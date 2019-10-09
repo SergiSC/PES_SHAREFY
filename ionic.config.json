@@ -1,5 +1,7 @@
 {
   "name": "PES_SHAREFY",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
