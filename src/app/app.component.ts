@@ -4,7 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -18,16 +19,17 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private fcm: FCM
+    private fcm: FCM,
+    private translate: TranslateService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
+    const userLang = 'cat';
+    this.translate.use(userLang);
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      // this.splashScreen.hide();
-
       this.fcm.getToken().then(token => {
         console.log(token);
       });

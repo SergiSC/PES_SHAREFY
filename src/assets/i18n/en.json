@@ -1,0 +1,21 @@
+{
+  "PAGE": {
+    "LOGIN": {
+      "BUTTONLOGIN": "Log In",
+      "BUTTONREGISTRE": "Sign In",
+      "BUTTONRECUPERAR": "Recover password"
+    },
+    "PERFIL": {
+      "TITLE": "Profile",
+      "BUTTONINFORMACIO": "Information",
+      "BUTTONJOCS": "Games",
+      "BUTTONSEGUIDORS": "Followers",
+      "BUTTONSEGUITS": "Following",
+      "BUTTONPUBLICACIONS": "Publications",
+      "BUTTONMAGRADA": "Likes"
+    },
+    "INFORMACIO": {
+      "TITLE": "Information"
+    }
+  }
+}
