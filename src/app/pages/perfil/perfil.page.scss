@@ -2,3 +2,26 @@ ion-toolbar {
   --background: var(--ion-color-primary);
   color: var(--ion-color-primary-contrast);
 }
+
+.avatar {
+  width: 120px;
+  height: 120px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-top {
+  margin-top: 10%;
+}
+
+ion-button {
+  font-size: 12pt;
+}
+
+.logo {
+  width: 50%;
+}
