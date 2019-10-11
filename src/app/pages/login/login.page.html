@@ -1,19 +1,31 @@
-<ion-content>
-  <ion-grid class="center">
+<ion-content class="background-image">
     <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/tabs']"> {{ 'PAGE.LOGIN.BUTTONLOGIN' | translate }} </ion-button>
-      </ion-col>
+      <ion-grid class="nom-aplicacio">
+        <ion-label class="nom-aplicacio-share">Share</ion-label>
+        <ion-label class="nom-aplicacio-fy">fy</ion-label>
+      </ion-grid>
     </ion-row>
     <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/registre']"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
-      </ion-col>
+        <ion-img class="logo-img" src="../assets/logojusto.png"></ion-img>
     </ion-row>
     <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/recuperar']"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-grid class="center">
+        <ion-item>
+          <ion-label position="floating">Username or email:</ion-label>
+          <ion-input type="text" id="input-user-email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password:</ion-label>
+          <ion-input type="text" id="input-password"></ion-input>
+        </ion-item>
+        <ion-button [routerLink]="['/recuperar']" fill="clear"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
+      </ion-grid>
+    </ion-row> 
+    <ion-row class="row-registar-entrar"> 
+        <div>
+          <ion-button [routerLink]="['/registre']" class="registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
+          <div class="divider"></div>
+          <ion-button [routerLink]="['/tabs']" class="registar-entrar"> {{ 'PAGE.LOGIN.BUTTONLOGIN' | translate }} </ion-button>
+        </div>
+      </ion-row> 
 </ion-content>
