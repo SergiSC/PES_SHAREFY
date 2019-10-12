@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ControlContainer } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,33 +11,48 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, 
-              public alertController: AlertController) {}
+  toast: any;
 
-  entrar(){
-    let InUserName = (document.getElementById('input-user-email') as HTMLInputElement).value;
-    let InPassword = (document.getElementById('input-password') as HTMLInputElement).value;
+  constructor(private router: Router,
+              public alertController: AlertController,
+              public toastController: ToastController) {}
+
+  entrar() {
+    const InUserName = (document.getElementById('input-user-email') as HTMLInputElement).value;
+    const InPassword = (document.getElementById('input-password') as HTMLInputElement).value;
     console.log(InUserName, InPassword);
-    if (!(0 || InUserName.length === 0 || InPassword.length === 0)) { this.router.navigateByUrl('/tabs');}
-    else { this.presentAlert() }
-    //Enviar les variabes a la base de dades i si funciona return
+    if (!(0 || InUserName.length === 0 || InPassword.length === 0)) { this.showToast(); this.router.navigateByUrl('/tabs'); } 
+    else { this.presentAlert(); }
+    // Enviar les variabes a la base de dades i si funciona return
   }
 
   async presentAlert() {
-    let alert = this.alertController.create({
+    const alert = this.alertController.create({
       header: 'Login Fallit',
-      subHeader: 'El Usuari, email o contrasenya introduit no correspon amb ningun usuari',
+      subHeader: 'L Usuari, email o contrasenya introduit no correspon amb ningun usuari de la base de dades',
       buttons: ['Okei']
     });
     (await alert).present();
   }
-
+  
+  async showToast() {
+    this.toast = this.toastController.create({
+      message: 'Login successfully',
+      showCloseButton: true,
+      position: 'top',
+      closeButtonText: 'Close',
+      duration: 1000,
+    });
+    (await this.toast).present();
+  }
+  HideToast() {
+    this.toast = this.toastController.dismiss();
+  }
 
   ngOnInit() {
-    //Mirar a la base de dades si te el toquen
-    //si el te anar a la seguent pagina
-    if (0) { this.router.navigateByUrl('/tabs');}
-
+    // Mirar a la base de dades si te el toquen
+    // si el te anar a la seguent pagina
+    if (0) { this.router.navigateByUrl('/tabs'); }
   }
 
 }

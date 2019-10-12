@@ -3,7 +3,9 @@
     "LOGIN": {
       "BUTTONLOGIN": "Log In",
       "BUTTONREGISTRE": "Sign In",
-      "BUTTONRECUPERAR": "Recover password"
+      "BUTTONRECUPERAR": "Recover password",
+      "TEXTUSER": "Username or email:",
+      "TEXTPASSWORD": "Password:"
     },
     "PERFIL": {
       "TITLE": "Profile",
