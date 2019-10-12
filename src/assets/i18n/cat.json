@@ -16,6 +16,11 @@
     },
     "INFORMACIO": {
       "TITLE": "Informació"
+    },
+    "RECUPERAR": {
+      "RECUPERARCONTRATITOL": "Recuperar Contrasenya",
+      "DESCRIPCIO": "Introdueix el teu email i t'enviarem un correu amb la teva contrasenya.",
+      "BOTO": "Envia"
     }
   }
 }
