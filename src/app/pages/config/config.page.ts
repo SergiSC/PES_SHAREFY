@@ -3,6 +3,7 @@ import {TranslateService} from '@ngx-translate/core';
 import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
+import {AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-config',
@@ -11,7 +12,7 @@ import { FCM } from '@ionic-native/fcm/ngx';
 })
 export class ConfigPage implements OnInit {
 
-  constructor() {}
+  constructor(public alertController: AlertController) {}
 
   ngOnInit() { // mirem la variable de la privacitat i de l'idioma per a poder iniciar el toogle i l'idioma de la pagina
   }
@@ -34,6 +35,18 @@ export class ConfigPage implements OnInit {
         console.log(token);
       });
     });*/
+  }
+
+  spanishOn() {
+
+  }
+
+  catalanOn() {
+
+  }
+
+  notificacionsOff() { // per defecte estan activades i al apretar es desactien
+    
   }
 
 }

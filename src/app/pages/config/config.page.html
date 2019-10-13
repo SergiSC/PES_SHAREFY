@@ -15,26 +15,37 @@
           <ion-toggle id="privacitat" (ionChange)="privacitatOn()"></ion-toggle>
       </ion-item>
     </ion-row>
-    <ion-row class="text-explicacio">
-        <ion-radio-group>
+    <ion-row>
+      <ion-item>
+          <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.NOTIFY' | translate }}</ion-label>
+          <ion-toggle id="notificacions" (ionChange)="notificacionsOff()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-radio-group class="text-explicacio">
             <ion-list-header>
               <ion-label> {{ 'PAGE.CONFIGURACIO.IDIOMES' | translate }}</ion-label>
             </ion-list-header>
+      <ion-row>
+          <ion-col>
             <ion-item>
-              <ion-label>{{ 'PAGE.CONFIGURACIO.ENGLISH' | translate }}</ion-label>
+              <ion-img class="imatge" src= "assets/icon/eng.png" ></ion-img>
               <ion-radio (ionSelected)="englishOn()" slot="start" color="success" value="eng"></ion-radio>
             </ion-item>
+          </ion-col>
+          <ion-col>
             <ion-item>
-              <ion-label>{{ 'PAGE.CONFIGURACIO.SPANISH' | translate }}</ion-label>
-              <ion-radio slot="start" color="success" value="esp"></ion-radio>
+                <ion-img class="imatge" src= "assets/icon/esp.png" ></ion-img>
+              <ion-radio (ionSelected)="spanishOn()" slot="start" color="success" value="esp"></ion-radio>
             </ion-item>
-  
+          </ion-col>
+          <ion-col>
             <ion-item>
-              <ion-label>{{ 'PAGE.CONFIGURACIO.CATALAN' | translate }}</ion-label>
-              <ion-radio slot="start" color="success" value="cat" checked></ion-radio>
+                <ion-img class="imatge" src= "assets/icon/cat.png" ></ion-img>
+              <ion-radio (ionSelected)="catalanOn()" slot="start" color="success" value="cat" checked></ion-radio>
             </ion-item>
-          </ion-radio-group>
-    </ion-row>
+          </ion-col>
+        </ion-row>
+    </ion-radio-group>
     <ion-row>
       <ion-col class="flex">
         <ion-button [routerLink]="['/login']">Tancar la sessió</ion-button>

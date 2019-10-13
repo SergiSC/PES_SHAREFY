@@ -4,7 +4,7 @@ ion-toolbar {
 }
 
 .flex {
-  margin-top: 30%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +21,11 @@ ion-toolbar {
 
 .text-explicacio {
     font-size: 100%;
+}
+
+.imatge {
+  width: 30px;
+  height: 30px;
 }
 
 .ion-text-center {
