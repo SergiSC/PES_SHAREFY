@@ -3,12 +3,38 @@
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Configuració</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.CONFIGURACIO.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid class="bottom">
+    <ion-row>
+      <ion-item>
+          <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.PRIVACITY' | translate }}</ion-label>
+          <ion-toggle id="privacitat" (ionChange)="privacitatOn()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-row class="text-explicacio">
+        <ion-radio-group>
+            <ion-list-header>
+              <ion-label> {{ 'PAGE.CONFIGURACIO.IDIOMES' | translate }}</ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>{{ 'PAGE.CONFIGURACIO.ENGLISH' | translate }}</ion-label>
+              <ion-radio (ionSelected)="englishOn()" slot="start" color="success" value="eng"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>{{ 'PAGE.CONFIGURACIO.SPANISH' | translate }}</ion-label>
+              <ion-radio slot="start" color="success" value="esp"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>{{ 'PAGE.CONFIGURACIO.CATALAN' | translate }}</ion-label>
+              <ion-radio slot="start" color="success" value="cat" checked></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+    </ion-row>
     <ion-row>
       <ion-col class="flex">
         <ion-button [routerLink]="['/login']">Tancar la sessió</ion-button>

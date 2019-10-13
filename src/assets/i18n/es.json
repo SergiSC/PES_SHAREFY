@@ -16,6 +16,14 @@
     },
     "INFORMACIO": {
       "TITLE": "Información"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuración",
+      "PRIVACITY": "Cuenta privada",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellano",
+      "CATALAN": "Catalan"
     }
   }
 }
