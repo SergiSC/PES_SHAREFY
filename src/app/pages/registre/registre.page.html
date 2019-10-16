@@ -3,7 +3,7 @@
     <ion-buttons slot="start" style="position: absolute;">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Registre</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.REGISTRE.TITLE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,46 +11,46 @@
   <ion-grid class="grid_registre">
     <ion-col >
       <ion-row>
-        <ion-label class="title">Crea el teu compte</ion-label>
+        <ion-label class="title">{{ 'PAGE.REGISTRE.SUBTITLE' | translate}}</ion-label>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
-            <ion-label position="floating">Nickname</ion-label>
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNICK' | translate}}</ion-label>
             <ion-input autofocus=true minlength="3" maxlength="10" [(ngModel)]="regNick" type="text" id="input-nick" class="input-register"></ion-input>
           </ion-item>
       </ion-row>
       <ion-row class="row_grid"> 
           <ion-item class="item_registre">
-              <ion-label position="floating">Nom i cognoms</ion-label>
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNOM' | translate}}</ion-label>
               <ion-input [(ngModel)]="regNameSurname" type="text" id="input-nick" class="input-register"></ion-input>
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
-              <ion-label position="floating">Correu electronic</ion-label>
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCORREU' | translate}}</ion-label>
               <ion-input [(ngModel)]="regEmail" (ionBlur)="checkEmailFormat()" type="email" id="input-nick" class="input-register"></ion-input>
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
-              <ion-label position="floating">Data de naixement</ion-label>
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELDATANAIXEMENT' | translate}}</ion-label>
               <ion-datetime [(ngModel)]="regDate" displayFormat="DD/MM/YYYY" value=""></ion-datetime>
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
-              <ion-label position="floating">Contrasenya</ion-label>
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYA' | translate}}</ion-label>
               <ion-input [(ngModel)]="regPassword" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
-              <ion-label position="floating">Confirmar contrasenya</ion-label>
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
               <ion-input [(ngModel)]="regPasswordRepeat" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
             </ion-item>
       </ion-row>
       <ion-row style="margin-top: 15%; justify-content: center">
-          <ion-button block size="8" expand="full" id="registreButton" (click)="registerUser()">Registrar-se<ion-ripple-effect></ion-ripple-effect></ion-button>
+          <ion-button block size="8" expand="full" id="registreButton" (click)="registerUser()">{{ 'PAGE.REGISTRE.BUTTONREGISTRE' | translate}}<ion-ripple-effect></ion-ripple-effect></ion-button>
       </ion-row>
     </ion-col>
   </ion-grid>

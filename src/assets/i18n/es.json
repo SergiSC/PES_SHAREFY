@@ -16,6 +16,17 @@
     },
     "INFORMACIO": {
       "TITLE": "Información"
+    },
+    "REGISTRE": {
+      "TITLE": "Registro",
+      "SUBTITLE": "Crea tu cuenta",
+      "LABELNICK": "Nombre de usuario",
+      "LABELNOM": "Nombre y apellidos",
+      "LABELCORREU": "Correo electrónico",
+      "LABELDATANAIXEMENT": "Fecha de nacimiento",
+      "LABELCONTRASENYA": "Contraseña",
+      "LABELCONTRASENYAREP":"Confirmar contraseña",
+      "BUTTONREGISTRE": "Registrate"
     }
   }
 }

@@ -16,6 +16,17 @@
     },
     "INFORMACIO": {
       "TITLE": "Informació"
+    },
+    "REGISTRE": {
+      "TITLE": "Registre",
+      "SUBTITLE": "Crea el teu compte",
+      "LABELNICK": "Nom d'usuari",
+      "LABELNOM": "Nom i cognoms",
+      "LABELCORREU": "Correu electrònic",
+      "LABELDATANAIXEMENT": "Data de naixement",
+      "LABELCONTRASENYA": "Contrasenya",
+      "LABELCONTRASENYAREP":"Confirmar contrasenya",
+      "BUTTONREGISTRE": "Registra't"
     }
   }
 }
