@@ -14,9 +14,9 @@
         <ion-label class="title">{{ 'PAGE.REGISTRE.SUBTITLE' | translate}}</ion-label>
       </ion-row>
       <ion-row class="row_grid">
-          <ion-item class="item_registre">
+          <ion-item class="item_registre" id="item-input-nick">
             <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNICK' | translate}}</ion-label>
-            <ion-input autofocus=true minlength="3" maxlength="10" [(ngModel)]="regNick" type="text" id="input-nick" class="input-register"></ion-input>
+            <ion-input autofocus=true minlength="3" maxlength="20" [(ngModel)]="regNick" (ionChange)="checkExistingNick()" type="text" id="input-nick" class="input-register"></ion-input>
           </ion-item>
       </ion-row>
       <ion-row class="row_grid"> 
