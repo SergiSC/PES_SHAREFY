@@ -2,3 +2,19 @@ ion-toolbar {
   --background: var(--ion-color-primary);
   color: var(--ion-color-primary-contrast);
 }
+
+.title {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+.grid_registre {
+  padding: 10%;
+}
+
+.item_registre {
+  width: 100%;
+  margin-bottom: 10px;
+}
