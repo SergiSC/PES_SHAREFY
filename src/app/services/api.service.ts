@@ -32,12 +32,12 @@ export class ApiService {
     );
   }
 
-<<<<<<< HEAD
   getAllUsers() {
     return this.http.get(
       this.url + '/api/users'
     )
-=======
+  }
+  
   resetPassword(email) {
     const body = {
       username: email,
@@ -46,6 +46,5 @@ export class ApiService {
         this.url + '/api/user/reset',
         body,
     );
->>>>>>> sprint3
   }
 }
