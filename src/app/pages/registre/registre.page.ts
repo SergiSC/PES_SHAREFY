@@ -25,12 +25,13 @@ export class RegistrePage implements OnInit {
   missatgeErrorPassword = []
   missatgeErrorPasswordRep = []
 
-  constructor(api: ApiService) { 
-    this.listUsers = api.getAllUsers()
-    console.log(this.listUsers)
+  constructor(public api: ApiService) { 
   }
 
   ngOnInit() {
+    this.listUsers = this.api.getAllUsers().subscribe((data:any) =>{
+      console.log(this.listUsers)
+    })
   }
 
   registerUser() {

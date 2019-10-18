@@ -33,9 +33,7 @@ export class ApiService {
   }
 
   getAllUsers() {
-    return this.http.get(
-      this.url + '/api/users'
-    )
+    return this.http.get(this.url + '/api/users')
   }
   
   resetPassword(email) {
