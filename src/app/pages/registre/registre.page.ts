@@ -29,9 +29,11 @@ export class RegistrePage implements OnInit {
   }
 
   ngOnInit() {
-    this.listUsers = this.api.getAllUsers().subscribe((data:any) =>{
-      console.log(this.listUsers)
-    })
+    this.api.getAllUsers().subscribe((data:any) =>{
+      console.log(data);
+    }, err => {
+
+    });
   }
 
   registerUser() {
