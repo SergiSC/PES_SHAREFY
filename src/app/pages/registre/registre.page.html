@@ -27,10 +27,19 @@
           </div>
       </ion-row>
       <ion-row class="row_grid"> 
+        <ion-col size="5"> 
           <ion-item class="item_registre">
-              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNOM' | translate}}</ion-label>
-              <ion-input [(ngModel)]="regNameSurname" type="text" id="input-nick" class="input-register"></ion-input>
-            </ion-item>
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNOM' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regName" type="text" id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="7">
+          <ion-item class="item_registre">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCOGNOM' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regLastname" type="text" id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+        </ion-col>
+          
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre" id="item-input-mail">

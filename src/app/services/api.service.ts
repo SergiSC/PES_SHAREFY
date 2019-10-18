@@ -35,6 +35,20 @@ export class ApiService {
   getAllUsers() {
     return this.http.get(this.url + '/api/users')
   }
+
+  postAfegirNouUsuariRegistrat(user) {
+    const body = {
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      password: user.password
+    };
+    return this.http.post(
+      this.url + '/api/register',
+      body
+    );
+  }
   
   resetPassword(email) {
     const body = {

@@ -11,13 +11,13 @@ import { ApiService } from 'src/app/services/api.service';
 export class RegistrePage implements OnInit {
 
   regNick = ""
-  regNameSurname = ""
+  regName = ""
+  regLastname = ""
   regEmail = ""
   regDate = ""
   regPassword = ""
   regPasswordRepeat = ""
   listUsers: any
-  mockedListUsers = ['aaa','aaab', 'sergi', 'serrano']
 
   errorRegistre = new errorsRegistre
   missatgeErrorNick = []
@@ -30,20 +30,27 @@ export class RegistrePage implements OnInit {
 
   ngOnInit() {
     this.api.getAllUsers().subscribe((data:any) =>{
-      console.log(data);
-    }, err => {
-
+      this.listUsers = data.list;
     });
   }
 
   registerUser() {
-    if (this.regNick === "" || this.regNameSurname === "" || this.regEmail === "" || this.regDate === "" || this.regPassword === "" || this.regPasswordRepeat === ""
+    if (this.regNick === "" || this.regName === "" || this.regLastname === "" || this.regEmail === "" || this.regDate === "" || this.regPassword === "" || this.regPasswordRepeat === ""
         || this.missatgeErrorNick.length > 0 || this.missatgeErrorMail.length > 0 || this.missatgeErrorPassword.length > 0 || this.missatgeErrorPasswordRep.length > 0) {
       let msg = "Hi ha camps que no són correctes o no estan complets"
       this.presentToastWithOptions(msg)
     }
     else {
-      console.log ("TODO REG IN  DB")
+      let user = {
+        username: this.regNick,
+        first_name: this.regName,
+        last_name: this.regLastname,
+        email: this.regEmail,
+        password: this.regPassword
+      }
+      this.api.postAfegirNouUsuariRegistrat(user).subscribe((data:any) => {
+        console.log(data)   // data = token
+      })
     }
   }
 
@@ -57,8 +64,8 @@ export class RegistrePage implements OnInit {
     }
     else {
       //Check nick used by other user
-      this.mockedListUsers.forEach(element =>{
-        if (element.toLowerCase() === this.regNick.toLowerCase()) {
+      this.listUsers.forEach(element =>{
+        if (element.username.toLowerCase() === this.regNick.toLowerCase()) {
           this.missatgeErrorNick.push(this.errorRegistre.errors[1].msg);
         }
       })
