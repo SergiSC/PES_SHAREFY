@@ -3,12 +3,49 @@
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Configuració</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.CONFIGURACIO.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid class="bottom">
+    <ion-row>
+      <ion-item>
+          <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.PRIVACITY' | translate }}</ion-label>
+          <ion-toggle id="privacitat" (ionChange)="privacitatOn()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+          <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.NOTIFY' | translate }}</ion-label>
+          <ion-toggle id="notificacions" (ionChange)="notificacionsOff()"></ion-toggle>
+      </ion-item>
+    </ion-row>
+    <ion-radio-group class="text-explicacio">
+            <ion-list-header>
+              <ion-label> {{ 'PAGE.CONFIGURACIO.IDIOMES' | translate }}</ion-label>
+            </ion-list-header>
+      <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-img class="imatge" src= "assets/icon/eng.png" ></ion-img>
+              <ion-radio   (ionSelect)="englishOn()" slot="start" color="success" value="eng"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+                <ion-img class="imatge" src= "assets/icon/esp.png" ></ion-img>
+              <ion-radio (ionSelect)="spanishOn()" slot="start" color="success" value="esp"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+                <ion-img class="imatge" src= "assets/icon/cat.png" ></ion-img>
+              <ion-radio (ionSelect)="catalanOn()" slot="start" color="success" value="cat" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+    </ion-radio-group>
     <ion-row>
       <ion-col class="flex">
         <ion-button [routerLink]="['/login']">Tancar la sessió</ion-button>

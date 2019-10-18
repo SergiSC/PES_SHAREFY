@@ -3,7 +3,9 @@
     "LOGIN": {
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registra't",
-      "BUTTONRECUPERAR": "Recuperar Contrasenya"
+      "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
+      "TEXTUSER": "Nom usuari o email:",
+      "TEXTPASSWORD": "Contrasenya:"
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -27,6 +29,20 @@
       "LABELCONTRASENYA": "Contrasenya",
       "LABELCONTRASENYAREP":"Confirmar contrasenya",
       "BUTTONREGISTRE": "Registra't"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuració",
+      "PRIVACITY": "Compte privada",
+      "NOTIFY": "Notificacions",
+      "IDIOMES": "Idiome:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellà",
+      "CATALAN": "Català"
+    },
+    "RECUPERAR": {
+      "RECUPERARCONTRATITOL": "Recuperar Contrasenya",
+      "DESCRIPCIO": "Introdueix el teu email i t'enviarem un correu amb la teva contrasenya.",
+      "BOTO": "Envia"
     }
   }
 }

@@ -3,7 +3,9 @@
     "LOGIN": {
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registrate",
-      "BUTTONRECUPERAR": "Recuperar Contraseña"
+      "BUTTONRECUPERAR": "Recuperar Contraseña",
+      "TEXTUSER": "Nombre de usuario o email:",
+      "TEXTPASSWORD": "Contraseña:"
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -27,6 +29,15 @@
       "LABELCONTRASENYA": "Contraseña",
       "LABELCONTRASENYAREP":"Confirmar contraseña",
       "BUTTONREGISTRE": "Registrate"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuración",
+      "PRIVACITY": "Cuenta privada",
+      "NOTIFY": "Notificaciones",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellano",
+      "CATALAN": "Catalan"
     }
   }
 }
