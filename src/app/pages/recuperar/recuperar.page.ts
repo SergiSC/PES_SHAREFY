@@ -25,7 +25,7 @@ export class RecuperarPage implements OnInit {
       }).then(alert => {
         alert.present();
       });
-    }, error => {
+    }, err => {
       this.alertController.create({
         header: 'Correu erroni',
         message: 'El correu introduït no existeix',
