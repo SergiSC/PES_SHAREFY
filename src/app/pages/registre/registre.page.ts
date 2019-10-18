@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
+import { errorsRegistre } from './registre.errors';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-registre',
@@ -14,48 +16,110 @@ export class RegistrePage implements OnInit {
   regDate = ""
   regPassword = ""
   regPasswordRepeat = ""
-  showAlert = false
+  listUsers: any
   mockedListUsers = ['aaa','aaab', 'sergi', 'serrano']
 
-  constructor() { }
+  errorRegistre = new errorsRegistre
+  missatgeErrorNick = []
+  missatgeErrorMail = []
+  missatgeErrorPassword = []
+  missatgeErrorPasswordRep = []
+
+  constructor(api: ApiService) { 
+    this.listUsers = api.getAllUsers()
+    console.log(this.listUsers)
+  }
 
   ngOnInit() {
   }
 
   registerUser() {
-    console.log(this.regNick)
-    console.log(this.regNameSurname)
-    console.log(this.regEmail)
-    console.log(this.regDate)
-    console.log(this.regPassword)
-    console.log(this.regPasswordRepeat)
+    if (this.regNick === "" || this.regNameSurname === "" || this.regEmail === "" || this.regDate === "" || this.regPassword === "" || this.regPasswordRepeat === ""
+        || this.missatgeErrorNick.length > 0 || this.missatgeErrorMail.length > 0 || this.missatgeErrorPassword.length > 0 || this.missatgeErrorPasswordRep.length > 0) {
+      let msg = "Hi ha camps que no són correctes o no estan complets"
+      this.presentToastWithOptions(msg)
+    }
+    else {
+      console.log ("TODO REG IN  DB")
+    }
   }
 
-  equalPasswords() {
-    if (this.regPassword !== this.regPasswordRepeat) return false;
-    else return true;
-  }
-
-  checkExistingNick() {
-    if (this.regNick.length > 2){
+  checkNickName() {
+    this.missatgeErrorNick = []
+    const labelNick = document.getElementById('item-input-nick')
+    
+    //Check lenght nickname
+    if (this.regNick.length < 3 || this.regNick.length > 20) {
+      this.missatgeErrorNick.push(this.errorRegistre.errors[0].msg)
+    }
+    else {
+      //Check nick used by other user
       this.mockedListUsers.forEach(element =>{
-        console.log('11')
         if (element.toLowerCase() === this.regNick.toLowerCase()) {
-          console.log('same nick');
-          const labelNick = document.getElementById('item-input-nick')
-          labelNick.setAttribute('style','--highlight-color-focused: red;')
+          this.missatgeErrorNick.push(this.errorRegistre.errors[1].msg);
         }
       })
+      
+      //Check correct input form
+      let re = /^([a-zA-Z0-9 _-]+)$/
+      if (!re.test(String(this.regNick).toLowerCase())) {
+        this.missatgeErrorNick.push(this.errorRegistre.errors[2].msg)
+      }
+    }
+
+    if (this.missatgeErrorNick.length === 0) {
+      labelNick.setAttribute('style','--highlight-background: var(--ion-color-primary) !important;')
+    }
+    else {
+      labelNick.setAttribute('style','--highlight-background: red !important;')
     }
   }
 
   checkEmailFormat() {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let message = "El format del correu electrónic no es vàlid"
+    const labelMail = document.getElementById('item-input-mail')
+    this.missatgeErrorMail = []
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(this.regEmail).toLowerCase())) {
-      this.presentToastWithOptions(message)
+      this.missatgeErrorMail.push(this.errorRegistre.errors[3].msg)
     }
-    console.log(re.test(String(this.regEmail).toLowerCase()));
+    if (this.missatgeErrorMail.length === 0) {
+      labelMail.setAttribute('style','--highlight-background: var(--ion-color-primary) !important;')
+    }
+    else {
+      labelMail.setAttribute('style','--highlight-background: red !important;')
+    }
+  }
+
+  checkPasswordFormat() {
+    const labelPassword = document.getElementById('item-input-password')
+    this.missatgeErrorPassword = []
+
+    if (this.regPassword.length < 8) this.missatgeErrorPassword.push(this.errorRegistre.errors[4].msg)
+
+    let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/;
+    if (this.regPassword.match(re) === null) {
+      this.missatgeErrorPassword.push(this.errorRegistre.errors[5].msg)
+    }
+    if (this.missatgeErrorPassword.length === 0) {
+      labelPassword.setAttribute('style','--highlight-background: var(--ion-color-primary) !important;')
+    }
+    else {
+      labelPassword.setAttribute('style','--highlight-background: red !important;')
+    }
+  }
+
+  checkSamePasswords() {
+    const labelPasswordRep = document.getElementById('item-input-password-rep')
+    this.missatgeErrorPasswordRep = []
+    
+    if (this.regPasswordRepeat !== this.regPassword) this.missatgeErrorPasswordRep.push(this.errorRegistre.errors[6].msg)
+
+    if (this.missatgeErrorPasswordRep.length === 0) {
+      labelPasswordRep.setAttribute('style','--highlight-background: var(--ion-color-primary) !important;')
+    }
+    else {
+      labelPasswordRep.setAttribute('style','--highlight-background: red !important;')
+    }
   }
 
   async presentToastWithOptions(message) {
@@ -77,4 +141,5 @@ export class RegistrePage implements OnInit {
     document.body.appendChild(toast);
     return toast.present();
   }
+  
 }

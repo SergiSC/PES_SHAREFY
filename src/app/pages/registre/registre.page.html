@@ -16,8 +16,15 @@
       <ion-row class="row_grid">
           <ion-item class="item_registre" id="item-input-nick">
             <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNICK' | translate}}</ion-label>
-            <ion-input autofocus=true minlength="3" maxlength="20" [(ngModel)]="regNick" (ionChange)="checkExistingNick()" type="text" id="input-nick" class="input-register"></ion-input>
+            <ion-input autofocus=true [(ngModel)]="regNick" (ionChange)="checkNickName()" type="text" class="input-register"></ion-input>
           </ion-item>
+          <div *ngIf="missatgeErrorNick.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorNick">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
       </ion-row>
       <ion-row class="row_grid"> 
           <ion-item class="item_registre">
@@ -26,10 +33,17 @@
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
-          <ion-item class="item_registre">
+          <ion-item class="item_registre" id="item-input-mail">
               <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCORREU' | translate}}</ion-label>
-              <ion-input [(ngModel)]="regEmail" (ionBlur)="checkEmailFormat()" type="email" id="input-nick" class="input-register"></ion-input>
+              <ion-input [(ngModel)]="regEmail" (ionChange)="checkEmailFormat()" type="email" id="input-nick" class="input-register"></ion-input>
             </ion-item>
+            <div *ngIf="missatgeErrorMail.length > 0">
+              <ng-container *ngFor="let err of missatgeErrorMail">
+                <div class="error_message">
+                  <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+                </div>
+              </ng-container>
+            </div>
       </ion-row>
       <ion-row class="row_grid">
           <ion-item class="item_registre">
@@ -38,16 +52,30 @@
             </ion-item>
       </ion-row>
       <ion-row class="row_grid">
-          <ion-item class="item_registre">
-              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYA' | translate}}</ion-label>
-              <ion-input [(ngModel)]="regPassword" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
-            </ion-item>
+          <ion-item class="item_registre" id="item-input-password">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYA' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regPassword" (ionChange)="checkPasswordFormat()" type="password" clear-on-edit class="input-register"></ion-input>
+          </ion-item>
+          <div *ngIf="missatgeErrorPassword.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorPassword">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
       </ion-row>
       <ion-row class="row_grid">
-          <ion-item class="item_registre">
-              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
-              <ion-input [(ngModel)]="regPasswordRepeat" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
-            </ion-item>
+          <ion-item class="item_registre" id="item-input-password-rep">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regPasswordRepeat" (ionChange)="checkSamePasswords()" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+          <div *ngIf="missatgeErrorPasswordRep.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorPasswordRep">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
       </ion-row>
       <ion-row style="margin-top: 15%; justify-content: center">
           <ion-button block size="8" expand="full" id="registreButton" (click)="registerUser()">{{ 'PAGE.REGISTRE.BUTTONREGISTRE' | translate}}<ion-ripple-effect></ion-ripple-effect></ion-button>
