@@ -18,13 +18,6 @@ export class RecuperarPage implements OnInit {
   enviarMail() {
     const RecMail = (document.getElementById('mail') as HTMLInputElement).value;
     this.api.resetPassword(RecMail).subscribe( (data: any) => {
-      console.log(data); // STATUS 200
-    }, error => {
-    });
-    console.log(RecMail); // es mira si el mail es correcte o no
-    let x: boolean;
-    x = true;
-    if (x) { // si es correcte
       this.alertController.create({
         header: 'Correu enviat',
         message: 'Contrasenya enviada a la dirrecció donada, sino la rebut repeteixi el procés i asseguris que el correu és el correcte',
@@ -32,7 +25,7 @@ export class RecuperarPage implements OnInit {
       }).then(alert => {
         alert.present();
       });
-    } else { // si el correu introduit no es correcte
+    }, error => {
       this.alertController.create({
         header: 'Correu erroni',
         message: 'El correu introduït no existeix',
@@ -40,7 +33,7 @@ export class RecuperarPage implements OnInit {
       }).then(alert => {
         alert.present();
       });
-    }
+    });
   }
 
 }
