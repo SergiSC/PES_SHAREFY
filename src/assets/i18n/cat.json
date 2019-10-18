@@ -3,7 +3,9 @@
     "LOGIN": {
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registra't",
-      "BUTTONRECUPERAR": "Recuperar Contrasenya"
+      "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
+      "TEXTUSER": "Nom usuari o email:",
+      "TEXTPASSWORD": "Contrasenya:"
     },
     "PERFIL": {
       "TITLE": "Perfil",
