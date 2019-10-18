@@ -9,7 +9,7 @@ export class ApiService {
   httpOptions: any;
   public token: string;
 
-  url = 'sharefy.tk';
+  url = 'http://www.sharefy.tk';
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +28,16 @@ export class ApiService {
     };
     return this.http.post(
         this.url + '/api/user/username',
+        body,
+    );
+  }
+
+  resetPassword(email) {
+    const body = {
+      username: email,
+    };
+    return this.http.post(
+        this.url + '/api/user/reset',
         body,
     );
   }

@@ -51,7 +51,7 @@ export class InformacioPage implements OnInit {
 
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
-      header:  this.translate.instant('SELECT IMAGE SOURCE'),
+      header:  this.translate.instant('PAGE.IEWDN:EQWLKDA'),
       buttons: [{
         text: this.translate.instant('LOAD FROM LIBRARY '),
         handler: () => {

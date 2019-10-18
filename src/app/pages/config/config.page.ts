@@ -12,41 +12,29 @@ import {AlertController } from '@ionic/angular';
 })
 export class ConfigPage implements OnInit {
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController, private translate: TranslateService) {
+  }
 
   ngOnInit() { // mirem la variable de la privacitat i de l'idioma per a poder iniciar el toogle i l'idioma de la pagina
   }
 
   privacitatOn() { // s'activa quan es fa la compte privada
-    if (0 ) { // mirem l'esta del toggle i cambiem la variable de l'idioma
+    if ( 0 ) { // mirem l'esta del toggle i cambiem la variable de l'idioma
     }
   }
 
   englishOn() {
-    /* let platform: Platform;
-    let statusBar: StatusBar;
-    let fcm: FCM;
-    let translate: TranslateService;
-    let userLang = 'eng';
-    translate.use(userLang);
-    platform.ready().then(() => {
-      statusBar.styleDefault();
-      fcm.getToken().then(token => {
-        console.log(token);
-      });
-    });*/
+    this.translate.use('en');
   }
 
   spanishOn() {
-
+    this.translate.use('es');
   }
 
   catalanOn() {
-
+    this.translate.use('cat');
   }
 
-  notificacionsOff() { // per defecte estan activades i al apretar es desactien
-    
-  }
+  notificacionsOff() { }
 
 }

@@ -3,6 +3,7 @@ import { ControlContainer } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -15,15 +16,21 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router,
               public alertController: AlertController,
-              public toastController: ToastController) {}
+              public toastController: ToastController,
+              private api: ApiService) {}
 
   entrar() {
     const InUserName = (document.getElementById('input-user-email') as HTMLInputElement).value;
     const InPassword = (document.getElementById('input-password') as HTMLInputElement).value;
     console.log(InUserName, InPassword);
-    if (!(0 || InUserName.length === 0 || InPassword.length === 0)) { this.showToast(); this.router.navigateByUrl('/tabs'); } 
+    if (!(0 || InUserName.length === 0 || InPassword.length === 0)) { this.showToast(); this.router.navigateByUrl('/tabs'); }
     else { this.presentAlert(); }
-    // Enviar les variabes a la base de dades i si funciona return
+
+
+    this.api.usernameDisponible(InUserName).subscribe((data: any) => {
+      console.log(data.value);
+    });
+
   }
 
   async presentAlert() {
