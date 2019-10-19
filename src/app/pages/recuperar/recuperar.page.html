@@ -16,7 +16,7 @@
                 {{ 'PAGE.RECUPERAR.DESCRIPCIO' | translate }}
             </ion-text>
             <ion-item>
-                <ion-input id="mail" class="center" placeholder="Email" type="email"></ion-input>
+                <ion-input id="mail" class="center" [(ngModel)]="recMail" placeholder="Email" type="email"></ion-input>
             </ion-item>
         </ion-row>
         <ion-row class="flex">

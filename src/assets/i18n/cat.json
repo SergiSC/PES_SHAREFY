@@ -4,7 +4,7 @@
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registra't",
       "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
-      "TEXTUSER": "Nom usuari o email:",
+      "TEXTUSER": "Correu electrònic:",
       "TEXTPASSWORD": "Contrasenya:"
     },
     "PERFIL": {
@@ -35,7 +35,7 @@
       "TITLE": "Configuració",
       "PRIVACITY": "Compte privada",
       "NOTIFY": "Notificacions",
-      "IDIOMES": "Idiome:",
+      "IDIOMES": "Idioma:",
       "ENGLISH": "Inglés",
       "SPANISH": "Castellà",
       "CATALAN": "Català"

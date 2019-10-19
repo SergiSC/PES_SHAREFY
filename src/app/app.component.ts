@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {Storage} from '@ionic/storage';
 
 
 @Component({
@@ -20,14 +21,16 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     private fcm: FCM,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private storage: Storage
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
-    const userLang = 'cat';
-    this.translate.use(userLang);
+    this.storage.get('lang').then((data: any) => {
+      this.translate.use(data);
+    });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.fcm.getToken().then(token => {

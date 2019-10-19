@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import { Platform } from '@ionic/angular';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { FCM } from '@ionic-native/fcm/ngx';
 import {AlertController } from '@ionic/angular';
+import {Router} from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-config',
@@ -11,30 +10,55 @@ import {AlertController } from '@ionic/angular';
   styleUrls: ['./config.page.scss'],
 })
 export class ConfigPage implements OnInit {
-
-  constructor(public alertController: AlertController, private translate: TranslateService) {
+  notification: boolean;
+  privacity: boolean;
+  catS: boolean;
+  enS: boolean;
+  esS: boolean;
+  constructor(public alertController: AlertController,
+              private translate: TranslateService,
+              private router: Router,
+              private storage: Storage) {
   }
 
-  ngOnInit() { // mirem la variable de la privacitat i de l'idioma per a poder iniciar el toogle i l'idioma de la pagina
-  }
-
-  privacitatOn() { // s'activa quan es fa la compte privada
-    if ( 0 ) { // mirem l'esta del toggle i cambiem la variable de l'idioma
+  ngOnInit() {
+    if (this.translate.currentLang === 'cat') {
+      this.catS = true;
+    } else if (this.translate.currentLang === 'en') {
+      this.enS = true;
+    } else  {
+      this.esS = true;
     }
+  }
+
+  privacitatOn() {
+
+  }
+
+  notificacionsOff() {
+
   }
 
   englishOn() {
     this.translate.use('en');
+    this.storage.remove('lang');
+    this.storage.set('lang', 'en');
   }
 
   spanishOn() {
     this.translate.use('es');
+    this.storage.remove('lang');
+    this.storage.set('lang', 'es');
   }
 
   catalanOn() {
     this.translate.use('cat');
+    this.storage.remove('lang');
+    this.storage.set('lang', 'cat');
   }
 
-  notificacionsOff() { }
-
+  close() {
+    this.storage.remove('token');
+    this.router.navigate(['login']);
+  }
 }

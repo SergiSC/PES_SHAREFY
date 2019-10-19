@@ -32,8 +32,18 @@ export class ApiService {
     );
   }
 
+  resetPassword(mail) {
+    const body = {
+      email: mail,
+    };
+    return this.http.post(
+        this.url + '/api/user/reset',
+        body,
+    );
+  }
+
   getAllUsers() {
-    return this.http.get(this.url + '/api/users')
+    return this.http.get(this.url + '/api/users');
   }
 
   postAfegirNouUsuariRegistrat(user) {
@@ -49,13 +59,14 @@ export class ApiService {
       body
     );
   }
-  
-  resetPassword(email) {
+
+  login(mail, pass) {
     const body = {
-      username: email,
+      email: mail,
+      password: pass
     };
     return this.http.post(
-        this.url + '/api/user/reset',
+        this.url + '/api/login',
         body,
     );
   }
