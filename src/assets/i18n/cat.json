@@ -51,9 +51,11 @@
       "CATALAN": "Català"
     },
     "RECUPERAR": {
-      "RECUPERARCONTRATITOL": "Recuperar Contrasenya",
-      "DESCRIPCIO": "Introdueix el teu email i t'enviarem un correu amb la teva contrasenya.",
-      "BOTO": "Envia"
+      "TITLE1": "Correu enviat",
+      "TITLE2": "Correu erroni",
+      "MESSAGE1": "Contrasenya enviada a la dirrecció donada, sino la rebut repeteixi el procés i asseguris que el correu és el correcte",
+      "MESSAGE2": "El correu introduït no existeix",
+      "BUTTON": "Dacord"
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AlertController } from '@ionic/angular';
 import {ApiService} from '../../services/api.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-recuperar',
@@ -11,7 +12,9 @@ export class RecuperarPage implements OnInit {
 
   recMail: any;
 
-  constructor(public alertController: AlertController, public api: ApiService) { }
+  constructor(public alertController: AlertController,
+              public api: ApiService,
+              private translate: TranslateService) { }
 
   ngOnInit() {
   }
@@ -19,17 +22,17 @@ export class RecuperarPage implements OnInit {
   enviarMail() {
     this.api.resetPassword(this.recMail).subscribe( (data: any) => {
       this.alertController.create({
-        header: 'Correu enviat',
-        message: 'Contrasenya enviada a la dirrecció donada, sino la rebut repeteixi el procés i asseguris que el correu és el correcte',
-        buttons: ['Dacord']
+        header: this.translate.instant('PAGE.RECUPERAR.TITLE1'),
+        message: this.translate.instant('PAGE.RECUPERAR.MESSAGE1'),
+        buttons: this.translate.instant('PAGE.RECUPERAR.BUTTON')
       }).then(alert => {
         alert.present();
       });
     }, err => {
       this.alertController.create({
-        header: 'Correu erroni',
-        message: 'El correu introduït no existeix',
-        buttons: ['Dacord']
+        header: this.translate.instant('PAGE.RECUPERAR.TITLE2'),
+        message: this.translate.instant('PAGE.RECUPERAR.MESSAGE2'),
+        buttons: this.translate.instant('PAGE.RECUPERAR.BUTTON')
       }).then(alert => {
         alert.present();
       });

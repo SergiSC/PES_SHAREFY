@@ -49,6 +49,13 @@
       "ENGLISH": "Inglés",
       "SPANISH": "Castellano",
       "CATALAN": "Catalan"
+    },
+    "RECUPERAR": {
+      "TITLE1": "Correo enviado",
+      "TITLE2": "Correo erroneo",
+      "MESSAGE1": "Contraseña enviada a la dirección dada, sino lo ha recibido repita el proceso i asegurese que el correo es el correcto",
+      "MESSAGE2": "El correo introducido no existe",
+      "BUTTON": "Deacuerdo"
     }
   }
 }

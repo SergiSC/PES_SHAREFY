@@ -49,6 +49,13 @@
       "ENGLISH": "English",
       "SPANISH": "Spanish",
       "CATALAN": "Catalan"
+    },
+    "RECUPERAR": {
+      "TITLE1": "Email send",
+      "TITLE2": "Wrong mail",
+      "MESSAGE1": "Password sent to the given address, if you have not received the email, repeat the process and make sure the mail is correct",
+      "MESSAGE2": "The email entered does not exist",
+      "BUTTON": "Okay"
     }
   }
 }
