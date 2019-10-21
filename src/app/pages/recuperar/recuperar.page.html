@@ -1,0 +1,26 @@
+
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button> </ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center"> {{ 'PAGE.RECUPERAR.RECUPERARCONTRATITOL' | translate }} </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row  class="text-explicacio">
+            <ion-icon class="icono-gran" name="lock"></ion-icon>
+            <ion-text class="ion-margin">
+                {{ 'PAGE.RECUPERAR.DESCRIPCIO' | translate }}
+            </ion-text>
+            <ion-item>
+                <ion-input id="mail" class="center" [(ngModel)]="recMail" placeholder="Email" type="email"></ion-input>
+            </ion-item>
+        </ion-row>
+        <ion-row class="flex">
+            <ion-button class="boto-enviar" (click)="enviarMail()">{{ 'PAGE.RECUPERAR.BOTO' | translate }}</ion-button>
+        </ion-row>
+    </ion-grid>
+</ion-content>

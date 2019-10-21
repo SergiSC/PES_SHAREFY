@@ -1,0 +1,54 @@
+{
+  "PAGE": {
+    "LOGIN": {
+      "BUTTONLOGIN": "Log In",
+      "BUTTONREGISTRE": "Sign In",
+      "BUTTONRECUPERAR": "Recover password",
+      "TEXTUSER": "Email:",
+      "TEXTPASSWORD": "Password:"
+    },
+    "PERFIL": {
+      "TITLE": "Profile",
+      "BUTTONINFORMACIO": "Information",
+      "BUTTONJOCS": "Games",
+      "BUTTONSEGUIDORS": "Followers",
+      "BUTTONSEGUITS": "Following",
+      "BUTTONPUBLICACIONS": "Publications",
+      "BUTTONMAGRADA": "Likes"
+    },
+    "INFORMACIO": {
+      "TITLE": "Information"
+    },
+    "REGISTRE": {
+      "TITLE": "Sign In",
+      "SUBTITLE": "Create your account",
+      "LABELNICK": "Nickname",
+      "LABELNOM": "Name",
+      "LABELCOGNOM": "Last Name",
+      "LABELCORREU": "Email",
+      "LABELDATANAIXEMENT": "Birthday date",
+      "LABELCONTRASENYA": "Password",
+      "LABELCONTRASENYAREP":"Confirm password",
+      "BUTTONREGISTRE": "Sing In",
+      "ERROR1": "Username must have between 3 and 20 characters",
+      "ERROR2": "Username not avaible",
+      "ERROR3": "Username can only have alphanumeric characters",
+      "ERROR4": "Invalid email format",
+      "ERROR5": "Password must be at least 8 characters long",
+      "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
+      "ERROR7": "Passwords do not match",
+      "ALERTCORRECT": "Registration was successfully completed",
+      "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
+      "ALERTERRORSERVER": "There was a problem in creating your new profile"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuration",
+      "PRIVACITY": "Private Account",
+      "NOTIFY": "Notifications",
+      "IDIOMES": "Language:",
+      "ENGLISH": "English",
+      "SPANISH": "Spanish",
+      "CATALAN": "Catalan"
+    }
+  }
+}

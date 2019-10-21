@@ -5,16 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilPage } from './perfil.page';
-
+import { InformacioPage } from './informacio.page';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
 
+
 const routes: Routes = [
   {
     path: '',
-    component: PerfilPage
+    component: InformacioPage
   }
 ];
 
@@ -32,6 +32,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [PerfilPage]
+  declarations: [InformacioPage]
 })
-export class PerfilPageModule {}
+export class InformacioPageModule {}

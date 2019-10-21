@@ -5,8 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilPage } from './perfil.page';
-
+import { RecuperarPage } from './recuperar.page';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
@@ -14,7 +13,7 @@ import {HttpClient} from '@angular/common/http';
 const routes: Routes = [
   {
     path: '',
-    component: PerfilPage
+    component: RecuperarPage
   }
 ];
 
@@ -32,6 +31,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [PerfilPage]
+  declarations: [RecuperarPage]
 })
-export class PerfilPageModule {}
+export class RecuperarPageModule {}

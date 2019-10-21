@@ -13,10 +13,10 @@
   margin-top: 10%;
 }
 
-ion-button {
-  font-size: 12pt;
-}
-
-.logo {
-  width: 45%;
+.icon {
+    font-size: 64px;
+    color: white;
+    position: absolute;
+    top: calc(50% - 32px);
+    left: calc(50% - 32px);
 }

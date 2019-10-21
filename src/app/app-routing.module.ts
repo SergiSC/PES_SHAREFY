@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
   { path: 'config', loadChildren: './pages/config/config.module#ConfigPageModule' },
   { path: 'afegir', loadChildren: './pages/afegir/afegir.module#AfegirPageModule' },
+  { path: 'recuperar', loadChildren: './pages/recuperar/recuperar.module#RecuperarPageModule' },
+  { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
 
 ];
 @NgModule({

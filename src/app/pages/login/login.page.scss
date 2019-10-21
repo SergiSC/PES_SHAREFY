@@ -1,9 +1,47 @@
-.flex {
+.center {
+  margin-top: 15%;
+}
+
+.nom-aplicacio {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20%;
+  font-size: 230%;
 }
 
-.center {
-  margin-top: 70%;
+.nom-aplicacio-share {
+  color: #64C995;
+  font-weight: bold;
+}
+
+.nom-aplicacio-fy {
+  color: black;
+  font-weight: bold;
+}
+
+.row-registar-entrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.boto-registar-entrar {
+  width:135px;
+  height:45px;
+}
+
+.logo-img {
+  margin-top: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+.divider {
+  width:35px;
+  height:auto;
+  display:inline-block;
 }

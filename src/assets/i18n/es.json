@@ -1,0 +1,54 @@
+{
+  "PAGE": {
+    "LOGIN": {
+      "BUTTONLOGIN": "Entrar",
+      "BUTTONREGISTRE": "Registrate",
+      "BUTTONRECUPERAR": "Recuperar Contraseña",
+      "TEXTUSER": "Correo electrónico:",
+      "TEXTPASSWORD": "Contraseña:"
+    },
+    "PERFIL": {
+      "TITLE": "Perfil",
+      "BUTTONINFORMACIO": "Informatición",
+      "BUTTONJOCS": "Juegos",
+      "BUTTONSEGUIDORS": "Seguidores",
+      "BUTTONSEGUITS": "Seguidos",
+      "BUTTONPUBLICACIONS": "Publicaciones",
+      "BUTTONMAGRADA": "Me gusta"
+    },
+    "INFORMACIO": {
+      "TITLE": "Información"
+    },
+    "REGISTRE": {
+      "TITLE": "Registro",
+      "SUBTITLE": "Crea tu cuenta",
+      "LABELNICK": "Nombre de usuario",
+      "LABELNOM": "Nombre",
+      "LABELCOGNOM": "Apellidos",
+      "LABELCORREU": "Correo electrónico",
+      "LABELDATANAIXEMENT": "Fecha de nacimiento",
+      "LABELCONTRASENYA": "Contraseña",
+      "LABELCONTRASENYAREP":"Confirmar contraseña",
+      "BUTTONREGISTRE": "Registrate",
+      "ERROR1": "El nombre de usuario debe tener entre 3 y 20 carácteres",
+      "ERROR2": "Este nombre de usuario ya está ocupado",
+      "ERROR3": "El nombre de usuario solo debe tener carácteres alfanuméricos",
+      "ERROR4": "El formato del email no es correcto",
+      "ERROR5": "La contraseña debe tener como mínimo 8 carácteres",
+      "ERROR6": "La contraseña debe contener como mínimo una minúscula, una mayúscula y un número",
+      "ERROR7": "Las contraseñas no coinciden",
+      "ALERTCORRECT": "El registro se ha completado correctamente",
+      "ALERTINCORRECTE": "Hay campos del formulario que son incorrectos o no están completos",
+      "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuración",
+      "PRIVACITY": "Cuenta privada",
+      "NOTIFY": "Notificaciones",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellano",
+      "CATALAN": "Catalan"
+    }
+  }
+}

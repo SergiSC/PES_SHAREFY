@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Perfil</ion-title>
+    <ion-title class="ion-text-center"> {{ 'PAGE.PERFIL.TITLE' | translate }} </ion-title>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/config']">
         <ion-icon name="settings"></ion-icon>
@@ -13,5 +13,42 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid class="margin-top">
+    <ion-row>
+      <ion-col class="flex">
+        <ion-avatar class="avatar">
+          <img src="https://images.mediotiempo.com/LRmC3OgFDcX90qW7IEMut31QY78=/958x596/uploads/media/2019/05/07/avatar-sera-dividida-en-cinco.jpg">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="flex">
+        <ion-label>User Name</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-top">
+      <ion-col>
+        <ion-button class="ion-margin-start" expand="full" size="large" routerLink="/informacio"> {{ 'PAGE.PERFIL.BUTTONINFORMACIO' | translate }} </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="ion-margin-end" expand="full" size="large"> {{ 'PAGE.PERFIL.BUTTONJOCS' | translate }} </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="ion-margin-start" expand="full" size="large"> {{ 'PAGE.PERFIL.BUTTONSEGUIDORS' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="ion-margin-end"d expand="full" size="large"> {{ 'PAGE.PERFIL.BUTTONSEGUITS' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="ion-margin-start" expand="full" size="large"> {{ 'PAGE.PERFIL.BUTTONPUBLICACIONS' | translate }}</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="ion-margin-end" expand="full" size="large"> {{ 'PAGE.PERFIL.BUTTONMAGRADA' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

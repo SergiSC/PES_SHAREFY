@@ -1,12 +1,94 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" style="position: absolute;">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Registre</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.REGISTRE.TITLE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content style="vertical-align: middle;">
+  <ion-grid class="grid_registre">
+    <ion-col >
+      <ion-row>
+        <ion-label class="title">{{ 'PAGE.REGISTRE.SUBTITLE' | translate}}</ion-label>
+      </ion-row>
+      <ion-row class="row_grid">
+          <ion-item class="item_registre" id="item-input-nick">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNICK' | translate}}</ion-label>
+            <ion-input autofocus=true [(ngModel)]="regNick" (ionChange)="checkNickName()" type="text" class="input-register"></ion-input>
+          </ion-item>
+          <div *ngIf="missatgeErrorNick.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorNick">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
+      </ion-row>
+      <ion-row class="row_grid"> 
+        <ion-col size="5"> 
+          <ion-item class="item_registre">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELNOM' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regName" type="text" id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="7">
+          <ion-item class="item_registre">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCOGNOM' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regLastname" type="text" id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+        </ion-col>
+          
+      </ion-row>
+      <ion-row class="row_grid">
+          <ion-item class="item_registre" id="item-input-mail">
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCORREU' | translate}}</ion-label>
+              <ion-input [(ngModel)]="regEmail" (ionChange)="checkEmailFormat()" type="email" id="input-nick" class="input-register"></ion-input>
+            </ion-item>
+            <div *ngIf="missatgeErrorMail.length > 0">
+              <ng-container *ngFor="let err of missatgeErrorMail">
+                <div class="error_message">
+                  <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+                </div>
+              </ng-container>
+            </div>
+      </ion-row>
+      <ion-row class="row_grid">
+          <ion-item class="item_registre">
+              <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELDATANAIXEMENT' | translate}}</ion-label>
+              <ion-datetime [(ngModel)]="regDate" displayFormat="DD/MM/YYYY" value=""></ion-datetime>
+            </ion-item>
+      </ion-row>
+      <ion-row class="row_grid">
+          <ion-item class="item_registre" id="item-input-password">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYA' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regPassword" (ionChange)="checkPasswordFormat()" type="password" clear-on-edit class="input-register"></ion-input>
+          </ion-item>
+          <div *ngIf="missatgeErrorPassword.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorPassword">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
+      </ion-row>
+      <ion-row class="row_grid">
+          <ion-item class="item_registre" id="item-input-password-rep">
+            <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
+            <ion-input [(ngModel)]="regPasswordRepeat" (ionChange)="checkSamePasswords()" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
+          </ion-item>
+          <div *ngIf="missatgeErrorPasswordRep.length > 0">
+            <ng-container *ngFor="let err of missatgeErrorPasswordRep">
+              <div class="error_message">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+              </div>
+            </ng-container>
+          </div>
+      </ion-row>
+      <ion-row style="margin-top: 15%; justify-content: center">
+          <ion-button block size="8" expand="full" id="registreButton" (click)="registerUser()">{{ 'PAGE.REGISTRE.BUTTONREGISTRE' | translate}}<ion-ripple-effect></ion-ripple-effect></ion-button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>

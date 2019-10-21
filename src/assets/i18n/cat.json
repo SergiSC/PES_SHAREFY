@@ -1,0 +1,59 @@
+{
+  "PAGE": {
+    "LOGIN": {
+      "BUTTONLOGIN": "Entrar",
+      "BUTTONREGISTRE": "Registra't",
+      "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
+      "TEXTUSER": "Correu electrònic:",
+      "TEXTPASSWORD": "Contrasenya:"
+    },
+    "PERFIL": {
+      "TITLE": "Perfil",
+      "BUTTONINFORMACIO": "Informació",
+      "BUTTONJOCS": "Jocs",
+      "BUTTONSEGUIDORS": "Seguidors",
+      "BUTTONSEGUITS": "Seguits",
+      "BUTTONPUBLICACIONS": "Publicacions",
+      "BUTTONMAGRADA": "M'agrada"
+    },
+    "INFORMACIO": {
+      "TITLE": "Informació"
+    },
+    "REGISTRE": {
+      "TITLE": "Registre",
+      "SUBTITLE": "Crea el teu compte",
+      "LABELNICK": "Nom d'usuari",
+      "LABELNOM": "Nom",
+      "LABELCOGNOM": "Cognoms",
+      "LABELCORREU": "Correu electrònic",
+      "LABELDATANAIXEMENT": "Data de naixement",
+      "LABELCONTRASENYA": "Contrasenya",
+      "LABELCONTRASENYAREP":"Confirmar contrasenya",
+      "BUTTONREGISTRE": "Registra't",
+      "ERROR1": "El nom d'usuari ha de tenir entre 3 i 20 caracters",
+      "ERROR2": "Aquest nom d'usuari està ocupat",
+      "ERROR3": "El nom d'usuari només pot tenir caràcters alfanumèrics",
+      "ERROR4": "El format del correu electrònic no es vàlid",
+      "ERROR5": "La contrasenya ha de tenir mínim 8 caràcters",
+      "ERROR6": "La contrasenya ha de contenir mínim una minúscula, una majúscula i un número",
+      "ERROR7": "Les contrasenyes no coincideixen",
+      "ALERTCORRECT": "El registre s'ha completat correctament",
+      "ALERTINCORRECTE": "Hi ha camps del formulari que són incorrectes o no estan complets",
+      "ALERTERRORSERVER": "Hi ha hagut algun problema a l'hora de crear el teu nou perfil"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuració",
+      "PRIVACITY": "Compte privada",
+      "NOTIFY": "Notificacions",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellà",
+      "CATALAN": "Català"
+    },
+    "RECUPERAR": {
+      "RECUPERARCONTRATITOL": "Recuperar Contrasenya",
+      "DESCRIPCIO": "Introdueix el teu email i t'enviarem un correu amb la teva contrasenya.",
+      "BOTO": "Envia"
+    }
+  }
+}
