@@ -29,7 +29,14 @@
       "LABELDATANAIXEMENT": "Birthday date",
       "LABELCONTRASENYA": "Password",
       "LABELCONTRASENYAREP":"Confirm password",
-      "BUTTONREGISTRE": "Sing In"
+      "BUTTONREGISTRE": "Sing In",
+      "ERROR1": "Username must have between 3 and 20 characters",
+      "ERROR2": "Username not avaible",
+      "ERROR3": "Username can only have alphanumeric characters",
+      "ERROR4": "Invalid email format",
+      "ERROR5": "Password must be at least 8 characters long",
+      "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
+      "ERROR7": "Passwords do not match"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",

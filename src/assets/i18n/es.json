@@ -29,7 +29,14 @@
       "LABELDATANAIXEMENT": "Fecha de nacimiento",
       "LABELCONTRASENYA": "Contraseña",
       "LABELCONTRASENYAREP":"Confirmar contraseña",
-      "BUTTONREGISTRE": "Registrate"
+      "BUTTONREGISTRE": "Registrate",
+      "ERROR1": "El nombre de usuario debe tener entre 3 y 20 carácteres",
+      "ERROR2": "Este nombre de usuario ya está ocupado",
+      "ERROR3": "El nombre de usuario solo debe tener carácteres alfanuméricos",
+      "ERROR4": "El formato del email no es correcto",
+      "ERROR5": "La contraseña debe tener como mínimo 8 carácteres",
+      "ERROR6": "La contraseña debe contener como mínimo una minúscula, una mayúscula y un número",
+      "ERROR7": "Las contraseñas no coinciden"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuración",

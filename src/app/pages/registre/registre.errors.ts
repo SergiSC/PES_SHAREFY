@@ -1,32 +1,39 @@
+import {TranslateService} from '@ngx-translate/core';
+
 export class errorsRegistre {
+
+    constructor(
+        private translate: TranslateService
+    ){}
+
     errors= [
         {
             name: "error1",
-            msg: "Ha de tenir entre 3 i 20 caracters"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR1')
         },
         {
             name: "error2",
-            msg: "Nickname ja ocupat"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR2')
         },
         {
             name: "error3",
-            msg: "Només caràcters alfanumèrics"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR3')
         },
         {
             name: "error4",
-            msg: "El format del correu electrónic no es vàlid"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR4')
         },
         {
             name: "error5",
-            msg: "La contrasenya ha de tenir mínim 8 caràcters"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR5')
         },
         {
             name: "error6",
-            msg: "La contrasenya ha de contenir mínim una majúscula i un número"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR6')
         },
         {
             name: "error7",
-            msg: "Les contrasenyes no coincideixen"
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR7')
         }
-      ]
+    ]
 }
