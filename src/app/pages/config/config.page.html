@@ -8,13 +8,13 @@
 </ion-header>
 <ion-content>
   <ion-grid>
-    <ion-row style="margin-top: 5%"  class="ion-padding">
+    <ion-row style="margin-top: 5%" >
       <ion-item lines="none">
           <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.PRIVACITY' | translate }}</ion-label>
           <ion-toggle id="privacitat" (ionChange)="privacitatOn()"></ion-toggle>
       </ion-item>
     </ion-row>
-    <ion-row style="margin-top: 5%" class="ion-padding" >
+    <ion-row style="margin-top: 5%">
       <ion-item lines="none">
           <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.NOTIFY' | translate }}</ion-label>
           <ion-toggle id="notificacions" (ionChange)="notificacionsOff()"></ion-toggle>
@@ -47,9 +47,11 @@
               </ion-row>
           </ion-radio-group>
       </ion-row>
-    <ion-row style="margin-top: 45%">
-      <ion-col class="flex">
-        <ion-button (click)="close()">Tancar la sessió</ion-button>
+    <ion-row style="vertical-align: bottom;">
+      <ion-col class="flex" style="position: fixed;bottom: 33px;">
+        <div style="margin: 0 auto; bottom: 30px; display:flex">
+          <ion-button (click)="close()">Tancar la sessió</ion-button>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

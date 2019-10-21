@@ -33,8 +33,11 @@ export class AppComponent {
       if (data !== null) {
         this.translate.use(data);
       }
-      else this.translate.use('en')
-    });
+      else {
+        this.storage.set('lang', 'cat');
+        this.translate.use('cat')
+      }
+  });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.fcm.getToken().then(token => {
