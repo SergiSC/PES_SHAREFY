@@ -29,7 +29,11 @@ export class AppComponent {
 
   initializeApp() {
     this.storage.get('lang').then((data: any) => {
-      this.translate.use(data);
+      console.log(data)
+      if (data !== null) {
+        this.translate.use(data);
+      }
+      else this.translate.use('en')
     });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

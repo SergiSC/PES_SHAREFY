@@ -36,7 +36,10 @@
       "ERROR4": "Invalid email format",
       "ERROR5": "Password must be at least 8 characters long",
       "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
-      "ERROR7": "Passwords do not match"
+      "ERROR7": "Passwords do not match",
+      "ALERTCORRECT": "Registration was successfully completed",
+      "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
+      "ALERTERRORSERVER": "There was a problem in creating your new profile"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
