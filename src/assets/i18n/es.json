@@ -51,11 +51,14 @@
       "CATALAN": "Catalan"
     },
     "RECUPERAR": {
+      "TITLE0": "Recuperar contrasenya",
       "TITLE1": "Correo enviado",
       "TITLE2": "Correo erroneo",
-      "MESSAGE1": "Contraseña enviada a la dirección dada, sino lo ha recibido repita el proceso i asegurese que el correo es el correcto",
+      "MESSAGE1": "Contraseña enviada a la dirección dada, sino lo ha recibido repita el proceso i asegurese que el correo es el correcto. Asegurate de mirar tu spam",
       "MESSAGE2": "El correo introducido no existe",
-      "BUTTON": "Deacuerdo"
+      "BUTTON": "Deacuerdo",
+      "BUTTON1": "Enviar correo",
+      "DESCRIPTION": "Escribe el correo correcto y recibirás una nueva contrasenya"
     }
   }
 }

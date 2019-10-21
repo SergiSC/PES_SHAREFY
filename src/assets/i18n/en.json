@@ -51,11 +51,14 @@
       "CATALAN": "Catalan"
     },
     "RECUPERAR": {
+      "TITLE0": "Restore password",
       "TITLE1": "Email send",
       "TITLE2": "Wrong mail",
-      "MESSAGE1": "Password sent to the given address, if you have not received the email, repeat the process and make sure the mail is correct",
+      "MESSAGE1": "Password sent to the given address, if you have not received the email, repeat the process and make sure the mail is correct. Make sure to look your spam",
       "MESSAGE2": "The email entered does not exist",
-      "BUTTON": "Okay"
+      "BUTTON": "Okay",
+      "BUTTON1": "Send email",
+      "DESCRIPTION": "Write the correct mail and you will recieve a new password"
     }
   }
 }
