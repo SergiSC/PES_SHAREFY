@@ -55,8 +55,10 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.storage.get('token').then( () => {
-          this.router.navigateByUrl('/tabs');
+    this.storage.get('token').then( (data:any) => {
+      if(data != null) {
+        this.router.navigateByUrl('/tabs');
+      }
     });
   }
 }
