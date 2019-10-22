@@ -1,0 +1,37 @@
+.Usuari {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.Likes-publi {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 4%;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 35px;
+}
+
+.nom-usuari {
+    padding-left: 20%;
+}
+
+.row-likes {
+    padding-left: 2%;
+}
+
+.row-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    width: 350px;
+    height: 200px;
+}

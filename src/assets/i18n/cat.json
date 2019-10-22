@@ -5,7 +5,9 @@
       "BUTTONREGISTRE": "Registra't",
       "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
       "TEXTUSER": "Correu electrònic:",
-      "TEXTPASSWORD": "Contrasenya:"
+      "TEXTPASSWORD": "Contrasenya:",
+      "HEADERALERTA": "Login Fallit",
+      "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat"
     },
     "PERFIL": {
       "TITLE": "Perfil",

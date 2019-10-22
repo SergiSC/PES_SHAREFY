@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import {ApiService} from '../../services/api.service';
 import {Storage} from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginPage implements OnInit {
               public alertController: AlertController,
               public toastController: ToastController,
               private api: ApiService,
-              private storage: Storage) {}
+              private storage: Storage,
+              private Transaltor: TranslateService) {}
 
   entrar() {
     if (this.password !== null && this.mail !== null) {
@@ -36,8 +38,8 @@ export class LoginPage implements OnInit {
 
   async presentAlert() {
     const alert = this.alertController.create({
-      header: 'Login Fallit',
-      subHeader: 'L\'email o contrasenya introduit no correspon amb cap usuari registrat',
+      header: this.Transaltor.instant('PAGE.LOGIN:HEADERALERTA'),
+      subHeader: this.Transaltor.instant('PAGE.LOGIN:TEXTALERTA'),
       buttons: ['Okei']
     });
     (await alert).present();
