@@ -5,7 +5,9 @@
       "BUTTONREGISTRE": "Sign In",
       "BUTTONRECUPERAR": "Recover password",
       "TEXTUSER": "Email:",
-      "TEXTPASSWORD": "Password:"
+      "TEXTPASSWORD": "Password:",
+      "HEADERALERTA": "Login Failed",
+      "TEXTALERTA": "The email or password entered does not correspond to any registered user"
     },
     "PERFIL": {
       "TITLE": "Profile",

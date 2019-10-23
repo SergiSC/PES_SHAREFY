@@ -5,7 +5,9 @@
       "BUTTONREGISTRE": "Registrate",
       "BUTTONRECUPERAR": "Recuperar Contraseña",
       "TEXTUSER": "Correo electrónico:",
-      "TEXTPASSWORD": "Contraseña:"
+      "TEXTPASSWORD": "Contraseña:",
+      "HEADERALERTA": "Login Fallido",
+      "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado"
     },
     "PERFIL": {
       "TITLE": "Perfil",
