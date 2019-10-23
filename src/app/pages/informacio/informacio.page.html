@@ -19,26 +19,21 @@
     </ion-row>
     <ion-list class="ion-margin-start" lines="none">
       <ion-item>
-        <ion-label color="primary" position="stacked">User Name</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-label color="primary" position="stacked">User name</ion-label>
+        <ion-input type="email">{{user.username}}</ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" position="stacked">First Name</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label color="primary" position="stacked">Last Name</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-label color="primary" position="stacked">Nom</ion-label>
+        <ion-input type="email"> {{user.first_name}}</ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary" position="stacked">Tel.</ion-label>
-        <ion-input type="tel"></ion-input>
+        <ion-label color="primary" position="stacked">Cognom</ion-label>
+        <ion-input type="email">{{user.last_name}} </ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="stacked">Email</ion-label>
-        <ion-input type="tel"></ion-input>
+        <ion-input type="email"> {{user.email}} </ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="stacked">Password</ion-label>
