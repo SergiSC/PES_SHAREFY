@@ -7,7 +7,8 @@
       "TEXTUSER": "Correo electrónico:",
       "TEXTPASSWORD": "Contraseña:",
       "HEADERALERTA": "Login Fallido",
-      "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado"
+      "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado",
+      "BUTTON": "Deacuerdo"
     },
     "PERFIL": {
       "TITLE": "Perfil",

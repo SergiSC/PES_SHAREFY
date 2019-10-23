@@ -7,7 +7,8 @@
       "TEXTUSER": "Correu electrònic:",
       "TEXTPASSWORD": "Contrasenya:",
       "HEADERALERTA": "Login Fallit",
-      "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat"
+      "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat",
+      "BUTTON": "Dacord"
     },
     "PERFIL": {
       "TITLE": "Perfil",

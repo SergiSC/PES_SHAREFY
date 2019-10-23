@@ -39,4 +39,8 @@ export class RecuperarPage implements OnInit {
     });
   }
 
+  getCoordinates(ev) {
+    console.log('x: ' + ev.clientX + ' y: ' + ev.clientY);
+  }
+
 }

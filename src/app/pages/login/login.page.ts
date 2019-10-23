@@ -38,9 +38,9 @@ export class LoginPage implements OnInit {
 
   async presentAlert() {
     const alert = this.alertController.create({
-      header: this.Transaltor.instant('PAGE.LOGIN:HEADERALERTA'),
-      subHeader: this.Transaltor.instant('PAGE.LOGIN:TEXTALERTA'),
-      buttons: ['Okei']
+      header: this.Transaltor.instant('PAGE.LOGIN.HEADERALERTA'),
+      subHeader: this.Transaltor.instant('PAGE.LOGIN.TEXTALERTA'),
+      buttons: this.Transaltor.instant('PAGE.LOGIN.BUTTON')
     });
     (await alert).present();
   }

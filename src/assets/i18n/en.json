@@ -7,7 +7,8 @@
       "TEXTUSER": "Email:",
       "TEXTPASSWORD": "Password:",
       "HEADERALERTA": "Login Failed",
-      "TEXTALERTA": "The email or password entered does not correspond to any registered user"
+      "TEXTALERTA": "The email or password entered does not correspond to any registered user",
+      "BUTTON": "Ok"
     },
     "PERFIL": {
       "TITLE": "Profile",
