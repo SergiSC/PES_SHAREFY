@@ -21,6 +21,19 @@ export class ApiService {
     );
   }
 
+  setUserConfig(user, tok, noti, privat, lang ) {
+    const body = {
+      token: tok,
+      privacy: privat,
+      notification: noti,
+      language: lang
+    };
+    return this.http.post(
+         this.url + '/api/user/' +  user + '/set_configurations',
+         body
+     );
+   }
+
   usernameDisponible(name) {
     const body = {
       username: name,

@@ -8,44 +8,5 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row class="ion-margin-top">
-      <ion-col class="flex">
-        <ion-avatar class="avatar">
-          <ion-img (click)="selectImage()" src="https://images.mediotiempo.com/LRmC3OgFDcX90qW7IEMut31QY78=/958x596/uploads/media/2019/05/07/avatar-sera-dividida-en-cinco.jpg"></ion-img>
-          <ion-icon (click)="selectImage()"  class="icon" name="camera"></ion-icon>
-        </ion-avatar>
-      </ion-col>
-    </ion-row>
-    <ion-list class="ion-margin-start" lines="none">
-      <ion-item>
-        <ion-label color="primary" position="stacked">User name</ion-label>
-        <ion-input type="email">{{user.username}}</ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="primary" position="stacked">Nom</ion-label>
-        <ion-input type="email"> {{user.first_name}}</ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label color="primary" position="stacked">Cognom</ion-label>
-        <ion-input type="email">{{user.last_name}} </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="primary" position="stacked">Email</ion-label>
-        <ion-input type="email"> {{user.email}} </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="primary" position="stacked">Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-row style="vertical-align: bottom;">
-      <ion-col class="flex" style="position: fixed;bottom: 33px;">
-        <div style="margin: 0 auto; bottom: 30px; display:flex">
-          <ion-button (click)="guardar()">Guardar</ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
 </ion-content>
