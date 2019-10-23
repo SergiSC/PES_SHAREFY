@@ -3,6 +3,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {AlertController } from '@ionic/angular';
 import {Router} from '@angular/router';
 import {Storage} from '@ionic/storage';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-config',
@@ -15,10 +16,12 @@ export class ConfigPage implements OnInit {
   catS: boolean;
   enS: boolean;
   esS: boolean;
-  constructor(public alertController: AlertController,
-              private translate: TranslateService,
-              private router: Router,
-              private storage: Storage) {
+  constructor(
+    public api: ApiService,
+    public alertController: AlertController,
+    private translate: TranslateService,
+    private router: Router,
+    private storage: Storage) {
   }
 
   ngOnInit() {
@@ -29,6 +32,13 @@ export class ConfigPage implements OnInit {
     } else  {
       this.esS = true;
     }
+    this.storage.get('token').then((token: any) => {
+      this.storage.get('username').then((username: any) => {
+        this.api.recuperarInfoUser(username, token).subscribe((data: any) => {
+          console.log(data);
+        });
+      });
+    });
   }
 
   privacitatOn() {

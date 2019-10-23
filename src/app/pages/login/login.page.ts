@@ -27,7 +27,9 @@ export class LoginPage implements OnInit {
   entrar() {
     if (this.password !== null && this.mail !== null) {
       this.api.login(this.mail, this.password).subscribe((data: any) => {
+        console.log(data);
         this.storage.set('token', data.access_token);
+        this.storage.set('username', data.username);
         this.router.navigateByUrl('/tabs');
       }, err => {
         this.presentAlert();

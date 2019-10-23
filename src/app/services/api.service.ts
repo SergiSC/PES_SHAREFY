@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -7,19 +8,17 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ApiService {
 
   httpOptions: any;
-  public token: string;
+   token: string;
+   username: string;
 
   url = 'http://www.sharefy.tk';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: Storage) {}
 
-  recuperarToken() {
-    this.httpOptions = {
-      headers: new HttpHeaders({
-        Accept: 'application/json',
-        Authorization: this.token
-      })
-    };
+  recuperarInfoUser(user, tok) {
+   return this.http.get(
+        this.url + '/api/user/' +  user + '?token=' + tok,
+    );
   }
 
   usernameDisponible(name) {
@@ -62,7 +61,7 @@ export class ApiService {
 
   login(mail, pass) {
     const body = {
-      email: mail,
+      login: mail,
       password: pass
     };
     return this.http.post(
@@ -70,4 +69,6 @@ export class ApiService {
         body,
     );
   }
+
+
 }
