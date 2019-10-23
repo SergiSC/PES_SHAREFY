@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
-
+import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
 @Component({
   selector: 'app-publicacio',
   templateUrl: './publicacio.component.html',
@@ -12,6 +12,8 @@ export class PublicacioComponent implements OnInit {
   like = false;
   StrNLikes = '0';
   nLikes = 0;
+  commentaris = [];
+  PopoverController: any;
 
   constructor(public popoverCtrl: PopoverController,
               private StreamingMedia: StreamingMedia) { }
@@ -20,6 +22,14 @@ export class PublicacioComponent implements OnInit {
     this.like = !this.like;
     if (this.like) {this.nLikes += 1; } else {this.nLikes -= 1; }
     this.StrNLikes = this.nLikes.toString();
+   }
+
+  async presentPopOver(event) {
+     const popover = await this.PopoverController.create({
+       Component: PubliPopOverComponent,
+       event
+     });
+     return await popover.present();
    }
 
    startvideo() {

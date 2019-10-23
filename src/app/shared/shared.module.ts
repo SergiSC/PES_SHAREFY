@@ -13,7 +13,7 @@ import { PublicacioComponent } from '../shared/publicacio/publicacio.component';
     PublicacioComponent,
   ],
   exports: [
-    PublicacioComponent
+    PublicacioComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
