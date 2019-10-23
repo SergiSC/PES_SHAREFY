@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AlertController } from '@ionic/angular';
 import {ApiService} from '../../services/api.service';
 import {TranslateService} from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar',
@@ -14,6 +15,7 @@ export class RecuperarPage implements OnInit {
 
   constructor(public alertController: AlertController,
               public api: ApiService,
+              private router: Router,
               private translate: TranslateService) { }
 
   ngOnInit() {
@@ -27,6 +29,9 @@ export class RecuperarPage implements OnInit {
         buttons: this.translate.instant('PAGE.RECUPERAR.BUTTON')
       }).then(alert => {
         alert.present();
+        alert.onDidDismiss().then(() => {
+          this.router.navigate(['/login']);
+        });
       });
     }, err => {
       this.alertController.create({
@@ -38,9 +43,4 @@ export class RecuperarPage implements OnInit {
       });
     });
   }
-
-  getCoordinates(ev) {
-    console.log('x: ' + ev.clientX + ' y: ' + ev.clientY);
-  }
-
 }
