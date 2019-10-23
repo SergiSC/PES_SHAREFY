@@ -3,7 +3,12 @@
     "LOGIN": {
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registrate",
-      "BUTTONRECUPERAR": "Recuperar Contraseña"
+      "BUTTONRECUPERAR": "Recuperar Contraseña",
+      "TEXTUSER": "Correo electrónico:",
+      "TEXTPASSWORD": "Contraseña:",
+      "HEADERALERTA": "Login Fallido",
+      "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado",
+      "BUTTON": "Deacuerdo"
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -16,6 +21,47 @@
     },
     "INFORMACIO": {
       "TITLE": "Información"
+    },
+    "REGISTRE": {
+      "TITLE": "Registro",
+      "SUBTITLE": "Crea tu cuenta",
+      "LABELNICK": "Nombre de usuario",
+      "LABELNOM": "Nombre",
+      "LABELCOGNOM": "Apellidos",
+      "LABELCORREU": "Correo electrónico",
+      "LABELDATANAIXEMENT": "Fecha de nacimiento",
+      "LABELCONTRASENYA": "Contraseña",
+      "LABELCONTRASENYAREP":"Confirmar contraseña",
+      "BUTTONREGISTRE": "Registrate",
+      "ERROR1": "El nombre de usuario debe tener entre 3 y 20 carácteres",
+      "ERROR2": "Este nombre de usuario ya está ocupado",
+      "ERROR3": "El nombre de usuario solo debe tener carácteres alfanuméricos",
+      "ERROR4": "El formato del email no es correcto",
+      "ERROR5": "La contraseña debe tener como mínimo 8 carácteres",
+      "ERROR6": "La contraseña debe contener como mínimo una minúscula, una mayúscula y un número",
+      "ERROR7": "Las contraseñas no coinciden",
+      "ALERTCORRECT": "El registro se ha completado correctamente",
+      "ALERTINCORRECTE": "Hay campos del formulario que son incorrectos o no están completos",
+      "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuración",
+      "PRIVACITY": "Cuenta privada",
+      "NOTIFY": "Notificaciones",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellano",
+      "CATALAN": "Catalan"
+    },
+    "RECUPERAR": {
+      "TITLE0": "Recuperar contrasenya",
+      "TITLE1": "Correo enviado",
+      "TITLE2": "Correo erroneo",
+      "MESSAGE1": "Contraseña enviada a la dirección dada, sino lo ha recibido repita el proceso i asegurese que el correo es el correcto. Asegurate de mirar tu spam",
+      "MESSAGE2": "El correo introducido no existe",
+      "BUTTON": "Deacuerdo",
+      "BUTTON1": "Enviar correo",
+      "DESCRIPTION": "Escribe el correo correcto y recibirás una nueva contrasenya"
     }
   }
 }

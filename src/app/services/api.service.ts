@@ -9,7 +9,7 @@ export class ApiService {
   httpOptions: any;
   public token: string;
 
-  url = 'sharefy.tk';
+  url = 'http://www.sharefy.tk';
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +28,45 @@ export class ApiService {
     };
     return this.http.post(
         this.url + '/api/user/username',
+        body,
+    );
+  }
+
+  resetPassword(mail) {
+    const body = {
+      email: mail,
+    };
+    return this.http.post(
+        this.url + '/api/user/reset',
+        body,
+    );
+  }
+
+  getAllUsers() {
+    return this.http.get(this.url + '/api/users');
+  }
+
+  postAfegirNouUsuariRegistrat(user) {
+    const body = {
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      password: user.password
+    };
+    return this.http.post(
+      this.url + '/api/register',
+      body
+    );
+  }
+
+  login(mail, pass) {
+    const body = {
+      email: mail,
+      password: pass
+    };
+    return this.http.post(
+        this.url + '/api/login',
         body,
     );
   }

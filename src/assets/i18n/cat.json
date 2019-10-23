@@ -3,7 +3,12 @@
     "LOGIN": {
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registra't",
-      "BUTTONRECUPERAR": "Recuperar Contrasenya"
+      "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
+      "TEXTUSER": "Correu electrònic:",
+      "TEXTPASSWORD": "Contrasenya:",
+      "HEADERALERTA": "Login Fallit",
+      "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat",
+      "BUTTON": "Dacord"
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -16,6 +21,47 @@
     },
     "INFORMACIO": {
       "TITLE": "Informació"
+    },
+    "REGISTRE": {
+      "TITLE": "Registre",
+      "SUBTITLE": "Crea el teu compte",
+      "LABELNICK": "Nom d'usuari",
+      "LABELNOM": "Nom",
+      "LABELCOGNOM": "Cognoms",
+      "LABELCORREU": "Correu electrònic",
+      "LABELDATANAIXEMENT": "Data de naixement",
+      "LABELCONTRASENYA": "Contrasenya",
+      "LABELCONTRASENYAREP":"Confirmar contrasenya",
+      "BUTTONREGISTRE": "Registra't",
+      "ERROR1": "El nom d'usuari ha de tenir entre 3 i 20 caracters",
+      "ERROR2": "Aquest nom d'usuari està ocupat",
+      "ERROR3": "El nom d'usuari només pot tenir caràcters alfanumèrics",
+      "ERROR4": "El format del correu electrònic no es vàlid",
+      "ERROR5": "La contrasenya ha de tenir mínim 8 caràcters",
+      "ERROR6": "La contrasenya ha de contenir mínim una minúscula, una majúscula i un número",
+      "ERROR7": "Les contrasenyes no coincideixen",
+      "ALERTCORRECT": "El registre s'ha completat correctament",
+      "ALERTINCORRECTE": "Hi ha camps del formulari que són incorrectes o no estan complets",
+      "ALERTERRORSERVER": "Hi ha hagut algun problema a l'hora de crear el teu nou perfil"
+    },
+    "CONFIGURACIO": {
+      "TITLE": "Configuració",
+      "PRIVACITY": "Compte privada",
+      "NOTIFY": "Notificacions",
+      "IDIOMES": "Idioma:",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Castellà",
+      "CATALAN": "Català"
+    },
+    "RECUPERAR": {
+      "TITLE0": "Recuperar contrasenya",
+      "TITLE1": "Correu enviat",
+      "TITLE2": "Correu erroni",
+      "MESSAGE1": "Contrasenya enviada a la dirrecció donada, sino la rebut repeteixi el procés i asseguris que el correu és el correcte. Assegurat de mirar l'spam",
+      "MESSAGE2": "El correu introduït no existeix",
+      "BUTTON": "Dacord",
+      "BUTTON1": "Enviar correu",
+      "DESCRIPTION": "Escriu el correu correcte i rebràs una nova contrasenya"
     }
   }
 }

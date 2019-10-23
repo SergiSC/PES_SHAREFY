@@ -1,19 +1,28 @@
-<ion-content>
-  <ion-grid class="center">
-    <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/tabs']"> {{ 'PAGE.LOGIN.BUTTONLOGIN' | translate }} </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/registre']"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="flex">
-        <ion-button [routerLink]="['/recuperar']"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content class="ion-padding background-image">
+    <ion-app>
+        <ion-router-outlet></ion-router-outlet>
+    </ion-app>
+    <ion-grid class="nom-aplicacio">
+        <ion-label class="nom-aplicacio-share">Share</ion-label>
+        <ion-label class="nom-aplicacio-fy">fy</ion-label>
+    </ion-grid>
+    <ion-img class="logo-img ion-margin-bottom" src="../assets/logojusto.png"></ion-img>
+    <ion-grid class="ion-padding-top ion-margin-top">
+        <ion-item>
+            <ion-label position="floating"> {{ 'PAGE.LOGIN.TEXTUSER' | translate }} </ion-label>
+            <ion-input type="text" [(ngModel)]="mail"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating"> {{ 'PAGE.LOGIN.TEXTPASSWORD' | translate }} </ion-label>
+            <ion-input  type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button [routerLink]="['/recuperar']" fill="clear" style="text-transform: none;"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
+    </ion-grid>
+    <ion-row class="row-registar-entrar"> 
+      <div>
+        <ion-button [routerLink]="['/registre']" class="boto-registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
+        <div class="divider"></div>
+        <ion-button class="boto-registar-entrar" (click)="entrar()"> {{ 'PAGE.LOGIN.BUTTONLOGIN' | translate }} </ion-button>
+      </div>
+    </ion-row> 
 </ion-content>
