@@ -68,4 +68,8 @@ export class InformacioPage implements OnInit {
     });
     await actionSheet.present();
   }
+
+  guardar() {
+
+  }
 }
