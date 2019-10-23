@@ -11,17 +11,14 @@
     padding-left: 4%;
 }
 
-.profile-photo {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 35px;
-}
-
 .nom-usuari {
     padding-left: 20%;
 }
 
 .row-likes {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     padding-left: 2%;
 }
 
@@ -34,4 +31,13 @@
 .video-container {
     width: 350px;
     height: 200px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+}
+
+.boto-share {
+    padding-left: 215px;
 }

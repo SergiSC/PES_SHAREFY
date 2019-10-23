@@ -4,7 +4,7 @@
       "BUTTONLOGIN": "Log In",
       "BUTTONREGISTRE": "Sign In",
       "BUTTONRECUPERAR": "Recover password",
-      "TEXTUSER": "Email:",
+      "TEXTUSER": "User or Email:",
       "TEXTPASSWORD": "Password:",
       "HEADERALERTA": "Login Failed",
       "TEXTALERTA": "The email or password entered does not correspond to any registered user",

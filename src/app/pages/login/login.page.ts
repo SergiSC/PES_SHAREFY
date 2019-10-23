@@ -40,24 +40,14 @@ export class LoginPage implements OnInit {
     const alert = this.alertController.create({
       header: this.Transaltor.instant('PAGE.LOGIN.HEADERALERTA'),
       subHeader: this.Transaltor.instant('PAGE.LOGIN.TEXTALERTA'),
-      buttons: this.Transaltor.instant('PAGE.LOGIN.BUTTON')
+      buttons: [this.Transaltor.instant('PAGE.LOGIN.BUTTON')]
     });
     (await alert).present();
   }
 
-  async showToast() {
-    this.toast = this.toastController.create({
-      message: 'Login successfully',
-      showCloseButton: true,
-      position: 'bottom',
-      closeButtonText: 'Close',
-      duration: 1000,
-    });
-    await this.toast.present();
-  }
 
   ngOnInit() {
-    this.storage.get('token').then( (data:any) => {
+    this.storage.get('token').then( (data: any) => {
       if(data != null) {
         this.router.navigateByUrl('/tabs');
       }

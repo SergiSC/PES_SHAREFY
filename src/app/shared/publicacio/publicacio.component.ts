@@ -10,7 +10,7 @@ import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-me
 export class PublicacioComponent implements OnInit {
 
   like = false;
-  StrNLikes = 'Likes : 0';
+  StrNLikes = '0';
   nLikes = 0;
 
   constructor(public popoverCtrl: PopoverController,
@@ -19,7 +19,7 @@ export class PublicacioComponent implements OnInit {
   blike() {
     this.like = !this.like;
     if (this.like) {this.nLikes += 1; } else {this.nLikes -= 1; }
-    this.StrNLikes = 'Likes : ' + this.nLikes;
+    this.StrNLikes = this.nLikes.toString();
    }
 
    startvideo() {

@@ -2,11 +2,13 @@
   <ion-row class="Usuari">
     <ion-col>
       <ion-button fill="clear" (click)="gotoporfile()">
-      <ion-img class="profile-photo" src="../assets/blacksquare.png"></ion-img>
+      <ion-avatar class="avatar">
+        <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+      </ion-avatar>
       <ion-label class="nom-usuari">Faker</ion-label>
       </ion-button>
     </ion-col>
-    <ion-col text-right>   
+    <ion-col class="ion-text-right">   
       <ion-button fill="clear" class="buto-config"><ion-icon name="more"></ion-icon></ion-button>
     </ion-col>
   </ion-row>
@@ -19,9 +21,9 @@
   </ion-row>
   <ion-row class="row-likes">
     <ion-button fill="clear" (click)="blike()" > <ion-icon [name]="like ? 'heart' :'heart-empty'"></ion-icon></ion-button>
+    <ion-text color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
     <ion-button fill="clear"><ion-icon name="chatboxes"></ion-icon></ion-button>
-    <ion-col class="Likes-publi">
-      <ion-text [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
-    </ion-col>
+    <ion-button class="boto-share" fill="clear"><ion-icon name="share"></ion-icon></ion-button>
   </ion-row>
+
 </ion-grid>
