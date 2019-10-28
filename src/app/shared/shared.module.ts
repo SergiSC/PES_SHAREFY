@@ -7,7 +7,7 @@ import { PublicacioComponent } from '../shared/publicacio/publicacio.component';
 @NgModule({
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
   ],
   declarations: [
     PublicacioComponent,

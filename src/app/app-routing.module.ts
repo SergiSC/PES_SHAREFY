@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'afegir', loadChildren: './pages/afegir/afegir.module#AfegirPageModule' },
   { path: 'recuperar', loadChildren: './pages/recuperar/recuperar.module#RecuperarPageModule' },
   { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
+  { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
 
 ];
 @NgModule({

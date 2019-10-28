@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
+import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-publicacio',
   templateUrl: './publicacio.component.html',
@@ -9,19 +12,35 @@ import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.com
 })
 export class PublicacioComponent implements OnInit {
 
+  idp = "";
   like = false;
-  StrNLikes = '0';
-  nLikes = 0;
-  commentaris = [];
+  StrNLikes = 0;
   PopoverController: any;
+  NomUsuari = "Faker";
+  movie = "";
+  token = "";
+
+  commentaris: any[] = [
+    {
+      'name': 'Tete',
+      'photo': '',
+      'text': 'Como mola'
+    },
+    {
+      'name': 'Paker666',
+      'photo': '',
+      'text': 'inreible'
+    }
+  ];
 
   constructor(public popoverCtrl: PopoverController,
-              private StreamingMedia: StreamingMedia) { }
+              public api: ApiService,
+              private router: Router,
+               ) { }
 
   blike() {
     this.like = !this.like;
-    if (this.like) {this.nLikes += 1; } else {this.nLikes -= 1; }
-    this.StrNLikes = this.nLikes.toString();
+    if (this.like) {this.StrNLikes += 1; } else {this.StrNLikes -= 1; }
    }
 
   async presentPopOver(event) {
@@ -32,7 +51,7 @@ export class PublicacioComponent implements OnInit {
      return await popover.present();
    }
 
-   startvideo() {
+   /*startvideo() {
     let opcions: StreamingVideoOptions = {
       successCallback: () => { console.log(); },
       errorCallback: () => {console.log(); },
@@ -40,11 +59,21 @@ export class PublicacioComponent implements OnInit {
     }
     this.StreamingMedia.playVideo( 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4' , opcions);
    }
+   */
 
    gotoporfile(){ 
 
    }
 
-  ngOnInit() {}
+   gotoComments() {
+     this.router.navigateByUrl('../pages/comentaris');
+     console.log('hello');
+   }
+
+  ngOnInit() {
+    this.api.getpubli(22, this.token).subscribe( (data: any) => {
+      this.movie = data.value.video_path;
+    });
+  }
 
 }

@@ -84,5 +84,14 @@ export class ApiService {
     );
   }
 
+  getpubli(id, tok) {
+    const body = {
+    };
+    return this.http.get(
+        this.url + '/api/publication/' + id,
+        body,
+    );
+  }
+
 
 }
