@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 
 @Injectable({
@@ -51,6 +51,7 @@ export class ApiService {
     return this.http.post(
         this.url + '/api/user/reset',
         body,
+
     );
   }
 

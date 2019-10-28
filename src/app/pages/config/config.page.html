@@ -29,19 +29,19 @@
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/eng.png" ></ion-img>
-                          <ion-radio (ionSelect)="englishOn()" slot="start" value="eng" [checked]="enS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('en')" slot="start" value="eng" [checked]="enS"></ion-radio>
                       </ion-item>
                   </ion-col>
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/esp.png" ></ion-img>
-                          <ion-radio (ionSelect)="spanishOn()" slot="start"  value="esp" [checked]="esS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('es')" slot="start"  value="esp" [checked]="esS"></ion-radio>
                       </ion-item>
                   </ion-col>
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/cat.png" ></ion-img>
-                          <ion-radio (ionSelect)="catalanOn()" slot="start" value="cat" [checked]="catS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('cat')" slot="start" value="cat" [checked]="catS"></ion-radio>
                       </ion-item>
                   </ion-col>
               </ion-row>
