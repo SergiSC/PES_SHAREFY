@@ -27,9 +27,27 @@ export class ConfigPage implements OnInit {
     private cdr: ChangeDetectorRef) {
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+   }
 
   ionViewDidEnter() {
+    this.storage.get('token').then((token: any) => {
+      this.storage.get('username').then((username: any) => {
+        this.api.recuperarInfoUser(username, token).subscribe((data: any) => {
+           console.log(data);
+           if (data.value[0].notification === 1) {
+            this.notification = true;
+          } else {
+            this.notification = false;
+          }
+           if (data.value[0].public !== 1) {
+            this.private = true;
+          } else {
+            this.private = false;
+          }
+        });
+      });
+    });
     if (this.translate.currentLang === 'cat') {
       this.catS = true;
     } else if (this.translate.currentLang === 'en') {
@@ -37,19 +55,6 @@ export class ConfigPage implements OnInit {
     } else  {
       this.esS = true;
     }
-    this.storage.get('token').then((token: any) => {
-      this.storage.get('username').then((username: any) => {
-        this.api.recuperarInfoUser(username, token).subscribe((data: any) => {
-           console.log(data);
-           if (data.value[0].notification === 1) {
-            this.notification = true;
-          }
-           if (data.value[0].public !== 1) {
-            this.private = true;
-          }
-        });
-      });
-    });
   }
 
   sendInfo() {
