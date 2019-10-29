@@ -4,6 +4,8 @@ import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import {ApiService} from '../../services/api.service';
 import {Storage} from '@ionic/storage';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FirebaseUISignInSuccessWithAuthResult, FirebaseUISignInFailure } from 'firebaseui-angular';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,8 @@ export class LoginPage implements OnInit {
               public alertController: AlertController,
               public toastController: ToastController,
               private api: ApiService,
-              private storage: Storage) {}
+              private storage: Storage,
+              public afAuth: AngularFireAuth) {}
 
   entrar() {
     if (this.password !== null && this.mail !== null) {
@@ -54,7 +57,15 @@ export class LoginPage implements OnInit {
     await this.toast.present();
   }
 
+  successCallback(signInSuccessData: FirebaseUISignInSuccessWithAuthResult) {
+    console.log(signInSuccessData)
+  }
+  errorCallback(errorData: FirebaseUISignInFailure) {
+    console.log(errorData)
+  } 
+
   ngOnInit() {
+    console.log(this.afAuth.auth.currentUser)
     this.storage.get('token').then( (data:any) => {
       if(data != null) {
         this.router.navigateByUrl('/tabs');

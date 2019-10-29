@@ -25,6 +25,9 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+/* CSS imported for Google LogIn*/
+@import '~firebaseui/dist/firebaseui.css';
+
 
 ion-toolbar {
   --background: var(--ion-color-primary);

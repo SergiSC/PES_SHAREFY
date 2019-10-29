@@ -17,6 +17,10 @@
         </ion-item>
         <ion-button [routerLink]="['/recuperar']" style="text-transform: none;" fill="clear"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
     </ion-grid>
+    <firebase-ui 
+        (signInSuccessWithAuthResult)="successCallback($event)"
+        (signInFailure)="errorCallback($event)">
+    </firebase-ui>
     <ion-row class="row-registar-entrar"> 
       <div>
         <ion-button [routerLink]="['/registre']" class="boto-registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
