@@ -1,8 +1,8 @@
-import { NgModule} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -16,11 +16,12 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {IonicStorageModule} from '@ionic/storage';
 import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
-
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
+import { PubliPopOverComponent } from '../app/publi-pop-over/publi-pop-over.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, PubliPopOverComponent],
+  entryComponents: [PubliPopOverComponent],
   imports: [
       BrowserModule,
       IonicModule.forRoot(),
@@ -37,8 +38,10 @@ import { Camera } from '@ionic-native/Camera/ngx';
   ],
   providers: [
       StatusBar, SplashScreen, FCM, Camera, File,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    StreamingMedia
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

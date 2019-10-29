@@ -25,12 +25,12 @@ export class RegistrePage implements OnInit {
   missatgeErrorMail = [];
   missatgeErrorPassword = [];
   missatgeErrorPasswordRep = [];
-  err= new errorsRegistre(this.translate);
+  err = new errorsRegistre(this.translate);
 
   constructor(
-    public api: ApiService, 
-    private toastController: ToastController, 
-    private router: Router, 
+    public api: ApiService,
+    private toastController: ToastController,
+    private router: Router,
     private storage: Storage,
     public translate: TranslateService
   ) {}
@@ -54,6 +54,7 @@ export class RegistrePage implements OnInit {
       };
       this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
         this.storage.set('token', data.access_token);
+        this.storage.set('username', this.regNick);
         this.showToast(this.err.alerts[0].msg);
         this.router.navigate(['/tabs']);
       }, err => {

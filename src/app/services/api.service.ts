@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -7,20 +8,31 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class ApiService {
 
   httpOptions: any;
-  public token: string;
+   token: string;
+   username: string;
 
   url = 'http://www.sharefy.tk';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: Storage) {}
 
-  recuperarToken() {
-    this.httpOptions = {
-      headers: new HttpHeaders({
-        Accept: 'application/json',
-        Authorization: this.token
-      })
-    };
+  recuperarInfoUser(user, tok) {
+   return this.http.get(
+        this.url + '/api/user/' +  user + '?token=' + tok,
+    );
   }
+
+  setUserConfig(user, tok, noti, privat, lang ) {
+    const body = {
+      token: tok,
+      privacy: privat,
+      notification: noti,
+      language: lang
+    };
+    return this.http.post(
+         this.url + '/api/user/' +  user + '/set_configurations',
+         body
+     );
+   }
 
   usernameDisponible(name) {
     const body = {
@@ -39,6 +51,7 @@ export class ApiService {
     return this.http.post(
         this.url + '/api/user/reset',
         body,
+
     );
   }
 
@@ -62,7 +75,7 @@ export class ApiService {
 
   login(mail, pass) {
     const body = {
-      email: mail,
+      login: mail,
       password: pass
     };
     return this.http.post(
@@ -70,4 +83,15 @@ export class ApiService {
         body,
     );
   }
+
+  getpubli(id, tok) {
+    const body = {
+    };
+    return this.http.get(
+        this.url + '/api/publication/' + id,
+        body,
+    );
+  }
+
+
 }

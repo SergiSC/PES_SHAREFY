@@ -11,13 +11,13 @@
     <ion-row style="margin-top: 5%">
       <ion-item lines="none">
           <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.PRIVACITY' | translate }}</ion-label>
-          <ion-toggle id="privacitat" (ionChange)="privacitatOn()"></ion-toggle>
+          <ion-toggle  id="privacitat" (ionChange)="sendInfo()" value="private" [(ngModel)]="private"></ion-toggle>
       </ion-item>
     </ion-row>
     <ion-row style="margin-top: 5%">
       <ion-item lines="none">
           <ion-label class="text-explicacio"> {{ 'PAGE.CONFIGURACIO.NOTIFY' | translate }}</ion-label>
-          <ion-toggle id="notificacions" (ionChange)="notificacionsOff()"></ion-toggle>
+          <ion-toggle  id="notificacions" (ionChange)="sendInfo()"  value="notification" [(ngModel)]="notification"></ion-toggle>
       </ion-item>
     </ion-row>
       <ion-row style="margin-top: 5%">
@@ -29,19 +29,19 @@
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/eng.png" ></ion-img>
-                          <ion-radio (ionSelect)="englishOn()" slot="start" color="success" value="eng" [checked]="enS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('en')" slot="start" value="eng" [checked]="enS"></ion-radio>
                       </ion-item>
                   </ion-col>
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/esp.png" ></ion-img>
-                          <ion-radio (ionSelect)="spanishOn()" slot="start" color="success" value="esp" [checked]="esS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('es')" slot="start"  value="esp" [checked]="esS"></ion-radio>
                       </ion-item>
                   </ion-col>
                   <ion-col>
                       <ion-item lines="none">
                           <ion-img class="imatge" src= "assets/icon/cat.png" ></ion-img>
-                          <ion-radio (ionSelect)="catalanOn()" slot="start" color="success" value="cat" [checked]="catS"></ion-radio>
+                          <ion-radio (ionSelect)="changeL('cat')" slot="start" value="cat" [checked]="catS"></ion-radio>
                       </ion-item>
                   </ion-col>
               </ion-row>

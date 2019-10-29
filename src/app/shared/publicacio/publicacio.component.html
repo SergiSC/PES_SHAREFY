@@ -1,0 +1,30 @@
+<ion-grid>
+  <ion-row class="Usuari">
+    <ion-col>
+      <ion-button fill="clear" (click)="gotoporfile()">
+      <ion-avatar class="avatar">
+        <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+      </ion-avatar>
+      <ion-label class="nom-usuari" [(ngModel)]="NomUsuari"> </ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-text-right">   
+      <app-pop-aplicacio></app-pop-aplicacio>
+      <ion-button fill="clear" class="buto-config" (click)="presentPopOver($event)"><ion-icon name="more"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row-video-container">
+    <div>
+      <video controls autoplay class="video-container">
+        <source src="http://sharefy.tk{{movie}}" type="video/mp4">
+            Your browser does not support the video tag.
+      </video>
+    </div>
+  </ion-row>
+  <ion-row class="row-likes">
+    <ion-button fill="clear" (click)="blike()" > <ion-icon [name]="like ? 'heart' :'heart-empty'"></ion-icon></ion-button>
+    <ion-text color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
+    <ion-button fill="clear" (click)="gotoComments()"><ion-icon name="chatboxes"></ion-icon></ion-button>
+    <ion-button class="boto-share" fill="clear"><ion-icon name="share"></ion-icon></ion-button>
+  </ion-row>
+</ion-grid>

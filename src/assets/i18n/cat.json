@@ -4,8 +4,11 @@
       "BUTTONLOGIN": "Entrar",
       "BUTTONREGISTRE": "Registra't",
       "BUTTONRECUPERAR": "Has oblidat la contrasenya?",
-      "TEXTUSER": "Correu electrònic:",
-      "TEXTPASSWORD": "Contrasenya:"
+      "TEXTUSER": "Usuari o Correu electrònic:",
+      "TEXTPASSWORD": "Contrasenya:",
+      "HEADERALERTA": "Login Fallit",
+      "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat",
+      "BUTTON": "Dacord"
     },
     "PERFIL": {
       "TITLE": "Perfil",

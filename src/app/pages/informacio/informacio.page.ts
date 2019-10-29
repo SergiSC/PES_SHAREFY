@@ -3,6 +3,8 @@ import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
 import {ActionSheetController} from '@ionic/angular';
 import { File } from '@ionic-native/file/ngx';
 import {TranslateService} from '@ngx-translate/core';
+import { Storage } from '@ionic/storage';
+import { ApiService } from 'src/app/services/api.service';
 
 
 
@@ -15,6 +17,7 @@ export class InformacioPage implements OnInit {
 
   croppedImagepath = '';
   isLoading = false;
+  user = {};
 
   imagePickerOptions = {
     maximumImagesCount: 1,
@@ -25,10 +28,19 @@ export class InformacioPage implements OnInit {
       private camera: Camera,
       public actionSheetController: ActionSheetController,
       private file: File,
-      private translate: TranslateService
+      private translate: TranslateService,
+      private storage: Storage,
+      private api: ApiService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.storage.get('token').then((token: any) => {
+      this.storage.get('username').then((username: any) => {
+        this.api.recuperarInfoUser(username, token).subscribe((data: any) => {
+          this.user = data.value[0];
+        });
+      });
+    });
   }
 
 
@@ -67,5 +79,9 @@ export class InformacioPage implements OnInit {
       ]
     });
     await actionSheet.present();
+  }
+
+  guardar() {
+
   }
 }
