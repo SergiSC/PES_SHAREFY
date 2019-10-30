@@ -63,17 +63,28 @@
     "TERMS": {
       "TITLE": "Termes d'ús",
       "LABELACCEPTACIO": "Acceptació",
+      "TEXTACCEPTACIO": "Al registrar-se y iniciar sessió dins l'aplicació Sharefy, vostè accepta els termes d'ús tal i com s'estableix a continuació.",
       "LABELPROPOSITAPP": "Propòsit de l'aplicació",
+      "TEXTPROPOSITAPP": "Acceptem proporcionar-te el servei de Sharefy, que inclou totes les funcionalitats, serveis i tecnologies per a poder cumplir la missió de Sharefy: connectar-te a les comunitats gamers que més t'agraden. El servei inclou:\n- Oferir oportunitats personalitzades per a crear, connectar, comunicar, descubrir i compartir tot tipus de contingut relacionat amb els videojocs.\n- Fomentar un ambient positiu, inclusiu i segur.\n- Desenvolupar i utilitzar tecnologies que ens ajudin a recolzar continuament la nostra comunitat.",
       "LABELPROPIETATINTELLECTUAL": "Propietat intel·lectual",
-      "LABELMODIFICACIOTERMES": "Modificació dels termes d'ús"
+      "TEXTPROPIETATINTELLECTUAL": "Qualsevol material que contingui, de manera enunciativa però no limitador, textos, dades, gràfics, imatges, sons, vídeos, logotips, icones o codi html, està protegit pels Drets d'Autor.\nMarques registrades de l'aplicació:\n- Logotip de Sharefy",
+      "LABELCOMPROMIS": "Compromis per part de l'usuari",
+      "TEXTCOMPROMIS": "Pots utilitzar el servei de Sharefy si es compleixen els requisits següents:\n- No hi ha restricció d'edat.\n- No pots fer-te passar per una altra persona ni proporcionalitzar informació incorrecta.\n- No pots realitzar activitats il·legals, enganyoses o fraudulentes, ni activitats amb fins il·legals o no autoritzats.\n- No pots realitzar activitats que intervinguin en el Servei o impedeixin que s'operi com està previst.\n- No pots publicar informació privada o confidencial ni realitzar activitats que infringeixin els drets d'una altra persona, inclosos els drets de propietat intel·lectual.",
+      "LABELDATA": "Última modificació"
     },
     "PRIVACITAT": {
       "TITLE": "Política de privacitat",
       "LABELINTRODUCCIO": "Introducció",
+      "TEXTINTRODUCCIO": "",
       "LABELTRACTAMENTDADES": "Tractament de les dades personals",
+      "TEXTTRACTAMENTDADES": "",
       "LABLETEMPSDADES": "Quant de temps es guarden les teves dades",
+      "TEXTTEMPSDADES": "",
       "LABLEDRETS": "Els teus drets",
-      "LABELSEGURETATDADES": "Seguretat i integritat de les dades"
+      "TEXTDRETS": "",
+      "LABELSEGURETATDADES": "Seguretat i integritat de les dades",
+      "TEXTSEGURETATDADES": "",
+      "LABELDATA": "Última modificació"
     }
   }
 }
