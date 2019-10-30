@@ -59,6 +59,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/users');
   }
 
+  getAllGames() {
+    return this.http.get(this.url + '/api/games');
+  }
+
   postAfegirNouUsuariRegistrat(user) {
     const body = {
       username: user.username,
