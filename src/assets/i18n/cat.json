@@ -59,6 +59,21 @@
       "BUTTON": "Dacord",
       "BUTTON1": "Enviar correu",
       "DESCRIPTION": "Escriu el correu correcte i rebràs una nova contrasenya"
+    },
+    "TERMS": {
+      "TITLE": "Termes d'ús",
+      "LABELACCEPTACIO": "Acceptació",
+      "LABELPROPOSITAPP": "Propòsit de l'aplicació",
+      "LABELPROPIETATINTELLECTUAL": "Propietat intel·lectual",
+      "LABELMODIFICACIOTERMES": "Modificació dels termes d'ús"
+    },
+    "PRIVACITAT": {
+      "TITLE": "Política de privacitat",
+      "LABELINTRODUCCIO": "Introducció",
+      "LABELTRACTAMENTDADES": "Tractament de les dades personals",
+      "LABLETEMPSDADES": "Quant de temps es guarden les teves dades",
+      "LABLEDRETS": "Els teus drets",
+      "LABELSEGURETATDADES": "Seguretat i integritat de les dades"
     }
   }
 }

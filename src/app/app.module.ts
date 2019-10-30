@@ -40,8 +40,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID
     }
   ],
-  tosUrl: '<your-tos-link>',
-  privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
   credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
 };
 
