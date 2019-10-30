@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentaris',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComentarisPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute, private router: Router) { }
+  comentaris;
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      let com  = JSON.parse(params.special);
+      this.comentaris = com.coments;
+    });
   }
 
 }

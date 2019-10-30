@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>comentaris</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button>
+      
+          </ion-back-button>
+        </ion-buttons>
+    <ion-title>Comentaris</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <ion-row *ngFor="let comm of comentaris" class="row-des">
+                <ion-text><b>{{ comm.name }}</b></ion-text>
+                <ion-text class="padding-des">{{ comm.text }}</ion-text>
+        </ion-row>
+      </ion-grid>
 </ion-content>

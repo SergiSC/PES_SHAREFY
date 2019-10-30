@@ -19,22 +19,22 @@ export class PublicacioComponent implements OnInit {
   NomUsuari = "Faker";
   movie = "";
   token = "";
-  descrpicio = "Incredible game with ma friends";
-
-  
-  commentaris: any[] = [
-    {
-      'name': 'Tete',
-      'photo': '',
-      'text': 'Como mola'
-    },
-    {
-      'name': 'Paker666',
-      'photo': '',
-      'text': 'inreible'
-    }
-  ];
-
+  commentaris = {
+    descrpicio: ['Incredible game with ma friends'],
+    coments: [ {
+         name: 'Simon Grimm',
+         text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+        },
+        {
+          name: 'Simon Grimm',
+          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+         },
+         {
+          name: 'Simon Grimm',
+          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+         }
+    ]
+  };
 
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
@@ -54,29 +54,25 @@ export class PublicacioComponent implements OnInit {
      return await popover.present();
    }
 
-   /*startvideo() {
-    let opcions: StreamingVideoOptions = {
-      successCallback: () => { console.log(); },
-      errorCallback: () => {console.log(); },
-      orientation: 'portrait'
-    }
-    this.StreamingMedia.playVideo( 'https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1920_18MG.mp4' , opcions);
-   }
-   */
 
    gotoporfile() {
-    this.router.navigateByUrl('../pages/perfil');
-    console.log('hello');
+    this.router.navigate(['/perfil']);
    }
 
    gotoComments() {
-     this.router.navigateByUrl('../pages/comentaris');
-     console.log('hello');
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.commentaris)
+      }
+    };
+     this.router.navigate(['/comentaris'], navigationExtras);
    }
 
+
   ngOnInit() {
-    this.api.getpubli(22, this.token).subscribe( (data: any) => {
-      this.movie = data.value.video_path;
+     this.api.getpubli(7, this.token).subscribe( (data: any) => {
+      this.movie = 'http://sharefy.tk' + data.value.video_path;
+      document.getElementById('v').innerHTML="<source src=" + this.movie +" type='video/mp4'>";
     });
   }
 

@@ -14,32 +14,24 @@
     </ion-col>
   </ion-row>
   <ion-row class="row-video-container">
-    <div>
-      <video controls autoplay class="video-container">
-        <source src="http://sharefy.tk/storage/media/clips/0/0/6/1572363047.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-      </video>
-    </div>
+      <video width="100%"  id="v" controls> </video>
   </ion-row>
-  <ion-row class="row-likes-comm">
-    <ion-button fill="clear" (click)="blike()" > <ion-icon [name]="like ? 'heart' :'heart-empty'"></ion-icon></ion-button>
-    <ion-button fill="clear" (click)="gotoComments()"><ion-icon name="chatboxes"></ion-icon></ion-button>
-    <ion-button class="boto-share" fill="clear"><ion-icon name="share"></ion-icon></ion-button>
-  </ion-row>
-  <ion-row class="row-likes">
-    <ion-text color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }} likes</ion-text>
+  <ion-row  class="row-likes-comm ion-padding-horizontal">
+    <ion-col size="1">
+        <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
+    </ion-col>
+    <ion-col size="1">
+         <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="blike()" [name]="like ? 'heart' :'heart-empty'"></ion-icon>
+    </ion-col>
+    <ion-col size="1">
+        <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="gotoComments()" name="chatboxes"></ion-icon>
+    </ion-col>
+   <ion-col>
+      <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" float-right align-item-end color=primary name="share"></ion-icon>
+   </ion-col>
   </ion-row>
   <ion-row class="row-des">
     <ion-text [(ngModel)]="NomUsuari"><b>{{ NomUsuari }}</b></ion-text>
-    <ion-text class="padding-des" [(ngModel)]="descrpicio">{{ descrpicio }}</ion-text>
+    <ion-text class="padding-des" [(ngModel)]="commentaris">{{ commentaris.descrpicio }}</ion-text>
   </ion-row>
-  <ion-grid>
-    <ion-row *ngFor="let comm of commentaris" class="row-des">
-            <ion-avatar class="avatar">
-              <img src="../assets/blacksquare.png">
-            </ion-avatar>
-            <ion-text><b>{{ comm.name }}</b></ion-text>
-            <ion-text class="padding-des">{{ comm.text }}</ion-text>
-    </ion-row>
-  </ion-grid>
 </ion-grid>
