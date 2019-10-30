@@ -13,13 +13,15 @@ import { Router } from '@angular/router';
 export class PublicacioComponent implements OnInit {
 
   idp = "";
-  like = false;
+  like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   StrNLikes = 0;
   PopoverController: any;
   NomUsuari = "Faker";
   movie = "";
   token = "";
+  descrpicio = "Incredible game with ma friends";
 
+  
   commentaris: any[] = [
     {
       'name': 'Tete',
@@ -32,6 +34,7 @@ export class PublicacioComponent implements OnInit {
       'text': 'inreible'
     }
   ];
+
 
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
@@ -61,8 +64,9 @@ export class PublicacioComponent implements OnInit {
    }
    */
 
-   gotoporfile(){ 
-
+   gotoporfile() {
+    this.router.navigateByUrl('../pages/perfil');
+    console.log('hello');
    }
 
    gotoComments() {
