@@ -5,7 +5,7 @@
       <ion-avatar class="avatar">
         <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
       </ion-avatar>
-      <ion-label class="nom-usuari" [(ngModel)]="NomUsuari"> </ion-label>
+      <ion-label class="nom-usuari" [(ngModel)]="NomUsuari"><b>{{ NomUsuari }}</b></ion-label>
       </ion-button>
     </ion-col>
     <ion-col class="ion-text-right">   
@@ -16,15 +16,30 @@
   <ion-row class="row-video-container">
     <div>
       <video controls autoplay class="video-container">
-        <source src="http://sharefy.tk{{movie}}" type="video/mp4">
+        <source src="http://sharefy.tk/storage/media/clips/0/0/6/1572363047.mp4" type="video/mp4">
             Your browser does not support the video tag.
       </video>
     </div>
   </ion-row>
-  <ion-row class="row-likes">
+  <ion-row class="row-likes-comm">
     <ion-button fill="clear" (click)="blike()" > <ion-icon [name]="like ? 'heart' :'heart-empty'"></ion-icon></ion-button>
-    <ion-text color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
     <ion-button fill="clear" (click)="gotoComments()"><ion-icon name="chatboxes"></ion-icon></ion-button>
     <ion-button class="boto-share" fill="clear"><ion-icon name="share"></ion-icon></ion-button>
   </ion-row>
+  <ion-row class="row-likes">
+    <ion-text color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }} likes</ion-text>
+  </ion-row>
+  <ion-row class="row-des">
+    <ion-text [(ngModel)]="NomUsuari"><b>{{ NomUsuari }}</b></ion-text>
+    <ion-text class="padding-des" [(ngModel)]="descrpicio">{{ descrpicio }}</ion-text>
+  </ion-row>
+  <ion-grid>
+    <ion-row *ngFor="let comm of commentaris" class="row-des">
+            <ion-avatar class="avatar">
+              <img src="../assets/blacksquare.png">
+            </ion-avatar>
+            <ion-text><b>{{ comm.name }}</b></ion-text>
+            <ion-text class="padding-des">{{ comm.text }}</ion-text>
+    </ion-row>
+  </ion-grid>
 </ion-grid>

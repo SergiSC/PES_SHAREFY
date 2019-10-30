@@ -12,10 +12,24 @@
 }
 
 .nom-usuari {
-    padding-left: 20%;
+    padding-left: 17%;
 }
 
 .row-likes {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 7%;
+}
+.row-des {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 7%;
+    padding-top: 2%;
+}
+
+.row-likes-comm {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -40,4 +54,8 @@
 
 .boto-share {
     padding-left: 215px;
+}
+
+.padding-des {
+    padding-left: 2%;
 }
