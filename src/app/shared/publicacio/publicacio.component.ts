@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
@@ -12,7 +12,8 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class PublicacioComponent implements OnInit {
 
-  idp = "";
+  @Input('idp') idp: string;
+
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   StrNLikes = 0;
   PopoverController: any;
@@ -74,9 +75,9 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
-     this.api.getpubli(7, this.token).subscribe( (data: any) => {
+     this.api.getpubli(this.idp, this.token).subscribe( (data: any) => {
       this.movie = 'http://sharefy.tk' + data.value.video_path;
-      document.getElementById('v').innerHTML="<source src=" + this.movie +" type='video/mp4'>";
+      document.getElementById(this.idp).innerHTML="<source src=" + this.movie +" type='video/mp4'>";
     });
   }
 
