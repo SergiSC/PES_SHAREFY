@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'recuperar', loadChildren: './pages/recuperar/recuperar.module#RecuperarPageModule' },
   { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
   { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
+  { path: 'editar', loadChildren: './pages/editar/editar.module#EditarPageModule' },
+  { path: 'compartir', loadChildren: './pages/compartir/compartir.module#CompartirPageModule' },
 
 ];
 @NgModule({
