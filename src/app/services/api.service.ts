@@ -31,8 +31,8 @@ export class ApiService {
     return this.http.post(
          this.url + '/api/user/' +  user + '/set_configurations',
          body
-     );
-   }
+    );
+  }
 
   usernameDisponible(name) {
     const body = {

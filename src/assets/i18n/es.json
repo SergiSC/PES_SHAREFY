@@ -62,6 +62,12 @@
       "BUTTON": "Deacuerdo",
       "BUTTON1": "Enviar correo",
       "DESCRIPTION": "Escribe el correo correcto y recibirás una nueva contrasenya"
+    },
+    "EDITAR": {
+      "TITLE": "Editar publicación"
+    },
+    "COMPARTIR": {
+      "TITLE": "Compartir publicación"
     }
   }
 }

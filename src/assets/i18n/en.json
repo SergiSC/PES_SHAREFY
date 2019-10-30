@@ -62,6 +62,12 @@
       "BUTTON": "Okay",
       "BUTTON1": "Send email",
       "DESCRIPTION": "Write the correct mail and you will recieve a new password"
+    },
+    "EDITAR": {
+      "TITLE": "Edit publication"
+    },
+    "COMPARTIR": {
+      "TITLE": "Share publication"
     }
   }
 }

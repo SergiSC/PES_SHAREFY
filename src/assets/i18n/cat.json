@@ -62,6 +62,12 @@
       "BUTTON": "Dacord",
       "BUTTON1": "Enviar correu",
       "DESCRIPTION": "Escriu el correu correcte i rebràs una nova contrasenya"
+    },
+    "EDITAR": {
+      "TITLE": "Editar publicació"
+    },
+    "COMPARTIR": {
+      "TITLE": "Compartir publicació"
     }
   }
 }
