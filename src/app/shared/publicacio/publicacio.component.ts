@@ -3,7 +3,7 @@ import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-publicacio',
@@ -66,6 +66,10 @@ export class PublicacioComponent implements OnInit {
       }
     };
      this.router.navigate(['/comentaris'], navigationExtras);
+   }
+
+   gotoShare() {
+     this.router.navigate(['/compartir']);
    }
 
 
