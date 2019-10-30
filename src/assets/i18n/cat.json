@@ -67,7 +67,8 @@
       "TITLE": "Editar publicació"
     },
     "COMPARTIR": {
-      "TITLE": "Compartir publicació"
+      "TITLE": "Compartir publicació",
+      "DESCRIPTION": "Escull la xarxa social on vols compartir aquesta publicació"
     }
   }
 }

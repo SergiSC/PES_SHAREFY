@@ -67,7 +67,8 @@
       "TITLE": "Editar publicación"
     },
     "COMPARTIR": {
-      "TITLE": "Compartir publicación"
+      "TITLE": "Compartir publicación",
+      "DESCRIPTION": "Escoje la red social donde quieres compartir esta publicación"
     }
   }
 }

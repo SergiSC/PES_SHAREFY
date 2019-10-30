@@ -67,7 +67,8 @@
       "TITLE": "Edit publication"
     },
     "COMPARTIR": {
-      "TITLE": "Share publication"
+      "TITLE": "Share publication",
+      "DESCRIPTION": "Choose the social network where you want to share this publication"
     }
   }
 }
