@@ -4,6 +4,8 @@ import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-me
 import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 
 @Component({
   selector: 'app-publicacio',
@@ -40,6 +42,7 @@ export class PublicacioComponent implements OnInit {
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
               private router: Router,
+              private socialSharing: SocialSharing
                ) { }
 
   blike() {
@@ -70,7 +73,10 @@ export class PublicacioComponent implements OnInit {
    }
 
    gotoShare() {
-     this.router.navigate(['/compartir']);
+     //this.router.navigate(['/compartir']);
+       //TODO: mirar com compartir video o fotos
+       this.socialSharing.share("Missatge a compartir", null, null, "http://www.sharefy.tk");
+
    }
 
 

@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -37,8 +37,8 @@ import { PubliPopOverComponent } from '../app/publi-pop-over/publi-pop-over.comp
     }),
   ],
   providers: [
-      StatusBar, SplashScreen, FCM, Camera, File,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+      StatusBar, SplashScreen, FCM, Camera, File,  SocialSharing,
+      { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StreamingMedia
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
