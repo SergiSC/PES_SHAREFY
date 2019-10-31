@@ -8,7 +8,9 @@
       "TEXTPASSWORD": "Password:",
       "HEADERALERTA": "Login Failed",
       "TEXTALERTA": "The email or password entered does not correspond to any registered user",
-      "BUTTON": "Ok"
+      "BUTTON": "Ok",
+      "LABELLINK": "Check out our",
+      "LINK": "terms of use and privacy policy"
     },
     "PERFIL": {
       "TITLE": "Profile",
@@ -69,6 +71,25 @@
     "COMPARTIR": {
       "TITLE": "Share publication",
       "DESCRIPTION": "Choose the social network where you want to share this publication"
+    },
+    "TERMES": {
+      "TITLE": "Termes d'ús i condicions de privacitat",
+      "LABELRPOTECCIODEDADES": "Protecció de dades",
+      "TEXTPROTECCIODEDADES": "En compliment de la Llei Orgànica 15/1999, de 13 de desembre de Protecció de Dades de Caràcter Personal (LOPD), Sharefy amb CIF B-87667832, com a responsable del fitxer informa de les següents consideracions: Les dades de caràcter personal que li demanem, quedaran incorporades a un fitxer qual la finalitat és de enviar-li les comunicacions comercials.\nSi ho desitja, pot exercir els drets d'accés, rectificació, cancel·lació o oposició de les seves dades personals en el correu electrònic a info@sharefy.com o per escrit al carrer Falsa, 123, Barcelona.",
+      "LABELPOLITICADEPRIVACITAT": "Política de privacitat",
+      "LABELPREGUNTA1": "Qui és el responsable del tractament de les teves dades?",
+      "LABELRESPOSTA1": "Identitat: Sharefy\nCIF: B-87667832\nDir. Postal: Carrer Falsa,123,Barcelona\nE-Mail: info@sharefy.com",
+      "LABELPREGUNTA2": "Amb quina finalitat tractarem les teves dades personals?",
+      "LABELRESPOSTA2": "A Sharefy tractem les seves dades amb la finalitat principal de mantenir la nostra agenda de contactes:\na) Com a persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis.\nb) Com interessat que s'ha posat en contacte amb nosaltres consultándonos o sol·licitant-nos alguna infomació, per poder atendre'l.\nc) Com a persona de contacte per a mantenir relacions directament.\nCom a finalitat addicional, en cas que se li hagués sol·licitat autorització i ens l'hagués concedit, tractarem les seves dades per a l'enviament de comunicacions comercials.",
+      "LABELPREGUNTA3": "Quant de temps conservarem les teves dades?",
+      "LABELRESPOSTA3": "Les dades personals proporcionades es conservaran en la finalitat principal:\na) En cas de tractar d'una persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis, o bé directament, es conservaran mentre es mantingui la nostra relació amb aquesta entitat jurídica o organització, i fora de perill els terminis legals per les responsabilitats legals que es puguin derivar de la relació amb l'entitat jurídica o organització.\nb) En cas d'interessat posat en contacte amb nosaltres, fins a 6 mesos després d'atendre el seu requeriment, per si es produïssin per la seva banda comunicacions posteriors en referència a aquesta consulta o requeriment d'informació.\nc) En cas de persona de contacte per a mantenir relacions directament, es conservaran en tant es mantingui la relació i fora de perill els terminis legals de conservació.\nA la finalitat addicional d'enviament de comunicacions comercials, conservarem les seves dades fins que no ens manifesti la seva oposició a continuar rebent les nostres comunicacions.\nDecisions automatitzades, perfils i lògica aplicada:\nL'empresa NO prendrà decisions automatitzades.",
+      "LABELPREGUNTA4": "Quina és la legitimació per al tractament de les teves dades personals?",
+      "LABELRESPOSTA4": "La base legal per al tractament de les seves dades a la finalitat principal de manteniment d'agenda de contactes és:\na) En cas de tractar d'una persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis, és la satisfacció de l'interès legítim del responsable, d'acord amb el que estableix l'art. 6.1.f del RGPD.\nb) En cas d'interessat posat en contacte amb nosaltres, la base legal és l'obtenció del seu consentiment.\nc) En cas de persona de contacte per a mantenir relacions directament, és la satisfacció de l'interès legítim del responsable, d'acord amb el que estableix l'art. 6.1.f del RGPD.\nA la finalitat addicional d'enviament de comunicacions comercials, la base legal per al tractament de les seves dades és l'obtenció del seu consentiment.",
+      "LABELPREGUNTA5": "A quin destinatari es comunicaran les teves dades personals?",
+      "LABELRESPOSTA5": "A Sharefy comptarem amb la col·laboració de tercers prestadors de serveis que en cada cas hàgim pogut contractar i que, per a la prestació d'aquest servei, pot ser necessari que tinguin accés a les seves dades de caràcter personal, però que els tractaran amb totes les garanties legals exigibles, seguint les nostres instruccions i prèvia subscripció d'un contracte de protecció de dades en les que exigim, entre d'altres, tractar les dades exclusivament per a les finalitats pactades, aplicar mesures tècniques i organitzatives adequades, així com suprimir i retornar les dades a la finalització del servei.\nA Sharefy seguim uns criteris estrictes de selecció de tercers prestadors de serveis per tal de donar compliment a les nostres obligacions i matèria de protecció de dades.",
+      "LABELPREGUNTA6": "Quins són els teus drets quan ens facilita les seves dades?",
+      "LABELRESPOSTA6": "Qualsevol persona té dret a obtenir confirmació sobre si en Sharefy estem tractant dades personals que li concerneixen o no.\nAixí mateix, té:\nDret a sol·licitar l'accés a les seves dades personals.\nDret a sol·licitar la seva rectificació.\nDret a sol·licitar la seva supressió.\nDret a sol·licitar la limitació del seu tractament.\nDret a oposar-se al tractament.\nDret a la portabilitat de les dades.\nDret a retirar el consentiment prestat.\nDret d'informació.\nDret a oposar-se a ser objecte de decisions individuals automatitzades.\nAixí mateix, l'informem que pot dirigir-se a l'Agència Espanyola de Protecció de Dades (www.aepd.es) per obtenir informació addicional o per presentar una reclamació, per exemple, si no has obtingut satisfacció en l'exercici dels teus drets.",
+      "LABELULTIMAMODIFICACIO": "Última modificació"
     }
   }
 }

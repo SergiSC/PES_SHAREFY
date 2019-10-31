@@ -8,7 +8,9 @@
       "TEXTPASSWORD": "Contraseña:",
       "HEADERALERTA": "Login Fallido",
       "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado",
-      "BUTTON": "Deacuerdo"
+      "BUTTON": "Deacuerdo",
+      "LABELLINK": "Echa un vistazo a nuestros",
+      "LINK": "términos de uso y política de privacidad"
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -69,6 +71,25 @@
     "COMPARTIR": {
       "TITLE": "Compartir publicación",
       "DESCRIPTION": "Escoje la red social donde quieres compartir esta publicación"
+    },
+    "TERMES": {
+      "TITLE": "Terminos de uso y condiciones de privacidad",
+      "LABELRPOTECCIODEDADES": "Protección de datos",
+      "TEXTPROTECCIODEDADES": "En cumplimiento de la Ley Orgánica 15/1999, de 13 de diciembre de Protección de Datos de Carácter Personal (LOPD), Sharefy con CIF B-87667832, como responsable del fichero informa de las siguientes consideraciones: Los datos de carácter personal que le pedimos, quedarán incorporados a un fichero cuya finalidad es de enviarle las comunicaciones comerciales.\nSi lo desea, puede ejercer los derechos de acceso, rectificación, cancelación u oposición de sus datos personales en el correo electrónico a info@sharefy.com o por escrito en la calle Falsa, 123, Barcelona.",
+      "LABELPOLITICADEPRIVACITAT": "Política de privacidad",
+      "LABELPREGUNTA1": "¿Quién es el Responsable del tratamiento de sus datos?",
+      "LABELRESPOSTA1": "Identidad: Sharefy\nCIF: B-87667832\nDir. Postal: Carrer Falsa,123,Barcelona\nE-Mail: info@sharefy.com",
+      "LABELPREGUNTA2": "¿Con qué finalidad tratamos sus datos personales?",
+      "LABELRESPOSTA2": "En Sharefy tratamos sus datos con la finalidad principal de mantener nuestra agenda de contactos.\na) Como persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios.\nb) Como interesado que se ha puesto en contacto con nosotros consultándonos o solicitándonos alguna infomación, para poder atenderle.\nc) Como persona de contacto para mantener relaciones directamente.\nComo finalidad adicional, en caso de que se le hubiera solicitado autorización y nos la hubiera concedido, trataremos sus datos para el envío de comunicaciones comerciales.",
+      "LABELPREGUNTA3": "¿Por cuanto tiempo conservaremos sus datos?",
+      "LABELRESPOSTA3": "Los datos personales proporcionados se conservarán en la finalidad principal:\na) En caso de tratarse de una persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios, o bien directamente, se conservarán mientras se mantenga nuestra relación con dicha entidad jurídica u organización, y a salvo los plazos legales por las responsabilidades legales que pudieran derivarse de la relación con la entidad jurídica u organización.\nb) En caso de interesado puesto en contacto con nosotros, hasta 6 meses después de atender su requerimiento, por si se produjeran por su parte comunicaciones posteriores en referencia a dicha consulta o requerimiento de información.\nc) En caso de persona de contacto para mantener relaciones directamente, se conservarán en tanto se mantenga la relación y a salvo los plazos legales de conservación.\nEn la finalidad adicional de envío de comunicaciones comerciales, conservaremos sus datos en tanto no nos manifieste su oposición a continuar recibiendo nuestras comunicaciones.\nDecisiones automatizadas, perfiles y lógica aplicada:\nLa empresa NO tomará decisiones automatizadas.",
+      "LABELPREGUNTA4": "¿Cuál es la legitimación para el tratamiento de sus datos?",
+      "LABELRESPOSTA4": "La base legal para el tratamiento de sus datos en la finalidad principal de mantenimiento de agenda de contactos es,\na) En caso de tratarse de una persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios, es la satisfacción del interés legítimo del responsable, de acuerdo a lo establecido en el art. 6.1.f del RGPD.\nb) En caso de interesado puesto en contacto con nosotros, la base legal es la obtención de su consentimiento.\nc) En caso de persona de contacto para mantener relaciones directamente, es la satisfacción del interés legítimo del responsable, de acuerdo a lo establecido en el art. 6.1.f del RGPD.\nEn la finalidad adicional de envío de comunicaciones comerciales, la base legal para el tratamiento de sus datos es la obtención de su consentimiento.",
+      "LABELPREGUNTA5": "¿A qué destinatarios se comunicarán sus datos?",
+      "LABELRESPOSTA5": "Durante el periodo de duración del tratamiento no comunicaremos sus datos a terceros.\nEn Sharefy contaremos con la colaboración de terceros prestadores de servicios que en cada caso hayamos podido contratar y que, para la prestación de dicho servicio, puede ser necesario que tengan acceso a sus datos de carácter personal, pero que los tratarán con todas las garantías legales exigibles, siguiendo nuestras instrucciones y previa suscripción de un contrato de protección de datos en las que exigimos, entre otras, tratar los datos exclusivamente para las finalidades pactadas, aplicar medidas técnicas y organizativas adecuadas, así como suprimir y devolver los datos a la finalización del servicio.\nEn Sharefy seguimos unos criterios estrictos de selección de terceros prestadores de servicios con el fin de dar cumplimiento a nuestras obligaciones e materia de protección de datos.\n",
+      "LABELPREGUNTA6": "¿Cuales son sus derechos cuando nos facilita sus datos?",
+      "LABELRESPOSTA6": "Cualquier persona tiene derecho a obtener confirmación sobre si en Sharefy estamos tratando datos personales que le conciernan o no.\nAsimismo, tiene:\nDerecho a solicitar el acceso a sus datos personales.\nDerecho a solicitar su rectificación.\nDerecho a solicitar su supresión.\nDerecho a solicitar la limitación de su tratamiento.\nDerecho a oponerse al tratamiento.\nDerecho a la portabilidad de los datos.\nDerecho a retirar el consentimiento prestado.\nDerecho de información.\nDerecho a oponerse a ser objeto de decisiones individuales automatizadas.\nAsimismo, le informamos que puede dirigirse a la Agencia Española de Protección de Datos (www.aepd.es) para obtener información adicional o para presentar una reclamación, por ejemplo, si no has obtenido satisfacción en el ejercicio de tus derechos.",
+      "LABELULTIMAMODIFICACIO": "Última modificación"
     }
   }
 }

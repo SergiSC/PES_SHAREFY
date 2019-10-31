@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
   { path: 'editar', loadChildren: './pages/editar/editar.module#EditarPageModule' },
   { path: 'compartir', loadChildren: './pages/compartir/compartir.module#CompartirPageModule' },
+  { path: 'legal', loadChildren: './pages/legal/legal.module#LegalPageModule' },
 
 ];
 @NgModule({
