@@ -47,6 +47,9 @@ export class LoginPage implements OnInit {
     (await alert).present();
   }
 
+  goToLegal() {
+    this.router.navigateByUrl('/legal');
+  }
 
   ngOnInit() {
     this.storage.get('token').then( (data: any) => {

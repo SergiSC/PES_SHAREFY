@@ -86,6 +86,21 @@
             </ng-container>
           </div>
       </ion-row>
+      <ion-row style="justify-content: center">
+        <ion-col size="3" style="justify-content: center">
+          <ion-item lines="none">
+            <ion-checkbox slot="end" [(ngModel)]="legalChecked"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" style="padding: 0 !important;">
+          <ion-item lines="none" style="margin-top:5px;">
+            <p style="font-size: 12px;">
+              {{ 'PAGE.LOGIN.LABELLINK' | translate }}
+              <a [routerLink]="" (click)="goToLegal()" style="cursor: pointer;">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
+            </p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
       <ion-row style="margin-top: 15%; justify-content: center">
           <ion-button block size="8" expand="full" id="registreButton" (click)="registerUser()">{{ 'PAGE.REGISTRE.BUTTONREGISTRE' | translate}}<ion-ripple-effect></ion-ripple-effect></ion-button>
       </ion-row>

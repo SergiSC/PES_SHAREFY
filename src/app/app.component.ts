@@ -55,7 +55,7 @@ export class AppComponent {
       this.fcm.onTokenRefresh().subscribe(token => {
         console.log(token);
       });
-      //this.router.navigate(['login']);
+      this.router.navigate(['login']);
     });
   }
 }

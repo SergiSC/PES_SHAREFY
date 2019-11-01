@@ -21,6 +21,7 @@ export class RegistrePage implements OnInit {
   regPassword: any;
   regPasswordRepeat: any;
   listUsers: any;
+  legalChecked: any;
   missatgeErrorNick = [];
   missatgeErrorMail = [];
   missatgeErrorPassword = [];
@@ -71,7 +72,8 @@ export class RegistrePage implements OnInit {
       || this.regDate === undefined || this.regDate === ""
       || this.regPassword === undefined || this.regPassword === "" 
       || this.regPasswordRepeat === undefined || this.regPasswordRepeat === "" 
-      || this.missatgeErrorNick.length > 0 || this.missatgeErrorMail.length > 0 || this.missatgeErrorPassword.length > 0 || this.missatgeErrorPasswordRep.length > 0) return false
+      || this.missatgeErrorNick.length > 0 || this.missatgeErrorMail.length > 0 || this.missatgeErrorPassword.length > 0 || this.missatgeErrorPasswordRep.length > 0
+      || this.legalChecked === false) return false
     else return true
   }
 
@@ -137,6 +139,10 @@ export class RegistrePage implements OnInit {
     } else {
       labelPasswordRep.setAttribute('style', '--highlight-background: red !important;');
     }
+  }
+
+  goToLegal() {
+    this.router.navigateByUrl('/legal');
   }
 
   async showToast(msg) {

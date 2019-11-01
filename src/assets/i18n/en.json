@@ -44,7 +44,9 @@
       "ERROR7": "Passwords do not match",
       "ALERTCORRECT": "Registration was successfully completed",
       "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
-      "ALERTERRORSERVER": "There was a problem in creating your new profile"
+      "ALERTERRORSERVER": "There was a problem in creating your new profile",
+      "LABELLINK": "Accept the",
+      "LINK": "terms of use and privacy policy"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
@@ -73,23 +75,60 @@
       "DESCRIPTION": "Choose the social network where you want to share this publication"
     },
     "TERMES": {
-      "TITLE": "Termes d'ús i condicions de privacitat",
-      "LABELRPOTECCIODEDADES": "Protecció de dades",
-      "TEXTPROTECCIODEDADES": "En compliment de la Llei Orgànica 15/1999, de 13 de desembre de Protecció de Dades de Caràcter Personal (LOPD), Sharefy amb CIF B-87667832, com a responsable del fitxer informa de les següents consideracions: Les dades de caràcter personal que li demanem, quedaran incorporades a un fitxer qual la finalitat és de enviar-li les comunicacions comercials.\nSi ho desitja, pot exercir els drets d'accés, rectificació, cancel·lació o oposició de les seves dades personals en el correu electrònic a info@sharefy.com o per escrit al carrer Falsa, 123, Barcelona.",
-      "LABELPOLITICADEPRIVACITAT": "Política de privacitat",
-      "LABELPREGUNTA1": "Qui és el responsable del tractament de les teves dades?",
-      "LABELRESPOSTA1": "Identitat: Sharefy\nCIF: B-87667832\nDir. Postal: Carrer Falsa,123,Barcelona\nE-Mail: info@sharefy.com",
-      "LABELPREGUNTA2": "Amb quina finalitat tractarem les teves dades personals?",
-      "LABELRESPOSTA2": "A Sharefy tractem les seves dades amb la finalitat principal de mantenir la nostra agenda de contactes:\na) Com a persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis.\nb) Com interessat que s'ha posat en contacte amb nosaltres consultándonos o sol·licitant-nos alguna infomació, per poder atendre'l.\nc) Com a persona de contacte per a mantenir relacions directament.\nCom a finalitat addicional, en cas que se li hagués sol·licitat autorització i ens l'hagués concedit, tractarem les seves dades per a l'enviament de comunicacions comercials.",
-      "LABELPREGUNTA3": "Quant de temps conservarem les teves dades?",
-      "LABELRESPOSTA3": "Les dades personals proporcionades es conservaran en la finalitat principal:\na) En cas de tractar d'una persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis, o bé directament, es conservaran mentre es mantingui la nostra relació amb aquesta entitat jurídica o organització, i fora de perill els terminis legals per les responsabilitats legals que es puguin derivar de la relació amb l'entitat jurídica o organització.\nb) En cas d'interessat posat en contacte amb nosaltres, fins a 6 mesos després d'atendre el seu requeriment, per si es produïssin per la seva banda comunicacions posteriors en referència a aquesta consulta o requeriment d'informació.\nc) En cas de persona de contacte per a mantenir relacions directament, es conservaran en tant es mantingui la relació i fora de perill els terminis legals de conservació.\nA la finalitat addicional d'enviament de comunicacions comercials, conservarem les seves dades fins que no ens manifesti la seva oposició a continuar rebent les nostres comunicacions.\nDecisions automatitzades, perfils i lògica aplicada:\nL'empresa NO prendrà decisions automatitzades.",
-      "LABELPREGUNTA4": "Quina és la legitimació per al tractament de les teves dades personals?",
-      "LABELRESPOSTA4": "La base legal per al tractament de les seves dades a la finalitat principal de manteniment d'agenda de contactes és:\na) En cas de tractar d'una persona de contacte per a mantenir relacions amb l'entitat jurídica o organització en què vostè presta els seus serveis, és la satisfacció de l'interès legítim del responsable, d'acord amb el que estableix l'art. 6.1.f del RGPD.\nb) En cas d'interessat posat en contacte amb nosaltres, la base legal és l'obtenció del seu consentiment.\nc) En cas de persona de contacte per a mantenir relacions directament, és la satisfacció de l'interès legítim del responsable, d'acord amb el que estableix l'art. 6.1.f del RGPD.\nA la finalitat addicional d'enviament de comunicacions comercials, la base legal per al tractament de les seves dades és l'obtenció del seu consentiment.",
-      "LABELPREGUNTA5": "A quin destinatari es comunicaran les teves dades personals?",
-      "LABELRESPOSTA5": "A Sharefy comptarem amb la col·laboració de tercers prestadors de serveis que en cada cas hàgim pogut contractar i que, per a la prestació d'aquest servei, pot ser necessari que tinguin accés a les seves dades de caràcter personal, però que els tractaran amb totes les garanties legals exigibles, seguint les nostres instruccions i prèvia subscripció d'un contracte de protecció de dades en les que exigim, entre d'altres, tractar les dades exclusivament per a les finalitats pactades, aplicar mesures tècniques i organitzatives adequades, així com suprimir i retornar les dades a la finalització del servei.\nA Sharefy seguim uns criteris estrictes de selecció de tercers prestadors de serveis per tal de donar compliment a les nostres obligacions i matèria de protecció de dades.",
-      "LABELPREGUNTA6": "Quins són els teus drets quan ens facilita les seves dades?",
-      "LABELRESPOSTA6": "Qualsevol persona té dret a obtenir confirmació sobre si en Sharefy estem tractant dades personals que li concerneixen o no.\nAixí mateix, té:\nDret a sol·licitar l'accés a les seves dades personals.\nDret a sol·licitar la seva rectificació.\nDret a sol·licitar la seva supressió.\nDret a sol·licitar la limitació del seu tractament.\nDret a oposar-se al tractament.\nDret a la portabilitat de les dades.\nDret a retirar el consentiment prestat.\nDret d'informació.\nDret a oposar-se a ser objecte de decisions individuals automatitzades.\nAixí mateix, l'informem que pot dirigir-se a l'Agència Espanyola de Protecció de Dades (www.aepd.es) per obtenir informació addicional o per presentar una reclamació, per exemple, si no has obtingut satisfacció en l'exercici dels teus drets.",
-      "LABELULTIMAMODIFICACIO": "Última modificació"
+      "TITLE": "Terms of use and privacy conditions",
+      "LABELRPOTECCIODEDADES": "Data Protection",
+      "TEXTPROTECCIODEDADES1": "In compliance with Organic Law 15/1999, of December 13, Protection of Personal Data (LOPD), Sharefy with CIF B-87667832, as the person in charge of the file informs the following considerations: Personal data that is provided to him We ask, they will be incorporated into a file whose purpose is to send you commercial communications.",
+      "TEXTPROTECCIODEDADES2": "If you wish, you may exercise the rights of access, rectification, cancellation or opposition of your personal data in the email to info@sharefy.com or by writing to Carrer Falsa, 123, Barcelona.",
+      
+      "LABELPOLITICADEPRIVACITAT": "Privacy policy",
+      "LABELPREGUNTA1": "Who is responsible for the treatment of your data?",
+      "LABELRESPOSTA11": "Identity: Sharefy",
+      "LABELRESPOSTA12": "CIF: B-87667832",
+      "LABELRESPOSTA13": "Postal Address: Carrer Falsa, 123, Barcelona",
+      "LABELRESPOSTA14": "E-Mail: info@sharefy.com",
+      
+      "LABELPREGUNTA2": "For what purpose will we treat your personal data?",
+      "LABELRESPOSTA21": "At Sharefy we treat your data with the main purpose of maintaining our contact book:",
+      "LABELRESPOSTA22": "a) As a contact person to maintain relations with the legal entity or organization in which you provide services.",
+      "LABELRESPOSTA23": "b) As an interested party, you have contacted us by consulting us or requesting information, to be able to assist you.",
+      "LABELRESPOSTA24": "c) As a contact person to maintain relationships directly.",
+      "LABELRESPOSTA25": "As an additional purpose, in case you have been requested authorization and have granted us, we will treat your data for the sending of commercial communications.",
+
+      "LABELPREGUNTA3": "How long will we keep your data?",
+      "LABELRESPOSTA31": "The personal data provided will be preserved in the main purpose:",
+      "LABELRESPOSTA32": "a) In the case of dealing with a contact person to maintain relations with the legal entity or organization in which you provide your services, or directly, they will be preserved while maintaining our relationship with this legal entity or organization, and the legal deadlines for the legal responsibilities that may derive from the relationship with the legal entity or organization are out of danger.",
+      "LABELRESPOSTA33": "b) In the case of an interested party, contact us, up to 6 months after meeting your request, in case subsequent communications were produced with reference to this inquiry or request for information.",
+      "LABELRESPOSTA34": "c) In the case of a contact person to maintain relationships directly, they will be preserved as long as the statutory terms of conservation are maintained and kept safe.",
+      "LABELRESPOSTA35": "For the additional purpose of sending commercial communications, we will keep your data until you show us your opposition to continue receiving our communications.",
+      "LABELRESPOSTA36": "Automated decisions, profiles and applied logic:",
+      "LABELRESPOSTA37": "The company will NOT take automated decisions.",
+      
+      "LABELPREGUNTA4": "What is the legitimation for the treatment of your personal data?",
+      "LABELRESPOSTA41": "La base legal per al tractament de les seves dades a la finalitat principal de manteniment d'agenda de contactes és:",
+      "LABELRESPOSTA42": "a) In the case of dealing with a contact person to maintain relations with the legal entity or organization in which you provide services, it is the satisfaction of the legitimate interest of the person responsible, in accordance with the provisions of art. 6.1.f of the RGPD.",
+      "LABELRESPOSTA43": "b) If you are interested in contacting us, the legal basis is obtaining your consent.",
+      "LABELRESPOSTA44": "c) In the case of a contact person to maintain relationships directly, it is the satisfaction of the legitimate interest of the person responsible, in accordance with the provisions of art. 6.1.f of the RGPD.",
+      "LABELRESPOSTA45": "For the additional purpose of sending commercial communications, the legal basis for the processing of your data is the obtaining of your consent.",
+
+      "LABELPREGUNTA5": "To whom will your personal information be communicated?",
+      "LABELRESPOSTA51": "In Sharefy, we will have the collaboration of third-party service providers that in each case we have been able to contract and that, for the provision of this service, they may need to have access to their personal data, but they will be dealt with with all the legal guarantees required, following our instructions and after signing a data protection contract in which we demand, among other things, to treat the data exclusively for the agreed purposes, to apply appropriate technical and organizational measures, as well How to delete and return the data at the end of the service.",
+      "LABELRESPOSTA52": "At Sharefy we follow strict criteria for the selection of third-party service providers in order to comply with our obligations and data protection.",
+
+      "LABELPREGUNTA6": "What are your rights when you provide us with your information?",
+      "LABELRESPOSTA61": "Anyone has the right to get confirmation about whether we are dealing with personal data about Sharefy or not.",
+      "LABELRESPOSTA62": "The user has the following rights",
+      "LABELRESPOSTA63": "Right to request access to your personal data.",
+      "LABELRESPOSTA64": "Right to request rectification.",
+      "LABELRESPOSTA65": "Right to request its deletion.",
+      "LABELRESPOSTA66": "Right to request the limitation of their treatment.",
+      "LABELRESPOSTA67": "Right to oppose treatment.",
+      "LABELRESPOSTA68": "Right to data portability.",
+      "LABELRESPOSTA69": "Right to withdraw the consent given.",
+      "LABELRESPOSTA610": "Right of information.",
+      "LABELRESPOSTA611": "Right to oppose being the subject of individual automated decisions.",
+      "LABELRESPOSTA612": "Also, we inform you that you can contact the Spanish Data Protection Agency (www.aepd.es) for additional information or to file a claim, for example, if you have not obtained satisfaction during the exercise of the your rights",
+
+      "LABELULTIMAMODIFICACIO": "Last modified"
     }
   }
 }

@@ -17,10 +17,12 @@
             <ion-input  type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-button [routerLink]="['/recuperar']" fill="clear" style="text-transform: none;"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
-        <p class="legalLogIn">
-            {{ 'PAGE.LOGIN.LABELLINK' | translate }}
-            <a routerLink="/legal">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
-        </p>
+        <ion-item lines="none">
+            <p class="legalLogIn">
+                {{ 'PAGE.LOGIN.LABELLINK' | translate }}
+                <a [routerLink]="" (click)="goToLegal()" style="cursor: pointer;">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
+            </p>
+        </ion-item>
     </ion-grid>
     <ion-row class="row-registar-entrar"> 
       <div>
