@@ -22,6 +22,7 @@
     "@angular/router": "~8.1.2",
     "@ionic-native/camera": "^5.15.0",
     "@ionic-native/core": "^5.15.0",
+    "@ionic-native/deeplinks": "^5.16.0",
     "@ionic-native/fcm": "^5.15.0",
     "@ionic-native/file": "^5.15.0",
     "@ionic-native/social-sharing": "^5.16.0",
@@ -42,6 +43,7 @@
     "core-js": "^2.5.4",
     "es6-promise-plugin": "^4.2.2",
     "ionic": "^5.4.2",
+    "ionic-plugin-deeplinks": "^1.0.20",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -102,6 +104,11 @@
       "cordova-plugin-streaming-media": {},
       "cordova-plugin-x-socialsharing": {
         "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+      },
+      "ionic-plugin-deeplinks": {
+        "URL_SCHEME": "sharefy",
+        "DEEPLINK_SCHEME": "https",
+        "DEEPLINK_HOST": "sharefy.tk"
       }
     },
     "platforms": [

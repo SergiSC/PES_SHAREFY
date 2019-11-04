@@ -74,9 +74,15 @@ export class PublicacioComponent implements OnInit {
 
    gotoShare() {
      //this.router.navigate(['/compartir']);
-       //TODO: mirar com compartir video o fotos
-       this.socialSharing.share("Missatge a compartir", null, null, "http://www.sharefy.tk");
-
+      //TODO: mirar com compartir video o fotos
+    //this.socialSharing.share("Missatge a compartir", null, null, "http://www.sharefy.tk");
+    this.socialSharing.share("Check this item:  sharefy://tabs/mur/")
+    .then(() => {
+    
+    })
+    .catch(() => {
+    
+    });
    }
 
 
