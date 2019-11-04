@@ -9,11 +9,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
     <ion-grid>
-        <ion-row *ngFor="let comm of comentaris" class="row-des">
-                <ion-text><b>{{ comm.name }}</b></ion-text>
-                <ion-text class="padding-des">{{ comm.text }}</ion-text>
-        </ion-row>
-      </ion-grid>
+      <ion-row>
+        <ion-item>
+          <ion-avatar class="avatar">
+              <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+          </ion-avatar>
+          <ion-text class="ion-margin-start"><b>{{ ownername }}</b></ion-text>
+        </ion-item>
+        <ion-text class="ion-padding-horizontal">{{ des }}</ion-text>
+      </ion-row>
+      <ion-row *ngFor="let comm of comentaris" class="row-des">
+        <ion-item lines="none">
+            <ion-avatar class="avatar">
+                <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+            </ion-avatar>
+            <ion-text class="ion-margin-start"><b>{{ comm.name }}</b></ion-text>
+        </ion-item>
+        <ion-text class="ion-padding-horizontal">{{ comm.text }}</ion-text>
+      </ion-row>
+    </ion-grid>
 </ion-content>

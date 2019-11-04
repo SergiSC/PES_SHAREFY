@@ -5,16 +5,18 @@
       <ion-avatar class="avatar">
         <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
       </ion-avatar>
-      <ion-label class="nom-usuari" [(ngModel)]="NomUsuari"><b>{{ NomUsuari }}</b></ion-label>
+      <ion-label class="nom-usuari" [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
       </ion-button>
     </ion-col>
-    <ion-col class="ion-text-right">   
+    <ion-col class="ion-text-right">
       <app-pop-aplicacio></app-pop-aplicacio>
       <ion-button fill="clear" class="buto-config" (click)="presentPopOver($event)"><ion-icon name="more"></ion-icon></ion-button>
     </ion-col>
   </ion-row>
   <ion-row class="row-video-container">
-      <video width="100%"  [id]="idp" controls> </video>
+      <video width="100%"  [id]="idp" controls> 
+        <source [src]="'http://sharefy.tk' + video" type='video/mp4'>
+      </video>
   </ion-row>
   <ion-row  class="row-likes-comm ion-padding-horizontal">
     <ion-col size="1">
@@ -27,11 +29,11 @@
         <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="gotoComments()" name="chatboxes"></ion-icon>
     </ion-col>
    <ion-col>
-      <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" (click)="gotoShare()" float-right align-item-end color=primary name="share"></ion-icon>
+      <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" (click)="gotoShare()" class="ion-float-right" align-item-end color=primary name="share"></ion-icon>
    </ion-col>
   </ion-row>
   <ion-row class="row-des">
-    <ion-text [(ngModel)]="NomUsuari"><b>{{ NomUsuari }}</b></ion-text>
-    <ion-text class="padding-des" [(ngModel)]="commentaris">{{ commentaris.descrpicio }}</ion-text>
+    <ion-text [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-text>
+    <ion-text class="padding-des"> {{des}} </ion-text>
   </ion-row>
 </ion-grid>

@@ -4,6 +4,8 @@ import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-me
 import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
+import {Storage} from '@ionic/storage';
+import { ComentarisPage } from 'src/app/pages/comentaris/comentaris.page';
 
 @Component({
   selector: 'app-publicacio',
@@ -13,26 +15,31 @@ import { Router, NavigationExtras } from '@angular/router';
 export class PublicacioComponent implements OnInit {
 
   @Input('idp') idp: string;
+  @Input('idu') idu: string;
+  @Input('video') video: string;
+  @Input('des') des: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   StrNLikes = 0;
   PopoverController: any;
-  NomUsuari = "Faker";
-  movie = "";
-  token = "";
   commentaris = {
-    descrpicio: ['Incredible game with ma friends'],
+    ownername: '',
+    ownerphoto: '',
+    descrpicio: '',
     coments: [ {
          name: 'Simon Grimm',
-         text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+         text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+         img: '',
         },
         {
           name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+          img: '',
          },
          {
           name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+          img: '',
          }
     ]
   };
@@ -40,6 +47,7 @@ export class PublicacioComponent implements OnInit {
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
               private router: Router,
+              private storage: Storage,
                ) { }
 
   blike() {
@@ -66,7 +74,7 @@ export class PublicacioComponent implements OnInit {
         special: JSON.stringify(this.commentaris)
       }
     };
-     this.router.navigate(['/comentaris'], navigationExtras);
+    this.router.navigate(['/comentaris'], navigationExtras);
    }
 
    gotoShare() {
@@ -75,10 +83,7 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
-     this.api.getpubli(this.idp, this.token).subscribe( (data: any) => {
-      this.movie = 'http://sharefy.tk' + data.value.video_path;
-      document.getElementById(this.idp).innerHTML="<source src=" + this.movie +" type='video/mp4'>";
-    });
+    this.commentaris.descrpicio = this.des.toString();
   }
 
 }

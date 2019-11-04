@@ -97,5 +97,10 @@ export class ApiService {
     );
   }
 
+  getAllPublis(id, tok) {
+    return this.http.get(
+        this.url + '/api/user/' + id + '/publications'
+    );
+  }
 
 }
