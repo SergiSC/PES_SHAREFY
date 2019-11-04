@@ -68,7 +68,8 @@
       "DESCRIPTION": "Escriu el correu correcte i rebràs una nova contrasenya"
     },
     "EDITAR": {
-      "TITLE": "Editar publicació"
+      "TITLE": "Editar publicació",
+      "GAMES": "Jocs"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicació",

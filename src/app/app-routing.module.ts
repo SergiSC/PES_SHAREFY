@@ -3,7 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'registre', loadChildren: './pages/registre/registre.module#RegistrePageModule' },  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  { path: 'registre', loadChildren: './pages/registre/registre.module#RegistrePageModule' },
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'mur', loadChildren: './pages/mur/mur.module#MurPageModule' },
   { path: 'populars', loadChildren: './pages/populars/populars.module#PopularsPageModule' },
   { path: 'jocs', loadChildren: './pages/jocs/jocs.module#JocsPageModule' },
@@ -13,7 +14,6 @@ const routes: Routes = [
   { path: 'recuperar', loadChildren: './pages/recuperar/recuperar.module#RecuperarPageModule' },
   { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
   { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
-  { path: 'editar', loadChildren: './pages/editar/editar.module#EditarPageModule' },
   { path: 'compartir', loadChildren: './pages/compartir/compartir.module#CompartirPageModule' },
   { path: 'legal', loadChildren: './pages/legal/legal.module#LegalPageModule' },
   { path: 'edit-publicacio', loadChildren: './shared/edit-publicacio/edit-publicacio.module#EditPublicacioPageModule' },
