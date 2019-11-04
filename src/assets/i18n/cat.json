@@ -130,5 +130,11 @@
 
       "LABELULTIMAMODIFICACIO": "Última modificació"
     }
+  },
+  "SHARED": {
+    "POPOVER": {
+      "BUTTONESBORRAR": "Esborrar",
+      "BUTTONEDITAR": "Editar"
+    }
   }
 }

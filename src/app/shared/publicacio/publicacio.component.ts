@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
-import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
+import { PubliPopOverComponent } from 'src/app/shared/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
 
@@ -48,9 +48,11 @@ export class PublicacioComponent implements OnInit {
    }
 
   async presentPopOver(event) {
-     const popover = await this.PopoverController.create({
-       Component: PubliPopOverComponent,
-       event
+     const popover = await this.popoverCtrl.create({
+       component: PubliPopOverComponent,
+       event,
+       id: this.idp,
+       cssClass: 'setting-popover'
      });
      return await popover.present();
    }

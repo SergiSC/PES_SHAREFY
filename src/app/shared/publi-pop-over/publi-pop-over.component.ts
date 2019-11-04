@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-publi-pop-over',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PubliPopOverComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+  redirectToEdit(id) {
+    this.router.navigateByUrl('/edit-publicacio/' + id);
+  }
 
 }

@@ -30,3 +30,8 @@ ion-toolbar {
   --background: var(--ion-color-primary);
   color: var(--ion-color-primary-contrast);
 }
+
+.setting-popover .popover-content {
+  --min-width: 150px !important;
+  --max-width: 150px !important;
+}
