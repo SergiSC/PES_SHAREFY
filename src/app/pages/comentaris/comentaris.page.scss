@@ -1,4 +1,25 @@
+.avatar-porfile {
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+}
+
 .avatar {
-    width: 35px;
-    height: 35px;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.comm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0%;
+}
+
+.padding {
+    padding-bottom: 0%;
+    
 }

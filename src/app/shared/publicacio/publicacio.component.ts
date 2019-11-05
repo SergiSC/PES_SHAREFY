@@ -23,22 +23,22 @@ export class PublicacioComponent implements OnInit {
   StrNLikes = 0;
   PopoverController: any;
   commentaris = {
-    ownername: '',
+    ownername: 'Faker',
     ownerphoto: '',
     descrpicio: '',
     coments: [ {
          name: 'Simon Grimm',
-         text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+         text: 'Dios vaya passada de partid que es aixo loco',
          img: '',
         },
         {
-          name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+          name: 'Venyto Camela',
+          text: 'Vaya caca de clip mi madre hace eso con una mano en la paella y la otra en la fregona',
           img: '',
          },
          {
-          name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO',
+          name: 'Hittler',
+          text: 'Hay q quemarlo todo',
           img: '',
          }
     ]
@@ -84,6 +84,9 @@ export class PublicacioComponent implements OnInit {
 
   ngOnInit() {
     this.commentaris.descrpicio = this.des.toString();
+    user:"";
+
+
   }
 
 }
