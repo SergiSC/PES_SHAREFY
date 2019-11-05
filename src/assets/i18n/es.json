@@ -10,7 +10,9 @@
       "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado",
       "BUTTON": "Deacuerdo",
       "LABELLINK": "Echa un vistazo a nuestros",
-      "LINK": "términos de uso y política de privacidad"
+      "LINK": "términos de uso y política de privacidad",
+      "TITLEALERT": "Email ya registrado",
+      "MESSAGEALERT": "Este email ya está registrado en el sistema. Recupera tu contraseña para entrar."
     },
     "PERFIL": {
       "TITLE": "Perfil",

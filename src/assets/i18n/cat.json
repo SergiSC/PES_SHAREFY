@@ -10,7 +10,9 @@
       "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat",
       "BUTTON": "Dacord",
       "LABELLINK": "Fes una ullada als nostres",
-      "LINK": "termes d'ús i política de privacitat"
+      "LINK": "termes d'ús i política de privacitat",
+      "TITLEALERT": "Email ja registrat",
+      "MESSAGEALERT": "Aquest email ja està registrat en el sistema. Recupera la teva contrasenya per entrar."
     },
     "PERFIL": {
       "TITLE": "Perfil",

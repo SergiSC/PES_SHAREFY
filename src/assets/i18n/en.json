@@ -10,7 +10,9 @@
       "TEXTALERTA": "The email or password entered does not correspond to any registered user",
       "BUTTON": "Ok",
       "LABELLINK": "Check out our",
-      "LINK": "terms of use and privacy policy"
+      "LINK": "terms of use and privacy policy",
+      "TITLEALERT": "Email is already registred",
+      "MESSAGEALERT": "This email is already registred in the system. Restore your password to access the aplication."
     },
     "PERFIL": {
       "TITLE": "Profile",

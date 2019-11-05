@@ -97,5 +97,9 @@ export class ApiService {
     );
   }
 
+  getAllEmails() {
+    return this.http.get(this.url + '/api/emails');
+  }
+
 
 }
