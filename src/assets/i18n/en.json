@@ -70,7 +70,8 @@
       "DESCRIPTION": "Write the correct mail and you will recieve a new password"
     },
     "EDITAR": {
-      "TITLE": "Edit publication"
+      "TITLE": "Edit publication",
+      "GAMES": "Games"
     },
     "COMPARTIR": {
       "TITLE": "Share publication",

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-edit-publicacio',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPublicacioPage implements OnInit {
 
-  constructor() { }
+  games: any;
+
+  constructor(public api: ApiService) {
+   }
 
   ngOnInit() {
+    this.games = this.api.getAllGames();
   }
 
 }

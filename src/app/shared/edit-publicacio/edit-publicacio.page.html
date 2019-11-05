@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>editPublicacio</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+  <ion-title class="ion-text-center"> {{ 'PAGE.EDITAR.TITLE' | translate }} </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-grid>
+    <ion-row style="margin-top: 5%">
+      <ion-item>
+        <ion-row>
+          <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
+          <ion-select [(ngModel)]="games"> 
+            <ion-select-option *ngFor="let g of games"> {{g}} </ion-select-option>
+          </ion-select>
+        </ion-row>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
 </ion-content>
