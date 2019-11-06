@@ -30,7 +30,7 @@ export class ApiService {
       language: lang
     };
     return this.http.post(
-         this.url + '/api/user/' +  user + '/set_configurations',
+         this.url + '/api/user/' +  user + '/configuration',
          body
     );
   }
@@ -113,7 +113,6 @@ export class ApiService {
     );
   }
 
-<<<<<<< HEAD
   dislike(username, idp, tok) {
     const body = {
       token: tok
@@ -137,7 +136,6 @@ export class ApiService {
     )
   }
 
-=======
   guardarInfoUser(user: { last_name: any; first_name: any; email: any; username: any }, tok) {
     const body = {
     };
@@ -146,5 +144,4 @@ export class ApiService {
         body,
     );
   }
->>>>>>> 913a236ca7fdffbf536bc988c1ad3e266efeb5b5
 }
