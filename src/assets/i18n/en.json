@@ -22,7 +22,12 @@
       "BUTTONMAGRADA": "Likes"
     },
     "INFORMACIO": {
-      "TITLE": "Information"
+      "TITLE": "Information",
+      "GUARDAR": "Guardar",
+      "CANVI": "Cambiar contraseña",
+      "SELECCIO": "Selecciona una foto",
+      "LIBRARY": "Desde tu galeria",
+      "CAMERA": "Hacer foto con la camara"
     },
     "REGISTRE": {
       "TITLE": "Sign In",

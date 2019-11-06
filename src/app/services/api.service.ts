@@ -97,5 +97,12 @@ export class ApiService {
     );
   }
 
-
+  guardarInfoUser(user: { last_name: any; first_name: any; email: any; username: any }, tok) {
+    const body = {
+    };
+    return this.http.get(
+        this.url + '/api/publication/',
+        body,
+    );
+  }
 }
