@@ -4,6 +4,7 @@ import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-me
 import { PubliPopOverComponent } from 'src/app/shared/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-publicacio',
@@ -50,8 +51,8 @@ export class PublicacioComponent implements OnInit {
   async presentPopOver(event) {
      const popover = await this.popoverCtrl.create({
        component: PubliPopOverComponent,
+       componentProps: {idPublication: this.idp},
        event,
-       id: this.idp,
        cssClass: 'setting-popover'
      });
      return await popover.present();
@@ -77,7 +78,7 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
-     this.api.getpubli(this.idp, this.token).subscribe( (data: any) => {
+     this.api.getPublicationById(this.idp).subscribe( (data: any) => {
       this.movie = 'http://sharefy.tk' + data.value.video_path;
       document.getElementById(this.idp).innerHTML="<source src=" + this.movie +" type='video/mp4'>";
     });

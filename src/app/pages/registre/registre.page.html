@@ -44,7 +44,7 @@
       <ion-row class="row_grid">
           <ion-item class="item_registre" id="item-input-mail">
               <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCORREU' | translate}}</ion-label>
-              <ion-input [(ngModel)]="regEmail" (ionChange)="checkEmailFormat()" type="email" id="input-nick" class="input-register"></ion-input>
+              <ion-input [(ngModel)]="regEmail" (ionChange)="checkEmailFormatAndDisponibility()" type="email" id="input-nick" class="input-register"></ion-input>
             </ion-item>
             <div *ngIf="missatgeErrorMail.length > 0">
               <ng-container *ngFor="let err of missatgeErrorMail">

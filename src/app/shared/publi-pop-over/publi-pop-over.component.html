@@ -2,7 +2,7 @@
   <ion-item button (click)="redirectToEdit(id)">
     {{ 'SHARED.POPOVER.BUTTONEDITAR' | translate }}
   </ion-item>
-  <ion-item button lines="none">
+  <ion-item button lines="none" (click)="showAlertDelete()">
     {{ 'SHARED.POPOVER.BUTTONESBORRAR' | translate }}
   </ion-item>
 </ion-list>

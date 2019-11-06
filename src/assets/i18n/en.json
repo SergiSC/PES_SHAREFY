@@ -44,6 +44,7 @@
       "ERROR5": "Password must be at least 8 characters long",
       "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
       "ERROR7": "Passwords do not match",
+      "ERROR8": "Email already registred in the system. Enter another email",
       "ALERTCORRECT": "Registration was successfully completed",
       "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
       "ALERTERRORSERVER": "There was a problem in creating your new profile",
@@ -137,7 +138,10 @@
   "SHARED": {
     "POPOVER": {
       "BUTTONESBORRAR": "Delete",
-      "BUTTONEDITAR": "Edit"
+      "BUTTONEDITAR": "Edit",
+      "TITLEALERTBORRAR": "Delete publication",
+      "TEXTALERTBORRAR": "Are you sure you want to delete this publication?",
+      "BUTTONCANCEL": "Cancel"
     }
   }
 }

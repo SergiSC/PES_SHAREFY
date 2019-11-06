@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-publicacio',
@@ -9,12 +11,21 @@ import { ApiService } from 'src/app/services/api.service';
 export class EditPublicacioPage implements OnInit {
 
   games: any;
+  publicacio;
+  private routeSub: Subscription;
 
-  constructor(public api: ApiService) {
+  constructor(public api: ApiService, private route: ActivatedRoute) {
    }
 
   ngOnInit() {
-    this.games = this.api.getAllGames();
+    this.routeSub = this.route.params.subscribe(params => {
+      this.api.getPublicationById(params['idPublicacio']).subscribe((data:any) => {
+        this.publicacio = data.value
+      })
+    });
+    this.api.getAllGames().subscribe((data:any) => {
+      this.games = data.value
+    });
   }
 
 }

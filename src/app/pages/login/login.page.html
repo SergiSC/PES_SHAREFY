@@ -22,6 +22,10 @@
                 <a [routerLink]="" (click)="goToLegal()" style="cursor: pointer;">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
             </p>
         </ion-item>
+        <firebase-ui
+            (signInSuccessWithAuthResult)="successCallback($event)"
+            (signInFailure)="errorCallback($event)">
+        </firebase-ui>
     </ion-grid>
     <firebase-ui id="uiGoogle"
         (signInSuccessWithAuthResult)="successCallback($event)"
