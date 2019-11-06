@@ -79,14 +79,15 @@ export class ApiService {
     );
   }
 
-  editarPublicacio(publicacio, tokenPu) {
+  editarPublicacio(gameN, textN, id, tokenPu) {
     const body = {
-      game: publicacio.game,
-      text: publicacio.text,
-      toke: tokenPu
-    }
+      game: gameN,
+      text: textN,
+      token: tokenPu
+    };
     return this.http.put(
-      this.url + 'api/publication', body
+      this.url + 'api/publication' + id,
+      body,
     );
   }
 
