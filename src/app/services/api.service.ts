@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Storage } from '@ionic/storage';
+import { tokenName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -99,7 +100,27 @@ export class ApiService {
 
   getAllPublis(id, tok) {
     return this.http.get(
-        this.url + '/api/user/' + id + '/publications'
+        this.url + '/api/user/' + id + '/publications' + '?token=' + tok,
+    );
+  }
+
+
+  like(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+        this.url + '/api/like/user/' + username + '/publication/' + idp,
+        body,
+    );
+  }
+
+  dislike(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.delete(
+        this.url + '/api/like/user/' + username + '/publication/' + idp + '?token=' + tok,
     );
   }
 

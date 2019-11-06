@@ -3,9 +3,9 @@
     <ion-col>
       <ion-button fill="clear" (click)="gotoporfile()">
       <ion-avatar class="avatar">
-        <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+        <ion-img alt="" [src]="'http://sharefy.tk' + photo"></ion-img>
       </ion-avatar>
-      <ion-label class="nom-usuari" [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
+      <ion-label style="text-transform: none;" class="nom-usuari" [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
       </ion-button>
     </ion-col>
     <ion-col class="ion-text-right">
@@ -20,7 +20,7 @@
   </ion-row>
   <ion-row  class="row-likes-comm ion-padding-horizontal">
     <ion-col size="1">
-        <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="StrNLikes">{{ StrNLikes }}</ion-text>
+        <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="numLikes">{{ numLikes }}</ion-text>
     </ion-col>
     <ion-col size="1">
          <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="blike()" [name]="like ? 'heart' :'heart-empty'"></ion-icon>

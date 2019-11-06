@@ -15,15 +15,17 @@ import { ComentarisPage } from 'src/app/pages/comentaris/comentaris.page';
 export class PublicacioComponent implements OnInit {
 
   @Input('idp') idp: string;
-  @Input('idu') idu: string;
+  @Input('username') username: string;
   @Input('video') video: string;
   @Input('des') des: string;
+  @Input('numLikes') numLikes: number;
+  @Input('photo') photo: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
-  StrNLikes = 0;
   PopoverController: any;
+  token:"";
   commentaris = {
-    ownername: 'Faker',
+    ownername: '',
     ownerphoto: '',
     descrpicio: '',
     coments: [ {
@@ -52,8 +54,19 @@ export class PublicacioComponent implements OnInit {
 
   blike() {
     this.like = !this.like;
-    if (this.like) {this.StrNLikes += 1; } else {this.StrNLikes -= 1; }
-   }
+    if (this.like) {
+      this.numLikes += 1;
+      this.storage.get('username').then((data: any) => {
+        this.api.like(data, this.idp, this.token).subscribe();
+      });
+
+    } else {
+      this.numLikes -= 1;
+      this.storage.get('username').then((data: any) => {
+        this.api.dislike(data, this.idp, this.token).subscribe();
+      });
+    }
+  }
 
   async presentPopOver(event) {
      const popover = await this.PopoverController.create({
@@ -69,7 +82,7 @@ export class PublicacioComponent implements OnInit {
    }
 
    gotoComments() {
-    let navigationExtras: NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams: {
         special: JSON.stringify(this.commentaris)
       }
@@ -84,9 +97,14 @@ export class PublicacioComponent implements OnInit {
 
   ngOnInit() {
     this.commentaris.descrpicio = this.des.toString();
-    user:"";
-
-
+    this.storage.get('token').then((val) => {
+      this.token = val;
+    });
+    this.api.getpubli(this.idp, this.token).subscribe((data: any) => {
+      console.log("Ara ve publi");
+      console.log(data);
+    });
+    this.commentaris.ownername = this.username;
   }
 
 }
