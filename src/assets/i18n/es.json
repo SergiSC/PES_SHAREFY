@@ -24,7 +24,12 @@
       "BUTTONMAGRADA": "Me gusta"
     },
     "INFORMACIO": {
-      "TITLE": "Información"
+      "TITLE": "Información",
+      "GUARDAR": "Save",
+      "CANVI": "Change Password",
+      "SELECCIO": "Select photo",
+      "LIBRARY": "From Gallery",
+      "CAMERA": "Take photo"
     },
     "REGISTRE": {
       "TITLE": "Registro",

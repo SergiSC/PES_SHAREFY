@@ -113,6 +113,7 @@ export class ApiService {
     );
   }
 
+<<<<<<< HEAD
   dislike(username, idp, tok) {
     const body = {
       token: tok
@@ -136,4 +137,14 @@ export class ApiService {
     )
   }
 
+=======
+  guardarInfoUser(user: { last_name: any; first_name: any; email: any; username: any }, tok) {
+    const body = {
+    };
+    return this.http.get(
+        this.url + '/api/publication/',
+        body,
+    );
+  }
+>>>>>>> 913a236ca7fdffbf536bc988c1ad3e266efeb5b5
 }
