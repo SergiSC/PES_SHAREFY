@@ -51,7 +51,8 @@ export class RegistrePage implements OnInit {
         first_name: this.regName,
         last_name: this.regLastname,
         email: this.regEmail,
-        password: this.regPassword
+        password: this.regPassword,
+        birth_date: this.regDate
       };
       this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
         this.storage.set('token', data.access_token);

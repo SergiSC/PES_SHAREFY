@@ -69,7 +69,8 @@ export class ApiService {
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email,
-      password: user.password
+      password: user.password,
+      birth_date: user.birth_date,
     };
     return this.http.post(
       this.url + '/api/register',
@@ -97,5 +98,18 @@ export class ApiService {
     );
   }
 
+  getAllEmails() {
+    return this.http.get(this.url + '/api/emails');
+  }
+
+  postSetTokenFromGoogleAuth(user, tokenGoogleAuth) {
+    const body = {
+      token: tokenGoogleAuth
+    }
+    return this.http.post(
+      this.url + '/api/user/' + user + '/token_password',
+      body
+    )
+  }
 
 }
