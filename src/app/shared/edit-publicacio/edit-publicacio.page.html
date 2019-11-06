@@ -10,14 +10,14 @@
   <ion-grid>
       <ion-row style="margin-top: 20%" >
        <video width="100%" controls> 
-         <source [src]="'http://sharefy.tk/api/' + path" type='video/mp4'>
+         <source [src]="'http://sharefy.tk' + path" type='video/mp4'>
        </video>
       </ion-row>
       <ion-row style="margin-top: 15%">
         <ion-item lines=none>
           <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
-          <ion-select [(ngModel)]="newSel" interface="popover" class="select" (ionChange)=cambiJoc()> 
-            <ion-select-option *ngFor="let g of games" > {{g.name}} </ion-select-option>
+          <ion-select [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select" (ionChange)=cambiJoc()> 
+            <ion-select-option *ngFor="let g of games"> {{g.name}} </ion-select-option>
           </ion-select>
         </ion-item>
       </ion-row>

@@ -74,7 +74,7 @@ export class PublicacioComponent implements OnInit {
   async presentPopOver(event) {
      const popover = await this.popoverCtrl.create({
        component: PubliPopOverComponent,
-       componentProps: {idPublication: this.idp},
+       componentProps: {idPublication: this.idp, video: this.video, desc: this.des, game: this.game},
        event,
        cssClass: 'setting-popover'
      });

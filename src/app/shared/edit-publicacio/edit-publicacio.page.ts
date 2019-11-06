@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class EditPublicacioPage implements OnInit {
 
   games: any;
-  publicacio;
+  pid;
   path: string;
   gameSel: string;
   desc: string;
@@ -22,19 +22,15 @@ export class EditPublicacioPage implements OnInit {
    }
 
   ngOnInit() {
-    this.routeSub = this.route.params.subscribe(params => {
-      this.api.getPublicationById(params['idPublicacio']).subscribe((data:any) => {
-        this.publicacio = data.value;
-        console.log(this.publicacio);
-        this.path = this.publicacio.video_path;
-        console.log(this.path);
-        this.newSel = this.publicacio.game.name;
-        this.desc = this.publicacio.text;
-      });
+    this.route.params.subscribe(data => {
+      this.pid = data.idp;
+      this.path = data.video;
+      this.desc = data.desc;
+      this.newSel = data.game;
     });
-    this.api.getAllGames().subscribe((data:any) => {
+    this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;
-      console.log(this.games);
+      //console.log(this.games);
     });
   }
 
