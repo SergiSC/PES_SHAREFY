@@ -21,7 +21,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <app-publicacio  idp="5"></app-publicacio>
-  <app-publicacio idp="6"></app-publicacio>
-  <app-publicacio  idp="7"></app-publicacio>
+  <div *ngFor="let publi of publicacio">
+      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
+  </div>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Storage } from '@ionic/storage';
+import { tokenName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class ApiService {
       language: lang
     };
     return this.http.post(
-         this.url + '/api/user/' +  user + '/set_configurations',
+         this.url + '/api/user/' +  user + '/configuration',
          body
     );
   }
@@ -106,6 +107,32 @@ export class ApiService {
     );
   }
 
+  getAllPublis(id, tok) {
+    return this.http.get(
+        this.url + '/api/user/' + id + '/publications' + '?token=' + tok,
+    );
+  }
+
+
+  like(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+        this.url + '/api/like/user/' + username + '/publication/' + idp,
+        body,
+    );
+  }
+
+  dislike(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.delete(
+        this.url + '/api/like/user/' + username + '/publication/' + idp + '?token=' + tok,
+    );
+  }
+  
   getAllEmails() {
     return this.http.get(this.url + '/api/emails');
   }
@@ -120,4 +147,12 @@ export class ApiService {
     )
   }
 
+  guardarInfoUser(user: { last_name: any; first_name: any; email: any; username: any }, tok) {
+    const body = {
+    };
+    return this.http.get(
+        this.url + '/api/publication/',
+        body,
+    );
+  }
 }

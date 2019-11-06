@@ -6,7 +6,7 @@
     <ion-title class="ion-text-center"> {{ 'PAGE.PERFIL.TITLE' | translate }} </ion-title>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/config']">
-        <ion-icon name="settings"></ion-icon>
+        <ion-icon  name="settings"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -17,7 +17,7 @@
     <ion-row>
       <ion-col class="flex">
         <ion-avatar class="avatar">
-          <img alt="" src="https://images.mediotiempo.com/LRmC3OgFDcX90qW7IEMut31QY78=/958x596/uploads/media/2019/05/07/avatar-sera-dividida-en-cinco.jpg">
+          <img alt="" [src]="pathFotoPerfil">
         </ion-avatar>
       </ion-col>
     </ion-row>

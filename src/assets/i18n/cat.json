@@ -24,7 +24,12 @@
       "BUTTONMAGRADA": "M'agrada"
     },
     "INFORMACIO": {
-      "TITLE": "Informació"
+      "TITLE": "Informació",
+      "GUARDAR": "Guardar",
+      "CANVI": "Canviar contrasenya",
+      "SELECCIO": "Selecciona la foto",
+      "LIBRARY": "Des de la galeria",
+      "CAMERA": "Fes una foto amb la camera"
     },
     "REGISTRE": {
       "TITLE": "Registre",
