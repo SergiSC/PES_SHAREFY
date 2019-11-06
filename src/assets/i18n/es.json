@@ -44,6 +44,7 @@
       "ERROR5": "La contraseña debe tener como mínimo 8 carácteres",
       "ERROR6": "La contraseña debe contener como mínimo una minúscula, una mayúscula y un número",
       "ERROR7": "Las contraseñas no coinciden",
+      "ERROR8": "Email ya registrado en el sistema. Introduce otro email",
       "ALERTCORRECT": "El registro se ha completado correctamente",
       "ALERTINCORRECTE": "Hay campos del formulario que son incorrectos o no están completos",
       "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil",

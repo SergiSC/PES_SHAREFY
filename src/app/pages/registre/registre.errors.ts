@@ -34,6 +34,10 @@ export class errorsRegistre {
         {
             name: "error7",
             msg: this.translate.instant('PAGE.REGISTRE.ERROR7')
+        },
+        {
+            name: "error8",
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR8')
         }
     ]
     alerts = [

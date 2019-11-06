@@ -44,6 +44,7 @@
       "ERROR5": "La contrasenya ha de tenir mínim 8 caràcters",
       "ERROR6": "La contrasenya ha de contenir mínim una minúscula, una majúscula i un número",
       "ERROR7": "Les contrasenyes no coincideixen",
+      "ERROR8": "Email ja registrat al sistema. Introdueix un altre email",
       "ALERTCORRECT": "El registre s'ha completat correctament",
       "ALERTINCORRECTE": "Hi ha camps del formulari que són incorrectes o no estan complets",
       "ALERTERRORSERVER": "Hi ha hagut algun problema a l'hora de crear el teu nou perfil",
