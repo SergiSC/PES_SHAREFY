@@ -72,7 +72,9 @@
     },
     "EDITAR": {
       "TITLE": "Editar publicació",
-      "GAMES": "Jocs"
+      "GAMES": "Jocs",
+      "DESCRIPTION": "Descripció",
+      "SAVE": "Guardar canvis"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicació",

@@ -78,6 +78,17 @@ export class ApiService {
     );
   }
 
+  editarPublicacio(publicacio, tokenPu) {
+    const body = {
+      game: publicacio.game,
+      text: publicacio.text,
+      toke: tokenPu
+    }
+    return this.http.put(
+      this.url + 'api/publication', body
+    );
+  }
+
   login(mail, pass) {
     const body = {
       login: mail,

@@ -24,7 +24,7 @@ export class PubliPopOverComponent implements OnInit {
   redirectToEdit() {
     this.DismissClick()
     console.log(this.idPublication)
-    this.router.navigateByUrl('/edit-publicacio/'+this.idPublication);
+    this.router.navigateByUrl('/edit-publicacio/'+ this.idPublication);
   }
 
   showAlertDelete() {
