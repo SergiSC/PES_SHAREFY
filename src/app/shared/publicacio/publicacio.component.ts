@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
-import { PubliPopOverComponent } from 'src/app/publi-pop-over/publi-pop-over.component';
+import { PubliPopOverComponent } from 'src/app/shared/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
 import {Storage} from '@ionic/storage';
 import { ComentarisPage } from 'src/app/pages/comentaris/comentaris.page';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-publicacio',
@@ -69,9 +70,11 @@ export class PublicacioComponent implements OnInit {
   }
 
   async presentPopOver(event) {
-     const popover = await this.PopoverController.create({
-       Component: PubliPopOverComponent,
-       event
+     const popover = await this.popoverCtrl.create({
+       component: PubliPopOverComponent,
+       componentProps: {idPublication: this.idp},
+       event,
+       cssClass: 'setting-popover'
      });
      return await popover.present();
    }
@@ -99,10 +102,6 @@ export class PublicacioComponent implements OnInit {
     this.commentaris.descrpicio = this.des.toString();
     this.storage.get('token').then((val) => {
       this.token = val;
-    });
-    this.api.getpubli(this.idp, this.token).subscribe((data: any) => {
-      console.log("Ara ve publi");
-      console.log(data);
     });
     this.commentaris.ownername = this.username;
   }

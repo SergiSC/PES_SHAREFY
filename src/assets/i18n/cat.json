@@ -10,7 +10,9 @@
       "TEXTALERTA": "L'email o contrasenya introduit no correspon amb cap usuari registrat",
       "BUTTON": "Dacord",
       "LABELLINK": "Fes una ullada als nostres",
-      "LINK": "termes d'ús i política de privacitat"
+      "LINK": "termes d'ús i política de privacitat",
+      "TITLEALERT": "Email ja registrat",
+      "MESSAGEALERT": "Aquest email ja està registrat en el sistema. Recupera la teva contrasenya per entrar."
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -42,6 +44,7 @@
       "ERROR5": "La contrasenya ha de tenir mínim 8 caràcters",
       "ERROR6": "La contrasenya ha de contenir mínim una minúscula, una majúscula i un número",
       "ERROR7": "Les contrasenyes no coincideixen",
+      "ERROR8": "Email ja registrat al sistema. Introdueix un altre email",
       "ALERTCORRECT": "El registre s'ha completat correctament",
       "ALERTINCORRECTE": "Hi ha camps del formulari que són incorrectes o no estan complets",
       "ALERTERRORSERVER": "Hi ha hagut algun problema a l'hora de crear el teu nou perfil",
@@ -68,7 +71,8 @@
       "DESCRIPTION": "Escriu el correu correcte i rebràs una nova contrasenya"
     },
     "EDITAR": {
-      "TITLE": "Editar publicació"
+      "TITLE": "Editar publicació",
+      "GAMES": "Jocs"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicació",
@@ -129,6 +133,15 @@
       "LABELRESPOSTA612": "Així mateix, l'informem que pot dirigir-se a l'Agència Espanyola de Protecció de Dades (www.aepd.es) per obtenir informació addicional o per presentar una reclamació, per exemple, si no has obtingut satisfacció en l'exercici dels teus drets.",
 
       "LABELULTIMAMODIFICACIO": "Última modificació"
+    }
+  },
+  "SHARED": {
+    "POPOVER": {
+      "BUTTONESBORRAR": "Esborrar",
+      "BUTTONEDITAR": "Editar",
+      "TITLEALERTBORRAR": "Borrar publicació",
+      "TEXTALERTBORRAR": "Estas segur què vols borrar la publicació?",
+      "BUTTONCANCEL": "Cancel·lar"
     }
   }
 }

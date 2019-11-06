@@ -21,6 +21,7 @@ export class RegistrePage implements OnInit {
   regPassword: any;
   regPasswordRepeat: any;
   listUsers: any;
+  listMail: any;
   legalChecked: any;
   missatgeErrorNick = [];
   missatgeErrorMail = [];
@@ -40,18 +41,23 @@ export class RegistrePage implements OnInit {
     this.api.getAllUsers().subscribe((data: any) => {
       this.listUsers = data.list;
     });
+    this.api.getAllEmails().subscribe((data:any) => {
+      this.listMail = data.list;
+    })
   }
 
   registerUser() {
     if (!this.validInputs()) {
       this.showToast(this.err.alerts[1].msg);
     } else {
+      let date = this.regDate.split('T')
       const user = {
         username: this.regNick,
         first_name: this.regName,
         last_name: this.regLastname,
         email: this.regEmail,
-        password: this.regPassword
+        password: this.regPassword,
+        birth_date: date[0]
       };
       this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
         this.storage.set('token', data.access_token);
@@ -100,13 +106,19 @@ export class RegistrePage implements OnInit {
     }
   }
 
-  checkEmailFormat() {
+  checkEmailFormatAndDisponibility() {
     const labelMail = document.getElementById('item-input-mail');
     this.missatgeErrorMail = [];
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(this.regEmail).toLowerCase())) {
       this.missatgeErrorMail.push(this.err.errors[3].msg);
     }
+
+    this.listMail.forEach(element => {
+      if (element.email.toLowerCase() === this.regEmail.toLowerCase()) {
+        this.missatgeErrorMail.push(this.err.errors[7].msg);
+      }
+    });
     if (this.missatgeErrorMail.length === 0) {
       labelMail.setAttribute('style', '--highlight-background: var(--ion-color-primary) !important;');
     } else {

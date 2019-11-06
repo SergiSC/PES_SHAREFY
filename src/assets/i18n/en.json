@@ -10,7 +10,9 @@
       "TEXTALERTA": "The email or password entered does not correspond to any registered user",
       "BUTTON": "Ok",
       "LABELLINK": "Check out our",
-      "LINK": "terms of use and privacy policy"
+      "LINK": "terms of use and privacy policy",
+      "TITLEALERT": "Email is already registred",
+      "MESSAGEALERT": "This email is already registred in the system. Restore your password to access the aplication."
     },
     "PERFIL": {
       "TITLE": "Profile",
@@ -42,6 +44,7 @@
       "ERROR5": "Password must be at least 8 characters long",
       "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
       "ERROR7": "Passwords do not match",
+      "ERROR8": "Email already registred in the system. Enter another email",
       "ALERTCORRECT": "Registration was successfully completed",
       "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
       "ALERTERRORSERVER": "There was a problem in creating your new profile",
@@ -68,7 +71,8 @@
       "DESCRIPTION": "Write the correct mail and you will recieve a new password"
     },
     "EDITAR": {
-      "TITLE": "Edit publication"
+      "TITLE": "Edit publication",
+      "GAMES": "Games"
     },
     "COMPARTIR": {
       "TITLE": "Share publication",
@@ -129,6 +133,15 @@
       "LABELRESPOSTA612": "Also, we inform you that you can contact the Spanish Data Protection Agency (www.aepd.es) for additional information or to file a claim, for example, if you have not obtained satisfaction during the exercise of the your rights",
 
       "LABELULTIMAMODIFICACIO": "Last modified"
+    }
+  },
+  "SHARED": {
+    "POPOVER": {
+      "BUTTONESBORRAR": "Delete",
+      "BUTTONEDITAR": "Edit",
+      "TITLEALERTBORRAR": "Delete publication",
+      "TEXTALERTBORRAR": "Are you sure you want to delete this publication?",
+      "BUTTONCANCEL": "Cancel"
     }
   }
 }

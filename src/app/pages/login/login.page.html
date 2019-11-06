@@ -2,10 +2,9 @@
     <ion-app>
         <ion-router-outlet></ion-router-outlet>
     </ion-app>
-    <ion-grid class="nom-aplicacio">
-        <ion-label class="nom-aplicacio-share">Share</ion-label>
-        <ion-label class="nom-aplicacio-fy">fy</ion-label>
-    </ion-grid>
+    <ion-label class="nom-aplicacio">
+        <font color = #64C995>Share</font><font color = black>fy</font>  
+    </ion-label>
     <ion-img class="logo-img ion-margin-bottom" src="../assets/logojusto.png"></ion-img>
     <ion-grid class="ion-padding-top ion-margin-top">
         <ion-item>
@@ -23,7 +22,15 @@
                 <a [routerLink]="" (click)="goToLegal()" style="cursor: pointer;">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
             </p>
         </ion-item>
+        <firebase-ui
+            (signInSuccessWithAuthResult)="successCallback($event)"
+            (signInFailure)="errorCallback($event)">
+        </firebase-ui>
     </ion-grid>
+    <firebase-ui id="uiGoogle"
+        (signInSuccessWithAuthResult)="successCallback($event)"
+        (signInFailure)="errorCallback($event)">
+    </firebase-ui>
     <ion-row class="row-registar-entrar"> 
       <div>
         <ion-button [routerLink]="['/registre']" class="boto-registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
