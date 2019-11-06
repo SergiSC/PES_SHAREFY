@@ -5,8 +5,8 @@ import { File } from '@ionic-native/file/ngx';
 import {TranslateService} from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { ApiService } from 'src/app/services/api.service';
-import {errorsRegistre} from '../registre/registre.errors';
 import {Router} from '@angular/router';
+import {errorsInformacio} from './informacio.errors';
 
 
 
@@ -30,8 +30,9 @@ export class InformacioPage implements OnInit {
   missatgeErrorMail = [];
   missatgeErrorPassword = [];
   missatgeErrorPasswordRep = [];
-  err = new errorsRegistre(this.translate);
-
+  oldMail: any;
+  listMail: any;
+  err = new errorsInformacio(this.translate);
   imagePickerOptions = {
     maximumImagesCount: 1,
     quality: 50
@@ -52,6 +53,9 @@ export class InformacioPage implements OnInit {
     this.api.getAllUsers().subscribe((data: any) => {
       this.listUsers = data.list;
     });
+    this.api.getAllEmails().subscribe((data: any) => {
+      this.listMail = data.list;
+    });
     this.storage.get('token').then((token: any) => {
       this.storage.get('username').then((username: any) => {
         this.api.recuperarInfoUser(username, token).subscribe((data: any) => {
@@ -64,6 +68,7 @@ export class InformacioPage implements OnInit {
           this.regLastname = data.value[0].last_name;
           this.regEmail = data.value[0].email;
           this.regDate = data.value[0].birth_date;
+          this.oldMail = data.value[0].email;
         });
       });
     });
@@ -119,10 +124,13 @@ export class InformacioPage implements OnInit {
         email: this.regEmail,
       };
       this.storage.get('token').then(tok => {
-        this.api.guardarInfoUser(user, tok).subscribe((data: any) => {
-          this.showToast(this.err.alerts[0].msg);
-        }, err => {
-          this.showToast(this.err.alerts[2].msg);
+        this.storage.get('username').then(usr => {
+          this.api.guardarInfoUser(usr, user, tok).subscribe((data: any) => {
+            this.storage.set('username', user.username);
+            this.showToast(this.err.alerts[0].msg);
+          }, err => {
+            this.showToast(this.err.alerts[2].msg);
+          });
         });
       });
     }
@@ -147,7 +155,7 @@ export class InformacioPage implements OnInit {
     } else {
       this.storage.get('username').then((data: any) => {
         this.listUsers.forEach(element => {
-          if (element.username.toLowerCase() === this.regNick.toLowerCase() && this.regNick.toLowerCase() != data) {
+          if (element.username.toLowerCase() === this.regNick.toLowerCase() && this.regNick.toLowerCase() !== data.toString().toLocaleLowerCase()) {
             this.missatgeErrorNick.push(this.err.errors[1].msg);
           }
         });
@@ -164,14 +172,19 @@ export class InformacioPage implements OnInit {
     }
   }
 
-  checkEmailFormat() {
+  checkEmailFormatAndDisponibility() {
     const labelMail = document.getElementById('item-input-mail');
     this.missatgeErrorMail = [];
-    // tslint:disable-next-line:max-line-length
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(this.regEmail).toLowerCase())) {
       this.missatgeErrorMail.push(this.err.errors[3].msg);
     }
+
+    this.listMail.forEach(element => {
+      if (element.email.toLowerCase() === this.regEmail.toLowerCase() && element.email.toLowerCase() !== this.oldMail.toString().toLocaleLowerCase()) {
+        this.missatgeErrorMail.push(this.err.errors[7].msg);
+      }
+    });
     if (this.missatgeErrorMail.length === 0) {
       labelMail.setAttribute('style', '--highlight-background: var(--ion-color-primary) !important;');
     } else {
