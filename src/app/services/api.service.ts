@@ -144,4 +144,10 @@ export class ApiService {
         body,
     );
   }
+
+  getLike(user, tok, id) {
+    return this.http.get(
+        this.url + '/api/like/user/' + user + '/publication/' + id  +'?token=' + tok
+    );
+  }
 }

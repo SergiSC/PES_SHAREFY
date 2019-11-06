@@ -17,8 +17,8 @@ export class MurPage implements OnInit {
     });
     this.api.getAllPublis(25, null).subscribe( (data: any) => {
       this.publicacio.push(...data.value);
+      console.log(this.publicacio);
     });
-    console.log(this.publicacio);
   }
 
 }
