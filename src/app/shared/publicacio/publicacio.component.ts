@@ -21,8 +21,10 @@ export class PublicacioComponent implements OnInit {
   @Input('des') des: string;
   @Input('numLikes') numLikes: number;
   @Input('photo') photo: string;
+  @Input('game') game: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
+  esOwner = false;
   PopoverController: any;
   token:"";
   commentaris = {
@@ -82,6 +84,7 @@ export class PublicacioComponent implements OnInit {
 
    gotoporfile() {
     this.router.navigate(['/perfil']);
+    // de moment va a la del usuari registat
    }
 
    gotoComments() {
@@ -104,6 +107,12 @@ export class PublicacioComponent implements OnInit {
       this.token = val;
     });
     this.commentaris.ownername = this.username;
+
+    this.storage.get('username').then((val) => {
+      if (this.commentaris.ownername === val) {
+        this.esOwner = true;
+      }
+    });
   }
 
 }
