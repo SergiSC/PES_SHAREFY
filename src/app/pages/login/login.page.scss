@@ -10,6 +10,16 @@
   font-size: 230%;
 }
 
+.nom-aplicacio-share {
+  color: #64C995;
+  font-weight: bold;
+}
+
+.nom-aplicacio-fy {
+  color: black;
+  font-weight: bold;
+}
+
 .row-registar-entrar {
   display: flex;
   justify-content: center;
@@ -23,8 +33,10 @@
 }
 
 .logo-img {
-  margin: 10% auto 10% auto;
+  margin-top: 20%;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 150px;
 }
 
@@ -37,8 +49,4 @@
 .legalLogIn {
   font-size: 14px;
   margin-top: 0 !important;
-}
-
-.hideButton {
-  display: none !important;
 }
