@@ -69,7 +69,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.api.getAllEmails().subscribe((data: any) => {
-      console.log(data)
+      console.log(data);
       this.emailList = data.list;
     });
     this.storage.get('token').then( (data: any) => {
@@ -100,16 +100,5 @@ export class LoginPage implements OnInit {
         })
         .catch(err => console.error(err));
   }
-
-
-  async showToast(msg) {
-    const toast = await this.toastController.create({
-      message: msg,
-      showCloseButton: true,
-      position: 'bottom',
-      closeButtonText: 'Close',
-      duration: 3000,
-    });
-    await toast.present();
-  }
+  
 }
