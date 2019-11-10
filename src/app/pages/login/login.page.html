@@ -24,7 +24,11 @@
             </p>
         </ion-item>
     </ion-grid>
-    <ion-row class="row-registar-entrar"> 
+    <ion-button (click)="google_login()" color="danger" expand="block">
+        <ion-icon name="logo-google"></ion-icon>
+        <ion-label style="margin-left: 10px; text-transform: none;"> LogIn amb Google</ion-label>
+    </ion-button>
+    <ion-row class="row-registar-entrar">
       <div>
         <ion-button [routerLink]="['/registre']" class="boto-registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
         <div class="divider"></div>

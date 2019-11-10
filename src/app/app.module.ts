@@ -18,6 +18,7 @@ import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from '../app/publi-pop-over/publi-pop-over.component';
+import {GooglePlus} from '@ionic-native/google-plus/ngx';
 
 @NgModule({
   declarations: [AppComponent, PubliPopOverComponent],
@@ -37,7 +38,7 @@ import { PubliPopOverComponent } from '../app/publi-pop-over/publi-pop-over.comp
     }),
   ],
   providers: [
-      StatusBar, SplashScreen, FCM, Camera, File,
+      StatusBar, SplashScreen, FCM, Camera, File, GooglePlus,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StreamingMedia
   ],
