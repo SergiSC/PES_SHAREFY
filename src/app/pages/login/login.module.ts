@@ -9,7 +9,6 @@ import { LoginPage } from './login.page';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
-import { FirebaseUIModule } from 'firebaseui-angular';
 
 
 const routes: Routes = [
@@ -26,7 +25,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule,
     RouterModule.forChild(routes),
-    FirebaseUIModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

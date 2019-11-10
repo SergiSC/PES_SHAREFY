@@ -19,19 +19,6 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from './shared/publi-pop-over/publi-pop-over.component';
 
-import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
-
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import { environment } from 'src/environments/environment';
- 
-const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  signInFlow: 'popup',
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
-};
 
 @NgModule({
   declarations: [AppComponent, PubliPopOverComponent],
@@ -42,9 +29,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
       AppRoutingModule,
       HttpClientModule,
       IonicStorageModule.forRoot(),
-      AngularFireModule.initializeApp(environment.firebaseConfig),
-      AngularFireAuthModule,
-      FirebaseUIModule.forRoot(firebaseUiAuthConfig),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
