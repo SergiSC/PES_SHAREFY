@@ -133,7 +133,7 @@ export class ApiService {
         this.url + '/api/like/user/' + username + '/publication/' + idp + '?token=' + tok,
     );
   }
-  
+
   getAllEmails() {
     return this.http.get(this.url + '/api/emails');
   }
@@ -145,15 +145,27 @@ export class ApiService {
     return this.http.post(
       this.url + '/api/user/' + user + '/token_password',
       body
-    )
+    );
   }
 
-  guardarInfoUser(user: { last_name: any; first_name: any; email: any; username: any }, tok) {
+  guardarInfoUser(olduser, user , tok) {
     const body = {
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      birth_date: user.birth_date, // TODO: MIRAR SI VA AL BACKEND
+      token: tok
     };
-    return this.http.get(
-        this.url + '/api/publication/',
+    return this.http.put(
+        this.url + '/api/user/' + olduser,
         body,
+    );
+  }
+
+  getLike(user, tok, id) {
+    return this.http.get(
+        this.url + '/api/like/user/' + user + '/publication/' + id  + '?token=' + tok
     );
   }
 }

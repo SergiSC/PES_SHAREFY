@@ -1,6 +1,6 @@
 import {TranslateService} from '@ngx-translate/core';
 
-export class errorsRegistre {
+export class errorsInformacio {
 
     constructor(
         public translate: TranslateService
@@ -34,20 +34,24 @@ export class errorsRegistre {
         {
             name: "error7",
             msg: this.translate.instant('PAGE.REGISTRE.ERROR7')
+        },
+        {
+            name: "error8",
+            msg: this.translate.instant('PAGE.REGISTRE.ERROR8')
         }
     ]
     alerts = [
         {
             name: "alertCorrect",
-            msg: this.translate.instant('PAGE.REGISTRE.ALERTCORRECT')
+            msg: this.translate.instant('PAGE.INFORMACIO.ALERTCORRECT')
         },
         {
             name: "alertIncorrect",
-            msg: this.translate.instant('PAGE.REGISTRE.ALERTINCORRECTE')
+            msg: this.translate.instant('PAGE.INFORMACIO.ALERTINCORRECTE')
         },
         {
             name: "alertErrorServer",
-            msg: this.translate.instant('PAGE.REGISTRE.ALERTERRORSERVER')
+            msg: this.translate.instant('PAGE.INFORMACIO.ALERTERRORSERVER')
         }
     ]
 }

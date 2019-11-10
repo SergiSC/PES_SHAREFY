@@ -25,11 +25,14 @@
     },
     "INFORMACIO": {
       "TITLE": "Information",
-      "GUARDAR": "Guardar",
-      "CANVI": "Cambiar contraseña",
-      "SELECCIO": "Selecciona una foto",
-      "LIBRARY": "Desde tu galeria",
-      "CAMERA": "Hacer foto con la camara"
+      "GUARDAR": "Save",
+      "CANVI": "Change Password",
+      "SELECCIO": "Select photo",
+      "LIBRARY": "From Gallery",
+      "CAMERA": "Take photo",
+      "ALERTCORRECT": "Save correctly",
+      "ALERTINCORRECTE": "Missing Information",
+      "ALERTERRORSERVER": "Somthing wrong!"
     },
     "REGISTRE": {
       "TITLE": "Sign In",

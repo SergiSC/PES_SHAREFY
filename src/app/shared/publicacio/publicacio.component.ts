@@ -112,6 +112,12 @@ export class PublicacioComponent implements OnInit {
       if (this.commentaris.ownername === val) {
         this.esOwner = true;
       }
+      this.storage.get('token').then((token) => {
+        this.api.getLike(val, token, this.idp).subscribe((data: any) => {
+          this.like = data.value === 'true';
+        });
+      });
+
     });
   }
 
