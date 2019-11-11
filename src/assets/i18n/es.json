@@ -82,7 +82,10 @@
       "TITLE": "Editar publicación",
       "GAMES": "Juegos",
       "DESCRIPTION": "Descripción",
-      "SAVE": "Guardar cambios"
+      "SAVE": "Guardar cambios",
+      "MESSTITLE": "Cambios guardados",
+      "MESSDESC": "Cambios guardados correctamente",
+      "BUTTON":"Deacuerdo"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicación",

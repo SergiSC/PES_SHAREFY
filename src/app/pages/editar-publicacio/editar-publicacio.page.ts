@@ -4,6 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import {Storage} from '@ionic/storage';
+import {AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class EditarPublicacioPage implements OnInit {
   newDesc;
   private routeSub: Subscription;
 
-  constructor( private translate: TranslateService, public api: ApiService, private route: ActivatedRoute, private storage: Storage) {
+  constructor( private router: Router, public alertController: AlertController, private translate: TranslateService, public api: ApiService, private route: ActivatedRoute, private storage: Storage) {
    }
 
   ngOnInit() {
@@ -50,5 +52,15 @@ export class EditarPublicacioPage implements OnInit {
           this.api.editarPublicacio(id, this.desc, this.pid, data).subscribe((t: any) => {
           });
         });
-      }
+    this.alertController.create({
+        header: this.translate.instant('PAGE.EDITAR.MESSTITLE'),
+        message: this.translate.instant('PAGE.EDITAR.MESSDESC'),
+        buttons: this.translate.instant('PAGE.EDITAR.BUTTON')
+      }).then(alert => {
+        alert.present();
+        alert.onDidDismiss().then(() => {
+          this.router.navigate(['/mur']);
+        });
+      });
+  }
 }

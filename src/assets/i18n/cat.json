@@ -82,7 +82,10 @@
       "TITLE": "Editar publicació",
       "GAMES": "Jocs",
       "DESCRIPTION": "Descripció",
-      "SAVE": "Guardar canvis"
+      "SAVE": "Guardar canvis",
+      "MESSTITLE": "Cambis guardats",
+      "MESSDESC": "Cambis guardats correctament",
+      "BUTTON":"Dacord"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicació",
