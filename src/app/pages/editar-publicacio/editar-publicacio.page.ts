@@ -34,21 +34,21 @@ export class EditarPublicacioPage implements OnInit {
     });
     this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;
-      //console.log(this.games);
     });
   }
 
 
   save() {
-      if (this.newDesc != null) {
-        this.storage.get('token').then((data: any) => {
-          this.api.editarPublicacio(this.newSel, this.newDesc, this.pid, data);
-        });
-      } else {
-        this.storage.get('token').then((data: any) => {
-          this.api.editarPublicacio(this.newSel, this.desc, this.pid, data);
+    let id;
+    const a = this.newSel.substring(1, this.newSel.length - 1);
+    for (const game of this.games) {
+         if (game.name === a) {
+          id = game.id;
+         }
+    }
+    this.storage.get('token').then((data: any) => {
+          this.api.editarPublicacio(id, this.desc, this.pid, data).subscribe((t: any) => {
+          });
         });
       }
-  }
-
 }

@@ -25,7 +25,7 @@
           <ion-label style="margin-top: 5%; margin-left: 4.3%;">{{ 'PAGE.EDITAR.DESCRIPTION' | translate }}</ion-label>
         </ion-row>
         <ion-row>
-          <ion-textarea [(ngModel)]="newDesc" style="margin-left: 1.8%" [placeholder]=desc></ion-textarea>
+          <ion-textarea [(ngModel)]="desc" style="margin-left: 1.8%"></ion-textarea>
         </ion-row>
         <ion-row>
           <ion-button color=primary style="margin:0 auto; margin-top: 10%;" (click)=save()>{{ 'PAGE.EDITAR.SAVE' | translate }}</ion-button>

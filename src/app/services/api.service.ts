@@ -86,7 +86,7 @@ export class ApiService {
       token: tokenPu
     };
     return this.http.put(
-      this.url + 'api/publication' + id,
+      this.url + '/api/publication/' + id,
       body,
     );
   }
@@ -141,7 +141,7 @@ export class ApiService {
   postSetTokenFromGoogleAuth(user, tokenGoogleAuth) {
     const body = {
       token: tokenGoogleAuth
-    }
+    };
     return this.http.post(
       this.url + '/api/user/' + user + '/token_password',
       body
