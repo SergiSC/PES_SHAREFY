@@ -8,12 +8,12 @@
   </ion-header>
   <ion-content>
     <ion-grid>
-        <ion-row style="margin-top: 20%" >
-         <video width="100%" controls> 
+        <ion-row>
+         <video width="100%" controls style="margin-top: 10px;"> 
            <source [src]="'http://sharefy.tk' + path" type='video/mp4'>
          </video>
         </ion-row>
-        <ion-row style="margin-top: 15%">
+        <ion-row style="margin-top: 10%">
           <ion-item lines=none>
             <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
             <ion-select [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select"> 
@@ -25,7 +25,7 @@
           <ion-label style="margin-top: 5%; margin-left: 4.3%;">{{ 'PAGE.EDITAR.DESCRIPTION' | translate }}</ion-label>
         </ion-row>
         <ion-row>
-          <ion-textarea [(ngModel)]="desc" style="margin-left: 1.8%"></ion-textarea>
+          <ion-textarea auto-grow=true [(ngModel)]="desc" style="margin-left: 1.8%; margin-right: 1.8%;"></ion-textarea>
         </ion-row>
         <ion-row>
           <ion-button color=primary style="margin:0 auto; margin-top: 10%;" (click)=save()>{{ 'PAGE.EDITAR.SAVE' | translate }}</ion-button>
