@@ -147,7 +147,15 @@ export class ApiService {
 
   getLike(user, tok, id) {
     return this.http.get(
-        this.url + '/api/like/user/' + user + '/publication/' + id  +'?token=' + tok
+        this.url + '/api/like/user/' + user + '/publication/' + id  + '?token=' + tok
     );
   }
+
+
+  getComments(user, id, tok){
+    return this.http.get(
+      this.url + '/api/comment/user/' + user + '/publication/' + id  + '?token=' + tok
+    );
+  }
+
 }

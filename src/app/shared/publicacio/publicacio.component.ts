@@ -103,9 +103,6 @@ export class PublicacioComponent implements OnInit {
 
   ngOnInit() {
     this.commentaris.descrpicio = this.des.toString();
-    this.storage.get('token').then((val) => {
-      this.token = val;
-    });
     this.commentaris.ownername = this.username;
 
     this.storage.get('username').then((val) => {
@@ -119,6 +116,7 @@ export class PublicacioComponent implements OnInit {
       });
 
     });
+
   }
 
 }
