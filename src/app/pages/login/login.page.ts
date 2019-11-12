@@ -56,6 +56,7 @@ export class LoginPage implements OnInit {
   goToLegal() {
     this.router.navigateByUrl('/legal');
   }
+  /*
 
   successCallback(signInSuccessData: FirebaseUISignInSuccessWithAuthResult) {
     let found = false;
@@ -103,6 +104,7 @@ export class LoginPage implements OnInit {
   errorCallback(errorData: FirebaseUISignInFailure) {
     console.log(errorData)
   } 
+  */
 
   async showToast(msg) {
     const toast = await this.toastController.create({

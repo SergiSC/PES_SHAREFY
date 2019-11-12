@@ -12,13 +12,15 @@
 <ion-content class="ion-padding">
     <ion-grid>
       <ion-row>
-        <ion-item class="ion-margin-bottom">
-          <ion-avatar class="avatar-porflie">
+        <ion-col size="auto" class="comm">
+          <ion-avatar class="avatar-porfile">
             <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
-        </ion-avatar>
-          <ion-text class="ion-margin-start"><b>{{ ownername }}:</b> {{ des }}</ion-text>
-        </ion-item>
+          </ion-avatar>
+        </ion-col>
+        <ion-col class="comm" ><ion-text class="auto-name"><b>{{ ownername }}</b></ion-text></ion-col>
       </ion-row>
+      <ion-row><ion-text class="auto-margin">{{ des }}</ion-text></ion-row>
+      <hr>
       <ion-row *ngFor="let comm of comentaris" class="row-des">
         <ion-grid>
             <ion-row>
@@ -27,9 +29,9 @@
                   <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
                 </ion-avatar>
               </ion-col>
-              <ion-col class="padding"><ion-text><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
+              <ion-col padding-bottom="0%;"><ion-text  width="-webkit-fill-available" ><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
             </ion-row>
-            <ion-row><ion-text>{{ comm.text }}</ion-text></ion-row>
+            <ion-row><ion-text width="-webkit-fill-available">{{ comm.text }}</ion-text></ion-row>
           </ion-grid>
       </ion-row>
     </ion-grid>

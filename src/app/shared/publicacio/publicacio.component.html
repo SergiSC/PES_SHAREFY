@@ -5,7 +5,7 @@
       <ion-avatar class="avatar">
         <ion-img alt="" [src]="'http://sharefy.tk' + photo"></ion-img>
       </ion-avatar>
-      <ion-label style="text-transform: none;" class="nom-usuari" [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
+      <ion-label style="text-transform: none; padding-left: 17%;"  [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
       </ion-button>
     </ion-col>
     <ion-col class="ion-text-right">
@@ -32,6 +32,6 @@
    </ion-col>
   </ion-row>
   <ion-row class="row-des">
-    <ion-text [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}:</b> {{des}}</ion-text>
+    <ion-text [(ngModel)]="commentaris" class="auto" ><b>{{ commentaris.ownername }}:</b> {{des}}</ion-text>
   </ion-row>
 </ion-grid>

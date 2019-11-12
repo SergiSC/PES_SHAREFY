@@ -4,23 +4,6 @@
     align-items: center;
 }
 
-.Likes-publi {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 4%;
-}
-
-.nom-usuari {
-    padding-left: 17%;
-}
-
-.row-likes {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 7%;
-}
 .row-des {
     display: flex;
     justify-content: left;
@@ -52,11 +35,8 @@
     height: 35px;
 }
 
-.boto-share {
-    padding-left: 215px;
-}
-
-.padding-des {
-    padding-left: 2%;
+.auto {
+    width: -webkit-fill-available;
+    padding-right: 16px;
 }
 

@@ -33,7 +33,7 @@ export class PublicacioComponent implements OnInit {
     descrpicio: '',
     coments: [ {
          name: 'Simon Grimm',
-         text: 'Dios vaya passada de partid que es aixo loco',
+         text: 'Dios vaya passada de partit que es aixo loco',
          img: '',
         },
         {
