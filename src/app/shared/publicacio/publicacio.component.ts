@@ -93,17 +93,6 @@ export class PublicacioComponent implements OnInit {
     this.commentaris.idpubli = this.idp;
     this.commentaris.ownerphoto = this.photo;
 
-    this.api.getPublicationById(this.idp).subscribe((data: any) => {
-      data.value.comments.forEach(comment => {
-        const coments = [ {
-          name: comment.user.username,
-          img: comment.user.photo_path,
-          text: comment.text
-        }];
-        this.commentaris.coments.push(...coments);
-      });
-    });
-
     this.storage.get('username').then((val) => {
       if (this.commentaris.ownername === val) {
         this.esOwner = true;

@@ -12,29 +12,46 @@ import {Storage} from '@ionic/storage';
 export class ComentarisPage implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private stor: Storage) { }
-  comentaris;
   des;
   ownername;
   ownerphoto;
-  Inpu: "";
+  Inpu = '';
   Idpublicacio: null;
+  comentaris = [];
+  
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       let com  = JSON.parse(params.special);
-      this.comentaris = com.coments;
       this.des = com.descrpicio;
       this.ownername = com.ownername;
       this.ownerphoto = com.ownerphoto;
       this.Idpublicacio = com.idpubli;
+      this.getComents();
+    });
+  }
+
+  getComents() {
+    let c = [];
+    this.api.getPublicationById(this.Idpublicacio).subscribe((data: any) => {
+      data.value.comments.forEach(comment => {
+        const coments = [ {
+          name: comment.user.username,
+          img: comment.user.photo_path,
+          text: comment.text
+        }];
+        c.push(...coments);
+      });
+      this.comentaris = c;
     });
   }
 
   AfegirCom() {
     this.stor.get('username').then((val) => {
-      this.stor.get('token').then((token) => {      
+      this.stor.get('token').then((token) => {
         this.api.AddComment(val, this.Idpublicacio, token, this.Inpu).subscribe((data2: any) => {
-          console.log(data2);
+          this.Inpu = "";
+          this.getComents();
         });
       });
     });
