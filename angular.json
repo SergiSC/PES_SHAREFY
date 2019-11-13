@@ -103,7 +103,7 @@
             "assets": [
               {
                 "glob": "favicon.ico",
-                "input": "src/",
+                "input": "src/app/assets/icon",
                 "output": "/"
               },
               {

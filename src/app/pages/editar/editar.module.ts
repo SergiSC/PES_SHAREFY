@@ -6,10 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EditarPage } from './editar.page';
-
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {customTranslateLoader} from '../../app.module';
-import {HttpClient} from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from 'selenium-webdriver/http';
+import { customTranslateLoader } from 'src/app/app.module';
 
 const routes: Routes = [
   {

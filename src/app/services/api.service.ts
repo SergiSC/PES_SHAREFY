@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Storage } from '@ionic/storage';
+import { tokenName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class ApiService {
       language: lang
     };
     return this.http.post(
-         this.url + '/api/user/' +  user + '/set_configurations',
+         this.url + '/api/user/' +  user + '/configuration',
          body
     );
   }
@@ -69,11 +70,24 @@ export class ApiService {
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email,
-      password: user.password
+      password: user.password,
+      birth_date: user.birth_date,
     };
     return this.http.post(
       this.url + '/api/register',
       body
+    );
+  }
+
+  editarPublicacio(gameN, textN, id, tokenPu) {
+    const body = {
+      game: gameN,
+      text: textN,
+      token: tokenPu
+    };
+    return this.http.put(
+      this.url + '/api/publication/' + id,
+      body,
     );
   }
 
@@ -88,14 +102,70 @@ export class ApiService {
     );
   }
 
-  getpubli(id, tok) {
-    const body = {
-    };
+  getPublicationById(id) {
     return this.http.get(
-        this.url + '/api/publication/' + id,
-        body,
+      this.url + '/api/publication/' + id
+    );
+  }
+
+  getAllPublis(id, tok) {
+    return this.http.get(
+        this.url + '/api/user/' + id + '/publications' + '?token=' + tok,
     );
   }
 
 
+  like(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+        this.url + '/api/like/user/' + username + '/publication/' + idp,
+        body,
+    );
+  }
+
+  dislike(username, idp, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.delete(
+        this.url + '/api/like/user/' + username + '/publication/' + idp + '?token=' + tok,
+    );
+  }
+
+  getAllEmails() {
+    return this.http.get(this.url + '/api/emails');
+  }
+
+  postSetTokenFromGoogleAuth(user, tokenGoogleAuth) {
+    const body = {
+      token: tokenGoogleAuth
+    };
+    return this.http.post(
+      this.url + '/api/user/' + user + '/token_password',
+      body
+    );
+  }
+
+  guardarInfoUser(olduser, user , tok) {
+    const body = {
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      birth_date: user.birth_date, // TODO: MIRAR SI VA AL BACKEND
+      token: tok
+    };
+    return this.http.put(
+        this.url + '/api/user/' + olduser,
+        body,
+    );
+  }
+
+  getLike(user, tok, id) {
+    return this.http.get(
+        this.url + '/api/like/user/' + user + '/publication/' + id  + '?token=' + tok
+    );
+  }
 }

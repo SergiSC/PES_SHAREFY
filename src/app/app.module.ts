@@ -19,6 +19,8 @@ import { Camera } from '@ionic-native/Camera/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from '../app/shared/publi-pop-over/publi-pop-over.component';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import {GooglePlus} from '@ionic-native/google-plus/ngx';
+
 
 @NgModule({
   declarations: [AppComponent, PubliPopOverComponent],
@@ -38,8 +40,8 @@ import { Deeplinks } from '@ionic-native/deeplinks/ngx';
     }),
   ],
   providers: [
-      StatusBar, SplashScreen, FCM, Camera, File,  SocialSharing, Deeplinks,
-      { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    StatusBar, SplashScreen, FCM, Camera, File,  SocialSharing, Deeplinks, GooglePlus,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StreamingMedia
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

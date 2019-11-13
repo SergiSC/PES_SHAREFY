@@ -8,7 +8,11 @@
       "TEXTPASSWORD": "Contraseña:",
       "HEADERALERTA": "Login Fallido",
       "TEXTALERTA": "L'email o contraseña introducida no corresponde con ningun usuario regitrado",
-      "BUTTON": "Deacuerdo"
+      "BUTTON": "Deacuerdo",
+      "LABELLINK": "Echa un vistazo a nuestros",
+      "LINK": "términos de uso y política de privacidad",
+      "TITLEALERT": "Email ya registrado",
+      "MESSAGEALERT": "Este email ya está registrado en el sistema. Recupera tu contraseña para entrar."
     },
     "PERFIL": {
       "TITLE": "Perfil",
@@ -20,7 +24,15 @@
       "BUTTONMAGRADA": "Me gusta"
     },
     "INFORMACIO": {
-      "TITLE": "Información"
+      "TITLE": "Información",
+      "GUARDAR": "Guardar",
+      "CANVI": "Cambiar contraseña",
+      "SELECCIO": "Selecciona una foto",
+      "LIBRARY": "Desde tu galeria",
+      "CAMERA": "Hacer foto con la camara",
+      "ALERTCORRECT": "Los datos se han guardado correctamente",
+      "ALERTINCORRECTE": "Campos incompletos o con un formato erronio",
+      "ALERTERRORSERVER": "No se han podido guardar los datos en el servidor"
     },
     "REGISTRE": {
       "TITLE": "Registro",
@@ -40,9 +52,12 @@
       "ERROR5": "La contraseña debe tener como mínimo 8 carácteres",
       "ERROR6": "La contraseña debe contener como mínimo una minúscula, una mayúscula y un número",
       "ERROR7": "Las contraseñas no coinciden",
+      "ERROR8": "Email ya registrado en el sistema. Introduce otro email",
       "ALERTCORRECT": "El registro se ha completado correctamente",
       "ALERTINCORRECTE": "Hay campos del formulario que son incorrectos o no están completos",
-      "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil"
+      "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil",
+      "LABELLINK": "Acepta los",
+      "LINK": "términos de uso y política de privacidad"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuración",
@@ -64,11 +79,82 @@
       "DESCRIPTION": "Escribe el correo correcto y recibirás una nueva contrasenya"
     },
     "EDITAR": {
-      "TITLE": "Editar publicación"
+      "TITLE": "Editar publicación",
+      "GAMES": "Juegos",
+      "DESCRIPTION": "Descripción",
+      "SAVE": "Guardar cambios",
+      "MESSTITLE": "Cambios guardados",
+      "MESSDESC": "Cambios guardados correctamente",
+      "BUTTON":"Deacuerdo"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicación",
       "DESCRIPTION": "Escoje la red social donde quieres compartir esta publicación"
+    },
+    "TERMES": {
+      "TITLE": "Terminos de uso y condiciones de privacidad",
+      "LABELRPOTECCIODEDADES": "Protección de datos",
+      "TEXTPROTECCIODEDADES1": "En cumplimiento de la Ley Orgánica 15/1999, de 13 de diciembre de Protección de Datos de Carácter Personal (LOPD), Sharefy con CIF B-87667832, como responsable del fichero informa de las siguientes consideraciones: Los datos de carácter personal que le pedimos, quedarán incorporados a un fichero cuya finalidad es de enviarle las comunicaciones comerciales.",
+      "TEXTPROTECCIODEDADES2": "Si lo desea, puede ejercer los derechos de acceso, rectificación, cancelación u oposición de sus datos personales en el correo electrónico a info@sharefy.com o por escrito en la calle Falsa, 123, Barcelona.",
+      
+      "LABELPOLITICADEPRIVACITAT": "Política de privacidad",
+      "LABELPREGUNTA1": "¿Quién es el Responsable del tratamiento de sus datos?",
+      "LABELRESPOSTA11": "Identidad: Sharefy",
+      "LABELRESPOSTA12": "CIF: B-87667832",
+      "LABELRESPOSTA13": "Dir. Postal: Carrer Falsa, 123, Barcelona",
+      "LABELRESPOSTA14": "E-Mail: info@sharefy.com",
+      
+      "LABELPREGUNTA2": "¿Con qué finalidad tratamos sus datos personales?",
+      "LABELRESPOSTA21": "En Sharefy tratamos sus datos con la finalidad principal de mantener nuestra agenda de contactos:",
+      "LABELRESPOSTA22": "a) Como persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios.",
+      "LABELRESPOSTA23": "b) Como interesado que se ha puesto en contacto con nosotros consultándonos o solicitándonos alguna infomación, para poder atenderle.",
+      "LABELRESPOSTA24": "c) Como persona de contacto para mantener relaciones directamente.",
+      "LABELRESPOSTA25": "Como finalidad adicional, en caso de que se le hubiera solicitado autorización y nos la hubiera concedido, trataremos sus datos para el envío de comunicaciones comerciales.",
+
+      "LABELPREGUNTA3": "¿Por cuanto tiempo conservaremos sus datos?",
+      "LABELRESPOSTA31": "Los datos personales proporcionados se conservarán en la finalidad principal:",
+      "LABELRESPOSTA32": "a) En caso de tratarse de una persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios, o bien directamente, se conservarán mientras se mantenga nuestra relación con dicha entidad jurídica u organización, y a salvo los plazos legales por las responsabilidades legales que pudieran derivarse de la relación con la entidad jurídica u organización.",
+      "LABELRESPOSTA33": "b) En caso de interesado puesto en contacto con nosotros, hasta 6 meses después de atender su requerimiento, por si se produjeran por su parte comunicaciones posteriores en referencia a dicha consulta o requerimiento de información.",
+      "LABELRESPOSTA34": "c) En caso de persona de contacto para mantener relaciones directamente, se conservarán en tanto se mantenga la relación y a salvo los plazos legales de conservación.",
+      "LABELRESPOSTA35": "En la finalidad adicional de envío de comunicaciones comerciales, conservaremos sus datos en tanto no nos manifieste su oposición a continuar recibiendo nuestras comunicaciones.",
+      "LABELRESPOSTA36": "Decisiones automatizadas, perfiles y lógica aplicada:",
+      "LABELRESPOSTA37": "La empresa NO tomará decisiones automatizadas.",
+      
+      "LABELPREGUNTA4": "¿Cuál es la legitimación para el tratamiento de sus datos?",
+      "LABELRESPOSTA41": "La base legal para el tratamiento de sus datos en la finalidad principal de mantenimiento de agenda de contactos es:",
+      "LABELRESPOSTA42": "a) En caso de tratarse de una persona de contacto para mantener relaciones con la entidad jurídica u organización en la que usted presta sus servicios, es la satisfacción del interés legítimo del responsable, de acuerdo a lo establecido en el art. 6.1.f del RGPD.",
+      "LABELRESPOSTA43": "b) En caso de interesado puesto en contacto con nosotros, la base legal es la obtención de su consentimiento.",
+      "LABELRESPOSTA44": "c) En caso de persona de contacto para mantener relaciones directamente, es la satisfacción del interés legítimo del responsable, de acuerdo a lo establecido en el art. 6.1.f del RGPD.",
+      "LABELRESPOSTA45": "En la finalidad adicional de envío de comunicaciones comerciales, la base legal para el tratamiento de sus datos es la obtención de su consentimiento.",
+
+      "LABELPREGUNTA5": "¿A qué destinatarios se comunicarán sus datos?",
+      "LABELRESPOSTA51": "Durante el periodo de duración del tratamiento no comunicaremos sus datos a terceros. En Sharefy contaremos con la colaboración de terceros prestadores de servicios que en cada caso hayamos podido contratar y que, para la prestación de dicho servicio, puede ser necesario que tengan acceso a sus datos de carácter personal, pero que los tratarán con todas las garantías legales exigibles, siguiendo nuestras instrucciones y previa suscripción de un contrato de protección de datos en las que exigimos, entre otras, tratar los datos exclusivamente para las finalidades pactadas, aplicar medidas técnicas y organizativas adecuadas, así como suprimir y devolver los datos a la finalización del servicio.",
+      "LABELRESPOSTA52": "En Sharefy seguimos unos criterios estrictos de selección de terceros prestadores de servicios con el fin de dar cumplimiento a nuestras obligaciones e materia de protección de datos.",
+
+      "LABELPREGUNTA6": "¿Cuales son sus derechos cuando nos facilita sus datos?",
+      "LABELRESPOSTA61": "Cualquier persona tiene derecho a obtener confirmación sobre si en Sharefy estamos tratando datos personales que le conciernan o no.",
+      "LABELRESPOSTA62": "Asimismo, tiene:",
+      "LABELRESPOSTA63": "Derecho a solicitar el acceso a sus datos personales.",
+      "LABELRESPOSTA64": "Derecho a solicitar su rectificación.",
+      "LABELRESPOSTA65": "Derecho a solicitar su supresión.",
+      "LABELRESPOSTA66": "Derecho a solicitar la limitación de su tratamiento.",
+      "LABELRESPOSTA67": "Derecho a oponerse al tratamiento.",
+      "LABELRESPOSTA68": "Derecho a la portabilidad de los datos.",
+      "LABELRESPOSTA69": "Derecho a retirar el consentimiento prestado.",
+      "LABELRESPOSTA610": "Derecho de información.",
+      "LABELRESPOSTA611": "Derecho a oponerse a ser objeto de decisiones individuales automatizadas.",
+      "LABELRESPOSTA612": "Asimismo, le informamos que puede dirigirse a la Agencia Española de Protección de Datos (www.aepd.es) para obtener información adicional o para presentar una reclamación, por ejemplo, si no has obtenido satisfacción en el ejercicio de tus derechos.",
+
+      "LABELULTIMAMODIFICACIO": "Última modificación"
+    }
+  },
+  "SHARED": {
+    "POPOVER": {
+      "BUTTONESBORRAR": "Borrar",
+      "BUTTONEDITAR": "Editar",
+      "TITLEALERTBORRAR": "Borrar publicación",
+      "TEXTALERTBORRAR": "¿Estás seguro que quieres borrar esta publicación?",
+      "BUTTONCANCEL": "Cancelar"
     }
   }
 }

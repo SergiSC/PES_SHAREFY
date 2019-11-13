@@ -2,10 +2,9 @@
     <ion-app>
         <ion-router-outlet></ion-router-outlet>
     </ion-app>
-    <ion-grid class="nom-aplicacio">
-        <ion-label class="nom-aplicacio-share">Share</ion-label>
-        <ion-label class="nom-aplicacio-fy">fy</ion-label>
-    </ion-grid>
+    <ion-label class="nom-aplicacio">
+        <font color = #64C995>Share</font><font color = black>fy</font>  
+    </ion-label>
     <ion-img class="logo-img ion-margin-bottom" src="../assets/logojusto.png"></ion-img>
     <ion-grid class="ion-padding-top ion-margin-top">
         <ion-item>
@@ -17,8 +16,18 @@
             <ion-input  type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
         <ion-button [routerLink]="['/recuperar']" fill="clear" style="text-transform: none;"> {{ 'PAGE.LOGIN.BUTTONRECUPERAR' | translate }} </ion-button>
+        <ion-item lines="none">
+            <p class="legalLogIn">
+                {{ 'PAGE.LOGIN.LABELLINK' | translate }}
+                <a [routerLink]="" (click)="goToLegal()" style="cursor: pointer;">{{ 'PAGE.LOGIN.LINK' | translate }}</a>
+            </p>
+        </ion-item>
     </ion-grid>
-    <ion-row class="row-registar-entrar"> 
+    <ion-button (click)="google_login()" color="danger" expand="block">
+        <ion-icon name="logo-google"></ion-icon>
+        <ion-label style="margin-left: 10px; text-transform: none;"> LogIn amb Google</ion-label>
+    </ion-button>
+    <ion-row class="row-registar-entrar">
       <div>
         <ion-button [routerLink]="['/registre']" class="boto-registar-entrar"> {{ 'PAGE.LOGIN.BUTTONREGISTRE' | translate }} </ion-button>
         <div class="divider"></div>

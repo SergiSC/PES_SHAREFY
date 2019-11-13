@@ -5,16 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
+import { LegalPage } from './legal.page';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: LegalPage
   }
 ];
 
@@ -23,7 +22,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
@@ -33,6 +31,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [LoginPage]
+  declarations: [LegalPage]
 })
-export class LoginPageModule {}
+export class LegalPageModule {}

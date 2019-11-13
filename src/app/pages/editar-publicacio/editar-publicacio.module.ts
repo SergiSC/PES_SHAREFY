@@ -5,16 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {customTranslateLoader} from '../../app.module';
-import {HttpClient} from '@angular/common/http';
-
+import { EditarPublicacioPage } from './editar-publicacio.page';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { customTranslateLoader } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: EditarPublicacioPage
   }
 ];
 
@@ -23,7 +23,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
@@ -33,6 +32,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [LoginPage]
+  declarations: [EditarPublicacioPage]
 })
-export class LoginPageModule {}
+export class EditarPublicacioPageModule {}

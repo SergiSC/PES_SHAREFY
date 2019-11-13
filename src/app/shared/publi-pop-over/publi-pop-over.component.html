@@ -1,3 +1,8 @@
-<p>
-  publi-pop-over works!
-</p>
+<ion-list>
+  <ion-item button (click)="redirectToEdit()">
+    {{ 'SHARED.POPOVER.BUTTONEDITAR' | translate }}
+  </ion-item>
+  <ion-item button lines="none" (click)="showAlertDelete()">
+    {{ 'SHARED.POPOVER.BUTTONESBORRAR' | translate }}
+  </ion-item>
+</ion-list>

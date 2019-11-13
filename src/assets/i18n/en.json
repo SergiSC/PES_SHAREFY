@@ -8,7 +8,11 @@
       "TEXTPASSWORD": "Password:",
       "HEADERALERTA": "Login Failed",
       "TEXTALERTA": "The email or password entered does not correspond to any registered user",
-      "BUTTON": "Ok"
+      "BUTTON": "Ok",
+      "LABELLINK": "Check out our",
+      "LINK": "terms of use and privacy policy",
+      "TITLEALERT": "Email is already registred",
+      "MESSAGEALERT": "This email is already registred in the system. Restore your password to access the aplication."
     },
     "PERFIL": {
       "TITLE": "Profile",
@@ -20,7 +24,15 @@
       "BUTTONMAGRADA": "Likes"
     },
     "INFORMACIO": {
-      "TITLE": "Information"
+      "TITLE": "Information",
+      "GUARDAR": "Save",
+      "CANVI": "Change Password",
+      "SELECCIO": "Select photo",
+      "LIBRARY": "From Gallery",
+      "CAMERA": "Take photo",
+      "ALERTCORRECT": "Save correctly",
+      "ALERTINCORRECTE": "Missing Information",
+      "ALERTERRORSERVER": "Somthing wrong!"
     },
     "REGISTRE": {
       "TITLE": "Sign In",
@@ -40,9 +52,12 @@
       "ERROR5": "Password must be at least 8 characters long",
       "ERROR6": "Password must contain at least a lower case letter, a capital letter and a number",
       "ERROR7": "Passwords do not match",
+      "ERROR8": "Email already registred in the system. Enter another email",
       "ALERTCORRECT": "Registration was successfully completed",
       "ALERTINCORRECTE": "There are form fields that are incorrect or not complete",
-      "ALERTERRORSERVER": "There was a problem in creating your new profile"
+      "ALERTERRORSERVER": "There was a problem in creating your new profile",
+      "LABELLINK": "Accept the",
+      "LINK": "terms of use and privacy policy"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
@@ -64,11 +79,82 @@
       "DESCRIPTION": "Write the correct mail and you will recieve a new password"
     },
     "EDITAR": {
-      "TITLE": "Edit publication"
+      "TITLE": "Edit publication",
+      "GAMES": "Games",
+      "DESCRIPTION": "Description",
+      "SAVE": "Save changes",
+      "MESSTITLE": "Changes saved",
+      "MESSDESC": "Changes correctly changed",
+      "BUTTON":"Okay"
     },
     "COMPARTIR": {
       "TITLE": "Share publication",
       "DESCRIPTION": "Choose the social network where you want to share this publication"
+    },
+    "TERMES": {
+      "TITLE": "Terms of use and privacy conditions",
+      "LABELRPOTECCIODEDADES": "Data Protection",
+      "TEXTPROTECCIODEDADES1": "In compliance with Organic Law 15/1999, of December 13, Protection of Personal Data (LOPD), Sharefy with CIF B-87667832, as the person in charge of the file informs the following considerations: Personal data that is provided to him We ask, they will be incorporated into a file whose purpose is to send you commercial communications.",
+      "TEXTPROTECCIODEDADES2": "If you wish, you may exercise the rights of access, rectification, cancellation or opposition of your personal data in the email to info@sharefy.com or by writing to Carrer Falsa, 123, Barcelona.",
+      
+      "LABELPOLITICADEPRIVACITAT": "Privacy policy",
+      "LABELPREGUNTA1": "Who is responsible for the treatment of your data?",
+      "LABELRESPOSTA11": "Identity: Sharefy",
+      "LABELRESPOSTA12": "CIF: B-87667832",
+      "LABELRESPOSTA13": "Postal Address: Carrer Falsa, 123, Barcelona",
+      "LABELRESPOSTA14": "E-Mail: info@sharefy.com",
+      
+      "LABELPREGUNTA2": "For what purpose will we treat your personal data?",
+      "LABELRESPOSTA21": "At Sharefy we treat your data with the main purpose of maintaining our contact book:",
+      "LABELRESPOSTA22": "a) As a contact person to maintain relations with the legal entity or organization in which you provide services.",
+      "LABELRESPOSTA23": "b) As an interested party, you have contacted us by consulting us or requesting information, to be able to assist you.",
+      "LABELRESPOSTA24": "c) As a contact person to maintain relationships directly.",
+      "LABELRESPOSTA25": "As an additional purpose, in case you have been requested authorization and have granted us, we will treat your data for the sending of commercial communications.",
+
+      "LABELPREGUNTA3": "How long will we keep your data?",
+      "LABELRESPOSTA31": "The personal data provided will be preserved in the main purpose:",
+      "LABELRESPOSTA32": "a) In the case of dealing with a contact person to maintain relations with the legal entity or organization in which you provide your services, or directly, they will be preserved while maintaining our relationship with this legal entity or organization, and the legal deadlines for the legal responsibilities that may derive from the relationship with the legal entity or organization are out of danger.",
+      "LABELRESPOSTA33": "b) In the case of an interested party, contact us, up to 6 months after meeting your request, in case subsequent communications were produced with reference to this inquiry or request for information.",
+      "LABELRESPOSTA34": "c) In the case of a contact person to maintain relationships directly, they will be preserved as long as the statutory terms of conservation are maintained and kept safe.",
+      "LABELRESPOSTA35": "For the additional purpose of sending commercial communications, we will keep your data until you show us your opposition to continue receiving our communications.",
+      "LABELRESPOSTA36": "Automated decisions, profiles and applied logic:",
+      "LABELRESPOSTA37": "The company will NOT take automated decisions.",
+      
+      "LABELPREGUNTA4": "What is the legitimation for the treatment of your personal data?",
+      "LABELRESPOSTA41": "La base legal per al tractament de les seves dades a la finalitat principal de manteniment d'agenda de contactes és:",
+      "LABELRESPOSTA42": "a) In the case of dealing with a contact person to maintain relations with the legal entity or organization in which you provide services, it is the satisfaction of the legitimate interest of the person responsible, in accordance with the provisions of art. 6.1.f of the RGPD.",
+      "LABELRESPOSTA43": "b) If you are interested in contacting us, the legal basis is obtaining your consent.",
+      "LABELRESPOSTA44": "c) In the case of a contact person to maintain relationships directly, it is the satisfaction of the legitimate interest of the person responsible, in accordance with the provisions of art. 6.1.f of the RGPD.",
+      "LABELRESPOSTA45": "For the additional purpose of sending commercial communications, the legal basis for the processing of your data is the obtaining of your consent.",
+
+      "LABELPREGUNTA5": "To whom will your personal information be communicated?",
+      "LABELRESPOSTA51": "In Sharefy, we will have the collaboration of third-party service providers that in each case we have been able to contract and that, for the provision of this service, they may need to have access to their personal data, but they will be dealt with with all the legal guarantees required, following our instructions and after signing a data protection contract in which we demand, among other things, to treat the data exclusively for the agreed purposes, to apply appropriate technical and organizational measures, as well How to delete and return the data at the end of the service.",
+      "LABELRESPOSTA52": "At Sharefy we follow strict criteria for the selection of third-party service providers in order to comply with our obligations and data protection.",
+
+      "LABELPREGUNTA6": "What are your rights when you provide us with your information?",
+      "LABELRESPOSTA61": "Anyone has the right to get confirmation about whether we are dealing with personal data about Sharefy or not.",
+      "LABELRESPOSTA62": "The user has the following rights",
+      "LABELRESPOSTA63": "Right to request access to your personal data.",
+      "LABELRESPOSTA64": "Right to request rectification.",
+      "LABELRESPOSTA65": "Right to request its deletion.",
+      "LABELRESPOSTA66": "Right to request the limitation of their treatment.",
+      "LABELRESPOSTA67": "Right to oppose treatment.",
+      "LABELRESPOSTA68": "Right to data portability.",
+      "LABELRESPOSTA69": "Right to withdraw the consent given.",
+      "LABELRESPOSTA610": "Right of information.",
+      "LABELRESPOSTA611": "Right to oppose being the subject of individual automated decisions.",
+      "LABELRESPOSTA612": "Also, we inform you that you can contact the Spanish Data Protection Agency (www.aepd.es) for additional information or to file a claim, for example, if you have not obtained satisfaction during the exercise of the your rights",
+
+      "LABELULTIMAMODIFICACIO": "Last modified"
+    }
+  },
+  "SHARED": {
+    "POPOVER": {
+      "BUTTONESBORRAR": "Delete",
+      "BUTTONEDITAR": "Edit",
+      "TITLEALERTBORRAR": "Delete publication",
+      "TEXTALERTBORRAR": "Are you sure you want to delete this publication?",
+      "BUTTONCANCEL": "Cancel"
     }
   }
 }

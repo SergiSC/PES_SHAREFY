@@ -6,6 +6,9 @@ import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
+import {Storage} from '@ionic/storage';
+import { ComentarisPage } from 'src/app/pages/comentaris/comentaris.page';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-publicacio',
@@ -15,26 +18,35 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 export class PublicacioComponent implements OnInit {
 
   @Input('idp') idp: string;
+  @Input('username') username: string;
+  @Input('video') video: string;
+  @Input('des') des: string;
+  @Input('numLikes') numLikes: number;
+  @Input('photo') photo: string;
+  @Input('game') game: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
-  StrNLikes = 0;
+  esOwner = false;
   PopoverController: any;
-  NomUsuari = "Faker";
-  movie = "";
-  token = "";
+  token:"";
   commentaris = {
-    descrpicio: ['Incredible game with ma friends'],
+    ownername: '',
+    ownerphoto: '',
+    descrpicio: '',
     coments: [ {
          name: 'Simon Grimm',
-         text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+         text: 'Dios vaya passada de partid que es aixo loco',
+         img: '',
         },
         {
-          name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+          name: 'Venyto Camela',
+          text: 'Vaya caca de clip mi madre hace eso con una mano en la paella y la otra en la fregona',
+          img: '',
          },
          {
-          name: 'Simon Grimm',
-          text: 'eaoihfasogf uoasiohSAHIO sa SFAHFusazfocSZFHCakgb a ugfguicXZFC SZFSGUZFCJHO'
+          name: 'Hittler',
+          text: 'Hay q quemarlo todo',
+          img: '',
          }
     ]
   };
@@ -42,18 +54,32 @@ export class PublicacioComponent implements OnInit {
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
               private router: Router,
-              private socialSharing: SocialSharing
+              private socialSharing: SocialSharing,
+              private storage: Storage,
                ) { }
 
   blike() {
     this.like = !this.like;
-    if (this.like) {this.StrNLikes += 1; } else {this.StrNLikes -= 1; }
-   }
+    if (this.like) {
+      this.numLikes += 1;
+      this.storage.get('username').then((data: any) => {
+        this.api.like(data, this.idp, this.token).subscribe();
+      });
+
+    } else {
+      this.numLikes -= 1;
+      this.storage.get('username').then((data: any) => {
+        this.api.dislike(data, this.idp, this.token).subscribe();
+      });
+    }
+  }
 
   async presentPopOver(event) {
-     const popover = await this.PopoverController.create({
-       Component: PubliPopOverComponent,
-       event
+     const popover = await this.popoverCtrl.create({
+       component: PubliPopOverComponent,
+       componentProps: {idPublication: this.idp, video: this.video, desc: this.des, game: this.game},
+       event,
+       cssClass: 'setting-popover'
      });
      return await popover.present();
    }
@@ -61,15 +87,16 @@ export class PublicacioComponent implements OnInit {
 
    gotoporfile() {
     this.router.navigate(['/perfil']);
+    // de moment va a la del usuari registat
    }
 
    gotoComments() {
-    let navigationExtras: NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams: {
         special: JSON.stringify(this.commentaris)
       }
     };
-     this.router.navigate(['/comentaris'], navigationExtras);
+    this.router.navigate(['/comentaris'], navigationExtras);
    }
 
    gotoShare() {
@@ -87,9 +114,22 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
-     this.api.getpubli(this.idp, this.token).subscribe( (data: any) => {
-      this.movie = 'http://sharefy.tk' + data.value.video_path;
-      document.getElementById(this.idp).innerHTML="<source src=" + this.movie +" type='video/mp4'>";
+    this.commentaris.descrpicio = this.des.toString();
+    this.storage.get('token').then((val) => {
+      this.token = val;
+    });
+    this.commentaris.ownername = this.username;
+
+    this.storage.get('username').then((val) => {
+      if (this.commentaris.ownername === val) {
+        this.esOwner = true;
+      }
+      this.storage.get('token').then((token) => {
+        this.api.getLike(val, token, this.idp).subscribe((data: any) => {
+          this.like = data.value === 'true';
+        });
+      });
+
     });
   }
 
