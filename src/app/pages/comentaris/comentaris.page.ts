@@ -32,9 +32,9 @@ export class ComentarisPage implements OnInit {
 
   AfegirCom() {
     this.stor.get('username').then((val) => {
-      this.stor.get('token').then((token) => {
-        this.api.AddComment(val, this.Idpublicacio, token, this.Inpu, new Date()).subscribe((data2: any) => {
-          
+      this.stor.get('token').then((token) => {      
+        this.api.AddComment(val, this.Idpublicacio, token, this.Inpu).subscribe((data2: any) => {
+          console.log(data2);
         });
       });
     });

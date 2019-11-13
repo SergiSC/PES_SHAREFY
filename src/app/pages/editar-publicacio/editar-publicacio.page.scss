@@ -19,6 +19,12 @@
     text-align: center;
   }
 
+  
+.row-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   .select {
     max-width: 100% !important;
   }

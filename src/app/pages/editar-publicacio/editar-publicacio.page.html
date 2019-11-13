@@ -8,10 +8,10 @@
   </ion-header>
   <ion-content>
     <ion-grid>
-        <ion-row>
-         <video width="100%" controls style="margin-top: 10px;"> 
-           <source [src]="'http://sharefy.tk' + path" type='video/mp4'>
-         </video>
+        <ion-row class="row-video-container">
+            <video width="100%" controls> 
+              <source [src]="'http://sharefy.tk' + path" type='video/mp4'>
+            </video>
         </ion-row>
         <ion-row style="margin-top: 10%">
           <ion-item lines=none>

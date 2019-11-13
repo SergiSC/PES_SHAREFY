@@ -176,10 +176,9 @@ export class ApiService {
     );
   }
 
-  AddComment(user, id, tok, tex, dat) {
+  AddComment(user, id, tok, tex) {
     const body = {
       text: tex,
-      date: dat,
       token: tok
     };
     return this.http.post(
