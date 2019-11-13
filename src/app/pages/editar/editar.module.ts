@@ -5,18 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditPublicacioPage } from './edit-publicacio.page';
-import { SharedModule } from '../shared.module';
-
-
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {customTranslateLoader} from '../../app.module';
-import {HttpClient} from '@angular/common/http';
+import { EditarPage } from './editar.page';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from 'selenium-webdriver/http';
+import { customTranslateLoader } from 'src/app/app.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: EditPublicacioPage
+    component: EditarPage
   }
 ];
 
@@ -25,7 +22,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    SharedModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
@@ -35,6 +31,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [EditPublicacioPage]
+  declarations: [EditarPage]
 })
-export class EditPublicacioPageModule {}
+export class EditarPageModule {}

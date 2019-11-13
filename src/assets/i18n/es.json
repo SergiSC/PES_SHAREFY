@@ -25,11 +25,14 @@
     },
     "INFORMACIO": {
       "TITLE": "Información",
-      "GUARDAR": "Save",
-      "CANVI": "Change Password",
-      "SELECCIO": "Select photo",
-      "LIBRARY": "From Gallery",
-      "CAMERA": "Take photo"
+      "GUARDAR": "Guardar",
+      "CANVI": "Cambiar contraseña",
+      "SELECCIO": "Selecciona una foto",
+      "LIBRARY": "Desde tu galeria",
+      "CAMERA": "Hacer foto con la camara",
+      "ALERTCORRECT": "Los datos se han guardado correctamente",
+      "ALERTINCORRECTE": "Campos incompletos o con un formato erronio",
+      "ALERTERRORSERVER": "No se han podido guardar los datos en el servidor"
     },
     "REGISTRE": {
       "TITLE": "Registro",
@@ -77,7 +80,12 @@
     },
     "EDITAR": {
       "TITLE": "Editar publicación",
-      "GAMES": "Juegos"
+      "GAMES": "Juegos",
+      "DESCRIPTION": "Descripción",
+      "SAVE": "Guardar cambios",
+      "MESSTITLE": "Cambios guardados",
+      "MESSDESC": "Cambios guardados correctamente",
+      "BUTTON":"Deacuerdo"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicación",

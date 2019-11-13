@@ -29,7 +29,10 @@
       "CANVI": "Canviar contrasenya",
       "SELECCIO": "Selecciona la foto",
       "LIBRARY": "Des de la galeria",
-      "CAMERA": "Fes una foto amb la camera"
+      "CAMERA": "Fes una foto amb la camera",
+      "ALERTCORRECT": "Les dades s'han guardat correctament",
+      "ALERTINCORRECTE": "Hi ha camps del formulari que són incorrectes o no estan complets",
+      "ALERTERRORSERVER": "No s'han guardat les dades correctament"
     },
     "REGISTRE": {
       "TITLE": "Registre",
@@ -77,7 +80,12 @@
     },
     "EDITAR": {
       "TITLE": "Editar publicació",
-      "GAMES": "Jocs"
+      "GAMES": "Jocs",
+      "DESCRIPTION": "Descripció",
+      "SAVE": "Guardar canvis",
+      "MESSTITLE": "Cambis guardats",
+      "MESSDESC": "Cambis guardats correctament",
+      "BUTTON":"Dacord"
     },
     "COMPARTIR": {
       "TITLE": "Compartir publicació",
