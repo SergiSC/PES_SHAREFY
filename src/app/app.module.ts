@@ -17,7 +17,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
-import { PubliPopOverComponent } from '../app/publi-pop-over/publi-pop-over.component';
+import { PubliPopOverComponent } from '../app/shared/publi-pop-over/publi-pop-over.component';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 
 @NgModule({
