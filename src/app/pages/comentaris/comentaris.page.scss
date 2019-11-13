@@ -19,6 +19,13 @@
     padding-bottom: 0%;
 }
 
+.boto {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-bottom: 0%;
+}
+
 .auto-name {
     font-size: 130%;
     width: -webkit-fill-available;
@@ -34,5 +41,16 @@ hr {
     width: auto ;
     border-width: 1px;
     box-sizing: content-box;
+    color: black;
+}
+
+.bar {
+    color: #000;
+    background-color: aqua;
+    background: white;
+    }
+
+.new-background-color{
+    --background: white;
     color: black;
 }

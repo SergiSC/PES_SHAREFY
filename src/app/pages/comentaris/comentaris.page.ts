@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import {Storage} from '@ionic/storage';
+
 
 @Component({
   selector: 'app-comentaris',
@@ -8,11 +11,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ComentarisPage implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private stor: Storage) { }
   comentaris;
   des;
   ownername;
   ownerphoto;
+  Inpu: "";
+  Idpublicacio: null;
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -21,7 +26,17 @@ export class ComentarisPage implements OnInit {
       this.des = com.descrpicio;
       this.ownername = com.ownername;
       this.ownerphoto = com.ownerphoto;
+      this.Idpublicacio = com.idpubli;
     });
   }
 
+  AfegirCom() {
+    this.stor.get('username').then((val) => {
+      this.stor.get('token').then((token) => {
+        this.api.AddComment(val, this.Idpublicacio, token, this.Inpu, new Date()).subscribe((data2: any) => {
+          
+        });
+      });
+    });
+  }
 }

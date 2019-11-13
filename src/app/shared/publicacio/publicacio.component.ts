@@ -28,6 +28,7 @@ export class PublicacioComponent implements OnInit {
   PopoverController: any;
   token:"";
   commentaris = {
+    idpubli: null,
     ownername: '',
     ownerphoto: '',
     descrpicio: '',
@@ -104,6 +105,8 @@ export class PublicacioComponent implements OnInit {
   ngOnInit() {
     this.commentaris.descrpicio = this.des.toString();
     this.commentaris.ownername = this.username;
+    this.commentaris.idpubli = this.idp;
+
 
     this.storage.get('username').then((val) => {
       if (this.commentaris.ownername === val) {

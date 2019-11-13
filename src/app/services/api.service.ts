@@ -152,9 +152,21 @@ export class ApiService {
   }
 
 
-  getComments(user, id, tok){
+  getComments(user, id, tok) {
     return this.http.get(
       this.url + '/api/comment/user/' + user + '/publication/' + id  + '?token=' + tok
+    );
+  }
+
+  AddComment(user, id, tok, tex, dat) {
+    const body = {
+      text: tex,
+      date: dat,
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/comment/user/' + user + '/publication/' + id,
+      body,
     );
   }
 
