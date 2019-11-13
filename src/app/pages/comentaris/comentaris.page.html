@@ -14,7 +14,7 @@
       <ion-row>
         <ion-col size="auto" class="comm">
           <ion-avatar class="avatar-porfile">
-            <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+            <ion-img alt="" [src]="'http://sharefy.tk' + ownerphoto"></ion-img>
           </ion-avatar>
         </ion-col>
         <ion-col class="comm" ><ion-text class="auto-name"><b>{{ ownername }}</b></ion-text></ion-col>
@@ -26,7 +26,7 @@
             <ion-row>
               <ion-col size="auto" class="comm">
                 <ion-avatar class="avatar">
-                  <ion-img alt="" src="../assets/blacksquare.png"></ion-img>
+                  <ion-img alt="" [src]="'http://sharefy.tk' + comm.img"></ion-img>
                 </ion-avatar>
               </ion-col>
               <ion-col class="ion-padding-bottom" class="comm"><ion-text  width="-webkit-fill-available" ><p><b>{{ comm.name }}</b></p></ion-text></ion-col>

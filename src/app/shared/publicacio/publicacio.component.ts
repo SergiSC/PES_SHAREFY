@@ -32,22 +32,7 @@ export class PublicacioComponent implements OnInit {
     ownername: '',
     ownerphoto: '',
     descrpicio: '',
-    coments: [ {
-         name: 'Simon Grimm',
-         text: 'Dios vaya passada de partit que es aixo loco',
-         img: '',
-        },
-        {
-          name: 'Venyto Camela',
-          text: 'Vaya caca de clip mi madre hace eso con una mano en la paella y la otra en la fregona',
-          img: '',
-         },
-         {
-          name: 'Hittler',
-          text: 'Hay q quemarlo todo',
-          img: '',
-         }
-    ]
+    coments: [],
   };
 
   constructor(public popoverCtrl: PopoverController,
@@ -106,7 +91,18 @@ export class PublicacioComponent implements OnInit {
     this.commentaris.descrpicio = this.des.toString();
     this.commentaris.ownername = this.username;
     this.commentaris.idpubli = this.idp;
+    this.commentaris.ownerphoto = this.photo;
 
+    this.api.getPublicationById(this.idp).subscribe((data: any) => {
+      data.value.comments.forEach(comment => {
+        const coments = [ {
+          name: comment.user.username,
+          img: comment.user.photo_path,
+          text: comment.text
+        }];
+        this.commentaris.coments.push(...coments);
+      });
+    });
 
     this.storage.get('username').then((val) => {
       if (this.commentaris.ownername === val) {
