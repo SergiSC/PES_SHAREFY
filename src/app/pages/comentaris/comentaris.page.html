@@ -29,9 +29,10 @@
                   <ion-img alt="" [src]="'http://sharefy.tk' + comm.img"></ion-img>
                 </ion-avatar>
               </ion-col>
-              <ion-col class="ion-padding-bottom" class="comm"><ion-text  width="-webkit-fill-available" ><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
+              <ion-col class="ion-padding-bottom" class="comm"><ion-text><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
+              <ion-col><ion-icon name="trash" *ngIf="comm.name === user" (click)="BorrarCom(comm.id)" class="ion-float-right" style="margin-top: 16px;"></ion-icon></ion-col>
             </ion-row>
-            <ion-row><ion-text width="-webkit-fill-available">{{ comm.text }}</ion-text></ion-row>
+            <ion-row><ion-text class="auto-margin">{{ comm.text }}</ion-text></ion-row>
           </ion-grid>
       </ion-row>
     </ion-grid>

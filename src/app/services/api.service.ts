@@ -187,4 +187,10 @@ export class ApiService {
     );
   }
 
+  DeleteComment(id, tok) {
+    return this.http.delete(
+      this.url + '/api/comment/' + id + '?token=' + tok,
+    );
+  }
+
 }

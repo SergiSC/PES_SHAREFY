@@ -18,7 +18,7 @@ export class ComentarisPage implements OnInit {
   Inpu = '';
   Idpublicacio: null;
   comentaris = [];
-  
+  user: '';
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -29,6 +29,9 @@ export class ComentarisPage implements OnInit {
       this.Idpublicacio = com.idpubli;
       this.getComents();
     });
+    this.stor.get('username').then((val) => {
+      this.user = val;
+    });
   }
 
   getComents() {
@@ -38,7 +41,8 @@ export class ComentarisPage implements OnInit {
         const coments = [ {
           name: comment.user.username,
           img: comment.user.photo_path,
-          text: comment.text
+          text: comment.text,
+          id: comment.id
         }];
         c.push(...coments);
       });
@@ -47,12 +51,18 @@ export class ComentarisPage implements OnInit {
   }
 
   AfegirCom() {
-    this.stor.get('username').then((val) => {
-      this.stor.get('token').then((token) => {
-        this.api.AddComment(val, this.Idpublicacio, token, this.Inpu).subscribe((data2: any) => {
-          this.Inpu = "";
-          this.getComents();
-        });
+    this.stor.get('token').then((token) => {
+      this.api.AddComment(this.user, this.Idpublicacio, token, this.Inpu).subscribe((data2: any) => {
+        this.Inpu = "";
+        this.getComents();
+      });
+    });
+  }
+
+  BorrarCom(id) {
+    this.stor.get('token').then((token) => {
+      this.api.DeleteComment(id, token).subscribe((data2: any) => {
+        this.getComents();
       });
     });
   }
