@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'recuperar', loadChildren: './pages/recuperar/recuperar.module#RecuperarPageModule' },
   { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
   { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
-  { path: 'compartir', loadChildren: './pages/compartir/compartir.module#CompartirPageModule' },
+  { path: 'editar', loadChildren: './pages/editar/editar.module#EditarPageModule' },
   { path: 'legal', loadChildren: './pages/legal/legal.module#LegalPageModule' },
   { path: 'editar/:idPublicacio', loadChildren: './pages/editar/editar.module#EditarPageModule' },
   { path: 'editar-publicacio/:idPublicacio', loadChildren: './pages/editar-publicacio/editar-publicacio.module#EditarPublicacioPageModule' },

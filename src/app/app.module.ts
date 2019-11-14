@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -18,6 +18,7 @@ import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from '../app/shared/publi-pop-over/publi-pop-over.component';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import {GooglePlus} from '@ionic-native/google-plus/ngx';
 
 
@@ -39,7 +40,7 @@ import {GooglePlus} from '@ionic-native/google-plus/ngx';
     }),
   ],
   providers: [
-      StatusBar, SplashScreen, FCM, Camera, File, GooglePlus,
+    StatusBar, SplashScreen, FCM, Camera, File,  SocialSharing, Deeplinks, GooglePlus,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     StreamingMedia
   ],
