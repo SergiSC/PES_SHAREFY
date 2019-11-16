@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { AlertController, PopoverController } from '@ionic/angular';
+import { AlertController, PopoverController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { ApiService } from 'src/app/services/api.service';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-publi-pop-over',
@@ -19,7 +21,10 @@ export class PubliPopOverComponent implements OnInit {
     private router: Router,
     public alertController: AlertController,
     private translate: TranslateService,
-    private popoverController: PopoverController) { }
+    private popoverController: PopoverController,
+    private api: ApiService,
+    private storage: Storage,
+    private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -46,8 +51,13 @@ export class PubliPopOverComponent implements OnInit {
         }, {
           text: this.translate.instant('SHARED.POPOVER.BUTTONESBORRAR'),
           handler: () => {
-            //TODO esborrar publicacio
-            console.log('click esborrar');
+            //TODO falta fer refresh de la pagina al borrar
+            this.storage.get('token').then((token) => {
+              this.api.deletePublication(this.idPublication, token).subscribe((data: any) => {
+                this.showToast(this.translate.instant('SHARED.POPOVER.TEXTDELETEOK'));
+                location.reload()
+              });
+            });
           }
         }
       ]
@@ -55,6 +65,17 @@ export class PubliPopOverComponent implements OnInit {
       alert.present();
     });
   }
+
+  async showToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      showCloseButton: true,
+      position: 'bottom',
+      closeButtonText: 'Close',
+      duration: 3000,
+    });
+    await toast.present();
+   }
 
   async DismissClick() {
     await this.popoverController.dismiss();

@@ -154,7 +154,9 @@
       "BUTTONEDITAR": "Editar",
       "TITLEALERTBORRAR": "Borrar publicació",
       "TEXTALERTBORRAR": "Estas segur què vols borrar la publicació?",
-      "BUTTONCANCEL": "Cancel·lar"
+      "BUTTONCANCEL": "Cancel·lar",
+      "TEXTDELETEOK": "Publicació borrada correctament.",
+      "TEXTDELETEERROR": "Error a l'esborrar la publicació."
     }
   }
 }

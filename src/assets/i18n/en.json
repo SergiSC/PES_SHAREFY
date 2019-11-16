@@ -154,7 +154,9 @@
       "BUTTONEDITAR": "Edit",
       "TITLEALERTBORRAR": "Delete publication",
       "TEXTALERTBORRAR": "Are you sure you want to delete this publication?",
-      "BUTTONCANCEL": "Cancel"
+      "BUTTONCANCEL": "Cancel",
+      "TEXTDELETEOK": "The publication was deleted correctly.",
+      "TEXTDELETEERROR": "There was an error while deleting."
     }
   }
 }
