@@ -32,7 +32,6 @@ export class LoginPage implements OnInit {
   entrar() {
     if (this.password !== null && this.mail !== null) {
       this.api.login(this.mail, this.password).subscribe((data: any) => {
-        console.log(data);
         this.storage.set('token', data.access_token);
         this.storage.set('username', data.username);
         this.router.navigateByUrl('/tabs');
@@ -69,7 +68,6 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.api.getAllEmails().subscribe((data: any) => {
-      console.log(data);
       this.emailList = data.list;
     });
     this.storage.get('token').then( (data: any) => {
@@ -100,5 +98,4 @@ export class LoginPage implements OnInit {
         })
         .catch(err => console.error(err));
   }
-  
 }

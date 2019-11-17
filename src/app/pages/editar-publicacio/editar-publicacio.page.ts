@@ -24,7 +24,12 @@ export class EditarPublicacioPage implements OnInit {
   newDesc;
   private routeSub: Subscription;
 
-  constructor( private router: Router, public alertController: AlertController, private translate: TranslateService, public api: ApiService, private route: ActivatedRoute, private storage: Storage) {
+  constructor( private router: Router,
+               public alertController: AlertController,
+               private translate: TranslateService,
+               public api: ApiService,
+               private route: ActivatedRoute,
+               private storage: Storage) {
    }
 
   ngOnInit() {

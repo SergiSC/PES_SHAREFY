@@ -34,12 +34,11 @@ export class AppComponent {
 
   initializeApp() {
     this.storage.get('lang').then((data: any) => {
-      console.log(data)
       if (data !== null) {
         this.translate.use(data);
       } else {
         this.storage.set('lang', 'cat');
-        this.translate.use('cat')
+        this.translate.use('cat');
       }
   });
     this.platform.ready().then(() => {
