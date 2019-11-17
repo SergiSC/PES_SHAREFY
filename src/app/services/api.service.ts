@@ -192,5 +192,10 @@ export class ApiService {
       this.url + '/api/comment/' + id + '?token=' + tok,
     );
   }
+  deletePublication(id, token) {
+    return this.http.delete(
+      this.url + '/api/publication/' + id + '?token=' + token
+    )
+  }
 
 }

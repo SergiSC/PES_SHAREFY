@@ -154,7 +154,9 @@
       "BUTTONEDITAR": "Editar",
       "TITLEALERTBORRAR": "Borrar publicación",
       "TEXTALERTBORRAR": "¿Estás seguro que quieres borrar esta publicación?",
-      "BUTTONCANCEL": "Cancelar"
+      "BUTTONCANCEL": "Cancelar",
+      "TEXTDELETEOK": "Publicación borrada correctamente.",
+      "TEXTDELETEERROR": "Error al borrar la publicación."
     }
   }
 }
