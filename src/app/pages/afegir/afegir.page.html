@@ -10,5 +10,14 @@
 <!--FALTA TRADUIR-->
 
 <ion-content>
-    <ion-button (click)="UploatFile()"> Select File </ion-button>
+  <ion-textarea placeholder="description" [(ngModel)]="desc"></ion-textarea>
+  <ion-row style="margin-top: 10%">
+    <ion-item lines=none>
+       <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
+      <ion-select [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select">
+        <ion-select-option *ngFor="let g of games"> {{g.name}} </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  <ion-button (click)="UploatFile()"> Select File </ion-button>
 </ion-content>

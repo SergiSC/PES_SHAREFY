@@ -21,7 +21,7 @@ import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import {GooglePlus} from '@ionic-native/google-plus/ngx';
 import {FileChooser} from '@ionic-native/file-chooser/ngx';
 import {FileOpener} from '@ionic-native/file-opener/ngx';
-import { File } from '@ionic-native/file/ngx';
+import {File } from '@ionic-native/file/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import {FilePath} from '@ionic-native/file-path/ngx';
 
