@@ -15,5 +15,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-label class="titol">{{ 'PAGE.GAMES.DESCRIPTION' | translate }}</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-img class="image" *ngFor="let g of games" [src]="g.image_url"></ion-img>
+  </ion-row>
 
 </ion-content>

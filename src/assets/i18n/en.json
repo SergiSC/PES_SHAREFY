@@ -68,6 +68,9 @@
       "SPANISH": "Spanish",
       "CATALAN": "Catalan"
     },
+    "GAMES": {
+      "DESCRIPTION": "Choose you favorite game to watch the best clips!"
+    },
     "RECUPERAR": {
       "TITLE0": "Restore password",
       "TITLE1": "Email send",
