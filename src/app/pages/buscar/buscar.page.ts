@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AttrAst } from '@angular/compiler';
+import { element } from 'protractor';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-buscar',
@@ -8,25 +10,40 @@ import { AttrAst } from '@angular/compiler';
 })
 export class BuscarPage implements OnInit {
 
+  entradaBuscador: string
   users = [
     {
-      nom: 'AA',
+      nom: 'ser',
     },
     {
-      nom: 'BB'
+      nom: 'serg'
     },
     {
-      nom: 'CC'
+      nom: 'serra'
     },
     {
-      nom: 'DD'
+      nom: 'serran'
     },
     {
-      nom: 'EE'
+      nom: 'serrano'
     }
   ]
+  usuarisFiltrats = []
 
-  constructor() { }
+  constructor(private api: ApiService) { }
+
+  comprovarEntrada() {
+    this.usuarisFiltrats = []
+    if (this.entradaBuscador.length > 1) {
+      this.api.getAllUsers().subscribe((data:any) => {
+        data.list.forEach(element => {
+          if (element.username.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
+            this.usuarisFiltrats.push(element)
+          }
+        })
+      })
+    }
+  }
 
   ngOnInit() {
   }

@@ -13,19 +13,21 @@
 <ion-content>
   <ion-grid class="gridBuscar">
     <ion-row>
-      <ion-searchbar showCancelButton="never" class="searchBar"></ion-searchbar>
+      <ion-searchbar showCancelButton="never" class="searchBar" animated="true" placeholder="Busca..." [(ngModel)]="entradaBuscador" (ionChange)="comprovarEntrada()"></ion-searchbar>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-row *ngFor="let user of users">
+        <ion-row *ngFor="let usuari of usuarisFiltrats" class="people-row">
           <ion-col size="2">
-            <ion-icon name="contact"></ion-icon>
+            <ion-icon name="contact" style="font-size: 40px; padding-top: 5px !important;"></ion-icon>
           </ion-col>
-          <ion-col size="6">
-            <p> {{user.nom}} </p>
+          <ion-col size="5">
+            <p> {{usuari.username}} </p>
           </ion-col>
-          <ion-col size="4">
-            <ion-button color="primary" size="small" style="text-transform: none;"> view profile</ion-button>
+          <ion-col size="5" style="align-self: center">
+            <ion-row style="justify-content: center;">
+              <ion-button color="primary" size="small" style="text-transform: none;">view profile</ion-button>
+            </ion-row>
           </ion-col>
         </ion-row>
       </ion-col>
