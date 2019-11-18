@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <div style="width: 48px"></div>
+    </ion-buttons>
+    <ion-title class="ion-text-center"> BUSCAR </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="gridBuscar">
+    <ion-row>
+      <ion-searchbar showCancelButton="never" class="searchBar"></ion-searchbar>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-row *ngFor="let user of users">
+          <ion-col size="2">
+            <ion-icon name="contact"></ion-icon>
+          </ion-col>
+          <ion-col size="6">
+            <p> {{user.nom}} </p>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button color="primary" size="small" style="text-transform: none;"> view profile</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
