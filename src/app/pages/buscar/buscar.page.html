@@ -17,16 +17,21 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-row *ngFor="let usuari of usuarisFiltrats" class="people-row">
+        <ion-row *ngFor="let resultat of resultatsFiltrats" class="people-row">
           <ion-col size="2">
             <ion-icon name="contact" style="font-size: 40px; padding-top: 5px !important;"></ion-icon>
           </ion-col>
           <ion-col size="5">
-            <p> {{usuari.username}} </p>
+            <p class="nom-llista"> {{resultat.nom}} </p>
           </ion-col>
           <ion-col size="5" style="align-self: center">
             <ion-row style="justify-content: center;">
-              <ion-button color="primary" size="small" style="text-transform: none;">view profile</ion-button>
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='joc'" color="primary" size="small" style="text-transform: none; width: 100%;">
+                <ion-icon name="logo-game-controller-b" style="margin-right:3px;"></ion-icon> JOC
+              </ion-button>
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;">
+                <ion-icon name="contact" style="margin-right:3px;"></ion-icon>Perfil
+              </ion-button>
             </ion-row>
           </ion-col>
         </ion-row>
