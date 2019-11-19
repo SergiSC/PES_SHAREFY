@@ -6,31 +6,31 @@
     <ion-buttons slot="end">
       <div style="width: 48px"></div>
     </ion-buttons>
-    <ion-title class="ion-text-center"> BUSCAR </ion-title>
+    <ion-title class="ion-text-center">{{'PAGE.BUSCAR.TITLE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid class="gridBuscar">
     <ion-row>
-      <ion-searchbar showCancelButton="never" class="searchBar" animated="true" placeholder="Busca..." [(ngModel)]="entradaBuscador" (ionChange)="comprovarEntrada()"></ion-searchbar>
+      <ion-searchbar showCancelButton="never" class="searchBar" animated="true" placeholder="{{'PAGE.BUSCAR.PLACEHOLDERSEARCHBAR' | translate}}" [(ngModel)]="entradaBuscador" (ionChange)="comprovarEntrada()"></ion-searchbar>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-row *ngFor="let resultat of resultatsFiltrats" class="people-row">
           <ion-col size="2">
-            <ion-icon name="contact" style="font-size: 40px; padding-top: 5px !important;"></ion-icon>
+            <ion-img [src]="resultat.foto" style="height: 55px;"></ion-img>
           </ion-col>
           <ion-col size="5">
             <p class="nom-llista"> {{resultat.nom}} </p>
           </ion-col>
           <ion-col size="5" style="align-self: center">
             <ion-row style="justify-content: center;">
-              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='joc'" color="primary" size="small" style="text-transform: none; width: 100%;">
-                <ion-icon name="logo-game-controller-b" style="margin-right:3px;"></ion-icon> JOC
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='joc'" color="tertiary" size="small" style="text-transform: none; width: 100%;">
+                <ion-icon name="logo-game-controller-b" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONGAMES' | translate}}
               </ion-button>
               <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;">
-                <ion-icon name="contact" style="margin-right:3px;"></ion-icon>Perfil
+                <ion-icon name="contact" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONUSER' | translate}}
               </ion-button>
             </ion-row>
           </ion-col>
