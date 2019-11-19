@@ -153,6 +153,11 @@
       "BUTTONGAMES": "Juego",
       "BUTTONUSER": "Perfil",
       "BUTTONCATEGORY": "Categoría"
+    },
+    "CATEGORIA": {
+      "TITLE": "Categoría",
+      "LABELSELECTED": "Categoría seleccionada",
+      "LABELNUMBER": "Número de publicaciones"
     }
   },
   "SHARED": {

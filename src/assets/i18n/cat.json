@@ -153,6 +153,11 @@
       "BUTTONGAMES": "Joc",
       "BUTTONUSER": "Perfil",
       "BUTTONCATEGORY": "Categoria"
+    },
+    "CATEGORIA": {
+      "TITLE": "Categoria",
+      "LABELSELECTED": "Categoria seleccionada",
+      "LABELNUMBER": "Número de publicacions"
     }
   },
   "SHARED": {

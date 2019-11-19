@@ -3,6 +3,7 @@ import { AttrAst } from '@angular/compiler';
 import { element } from 'protractor';
 import { ApiService } from 'src/app/services/api.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar',
@@ -15,7 +16,8 @@ export class BuscarPage implements OnInit {
   resultatsFiltrats = []
 
   constructor(private api: ApiService,
-              private translate: TranslateService) { }
+              private translate: TranslateService,
+              private router: Router) { }
 
   comprovarEntrada() {
     this.resultatsFiltrats = []
@@ -52,6 +54,10 @@ export class BuscarPage implements OnInit {
       this.resultatsFiltrats.push(result)
       this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
     }
+  }
+
+  redirectCategoria(categoria) {
+    this.router.navigateByUrl('/categoria/' + categoria);
   }
 
   ngOnInit() {
