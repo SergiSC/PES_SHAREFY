@@ -25,7 +25,7 @@ export class BuscarPage implements OnInit {
           if (element.username.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
             let result = {
               nom: element.username,
-              foto: '',
+              foto: '../../assets/icon/face.png', //provisional fins que el endpoint proporcioni la img
               tipus: 'usuari'
             }
             this.resultatsFiltrats.push(result)

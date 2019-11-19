@@ -11,7 +11,7 @@ export class MurPage implements OnInit {
 
   publicacio: any;
   constructor(private api: ApiService,
-              private router: Router,) {}
+              private router: Router) {}
 
   ngOnInit() {
     this.api.getAllPublis(8, null).subscribe( (data: any) => {
