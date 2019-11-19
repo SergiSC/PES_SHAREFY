@@ -151,7 +151,8 @@
       "TITLE": "Search",
       "PLACEHOLDERSEARCHBAR": "Search...",
       "BUTTONGAMES": "Game",
-      "BUTTONUSER": "Profile"
+      "BUTTONUSER": "Profile",
+      "BUTTONCATEGORY": "Category"
     }
   },
   "SHARED": {

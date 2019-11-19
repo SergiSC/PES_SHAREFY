@@ -44,6 +44,12 @@ export class BuscarPage implements OnInit {
           }
         })
       })
+      let result = {
+        nom: 'Pentakill',
+        foto: '../../assets/icon/penta.png',
+        tipus: 'categoria'
+      }
+      this.resultatsFiltrats.push(result)
       this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
     }
   }

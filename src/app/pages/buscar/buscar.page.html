@@ -32,6 +32,9 @@
               <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;">
                 <ion-icon name="contact" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONUSER' | translate}}
               </ion-button>
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='categoria'" color="warning" size="small" style="text-transform: none; width: 100%;">
+                <ion-icon name="paper" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONCATEGORY' | translate}}
+              </ion-button>
             </ion-row>
           </ion-col>
         </ion-row>
