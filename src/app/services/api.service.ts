@@ -195,7 +195,30 @@ export class ApiService {
   deletePublication(id, token) {
     return this.http.delete(
       this.url + '/api/publication/' + id + '?token=' + token
-    )
+    );
+  }
+
+  IsFollowing(follower, following, tok) {
+    return this.http.get(
+      this.url + '/api/follow/user/' + follower + '/user/' + following + '?token=' + tok
+    );
+  }
+
+  Seguir(follower, following, tok) {
+    const body = {
+      user_follower: follower,
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/follow/user/' + following,
+      body,
+    );
+  }
+
+  DeixardeSeguir(follower, following, tok) {
+    return this.http.delete(
+      this.url + '/api/follow/user/' + follower + '/user/' + following + '?token=' + tok
+    );
   }
 
 }

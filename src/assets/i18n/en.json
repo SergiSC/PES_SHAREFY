@@ -21,7 +21,13 @@
       "BUTTONSEGUIDORS": "Followers",
       "BUTTONSEGUITS": "Following",
       "BUTTONPUBLICACIONS": "Publications",
-      "BUTTONMAGRADA": "Likes"
+      "BUTTONMAGRADA": "Likes",
+      "BUTTONSEGUIR": "Follow",
+      "BUTTONSEGUINT": "Following",
+      "NOSEGUINT": "This user is private",
+      "NPUBLICACIONS": "Publications",
+      "NSEGUIDORS": "Followers",
+      "NSEGUITS": "Following"
     },
     "INFORMACIO": {
       "TITLE": "Information",
