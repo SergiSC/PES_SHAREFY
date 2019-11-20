@@ -152,6 +152,12 @@
       "LABELRESPOSTA612": "Also, we inform you that you can contact the Spanish Data Protection Agency (www.aepd.es) for additional information or to file a claim, for example, if you have not obtained satisfaction during the exercise of the your rights",
 
       "LABELULTIMAMODIFICACIO": "Last modified"
+    },
+    "BUSCAR": {
+      "TITLE": "Search",
+      "PLACEHOLDERSEARCHBAR": "Search...",
+      "BUTTONGAMES": "Game",
+      "BUTTONUSER": "Profile"
     }
   },
   "SHARED": {

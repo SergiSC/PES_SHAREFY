@@ -152,6 +152,12 @@
       "LABELRESPOSTA612": "Així mateix, l'informem que pot dirigir-se a l'Agència Espanyola de Protecció de Dades (www.aepd.es) per obtenir informació addicional o per presentar una reclamació, per exemple, si no has obtingut satisfacció en l'exercici dels teus drets.",
 
       "LABELULTIMAMODIFICACIO": "Última modificació"
+    },
+    "BUSCAR": {
+      "TITLE": "Buscar",
+      "PLACEHOLDERSEARCHBAR": "Buscar...",
+      "BUTTONGAMES": "Joc",
+      "BUTTONUSER": "Perfil"
     }
   },
   "SHARED": {

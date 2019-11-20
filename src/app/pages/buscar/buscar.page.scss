@@ -1,0 +1,24 @@
+.searchBar{
+    --background: white;
+    --icon-color: var(--ion-color-primary);
+    --color: var(--ion-color-primary);
+}
+
+.gridBuscar {
+    padding: 5%;
+}
+
+.people-row {
+    border-bottom: 1px solid var(--ion-color-primary);
+    border-top: 1px solid var(--ion-color-primary);
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.nom-llista {
+    font-size: 11pt; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    max-width: 100%; 
+    white-space: nowrap;
+}
