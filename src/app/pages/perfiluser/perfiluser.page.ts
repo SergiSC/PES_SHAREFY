@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfiluser',
@@ -13,21 +14,22 @@ export class PerfiluserPage implements OnInit {
   data;
   pathFotoPerfil = '';
   Perfiluser = '';
-  public;
-  seguint;
+  public = undefined;
+  seguint = undefined;
 
   npubli = 0;
   nseguid = 0;
   nseguit = 0;
-
   user;
   token;
   publicacio;
 
   noPubli = true;
+  isLoading = false;
 
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage) { }
+  constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage,
+              private loadingController: LoadingController) { }
 
 Follow() {
   if (!this.seguint) {
@@ -56,11 +58,17 @@ es_ell() {
   return false;
 }
 
-ngOnInit() {}
+ngOnInit() {
+  this.route.queryParams.subscribe(params => {
+    const com  = JSON.parse(params.special);
+    this.data = com;
+  });
+}
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
+    this.presentLoading();
     this.route.queryParams.subscribe(params => {
-      let com  = JSON.parse(params.special);
+      const com  = JSON.parse(params.special);
       this.data = com;
     });
     this.store.get('token').then((token) => {
@@ -93,7 +101,28 @@ ngOnInit() {}
             this.publicacio = data.value;
             this.noPubli = false;
           }
+          this.dismiss();
+
         });
+      });
+    });
+  }
+  
+  async dismiss() {
+    this.isLoading = false;
+    return await this.loadingController.dismiss().then(() => console.log('dismissed'));
+  }
+
+  async presentLoading() {
+    return await this.loadingController.create({
+      duration: 5000,
+      message: "Wait"
+    }).then(a => {
+      a.present().then(() => {
+        console.log('presented');
+        if (!this.isLoading) {
+          a.dismiss().then(() => console.log('abort presenting'));
+        }
       });
     });
   }
