@@ -22,6 +22,8 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    
+    <div *ngFor="let publi of publicacions">
+      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name"></app-publicacio>
+    </div>
   </ion-row>
 </ion-content>

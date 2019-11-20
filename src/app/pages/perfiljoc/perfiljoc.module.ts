@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { PerfiljocPage } from './perfiljoc.page';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
