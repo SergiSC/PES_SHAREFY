@@ -11,16 +11,19 @@
 }
 
 .image {
-    height: 250px;
-    width: 155px;
-    align-self: center;
-    margin: auto;
-    margin-top: 15px;
+    height: 260px;
+    width: 165px;
+    margin-left: 15px;
 }
 
-.descrip {
+.text {
     text-align: center;
     align-self: center;
     font-size: 120%;
     margin: auto;
+    margin-top: 60px;
+}
+
+.desc {
+    font-size: small;
 }

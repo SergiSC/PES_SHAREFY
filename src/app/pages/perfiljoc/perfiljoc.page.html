@@ -11,9 +11,17 @@
 
 <ion-content>
   <ion-row>
-    <ion-img class="image"  [src]=imatge></ion-img>
+    <ion-col class="col">
+      <ion-img class="image"  [src]=imatge></ion-img>
+    </ion-col>
+    <ion-col>
+      <div class="text">
+        <ion-label color="primary">44 {{ 'PAGE.PROFILEGAMES.PUBLICATIONS' | translate }} <br> <br> <br>  </ion-label>
+        <ion-label class="desc">{{descripcio}} </ion-label>
+      </div>
+    </ion-col>
   </ion-row>
   <ion-row>
-    <ion-label class="descrip"> {{descripcio}} </ion-label>
+    
   </ion-row>
 </ion-content>

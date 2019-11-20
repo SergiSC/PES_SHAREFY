@@ -8,8 +8,14 @@
 }
 
 .image {
-    height: 260px;
-    width: 165px;
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 340px;
+    width: 245px;
+   // margin-left: 20px;
+   // margin-right: 20px;
+}
+
+.centriño {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
