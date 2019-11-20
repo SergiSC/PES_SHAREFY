@@ -69,7 +69,11 @@
       "CATALAN": "Catalan"
     },
     "GAMES": {
-      "DESCRIPTION": "Choose you favorite game to watch the best clips!"
+      "DESCRIPTION": "Choose you favorite game to watch the best clips!",
+      "TITLE": "Games"
+    },
+    "PROFILEGAMES": {
+      
     },
     "RECUPERAR": {
       "TITLE0": "Restore password",

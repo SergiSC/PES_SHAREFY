@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'informacio', loadChildren: './pages/informacio/informacio.module#InformacioPageModule' },
   { path: 'comentaris', loadChildren: './pages/comentaris/comentaris.module#ComentarisPageModule' },
   { path: 'legal', loadChildren: './pages/legal/legal.module#LegalPageModule' },
-  { path: 'editar-publicacio/:idPublicacio', loadChildren: './pages/editar-publicacio/editar-publicacio.module#EditarPublicacioPageModule' },
+  { path: 'editar-publicacio/:idPublicacio', loadChildren: './pages/editar-publicacio/editar-publicacio.module#EditarPublicacioPageModule' },  { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
+
 ];
 @NgModule({
   imports: [

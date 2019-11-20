@@ -24,7 +24,8 @@
       "BUTTONMAGRADA": "Me gusta"
     },
     "GAMES": {
-      "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!"
+      "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
+      "TITLE": "Juegos"
     },
     "INFORMACIO": {
       "TITLE": "Información",
