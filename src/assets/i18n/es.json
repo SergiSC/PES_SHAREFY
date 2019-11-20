@@ -27,7 +27,9 @@
       "NOSEGUINT": "Este usuario es privado",
       "NPUBLICACIONS": "Publicaciones",
       "NSEGUIDORS": "Seguidores",
-      "NSEGUITS": "Seguidos"
+      "NSEGUITS": "Seguidos",
+      "TEXTTEPUBLI": "Este usuario no ha subido ninguna publicación aún",
+      "TEXTNOTEPUBLI": "Aún no has subido ninguna publicación"
     },
     "INFORMACIO": {
       "TITLE": "Información",
@@ -64,6 +66,11 @@
       "ALERTERRORSERVER": "Ha habido algún problema al crear tu nuevo perfil",
       "LABELLINK": "Acepta los",
       "LINK": "términos de uso y política de privacidad"
+    },
+    "COMMENTS":{
+      "TITLE": "Comentarios",
+      "AFEGIR": "Añadir",
+      "PLACEHOLDER": "Comentario"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuración",

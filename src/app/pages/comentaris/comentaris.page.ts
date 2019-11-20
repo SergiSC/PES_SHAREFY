@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
 
@@ -65,5 +65,15 @@ export class ComentarisPage implements OnInit {
         this.getComents();
       });
     });
+  }
+  goperfiluser(name) {
+    this.router.navigate(['/perfiluser']);
+    // de moment va a la del usuari registat
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(name)
+      }
+    };
+    this.router.navigate(['/perfiluser'], navigationExtras);
   }
 }

@@ -27,7 +27,9 @@
       "NOSEGUINT": "This user is private",
       "NPUBLICACIONS": "Publications",
       "NSEGUIDORS": "Followers",
-      "NSEGUITS": "Following"
+      "NSEGUITS": "Following",
+      "TEXTTEPUBLI": "This user hasn't upload any publication yet",
+      "TEXTNOTEPUBLI": "You haven't upload any publication yet"
     },
     "INFORMACIO": {
       "TITLE": "Information",
@@ -64,6 +66,11 @@
       "ALERTERRORSERVER": "There was a problem in creating your new profile",
       "LABELLINK": "Accept the",
       "LINK": "terms of use and privacy policy"
+    },
+    "COMMENTS":{
+      "TITLE": "Comments",
+      "AFEGIR": "Add",
+      "PLACEHOLDER": "Comment"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",

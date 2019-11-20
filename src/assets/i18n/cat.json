@@ -27,7 +27,9 @@
       "NOSEGUINT": "Aquest usuari és privat",
       "NPUBLICACIONS": "Publicacions",
       "NSEGUIDORS": "Seguidors",
-      "NSEGUITS": "Seguits"
+      "NSEGUITS": "Seguits",
+      "TEXTTEPUBLI": "Aquest usuari encara no ha pujat cap publicaicó",
+      "TEXTNOTEPUBLI": "Encara no has pujat cap publicació"
     },
     "INFORMACIO": {
       "TITLE": "Informació",
@@ -64,6 +66,11 @@
       "ALERTERRORSERVER": "Hi ha hagut algun problema a l'hora de crear el teu nou perfil",
       "LABELLINK": "Accepta els",
       "LINK": "termes d'ús i política de privacitat"
+    },
+    "COMMENTS":{
+      "TITLE": "Comentaris",
+      "AFEGIR": "Afegir",
+      "PLACEHOLDER": "Comentari"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuració",

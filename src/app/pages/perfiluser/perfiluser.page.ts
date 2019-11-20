@@ -24,6 +24,9 @@ export class PerfiluserPage implements OnInit {
   token;
   publicacio;
 
+  noPubli = true;
+
+
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage) { }
 
 Follow() {
@@ -44,10 +47,18 @@ VeurePublicacions() {
     return true;
   } else if (this.seguint) {
     return true;
+  } else if (this.es_ell()) {
+    return true;
   } else { return false; }
 }
+es_ell() {
+  if (this.user === this.Perfiluser) { return true; }
+  return false;
+}
 
-  ngOnInit() {
+ngOnInit() {}
+
+  ionViewDidEnter() {
     this.route.queryParams.subscribe(params => {
       let com  = JSON.parse(params.special);
       this.data = com;
@@ -64,7 +75,7 @@ VeurePublicacions() {
         }
         if (data2.value[0].public !== null) {
           if (data2.value[0].public === 1) {
-            this.public = false;
+            this.public = true;
           } else {
             this.public = false;
           }
@@ -78,7 +89,10 @@ VeurePublicacions() {
           });
         });
         this.api.getAllPublis(data2.value[0].id, null).subscribe( (data: any) => {
-          this.publicacio = data.value;
+          if (data.value.length !== 0) {
+            this.publicacio = data.value;
+            this.noPubli = false;
+          }
         });
       });
     });
