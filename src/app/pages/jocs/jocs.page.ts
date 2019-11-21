@@ -12,8 +12,8 @@ import {TranslateService} from '@ngx-translate/core';
 export class JocsPage implements OnInit {
 
   games: any;
-  descTrad: any;
-
+  descTrad: string;
+  desTrad = 'hola';
   constructor(public api: ApiService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit() {
@@ -27,7 +27,8 @@ export class JocsPage implements OnInit {
     for (const game of this.games) {
       if (game.id  === id) {
         this.api.getGameDescription(game.id, this.translate.currentLang).subscribe((data: any) => {
-          this.descTrad = data.value;
+          this.descTrad = data.value.description;
+          console.log(this.desTrad);
         });
         joc = {imag: game.image_url, desc: this.descTrad, name: game.name, idg: game.id};
       }
