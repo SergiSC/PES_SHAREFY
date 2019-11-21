@@ -41,18 +41,18 @@
           </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col *ngIf="!es_ell()" class="flex">
+            <ion-col class="flex">
                   <ion-button *ngIf="!seguint" [color]="seguint ? 'secondary' :'primary'" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUIR' | translate }}</ion-button>
                   <ion-button *ngIf="seguint" [color]="seguint ? 'secondary' :'primary'" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col *ngIf="VeurePublicacions() && !noPubli">
+            <ion-col *ngIf="(public == true || seguint == true) && !noPubli">
               <div *ngFor="let publi of publicacio">
                   <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name"></app-publicacio>
               </div>
           </ion-col>
-          <ion-col *ngIf="!VeurePublicacions()">
+          <ion-col *ngIf="public == false && seguint == false">
             <div class="item">
               <ion-icon name="lock" style="font-size: 128px; margin-top: 32px;"></ion-icon>
               <p style="font-size: x-large;">{{ 'PAGE.PERFIL.NOSEGUINT' | translate }}</p>
@@ -60,8 +60,7 @@
           </ion-col>
           <ion-col *ngIf="noPubli" class="item">
               <ion-icon name="ios-videocam" style="font-size: 128px; margin-top: 32px;" *ngIf="!es_ell() && public"></ion-icon>
-              <p style="font-size: x-large;" *ngIf="!es_ell() && public">{{ 'PAGE.PERFIL.TEXTTEPUBLI' | translate }}</p>
-              <p style="font-size: x-large;" *ngIf="es_ell()">{{ 'PAGE.PERFIL.TEXTNOTEPUBLI' | translate }}</p>
+              <p style="font-size: x-large;" *ngIf="public">{{ 'PAGE.PERFIL.TEXTTEPUBLI' | translate }}</p>
           </ion-col>
         </ion-row>
       </ion-grid>

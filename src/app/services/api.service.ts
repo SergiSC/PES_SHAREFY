@@ -228,9 +228,10 @@ export class ApiService {
 
   Seguir(follower, following, tok) {
     const body = {
-      user_follower: follower,
+      follower_username: follower,
       token: tok
     };
+    console.log(follower, following);
     return this.http.post(
       this.url + '/api/follow/user/' + following,
       body,
