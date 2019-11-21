@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { Router, NavigationExtras } from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-jocs',
@@ -8,9 +11,29 @@ import { Router } from '@angular/router';
 })
 export class JocsPage implements OnInit {
 
-  constructor(private router: Router) { }
+  games: any;
+  descTrad: string;
+  desTrad = 'hola';
+  constructor(public api: ApiService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit() {
+    this.api.getAllGames().subscribe((data: any) => {
+      this.games = data.value;
+    });
+  }
+
+  navigate(id: any) {
+    let joc;
+    for (const game of this.games) {
+      if (game.id  === id) {
+        this.api.getGameDescription(game.id, this.translate.currentLang).subscribe((data: any) => {
+          this.descTrad = data.value.description;
+          console.log(this.desTrad);
+        });
+        joc = {imag: game.image_url, desc: this.descTrad, name: game.name, idg: game.id};
+      }
+    }
+    this.router.navigate(['/perfiljoc/', joc]);
   }
 
   openSearch() {

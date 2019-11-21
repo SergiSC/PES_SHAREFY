@@ -31,6 +31,13 @@
       "TEXTTEPUBLI": "Aquest usuari encara no ha pujat cap publicaicó",
       "TEXTNOTEPUBLI": "Encara no has pujat cap publicació"
     },
+    "GAMES": {
+      "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
+      "TITLE": "Jocs"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publicaions"
+    },
     "INFORMACIO": {
       "TITLE": "Informació",
       "GUARDAR": "Guardar",

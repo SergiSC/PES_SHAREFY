@@ -31,6 +31,13 @@
       "TEXTTEPUBLI": "Este usuario no ha subido ninguna publicación aún",
       "TEXTNOTEPUBLI": "Aún no has subido ninguna publicación"
     },
+    "GAMES": {
+      "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
+      "TITLE": "Juegos"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publicaciones"
+    },
     "INFORMACIO": {
       "TITLE": "Información",
       "GUARDAR": "Guardar",
