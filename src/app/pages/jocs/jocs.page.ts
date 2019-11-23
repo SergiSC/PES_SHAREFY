@@ -13,7 +13,7 @@ export class JocsPage implements OnInit {
 
   games: any;
   descTrad: string;
-  desTrad = 'hola';
+  
   constructor(public api: ApiService, private router: Router, private translate: TranslateService) { }
 
   ngOnInit() {
@@ -24,15 +24,10 @@ export class JocsPage implements OnInit {
 
   navigate(id: any) {
     let joc;
-    for (const game of this.games) {
-      if (game.id  === id) {
-        this.api.getGameDescription(game.id, this.translate.currentLang).subscribe((data: any) => {
-          this.descTrad = data.value.description;
-          console.log(this.desTrad);
-        });
-        joc = {imag: game.image_url, desc: this.descTrad, name: game.name, idg: game.id};
-      }
-    }
+    this.api.getGameDescription(id, this.translate.currentLang).subscribe((data: any) => {
+      joc = {imag: data.value.image_url, desc: data.value.description, name: data.value.name, idg: data.value.id};
+      console.log(joc);
+    });
     this.router.navigate(['/perfiljoc/', joc]);
   }
 
