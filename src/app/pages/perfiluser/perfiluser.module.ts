@@ -5,15 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComentarisPage } from './comentaris.page';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { customTranslateLoader } from 'src/app/app.module';
-import { HttpClient } from '@angular/common/http';
+import { PerfiluserPage } from './perfiluser.page';
+
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {customTranslateLoader} from '../../app.module';
+import {HttpClient} from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ComentarisPage
+    component: PerfiluserPage
   }
 ];
 
@@ -22,6 +24,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
@@ -31,6 +34,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [ComentarisPage]
+  declarations: [PerfiluserPage]
 })
-export class ComentarisPageModule {}
+export class PerfiluserPageModule {}

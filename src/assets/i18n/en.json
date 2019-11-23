@@ -21,7 +21,15 @@
       "BUTTONSEGUIDORS": "Followers",
       "BUTTONSEGUITS": "Following",
       "BUTTONPUBLICACIONS": "Publications",
-      "BUTTONMAGRADA": "Likes"
+      "BUTTONMAGRADA": "Likes",
+      "BUTTONSEGUIR": "Follow",
+      "BUTTONSEGUINT": "Following",
+      "NOSEGUINT": "This user is private",
+      "NPUBLICACIONS": "Publications",
+      "NSEGUIDORS": "Followers",
+      "NSEGUITS": "Following",
+      "TEXTTEPUBLI": "This user hasn't upload any publication yet",
+      "TEXTNOTEPUBLI": "You haven't upload any publication yet"
     },
     "INFORMACIO": {
       "TITLE": "Information",
@@ -59,6 +67,11 @@
       "LABELLINK": "Accept the",
       "LINK": "terms of use and privacy policy"
     },
+    "COMMENTS":{
+      "TITLE": "Comments",
+      "AFEGIR": "Add",
+      "PLACEHOLDER": "Comment"
+    },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
       "PRIVACITY": "Private Account",
@@ -67,6 +80,13 @@
       "ENGLISH": "English",
       "SPANISH": "Spanish",
       "CATALAN": "Catalan"
+    },
+    "GAMES": {
+      "DESCRIPTION": "Choose you favorite game to watch the best clips!",
+      "TITLE": "Games"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publications"
     },
     "RECUPERAR": {
       "TITLE0": "Restore password",

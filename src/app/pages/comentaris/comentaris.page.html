@@ -5,7 +5,7 @@
       
           </ion-back-button>
         </ion-buttons>
-    <ion-title>Comentaris</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.COMMENTS.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,7 +29,7 @@
                   <ion-img alt="" [src]="'http://sharefy.tk' + comm.img"></ion-img>
                 </ion-avatar>
               </ion-col>
-              <ion-col class="ion-padding-bottom" class="comm"><ion-text><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
+              <ion-col class="ion-padding-bottom" class="comm"><ion-text (click)="goperfiluser(comm.name)"><p><b>{{ comm.name }}</b></p></ion-text></ion-col>
               <ion-col><ion-icon name="trash" *ngIf="comm.name === user" (click)="BorrarCom(comm.id)" class="ion-float-right" style="margin-top: 16px;"></ion-icon></ion-col>
             </ion-row>
             <ion-row><ion-text class="auto-margin">{{ comm.text }}</ion-text></ion-row>
@@ -40,8 +40,8 @@
 
 <ion-footer>
     <ion-toolbar class="new-background-color">
-      <ion-input placeholder="Comentari" [(ngModel)]="Inpu"></ion-input>
-      <ion-buttons slot="primary"><ion-button color="primary" (click)="AfegirCom()">Afegir</ion-button></ion-buttons>
+      <ion-input placeholder="{{ 'PAGE.COMMENTS.PLACEHOLDER' | translate }}" [(ngModel)]="Inpu"></ion-input>
+      <ion-buttons slot="primary"><ion-button color="primary" (click)="AfegirCom()" style="text-transform: none;">{{ 'PAGE.COMMENTS.AFEGIR' | translate }}</ion-button></ion-buttons>
     </ion-toolbar>
   </ion-footer>
 

@@ -176,6 +176,28 @@ export class ApiService {
     );
   }
 
+  getGamePublications(idg) {
+    return this.http.get(
+      this.url + '/api/game/' + idg + '/publications'
+    );
+  }
+
+  getGameDescription(idg, lang) {
+    if (lang === 'cat') {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/ca'
+      );
+    } else if (lang === 'es') {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/es'
+      );
+    } else {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/en'
+      );
+    }
+  }
+
   AddComment(user, id, tok, tex) {
     const body = {
       text: tex,
@@ -195,7 +217,31 @@ export class ApiService {
   deletePublication(id, token) {
     return this.http.delete(
       this.url + '/api/publication/' + id + '?token=' + token
-    )
+    );
+  }
+
+  IsFollowing(follower, following, tok) {
+    return this.http.get(
+      this.url + '/api/follow/user/' + follower + '/user/' + following + '?token=' + tok
+    );
+  }
+
+  Seguir(follower, following, tok) {
+    const body = {
+      follower_username: follower,
+      token: tok
+    };
+    console.log(follower, following);
+    return this.http.post(
+      this.url + '/api/follow/user/' + following,
+      body,
+    );
+  }
+
+  DeixardeSeguir(follower, following, tok) {
+    return this.http.delete(
+      this.url + '/api/follow/user/' + follower + '/user/' + following + '?token=' + tok
+    );
   }
 
 }

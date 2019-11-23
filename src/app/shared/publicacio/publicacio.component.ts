@@ -7,8 +7,6 @@ import { Router, NavigationExtras } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 import {Storage} from '@ionic/storage';
-import { ComentarisPage } from 'src/app/pages/comentaris/comentaris.page';
-import { Key } from 'protractor';
 
 @Component({
   selector: 'app-publicacio',
@@ -72,8 +70,14 @@ export class PublicacioComponent implements OnInit {
 
 
    gotoporfile() {
-    this.router.navigate(['/perfil']);
+    this.router.navigate(['/perfiluser']);
     // de moment va a la del usuari registat
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.username)
+      }
+    };
+    this.router.navigate(['/perfiluser'], navigationExtras);
    }
 
    gotoComments() {
