@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button>
+      <ion-button (click)="openSearch()">
         <ion-icon name="search"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -20,7 +20,9 @@
   </ion-row>
   <ion-row *ngFor="let g of games">
     <ion-col class="centriño">
-      <ion-img class="image"  [src]="g.image_url" (click)="navigate(g.id)"></ion-img>
+      <ion-row>
+        <ion-img class="image"  [src]="g.image_url" (click)="navigate(g.id)"></ion-img>
+      </ion-row>
     </ion-col>
   </ion-row>
 

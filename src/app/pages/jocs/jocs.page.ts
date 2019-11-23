@@ -23,12 +23,16 @@ export class JocsPage implements OnInit {
   }
 
   navigate(id: any) {
-    let joc;
     this.api.getGameDescription(id, this.translate.currentLang).subscribe((data: any) => {
-      joc = {imag: data.value.image_url, desc: data.value.description, name: data.value.name, idg: data.value.id};
-      console.log(joc);
+      const joc = { 
+        imag:data.value.image_url, 
+        desc: data.value.description, 
+        name: data.value.name, 
+        idg: data.value.id
+      };
+      console.log(joc)
+      this.router.navigate(['/perfiljoc', joc]);
     });
-    this.router.navigate(['/perfiljoc/', joc]);
   }
 
   openSearch() {

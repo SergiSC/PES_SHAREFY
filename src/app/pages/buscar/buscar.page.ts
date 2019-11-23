@@ -36,28 +36,33 @@ export class BuscarPage implements OnInit {
       })
       this.api.getAllGames().subscribe((data:any) => {
         data.value.forEach(element => {
-          if (element.name.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
+          if (element.name_en.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
             let result = {
-              nom: element.name,
+              nom: element.name_en,
               foto: element.image_url,
-              tipus: 'joc'
+              tipus: 'joc',
+              infoJoc: element
             }
             this.resultatsFiltrats.push(result)
           }
         })
       })
-      let result = {
-        nom: 'Pentakill',
-        foto: '../../assets/icon/penta.png',
-        tipus: 'categoria'
-      }
-      this.resultatsFiltrats.push(result)
       this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
     }
   }
 
   redirectCategoria(categoria) {
     this.router.navigateByUrl('/categoria/' + categoria);
+  }
+
+  redirectJoc(joc) {
+    const jocParams = { 
+      imag: joc.image_url, 
+      desc: joc.description_en, 
+      name: joc.name_en, 
+      idg: joc.id 
+    };
+    this.router.navigate(['/perfiljoc', jocParams]);
   }
 
   ngOnInit() {
