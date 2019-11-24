@@ -47,6 +47,7 @@ export class BuscarPage implements OnInit {
                 tipus: "publicacio"
               }
               this.resultatsFiltrats.push(result)
+              if (this.selectTipus === 'publicacions') this.ordenaPer()
             })
             data.users.forEach(element => {
               let result = {
@@ -62,6 +63,7 @@ export class BuscarPage implements OnInit {
                 result.foto = 'http://www.sharefy.tk' + element.photo_path
               }
               this.resultatsFiltrats.push(result)
+              if (this.selectTipus === 'usuaris') this.ordenaPer()
             })
           })
         });
@@ -73,23 +75,24 @@ export class BuscarPage implements OnInit {
               text: element.name_en,
               id: element.id,
               foto: element.image_url,
+              descipcio: element.description_en,
               tipus: 'joc'
             }
             this.resultatsFiltrats.push(result)
+            if (this.selectTipus === 'jocs') this.ordenaPer()
           }
         })
       })
-      this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
-      this.ordenaPer()
     }
+    if (this.selectTipus == 'totes') this.ordenaPer()
 
   }
 
   redirectJoc(joc) {
     const jocParams = { 
-      imag: joc.image_url, 
-      desc: joc.description_en, 
-      name: joc.name_en, 
+      imag: joc.foto, 
+      desc: joc.descipcio, 
+      name: joc.text, 
       idg: joc.id 
     };
     this.router.navigate(['/perfiljoc', jocParams]);
@@ -103,7 +106,7 @@ export class BuscarPage implements OnInit {
         game: data.game, 
         idp: publicacioId
       };
-      this.router.navigate(['/publication/' + publicacioId, edit]);
+      this.router.navigate(['/publicacio', edit]);
     })
     
   }
@@ -125,7 +128,6 @@ export class BuscarPage implements OnInit {
       })
     }
     else if (this.selectTipus === 'publicacions') {
-      console.log(this.resultatsFiltrats)
       this.resultatsFiltrats.forEach(element => {
         if (element.tipus === 'publicacio') {
           this.resultatsEnsenyats.push(element)

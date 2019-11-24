@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <div style="width: 48px"></div>
+    </ion-buttons>
+    <ion-title class="ion-text-center">publi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="Usuari">
+      <ion-col>
+        <ion-button fill="clear" (click)="gotoporfile()">
+        <ion-avatar class="avatar">
+          <ion-img alt="" [src]="'http://sharefy.tk' + photo"></ion-img>
+        </ion-avatar>
+        <ion-label style="text-transform: none; padding-left: 17%;"  [(ngModel)]="commentaris"><b>{{ commentaris.ownername }}</b></ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <ion-button fill="clear" class="buto-config" (click)="presentPopOver($event)" *ngIf="esOwner == true"><ion-icon name="more"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-video-container">
+        <video width="100%"  [id]="idp" controls> 
+          <source [src]="'http://sharefy.tk' + video" type='video/mp4'>
+        </video>
+    </ion-row>
+    <ion-row  class="row-likes-comm ion-padding-horizontal">
+      <ion-col size="1">
+          <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="numLikes">{{ numLikes }}</ion-text>
+      </ion-col>
+      <ion-col size="1">
+           <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="blike()" [name]="like ? 'heart' :'heart-empty'"></ion-icon>
+      </ion-col>
+      <ion-col size="1">
+          <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="gotoComments()" name="chatboxes"></ion-icon>
+      </ion-col>
+     <ion-col>
+        <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" (click)="gotoShare()" class="ion-float-right" align-item-end color=primary name="share"></ion-icon>
+     </ion-col>
+    </ion-row>
+    <ion-row class="row-des">
+      <ion-text [(ngModel)]="commentaris" class="auto" ><b>{{ commentaris.ownername }}:</b> {{des}}</ion-text>
+    </ion-row>
+  </ion-grid>
+</ion-content>
