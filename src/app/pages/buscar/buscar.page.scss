@@ -16,9 +16,10 @@
 }
 
 .nom-llista {
-    font-size: 11pt; 
-    text-overflow: ellipsis; 
-    overflow: hidden; 
+    font-size: 10pt; 
     max-width: 100%; 
-    white-space: nowrap;
+}
+
+.selects {
+    width: 100% !important;
 }

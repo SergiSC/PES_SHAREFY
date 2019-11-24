@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'legal', loadChildren: './pages/legal/legal.module#LegalPageModule' },
   { path: 'editar-publicacio/:idPublicacio', loadChildren: './pages/editar-publicacio/editar-publicacio.module#EditarPublicacioPageModule' },
   { path: 'buscar', loadChildren: './pages/buscar/buscar.module#BuscarPageModule' },
-  { path: 'categoria/:nomCategoria', loadChildren: './pages/categoria/categoria.module#CategoriaPageModule' },
   { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
 
 ];

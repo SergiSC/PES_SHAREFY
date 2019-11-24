@@ -4,6 +4,7 @@ import { element } from 'protractor';
 import { ApiService } from 'src/app/services/api.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-buscar',
@@ -14,45 +15,74 @@ export class BuscarPage implements OnInit {
 
   entradaBuscador: string
   resultatsFiltrats = []
+  resultatsEnsenyats = []
+  customActionSheetTipus: any = {
+    header: this.translate.instant('PAGE.BUSCAR.TEXTLABELALERT1'),
+  };
+  customActionSheetPrioritat: any = {
+    header: this.translate.instant('PAGE.BUSCAR.TEXTLABELALERT2'),
+  };
+
+  selectTipus = 'totes'
+  selectPrioritat = 'recents'
 
   constructor(private api: ApiService,
               private translate: TranslateService,
-              private router: Router) { }
+              private router: Router,
+              private storage: Storage) { }
 
   comprovarEntrada() {
     this.resultatsFiltrats = []
+    this.resultatsEnsenyats = []
     if (this.entradaBuscador.length > 1) {
-      this.api.getAllUsers().subscribe((data:any) => {
-        data.list.forEach(element => {
-          if (element.username.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
-            let result = {
-              nom: element.username,
-              foto: '../../assets/icon/face.png', //provisional fins que el endpoint proporcioni la img
-              tipus: 'usuari'
-            }
-            this.resultatsFiltrats.push(result)
-          }
-        })
-      })
+
+      this.storage.get('username').then((usr) => {
+        this.storage.get('token').then((tk) => {
+          this.api.getUsuarisIPublicacions(this.entradaBuscador.toLowerCase(),tk).subscribe((data:any) => {
+            data.publications.forEach(element => {
+              let result = {
+                text: element.text,
+                id: element.id,
+                foto: '../../../assets/icon/play-button.png',
+                tipus: "publicacio"
+              }
+              this.resultatsFiltrats.push(result)
+            })
+            data.users.forEach(element => {
+              let result = {
+                text: element.username,
+                id: element.id,
+                foto: '',
+                tipus: "usuari"
+              }
+              if (element.photo_path === null) {
+                result.foto = '../../../assets/icon/user_profile.png'
+              }
+              else {
+                result.foto = 'http://www.sharefy.tk' + element.photo_path
+              }
+              this.resultatsFiltrats.push(result)
+            })
+          })
+        });
+      });
       this.api.getAllGames().subscribe((data:any) => {
         data.value.forEach(element => {
           if (element.name_en.toLowerCase().includes(this.entradaBuscador.toLowerCase())) {
             let result = {
-              nom: element.name_en,
+              text: element.name_en,
+              id: element.id,
               foto: element.image_url,
-              tipus: 'joc',
-              infoJoc: element
+              tipus: 'joc'
             }
             this.resultatsFiltrats.push(result)
           }
         })
       })
       this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
+      this.ordenaPer()
     }
-  }
 
-  redirectCategoria(categoria) {
-    this.router.navigateByUrl('/categoria/' + categoria);
   }
 
   redirectJoc(joc) {
@@ -63,6 +93,58 @@ export class BuscarPage implements OnInit {
       idg: joc.id 
     };
     this.router.navigate(['/perfiljoc', jocParams]);
+  }
+
+  redirectPublicacio(publicacioId) {
+    this.api.getPublicationById(publicacioId).subscribe((data:any) => {
+      const edit = {
+        video: data.video_path, 
+        desc: data.text, 
+        game: data.game, 
+        idp: publicacioId
+      };
+      this.router.navigate(['/publication/' + publicacioId, edit]);
+    })
+    
+  }
+
+  ordenaPer() {
+    this.resultatsEnsenyats = []
+    if (this.selectTipus === 'usuaris') {
+      this.resultatsFiltrats.forEach(element => {
+        if (element.tipus === 'usuari') {
+          this.resultatsEnsenyats.push(element)
+        }
+      })
+    }
+    else if (this.selectTipus === 'jocs') {
+      this.resultatsFiltrats.forEach(element => {
+        if (element.tipus === 'joc') {
+          this.resultatsEnsenyats.push(element)
+        }
+      })
+    }
+    else if (this.selectTipus === 'publicacions') {
+      console.log(this.resultatsFiltrats)
+      this.resultatsFiltrats.forEach(element => {
+        if (element.tipus === 'publicacio') {
+          this.resultatsEnsenyats.push(element)
+        }
+      })
+      /*if (this.selectPrioritat === 'recents') {
+        this.resultatsFiltrats.sort((a,b) => (a.data < b.data) ? 1 : ((b.data > a.data) ? -1 : 0)); 
+      }
+      else if (this.selectPrioritat === 'antigues') {
+        this.resultatsFiltrats.sort((a,b) => (a.data > b.data) ? 1 : ((b.data < a.data) ? -1 : 0)); 
+      }
+      else {
+        this.resultatsFiltrats.sort((a,b) => (a.likes < b.likes) ? 1 : ((b.likes > a.likes) ? -1 : 0)); 
+      }*/
+    }
+    //ALL
+    else {
+      this.resultatsEnsenyats = this.resultatsFiltrats
+    }
   }
 
   ngOnInit() {

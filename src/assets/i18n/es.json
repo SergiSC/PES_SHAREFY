@@ -172,7 +172,18 @@
       "PLACEHOLDERSEARCHBAR": "Buscar...",
       "BUTTONGAMES": "Juego",
       "BUTTONUSER": "Perfil",
-      "BUTTONCATEGORY": "Categoría"
+      "BUTTONCATEGORY": "Publicación",
+      "SELECTTYPE":"Filtrar",
+      "SELECTPRIORITY": "Ordenar",
+      "SELECTTYPEALL": "Todos",
+      "SELECTTYPEUSERS": "Usuarios",
+      "SELECTTYPEPUBLICATIONS": "Publicaciones",
+      "SELECTTYPEGAMES": "Juegos",
+      "SELECTPRIORITYRECENTS": "Más recientes",
+      "SELECTPRIORITYOLD": "Más antiguas",
+      "SELECTPRIORITYPOPULAR": "Más me gustas",
+      "TEXTLABELALERT1": "Filtrar por:",
+      "TEXTLABELALERT2": "Ordenar por:"
     },
     "CATEGORIA": {
       "TITLE": "Categoría",

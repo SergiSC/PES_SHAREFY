@@ -244,4 +244,8 @@ export class ApiService {
     );
   }
 
+  getUsuarisIPublicacions(data,tok) {
+    return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
+  }
+
 }

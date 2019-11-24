@@ -172,7 +172,18 @@
       "PLACEHOLDERSEARCHBAR": "Search...",
       "BUTTONGAMES": "Game",
       "BUTTONUSER": "Profile",
-      "BUTTONCATEGORY": "Category"
+      "BUTTONCATEGORY": "Publications",
+      "SELECTTYPE":"Filter",
+      "SELECTPRIORITY": "Order",
+      "SELECTTYPEALL": "All",
+      "SELECTTYPEUSERS": "Users",
+      "SELECTTYPEPUBLICATIONS": "Publications",
+      "SELECTTYPEGAMES": "Games",
+      "SELECTPRIORITYRECENTS": "Newest",
+      "SELECTPRIORITYOLD": "Oldest",
+      "SELECTPRIORITYPOPULAR": "Most likes",
+      "TEXTLABELALERT1": "Filter by:",
+      "TEXTLABELALERT2": "Order by:"
     },
     "CATEGORIA": {
       "TITLE": "Category",

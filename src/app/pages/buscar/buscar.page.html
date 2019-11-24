@@ -16,13 +16,34 @@
       <ion-searchbar showCancelButton="never" class="searchBar" animated="true" placeholder="{{'PAGE.BUSCAR.PLACEHOLDERSEARCHBAR' | translate}}" [(ngModel)]="entradaBuscador" (ionChange)="comprovarEntrada()"></ion-searchbar>
     </ion-row>
     <ion-row>
+      <ion-item class="selects">
+        <ion-label>{{'PAGE.BUSCAR.SELECTTYPE' | translate}}</ion-label>
+        <ion-select [(ngModel)]="selectTipus" (ionChange)="ordenaPer()" [interfaceOptions]="customActionSheetTipus" interface="action-sheet">
+          <ion-select-option value="totes">{{'PAGE.BUSCAR.SELECTTYPEALL' | translate}}</ion-select-option>
+          <ion-select-option value="usuaris">{{'PAGE.BUSCAR.SELECTTYPEUSERS' | translate}}</ion-select-option>
+          <ion-select-option value="publicacions">{{'PAGE.BUSCAR.SELECTTYPEPUBLICATIONS' | translate}}</ion-select-option>
+          <ion-select-option value="jocs">{{'PAGE.BUSCAR.SELECTTYPEGAMES' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item class="selects">
+        <ion-label>{{'PAGE.BUSCAR.SELECTPRIORITY' | translate}}</ion-label>
+        <ion-select [(ngModel)]="selectPrioritat" (ionChange)="ordenaPer()" [interfaceOptions]="customActionSheetPrioritat" interface="action-sheet">
+          <ion-select-option value="recents">{{'PAGE.BUSCAR.SELECTPRIORITYRECENTS' | translate}}</ion-select-option>
+          <ion-select-option value="antigues">{{'PAGE.BUSCAR.SELECTPRIORITYOLD' | translate}}</ion-select-option>
+          <ion-select-option value="populars">{{'PAGE.BUSCAR.SELECTPRIORITYPOPULAR' | translate}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        <ion-row *ngFor="let resultat of resultatsFiltrats" class="people-row">
+        <ion-row *ngFor="let resultat of resultatsEnsenyats" class="people-row">
           <ion-col size="2">
             <ion-img [src]="resultat.foto" style="height: 55px;"></ion-img>
           </ion-col>
           <ion-col size="5" style="align-self: center">
-            <p class="nom-llista"> {{resultat.nom}} </p>
+            <p class="nom-llista"> {{resultat.text}} </p>
           </ion-col>
           <ion-col size="5" style="align-self: center">
             <ion-row style="justify-content: center;">
@@ -32,7 +53,7 @@
               <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;">
                 <ion-icon name="contact" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONUSER' | translate}}
               </ion-button>
-              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='categoria'" color="warning" size="small" style="text-transform: none; width: 100%;" (click)="redirectCategoria(resultat.nom)">
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='publicacio'" color="warning" size="small" style="text-transform: none; width: 100%;" (click)="redirectPublicacio(resultat.id)">
                 <ion-icon name="paper" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONCATEGORY' | translate}}
               </ion-button>
             </ion-row>
