@@ -92,6 +92,7 @@ ngOnInit() {}
           if (data.value.length !== 0) {
             this.publicacio = data.value;
             this.noPubli = false;
+            this.npubli = this.publicacio.length;
           }
         });
       });
