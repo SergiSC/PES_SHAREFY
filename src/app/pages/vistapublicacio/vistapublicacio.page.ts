@@ -6,11 +6,11 @@ import {Storage} from '@ionic/storage';
 
 
 @Component({
-  selector: 'app-publicacio',
-  templateUrl: './publicacio.page.html',
-  styleUrls: ['./publicacio.page.scss'],
+  selector: 'app-vistapublicacio',
+  templateUrl: './vistapublicacio.page.html',
+  styleUrls: ['./vistapublicacio.page.scss'],
 })
-export class PublicacioPage implements OnInit {
+export class VistapublicacioPage implements OnInit {
 
   idPublicacio: any
   dadesPublicacio: Object

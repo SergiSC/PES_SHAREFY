@@ -29,4 +29,7 @@ export class MurPage implements OnInit {
     this.router.navigateByUrl('/buscar');
   }
 
+  gotoperfiluser(){
+    this.router.navigateByUrl('/perfil')
+  }
 }

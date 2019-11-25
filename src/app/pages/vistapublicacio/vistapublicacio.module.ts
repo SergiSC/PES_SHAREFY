@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicacioPage } from './publicacio.page';
+import { VistapublicacioPage } from './vistapublicacio.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
 import { customTranslateLoader } from 'src/app/app.module';
+import {HttpClient} from '@angular/common/http';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: PublicacioPage
+    component: VistapublicacioPage
   }
 ];
 
@@ -33,6 +34,7 @@ const routes: Routes = [
       }
     })
   ],
-  declarations: [PublicacioPage]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [VistapublicacioPage]
 })
-export class PublicacioPageModule {}
+export class VistapublicacioPageModule {}

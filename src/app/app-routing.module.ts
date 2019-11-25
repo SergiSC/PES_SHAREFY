@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'buscar', loadChildren: './pages/buscar/buscar.module#BuscarPageModule' },
   { path: 'perfiluser', loadChildren: './pages/perfiluser/perfiluser.module#PerfiluserPageModule' },
   { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
-  { path: 'publicacio', loadChildren: './pages/publicacio/publicacio.module#PublicacioPageModule' },
-  { path: 'vista-publicacio', loadChildren: './pages/vista-publicacio/vista-publicacio.module#VistaPublicacioPageModule' },
+  { path: 'vistapublicacio', loadChildren: './pages/vistapublicacio/vistapublicacio.module#VistapublicacioPageModule' },
+
 
 ];
 @NgModule({
