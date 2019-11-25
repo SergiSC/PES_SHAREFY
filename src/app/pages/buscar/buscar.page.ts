@@ -49,6 +49,7 @@ export class BuscarPage implements OnInit {
                 data: new Date(element.created_at)
               }
               this.resultatsFiltrats.push(result)
+              if (this.selectTipus === 'publicacions') this.ordenaPer()
             })
             data.users.forEach(element => {
               let result = {
@@ -64,6 +65,7 @@ export class BuscarPage implements OnInit {
                 result.foto = 'http://www.sharefy.tk' + element.photo_path
               }
               this.resultatsFiltrats.push(result)
+              if (this.selectTipus === 'usuaris') this.ordenaPer()
             })
           })
         });
@@ -79,12 +81,12 @@ export class BuscarPage implements OnInit {
               descripcio: element.description_en
             }
             this.resultatsFiltrats.push(result)
+            if (this.selectTipus === 'jocs') this.ordenaPer()
           }
         })
       })
-      this.resultatsFiltrats.sort((a,b) => (a.nom.toLowerCase() < b.nom.toLowerCase()) ? 1 : ((b.nom.toLowerCase() > a.nom.toLowerCase()) ? -1 : 0)); 
-      this.ordenaPer()
     }
+    if (this.selectTipus == 'totes') this.ordenaPer()
 
   }
 
@@ -106,7 +108,7 @@ export class BuscarPage implements OnInit {
         game: data.game, 
         idp: publicacioId
       };
-      this.router.navigate(['/publication/' + publicacioId, edit]);
+      this.router.navigate(['/publicacio', edit]);
     })
     
   }
