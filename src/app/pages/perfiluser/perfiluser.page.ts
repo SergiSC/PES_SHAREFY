@@ -61,17 +61,15 @@ go_to_follow(x) {
 }
 
 ngOnInit() {
-  this.route.queryParams.subscribe(params => {
-    const com  = JSON.parse(params.special);
-    this.Perfiluser = com;
+  this.route.params.subscribe(data => {
+    this.Perfiluser = data.nom;
   });
 }
 
   ionViewWillEnter() {
     this.presentLoading();
-    this.route.queryParams.subscribe(params => {
-      const com  = JSON.parse(params.special);
-      this.Perfiluser = com;
+    this.route.params.subscribe(data => {
+      this.Perfiluser = data.nom;
     });
     this.store.get('token').then((token) => {
       this.token = token;

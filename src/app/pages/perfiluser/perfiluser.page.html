@@ -5,11 +5,14 @@
           </ion-back-button>
       </ion-buttons>
     <ion-title class="ion-text-center" > {{ Perfiluser }} </ion-title>
-    <ion-buttons slot="end" *ngIf="esell">
-        <ion-button [routerLink]="['/informacio']">
+    <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name="heart"></ion-icon>
+        </ion-button>
+        <ion-button *ngIf="esell" [routerLink]="['/informacio']">
           <ion-icon name="person"></ion-icon>
         </ion-button>
-      <ion-button [routerLink]="['/config']">
+      <ion-button *ngIf="esell" [routerLink]="['/config']">
         <ion-icon  name="settings"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -52,7 +55,7 @@
           <ion-row>
             <ion-col *ngIf="(public == true || seguint == true) && !noPubli">
               <div *ngFor="let publi of publicacio">
-                  <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name"></app-publicacio>
+                  <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
               </div>
           </ion-col>
           <ion-col *ngIf="public == false && seguint == false">
