@@ -86,7 +86,8 @@
       "TITLE": "Games"
     },
     "PROFILEGAMES": {
-      "PUBLICATIONS": "Publications"
+      "PUBLICATIONS": "Publications",
+      "NOPUBLI": "Clips of this game have not yet been uploaded, be the first!"
     },
     "RECUPERAR": {
       "TITLE0": "Restore password",

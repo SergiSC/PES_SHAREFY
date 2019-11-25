@@ -36,7 +36,8 @@
       "TITLE": "Jocs"
     },
     "PROFILEGAMES": {
-      "PUBLICATIONS": "Publicaions"
+      "PUBLICATIONS": "Publicaions",
+      "NOPUBLI": "Encara no s'han penjat clips d'aquest joc, sigues el primer!"
     },
     "INFORMACIO": {
       "TITLE": "Informació",
