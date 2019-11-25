@@ -16,6 +16,8 @@ export class PerfiljocPage implements OnInit {
   id: any;
   publicacions: any;
   numPubli: any;
+  tePublicacions: boolean;
+  tePulicacions = false;
 
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
@@ -30,6 +32,7 @@ export class PerfiljocPage implements OnInit {
     this.api.getGamePublications(this.id).subscribe((data: any) => {
       this.publicacions = data.value;
       this.numPubli = data.value.length;
+      this.tePublicacions = (this.numPubli !== 0);
     });
   }
 

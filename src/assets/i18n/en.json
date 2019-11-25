@@ -86,7 +86,8 @@
       "TITLE": "Games"
     },
     "PROFILEGAMES": {
-      "PUBLICATIONS": "Publications"
+      "PUBLICATIONS": "Publications",
+      "NOPUBLI": "Clips of this game have not yet been uploaded, be the first!"
     },
     "RECUPERAR": {
       "TITLE0": "Restore password",
@@ -184,11 +185,6 @@
       "SELECTPRIORITYPOPULAR": "Most likes",
       "TEXTLABELALERT1": "Filter by:",
       "TEXTLABELALERT2": "Order by:"
-    },
-    "CATEGORIA": {
-      "TITLE": "Category",
-      "LABELSELECTED": "Selected category",
-      "LABELNUMBER": "Number of publications"
     }
   },
   "SHARED": {

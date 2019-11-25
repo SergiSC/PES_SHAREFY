@@ -10,6 +10,18 @@
     text-align: center;
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    text-align: center;
+    align-self: center;
+    font-size: 120%;
+    margin: auto;
+    margin-top: 60px;
+}
+
 .image {
     height: 260px;
     width: 165px;
