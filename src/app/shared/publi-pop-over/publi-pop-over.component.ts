@@ -31,7 +31,6 @@ export class PubliPopOverComponent implements OnInit {
 
   redirectToEdit() {
     this.DismissClick();
-    console.log(this.idPublication);
     const edit = {video: this.video, desc: this.desc, game: this.game, idp: this.idPublication };
     this.router.navigate(['/editar-publicacio/' + this.idPublication, edit]);
   }

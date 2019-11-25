@@ -33,6 +33,14 @@
       "NOFOLLOWERS": "Aquest usuari no es seguit per ningú",
       "NOFOLLOWING": "Aquest usuari no segueix a ningú"
     },
+    "GAMES": {
+      "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
+      "TITLE": "Jocs"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publicaions",
+      "NOPUBLI": "Encara no s'han penjat clips d'aquest joc, sigues el primer!"
+    },
     "INFORMACIO": {
       "TITLE": "Informació",
       "GUARDAR": "Guardar",
@@ -166,7 +174,19 @@
       "TITLE": "Buscar",
       "PLACEHOLDERSEARCHBAR": "Buscar...",
       "BUTTONGAMES": "Joc",
-      "BUTTONUSER": "Perfil"
+      "BUTTONUSER": "Perfil",
+      "BUTTONCATEGORY": "Publicacions",
+      "SELECTTYPE":"Filtra",
+      "SELECTPRIORITY": "Ordena",
+      "SELECTTYPEALL": "Tots",
+      "SELECTTYPEUSERS": "Usuaris",
+      "SELECTTYPEPUBLICATIONS": "Publicacions",
+      "SELECTTYPEGAMES": "Jocs",
+      "SELECTPRIORITYRECENTS": "Més recents",
+      "SELECTPRIORITYOLD": "Més antigues",
+      "SELECTPRIORITYPOPULAR": "Més m'agrada",
+      "TEXTLABELALERT1": "Filtra per:",
+      "TEXTLABELALERT2": "Ordena per:"
     }
   },
   "SHARED": {

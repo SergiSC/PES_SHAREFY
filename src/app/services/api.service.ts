@@ -176,6 +176,28 @@ export class ApiService {
     );
   }
 
+  getGamePublications(idg) {
+    return this.http.get(
+      this.url + '/api/game/' + idg + '/publications'
+    );
+  }
+
+  getGameDescription(idg, lang) {
+    if (lang === 'cat') {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/ca'
+      );
+    } else if (lang === 'es') {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/es'
+      );
+    } else {
+      return this.http.get(
+        this.url + '/api/game/' + idg + '/lang/en'
+      );
+    }
+  }
+
   AddComment(user, id, tok, tex) {
     const body = {
       text: tex,
@@ -233,4 +255,8 @@ export class ApiService {
       this.url + '/api/user/' + id + '/followed' + '?token=' + tok
     );
   }
+  getUsuarisIPublicacions(data,tok) {
+    return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
+  }
+
 }

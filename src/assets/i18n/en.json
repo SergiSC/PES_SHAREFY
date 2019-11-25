@@ -83,6 +83,14 @@
       "SPANISH": "Spanish",
       "CATALAN": "Catalan"
     },
+    "GAMES": {
+      "DESCRIPTION": "Choose you favorite game to watch the best clips!",
+      "TITLE": "Games"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publications",
+      "NOPUBLI": "Clips of this game have not yet been uploaded, be the first!"
+    },
     "RECUPERAR": {
       "TITLE0": "Restore password",
       "TITLE1": "Email send",
@@ -166,7 +174,19 @@
       "TITLE": "Search",
       "PLACEHOLDERSEARCHBAR": "Search...",
       "BUTTONGAMES": "Game",
-      "BUTTONUSER": "Profile"
+      "BUTTONUSER": "Profile",
+      "BUTTONCATEGORY": "Publications",
+      "SELECTTYPE":"Filter",
+      "SELECTPRIORITY": "Order",
+      "SELECTTYPEALL": "All",
+      "SELECTTYPEUSERS": "Users",
+      "SELECTTYPEPUBLICATIONS": "Publications",
+      "SELECTTYPEGAMES": "Games",
+      "SELECTPRIORITYRECENTS": "Newest",
+      "SELECTPRIORITYOLD": "Oldest",
+      "SELECTPRIORITYPOPULAR": "Most likes",
+      "TEXTLABELALERT1": "Filter by:",
+      "TEXTLABELALERT2": "Order by:"
     }
   },
   "SHARED": {

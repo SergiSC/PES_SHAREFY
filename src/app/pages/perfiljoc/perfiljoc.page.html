@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center"> {{joc}} </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="col">
+      <ion-img class="image"  [src]=imatge></ion-img>
+    </ion-col>
+    <ion-col>
+      <div class="text">
+        <ion-label color="primary">{{numPubli}}  {{ 'PAGE.PROFILEGAMES.PUBLICATIONS' | translate }} <br>  </ion-label>
+        <ion-label class="desc">{{descripcio}} </ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="tePublicacions">
+    <div *ngFor="let publi of publicacions">
+      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name"></app-publicacio>
+    </div>
+  </ion-row>
+  <ion-row *ngIf="!tePublicacions" class="flex">
+      <ion-icon name="ios-videocam" style="font-size: 128px; margin-top: 32px;"></ion-icon>
+      <p style="font-size: x-large;">{{ 'PAGE.PROFILEGAMES.NOPUBLI' | translate }}</p>
+  </ion-row>
+</ion-content>

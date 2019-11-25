@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start" (click)="openSearch()">
-        <ion-button (click)="openSearch()">
-          <ion-icon name="search"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    <ion-title class="ion-text-center">Jocs</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="openSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ 'PAGE.GAMES.TITLE' | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/perfil']">
         <ion-icon name="person"></ion-icon>
@@ -15,5 +15,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-label class="titol">{{ 'PAGE.GAMES.DESCRIPTION' | translate }}</ion-label>
+  </ion-row>
+  <ion-row *ngFor="let g of games">
+    <ion-col class="centriño">
+      <ion-row>
+        <ion-img class="image"  [src]="g.image_url" (click)="navigate(g.id)"></ion-img>
+      </ion-row>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

@@ -33,6 +33,14 @@
       "NOFOLLOWERS": "Este usuario no es seguido por nadie",
       "NOFOLLOWING": "Este usuario no sigue a nadie"
     },
+    "GAMES": {
+      "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
+      "TITLE": "Juegos"
+    },
+    "PROFILEGAMES": {
+      "PUBLICATIONS": "Publicaciones",
+      "NOPUBLI": "Todavía no se han colgado clips de este juego, sé el primero!"
+    },
     "INFORMACIO": {
       "TITLE": "Información",
       "GUARDAR": "Guardar",
@@ -166,7 +174,19 @@
       "TITLE": "Buscar",
       "PLACEHOLDERSEARCHBAR": "Buscar...",
       "BUTTONGAMES": "Juego",
-      "BUTTONUSER": "Perfil"
+      "BUTTONUSER": "Perfil",
+      "BUTTONCATEGORY": "Publicación",
+      "SELECTTYPE":"Filtrar",
+      "SELECTPRIORITY": "Ordenar",
+      "SELECTTYPEALL": "Todos",
+      "SELECTTYPEUSERS": "Usuarios",
+      "SELECTTYPEPUBLICATIONS": "Publicaciones",
+      "SELECTTYPEGAMES": "Juegos",
+      "SELECTPRIORITYRECENTS": "Más recientes",
+      "SELECTPRIORITYOLD": "Más antiguas",
+      "SELECTPRIORITYPOPULAR": "Más me gustas",
+      "TEXTLABELALERT1": "Filtrar por:",
+      "TEXTLABELALERT2": "Ordenar por:"
     }
   },
   "SHARED": {
