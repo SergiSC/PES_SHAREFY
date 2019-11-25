@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
 import { LoadingController } from '@ionic/angular';
@@ -11,25 +11,26 @@ import { LoadingController } from '@ionic/angular';
 })
 export class PerfiluserPage implements OnInit {
 
-  data;
   pathFotoPerfil = '';
-  Perfiluser = '';
+  Perfiluser = undefined;
   public = undefined;
   seguint = undefined;
+  iduser;
 
   npubli = 0;
   nseguid = 0;
   nseguit = 0;
-  user;
+  user = undefined;
   token;
   publicacio;
-
+  esell = true;
   noPubli = true;
   isLoading = false;
 
 
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage,
-              private loadingController: LoadingController) { }
+              private loadingController: LoadingController,  private router: Router) { }
+
 
 Follow() {
   if (!this.seguint) {
@@ -44,24 +45,25 @@ Follow() {
   this.seguint = !this.seguint;
 }
 
-VeurePublicacions() {
-  if (this.public) {
-    return true;
-  } else if (this.seguint) {
-    return true;
-  } else if (this.es_ell()) {
-    return true;
-  } else { return false; }
-}
-es_ell() {
-  if (this.user === this.Perfiluser) { return true; }
-  return false;
+go_to_follow(x) {
+  let CC;
+  if (x === 0) {
+    CC = [this.iduser, 'Followers'];
+  } else {
+    CC = [this.iduser, 'Following'];
+  }
+  const navigationExtras: NavigationExtras = {
+    queryParams: {
+      special: JSON.stringify(CC)
+    }
+  };
+  if (this.public === true || this.seguint === true) {this.router.navigate(['/followers'], navigationExtras); }
 }
 
 ngOnInit() {
   this.route.queryParams.subscribe(params => {
     const com  = JSON.parse(params.special);
-    this.data = com;
+    this.Perfiluser = com;
   });
 }
 
@@ -69,18 +71,16 @@ ngOnInit() {
     this.presentLoading();
     this.route.queryParams.subscribe(params => {
       const com  = JSON.parse(params.special);
-      this.data = com;
+      this.Perfiluser = com;
     });
     this.store.get('token').then((token) => {
       this.token = token;
-      this.api.recuperarInfoUser(this.data, token).subscribe((data2: any) => {
+      this.api.recuperarInfoUser(this.Perfiluser, token).subscribe((data2: any) => {
         console.log(data2);
         if (data2.value[0].photo_path !== null) {
           this.pathFotoPerfil = 'http://www.sharefy.tk' + data2.value[0].photo_path;
         }
-        if (data2.value[0].username !== null) {
-          this.Perfiluser = data2.value[0].username;
-        }
+        this.iduser = data2.value[0].id;
         if (data2.value[0].public !== null) {
           if (data2.value[0].public === 1) {
             this.public = true;
@@ -88,13 +88,21 @@ ngOnInit() {
             this.public = false;
           }
         }
+        this.nseguid = data2.value[0].followers_count;
+        this.nseguit = data2.value[0].followed_count;
+        this.npubli = data2.value[0].publications_count;
         this.store.get('username').then((val) => {
           this.user = val;
-          this.api.IsFollowing(val, this.Perfiluser, token).subscribe((data: any) => {
-            if (data.value === 'true') {
-              this.seguint = true;
-            } else { this.seguint = false; }
-          });
+          if (!(val === this.Perfiluser)) {
+            this.api.IsFollowing(val, this.Perfiluser, token).subscribe((data: any) => {
+              if (data.value === 'true') {
+                this.seguint = true;
+              } else { this.seguint = false; }
+              this.esell = false;
+            });
+          } else {
+            this.esell = true;
+          }
         });
         this.api.getAllPublis(data2.value[0].id, null).subscribe( (data: any) => {
           if (data.value.length !== 0) {
@@ -107,7 +115,7 @@ ngOnInit() {
       });
     });
   }
-  
+
   async dismiss() {
     this.isLoading = false;
     return await this.loadingController.dismiss().then(() => console.log('dismissed'));

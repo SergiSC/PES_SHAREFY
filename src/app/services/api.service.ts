@@ -244,6 +244,17 @@ export class ApiService {
     );
   }
 
+  Followers(id, tok) {
+    return this.http.get(
+      this.url + '/api/user/' + id + '/followers' + '?token=' + tok
+    );
+  }
+
+  Following(id, tok) {
+    return this.http.get(
+      this.url + '/api/user/' + id + '/followed' + '?token=' + tok
+    );
+  }
   getUsuarisIPublicacions(data,tok) {
     return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
   }

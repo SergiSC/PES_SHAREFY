@@ -70,7 +70,7 @@ export class PublicacioComponent implements OnInit {
 
 
    gotoporfile() {
-    this.router.navigate(['/perfiluser']);
+    //this.router.navigate(['/perfiluser']);
     // de moment va a la del usuari registat
     const navigationExtras: NavigationExtras = {
       queryParams: {

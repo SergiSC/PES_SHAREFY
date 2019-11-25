@@ -29,7 +29,9 @@
       "NSEGUIDORS": "Seguidores",
       "NSEGUITS": "Seguidos",
       "TEXTTEPUBLI": "Este usuario no ha subido ninguna publicación aún",
-      "TEXTNOTEPUBLI": "Aún no has subido ninguna publicación"
+      "TEXTNOTEPUBLI": "Aún no has subido ninguna publicación",
+      "NOFOLLOWERS": "Este usuario no es seguido por nadie",
+      "NOFOLLOWING": "Este usuario no sigue a nadie"
     },
     "GAMES": {
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
