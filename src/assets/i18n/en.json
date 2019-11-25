@@ -184,11 +184,6 @@
       "SELECTPRIORITYPOPULAR": "Most likes",
       "TEXTLABELALERT1": "Filter by:",
       "TEXTLABELALERT2": "Order by:"
-    },
-    "CATEGORIA": {
-      "TITLE": "Category",
-      "LABELSELECTED": "Selected category",
-      "LABELNUMBER": "Number of publications"
     }
   },
   "SHARED": {
