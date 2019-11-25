@@ -27,7 +27,7 @@
       </ion-item>
     </ion-row>
     <ion-row>
-      <ion-item class="selects">
+      <ion-item class="selects" *ngIf="selectTipus=='publicacions'">
         <ion-label>{{'PAGE.BUSCAR.SELECTPRIORITY' | translate}}</ion-label>
         <ion-select [(ngModel)]="selectPrioritat" (ionChange)="ordenaPer()" [interfaceOptions]="customActionSheetPrioritat" interface="action-sheet">
           <ion-select-option value="recents">{{'PAGE.BUSCAR.SELECTPRIORITYRECENTS' | translate}}</ion-select-option>

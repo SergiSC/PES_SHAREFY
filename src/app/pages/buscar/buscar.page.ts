@@ -44,7 +44,9 @@ export class BuscarPage implements OnInit {
                 text: element.text,
                 id: element.id,
                 foto: '../../../assets/icon/play-button.png',
-                tipus: "publicacio"
+                tipus: "publicacio",
+                likes: element.likes,
+                data: new Date(element.created_at)
               }
               this.resultatsFiltrats.push(result)
             })
@@ -73,7 +75,8 @@ export class BuscarPage implements OnInit {
               text: element.name_en,
               id: element.id,
               foto: element.image_url,
-              tipus: 'joc'
+              tipus: 'joc',
+              descripcio: element.description_en
             }
             this.resultatsFiltrats.push(result)
           }
@@ -87,9 +90,9 @@ export class BuscarPage implements OnInit {
 
   redirectJoc(joc) {
     const jocParams = { 
-      imag: joc.image_url, 
-      desc: joc.description_en, 
-      name: joc.name_en, 
+      imag: joc.foto, 
+      desc: joc.descripcio, 
+      name: joc.text, 
       idg: joc.id 
     };
     this.router.navigate(['/perfiljoc', jocParams]);
@@ -125,21 +128,20 @@ export class BuscarPage implements OnInit {
       })
     }
     else if (this.selectTipus === 'publicacions') {
-      console.log(this.resultatsFiltrats)
       this.resultatsFiltrats.forEach(element => {
         if (element.tipus === 'publicacio') {
           this.resultatsEnsenyats.push(element)
         }
       })
-      /*if (this.selectPrioritat === 'recents') {
-        this.resultatsFiltrats.sort((a,b) => (a.data < b.data) ? 1 : ((b.data > a.data) ? -1 : 0)); 
+      if (this.selectPrioritat === 'recents') {
+        this.resultatsEnsenyats.sort(function(a,b){return b.data - a.data});
       }
       else if (this.selectPrioritat === 'antigues') {
-        this.resultatsFiltrats.sort((a,b) => (a.data > b.data) ? 1 : ((b.data < a.data) ? -1 : 0)); 
+        this.resultatsEnsenyats.sort(function(a,b){return a.data - b.data});
       }
       else {
         this.resultatsFiltrats.sort((a,b) => (a.likes < b.likes) ? 1 : ((b.likes > a.likes) ? -1 : 0)); 
-      }*/
+      }
     }
     //ALL
     else {
