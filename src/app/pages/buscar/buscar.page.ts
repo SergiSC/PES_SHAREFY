@@ -101,10 +101,17 @@ export class BuscarPage implements OnInit {
   }
 
   redirectPublicacio(publicacioId) {
-      const edit = {
-        idp: publicacioId
-      };
-      this.router.navigate(['/publicacio', edit]);
+    const edit = {
+      idp: publicacioId
+    };
+    this.router.navigate(['/publicacio', edit]);
+  }
+
+  redirectUsuari(nom) {
+    const user = {
+      nom: nom
+    };
+    this.router.navigate(['/perfiluser', user]);
   }
 
   ordenaPer() {

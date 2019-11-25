@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FollowersPage } from './followers.page';
+import { VistaPublicacioPage } from './vista-publicacio.page';
 
-describe('FollowersPage', () => {
-  let component: FollowersPage;
-  let fixture: ComponentFixture<FollowersPage>;
+describe('VistaPublicacioPage', () => {
+  let component: VistaPublicacioPage;
+  let fixture: ComponentFixture<VistaPublicacioPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowersPage ],
+      declarations: [ VistaPublicacioPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FollowersPage);
+    fixture = TestBed.createComponent(VistaPublicacioPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
