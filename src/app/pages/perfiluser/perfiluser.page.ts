@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
 import { LoadingController } from '@ionic/angular';
@@ -16,6 +16,7 @@ export class PerfiluserPage implements OnInit {
   Perfiluser = '';
   public = undefined;
   seguint = undefined;
+  iduser;
 
   npubli = 0;
   nseguid = 0;
@@ -29,7 +30,7 @@ export class PerfiluserPage implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage,
-              private loadingController: LoadingController) { }
+              private loadingController: LoadingController,  private router: Router) { }
 
 Follow() {
   if (!this.seguint) {
@@ -44,18 +45,19 @@ Follow() {
   this.seguint = !this.seguint;
 }
 
-VeurePublicacions() {
-  if (this.public) {
-    return true;
-  } else if (this.seguint) {
-    return true;
-  } else if (this.es_ell()) {
-    return true;
-  } else { return false; }
-}
-es_ell() {
-  if (this.user === this.Perfiluser) { return true; }
-  return false;
+go_to_follow(x) {
+  let CC;
+  if (x === 0) {
+    CC = [this.iduser, 'Followers'];
+  } else {
+    CC = [this.iduser, 'Following'];
+  }
+  const navigationExtras: NavigationExtras = {
+    queryParams: {
+      special: JSON.stringify(CC)
+    }
+  };
+  if (this.public === true || this.seguint === true) {this.router.navigate(['/followers'], navigationExtras); }
 }
 
 ngOnInit() {
@@ -80,6 +82,8 @@ ngOnInit() {
         }
         if (data2.value[0].username !== null) {
           this.Perfiluser = data2.value[0].username;
+          this.iduser = data2.value[0].id;
+          console.log(this.iduser + ' ' + data2.value[0].id);
         }
         if (data2.value[0].public !== null) {
           if (data2.value[0].public === 1) {
@@ -108,7 +112,7 @@ ngOnInit() {
       });
     });
   }
-  
+
   async dismiss() {
     this.isLoading = false;
     return await this.loadingController.dismiss().then(() => console.log('dismissed'));

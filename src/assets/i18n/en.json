@@ -29,7 +29,9 @@
       "NSEGUIDORS": "Followers",
       "NSEGUITS": "Following",
       "TEXTTEPUBLI": "This user hasn't upload any publication yet",
-      "TEXTNOTEPUBLI": "You haven't upload any publication yet"
+      "TEXTNOTEPUBLI": "You haven't upload any publication yet",
+      "NOFOLLOWERS": "This user isn't followed by anyone",
+      "NOFOLLOWING": "This user is not following anyone"
     },
     "INFORMACIO": {
       "TITLE": "Information",

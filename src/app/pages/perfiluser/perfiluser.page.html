@@ -23,13 +23,13 @@
             </div>
           </ion-col>
           <ion-col class="item2">
-            <div>
+            <div (click)="go_to_follow(0)">
               <p>{{ nseguid }}</p>
               <p>{{ 'PAGE.PERFIL.NSEGUIDORS' | translate }}</p>
             </div>
           </ion-col>
           <ion-col class="item2">
-            <div>
+            <div (click)="go_to_follow(1)">
               <p>{{ nseguit }}</p>
               <p>{{ 'PAGE.PERFIL.NSEGUITS' | translate }}</p>
             </div>
@@ -58,9 +58,9 @@
               <p style="font-size: x-large;">{{ 'PAGE.PERFIL.NOSEGUINT' | translate }}</p>
             </div>
           </ion-col>
-          <ion-col *ngIf="noPubli" class="item">
-              <ion-icon name="ios-videocam" style="font-size: 128px; margin-top: 32px;" *ngIf="!es_ell() && public"></ion-icon>
-              <p style="font-size: x-large;" *ngIf="public">{{ 'PAGE.PERFIL.TEXTTEPUBLI' | translate }}</p>
+          <ion-col *ngIf="(noPubli && public == true) || (seguint && noPubli)" class="item">
+              <ion-icon name="ios-videocam" style="font-size: 128px; margin-top: 32px;"></ion-icon>
+              <p style="font-size: x-large;">{{ 'PAGE.PERFIL.TEXTTEPUBLI' | translate }}</p>
           </ion-col>
         </ion-row>
       </ion-grid>
