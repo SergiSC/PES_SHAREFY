@@ -39,8 +39,4 @@ export class MurPage implements OnInit {
   openSearch() {
     this.router.navigateByUrl('/buscar');
   }
-
-  gotoperfiluser(){
-    this.router.navigateByUrl('/perfil')
-  }
 }

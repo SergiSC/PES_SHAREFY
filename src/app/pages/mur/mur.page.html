@@ -22,10 +22,6 @@
     </ion-fab-button>
   </ion-fab>
   <div *ngFor="let publi of publicacio">
-<<<<<<< HEAD
     <app-publicacio *ngIf="publi.id_game !== null" [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name_en"></app-publicacio>
-=======
-      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
->>>>>>> sprint5
   </div>
 </ion-content>

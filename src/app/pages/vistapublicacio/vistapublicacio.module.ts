@@ -6,9 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { VistapublicacioPage } from './vistapublicacio.page';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { customTranslateLoader } from 'src/app/app.module';
+import { customTranslateLoader } from '../../app.module';
 import {HttpClient} from '@angular/common/http';
 
 
