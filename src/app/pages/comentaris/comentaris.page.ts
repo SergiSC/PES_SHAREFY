@@ -67,13 +67,9 @@ export class ComentarisPage implements OnInit {
     });
   }
   goperfiluser(name) {
-    this.router.navigate(['/perfiluser']);
-    // de moment va a la del usuari registat
-    const navigationExtras: NavigationExtras = {
-      queryParams: {
-        special: JSON.stringify(name)
-      }
+    const edit = {
+      nom: name
     };
-    this.router.navigate(['/perfiluser'], navigationExtras);
+    this.router.navigate(['/perfiluser', edit]);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-mur',
@@ -11,7 +12,8 @@ export class MurPage implements OnInit {
 
   publicacio: any;
   constructor(private api: ApiService,
-              private router: Router) {}
+              private router: Router,
+              private store: Storage) {}
 
   ngOnInit() {
     this.api.getAllPublis(8, null).subscribe( (data: any) => {
@@ -22,6 +24,15 @@ export class MurPage implements OnInit {
     });
     this.api.getAllPublis(54, null).subscribe( (data: any) => {
       this.publicacio.push(...data.value);
+    });
+  }
+
+  gotoperfiluser() {
+    this.store.get('username').then((val) => {
+      const edit = {
+        nom: val
+      };
+      this.router.navigate(['/perfiluser', edit]);
     });
   }
 
