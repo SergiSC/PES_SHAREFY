@@ -21,6 +21,7 @@ export class ComentarisPage implements OnInit {
   user: '';
 
   ngOnInit() {
+
     this.route.queryParams.subscribe(params => {
       let com  = JSON.parse(params.special);
       this.des = com.descrpicio;

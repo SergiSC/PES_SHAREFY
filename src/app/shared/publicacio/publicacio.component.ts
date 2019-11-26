@@ -21,12 +21,11 @@ export class PublicacioComponent implements OnInit {
   @Input('des') des: string;
   @Input('numLikes') numLikes: number;
   @Input('photo') photo: string;
-  @Input('game') game: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   esOwner = false;
   PopoverController: any;
-  token:"";
+  token: '';
   commentaris = {
     idpubli: null,
     ownername: '',
@@ -34,6 +33,7 @@ export class PublicacioComponent implements OnInit {
     descrpicio: '',
     coments: [],
   };
+  vlikes;
 
   constructor(public popoverCtrl: PopoverController,
               public api: ApiService,
@@ -70,12 +70,23 @@ export class PublicacioComponent implements OnInit {
 
 
    gotoporfile() {
-    //this.router.navigate(['/perfiluser']);
-    // de moment va a la del usuari registat
     const edit = {
       nom: this.commentaris.ownername
     };
     this.router.navigate(['/perfiluser', edit]);
+   }
+
+   gotolikes() {
+    this.api.getPublicationById(this.idp).subscribe((data4: any) => {
+      this.vlikes = data4.value.likes;
+      let CC = [this.idp, 'Likes', this.vlikes];
+      const navigationExtras: NavigationExtras = {
+        queryParams: {
+          special: JSON.stringify(CC)
+        }
+      };
+      this.router.navigate(['/followers'], navigationExtras);
+    });
    }
 
    gotoComments() {
@@ -88,15 +99,12 @@ export class PublicacioComponent implements OnInit {
    }
 
    gotoShare() {
-     //this.router.navigate(['/compartir']);
-      //TODO: mirar com compartir video o fotos
-    //this.socialSharing.share("Missatge a compartir", null, null, "http://www.sharefy.tk");
     this.socialSharing.share("Check this item:  sharefy://tabs/mur/")
     .then(() => {
-    
+
     })
     .catch(() => {
-    
+
     });
    }
 
@@ -106,6 +114,10 @@ export class PublicacioComponent implements OnInit {
     this.commentaris.ownername = this.username;
     this.commentaris.idpubli = this.idp;
     this.commentaris.ownerphoto = this.photo;
+
+    this.api.getPublicationById(this.idp).subscribe((data4: any) => {
+      this.vlikes = data4.value.likes;
+    });
 
     this.storage.get('username').then((val) => {
       if (this.commentaris.ownername === val) {
