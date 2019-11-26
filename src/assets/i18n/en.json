@@ -187,6 +187,10 @@
       "SELECTPRIORITYPOPULAR": "Most likes",
       "TEXTLABELALERT1": "Filter by:",
       "TEXTLABELALERT2": "Order by:"
+    },
+    "VISTAPUBLICACIO": {
+      "TITLE": "Publication",
+      "TEXTALLCOMMENTS": "See all comments"
     }
   },
   "SHARED": {

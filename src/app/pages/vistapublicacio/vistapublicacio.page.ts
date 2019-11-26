@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
@@ -13,9 +13,11 @@ import {Storage} from '@ionic/storage';
 export class VistapublicacioPage implements OnInit {
 
   idPublicacio: any
-  dadesPublicacio: Object
+  dadesPublicacio: any
+  comentaris = []
 
   carregat = false
+  nouComentari = ''
 
   constructor(private route: ActivatedRoute,
               private api: ApiService,
@@ -23,17 +25,40 @@ export class VistapublicacioPage implements OnInit {
               private storage: Storage) { }
 
   
+  goToComentaris() {
+    let comentariParams = {
+      idpubli: this.idPublicacio,
+      ownername: this.dadesPublicacio.user.username,
+      ownerphoto: this.dadesPublicacio.user.photo_path,
+      descrpicio: this.dadesPublicacio.text,
+      coments: [],
+    };
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(comentariParams)
+      }
+    };
+    this.router.navigate(['/comentaris'], navigationExtras);
+   }
 
-  gotoporfile() {}
-
-  onClick() {
-    console.log(this.dadesPublicacio)
-  }
+   afegirComentari() {
+    this.storage.get('token').then((token) => {
+      this.storage.get('username').then((user) => {
+        this.api.AddComment(user, this.idPublicacio, token, this.nouComentari).subscribe((data2: any) => {
+          this.nouComentari = '';
+          //falta aplicar ion-refresher per refrescar els comentaris
+        });
+      });
+    });
+   }
 
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.api.getPublicationById(data.idp).subscribe((data2:any) => {
+        this.idPublicacio = data.idp
         this.dadesPublicacio = data2.value
+        this.comentaris = data2.value.comments
+        this.comentaris.sort((a,b) => (a.date > b.date) ? 1 : ((b.date < a.date) ? -1 : 0)); 
         this.carregat = true;
       })
     });

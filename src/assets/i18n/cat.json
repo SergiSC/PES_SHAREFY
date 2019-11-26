@@ -187,6 +187,10 @@
       "SELECTPRIORITYPOPULAR": "Més m'agrada",
       "TEXTLABELALERT1": "Filtra per:",
       "TEXTLABELALERT2": "Ordena per:"
+    },
+    "VISTAPUBLICACIO": {
+      "TITLE": "Publicació",
+      "TEXTALLCOMMENTS": "Mira tots els comentaris"
     }
   },
   "SHARED": {

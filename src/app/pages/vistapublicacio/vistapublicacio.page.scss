@@ -1,0 +1,30 @@
+.avatar-porfile {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.avatar {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.comm {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-bottom: 0%;
+}
+
+.button-final {
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.new-background-color{
+    --background: white;
+    color: black;
+}
