@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'perfiluser', loadChildren: './pages/perfiluser/perfiluser.module#PerfiluserPageModule' },
   { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
   { path: 'vistapublicacio', loadChildren: './pages/vistapublicacio/vistapublicacio.module#VistapublicacioPageModule' },
+  { path: 'modelconvidar', loadChildren: './pages/modelconvidar/modelconvidar.module#ModelconvidarPageModule' },
 
 
 ];

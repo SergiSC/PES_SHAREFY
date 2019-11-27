@@ -33,7 +33,8 @@
       "NOFOLLOWERS": "Aquest usuari no es seguit per ningú",
       "NOFOLLOWING": "Aquest usuari no segueix a ningú",
       "LIKES": "M'agrada",
-      "NOLIKES": "Cap usuari ha donat m'agrada en aquesta publicació"
+      "NOLIKES": "Cap usuari ha donat m'agrada en aquesta publicació",
+      "BUTTONINVITE": "Convidar"
     },
     "GAMES": {
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
