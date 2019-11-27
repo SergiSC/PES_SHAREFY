@@ -41,14 +41,13 @@ export class EditarPublicacioPage implements OnInit {
     });
     this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;
-      console.log(data.value)
     });
   }
 
 
   save() {
     let id;
-    const a = this.newSel.substring(1, this.newSel.length - 1);
+    const a = this.newSel;
     for (const game of this.games) {
          if (game.name_en === a) {
           id = game.id;
