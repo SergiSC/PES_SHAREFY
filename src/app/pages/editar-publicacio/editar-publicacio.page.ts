@@ -64,7 +64,7 @@ export class EditarPublicacioPage implements OnInit {
       }).then(alert => {
         alert.present();
         alert.onDidDismiss().then(() => {
-          this.router.navigate(['/mur']);
+          this.router.navigate(['/tabs/mur']);
         });
       });
   }
