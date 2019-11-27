@@ -37,10 +37,11 @@ export class EditarPublicacioPage implements OnInit {
       this.pid = data.idp;
       this.path = data.video;
       this.desc = data.desc;
-      this.newSel = data.game;
+      this.newSel = data.game_en;
     });
     this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;
+      console.log(data.value)
     });
   }
 
@@ -49,7 +50,7 @@ export class EditarPublicacioPage implements OnInit {
     let id;
     const a = this.newSel.substring(1, this.newSel.length - 1);
     for (const game of this.games) {
-         if (game.name === a) {
+         if (game.name_en === a) {
           id = game.id;
          }
     }
