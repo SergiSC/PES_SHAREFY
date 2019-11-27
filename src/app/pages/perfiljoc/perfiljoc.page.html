@@ -23,7 +23,7 @@
   </ion-row>
   <ion-row *ngIf="tePublicacions">
     <div *ngFor="let publi of publicacions">
-      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name"></app-publicacio>
+      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
     </div>
   </ion-row>
   <ion-row *ngIf="!tePublicacions" class="flex">
