@@ -11,34 +11,48 @@ import {Storage} from '@ionic/storage';
 export class FollowersPage implements OnInit {
 
   data: any;
-  follo = undefined;
-  tefollow = undefined;
+  follower = false;
+  tefollower = true;
+
+  following = false;
+  tefollowing = true;
+
+  likes = false;
+  telikes = true;
+
   vectorfollow;
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage) {}
 
   ngOnInit() {
+
     this.route.queryParams.subscribe(params => {
       const com  = JSON.parse(params.special);
       this.data = com;
       if (com[1] === 'Followers') {
-        this.follo = true;
-      } else {this.follo = false; }
-
+        this.follower = true;
+      } else if (com[1] === 'Following') {
+        this.following = true;
+      } else if (com[1] === 'Likes') {
+        this.likes = true;
+      }
       this.store.get('token').then((token) => {
-        if (this.follo) {
+        if (this.follower) {
           this.api.Followers(com[0], token).subscribe((followers: any) => {
             this.vectorfollow = followers.followers;
-            this.tefollow = true;
           }, err => {
-            this.tefollow = false;
+            this.tefollower = false;
           });
-        } else {
+        } else if (this.following) {
           this.api.Following(com[0], token).subscribe((followers: any) => {
-            this.vectorfollow = followers.followers;
-            this.tefollow = true;
+            this.vectorfollow = followers.followed;
           }, err => {
-            this.tefollow = false;
+            this.tefollowing = false;
           });
+        } else if (this.likes) {
+          this.vectorfollow = com[2];
+          if (this.vectorfollow.length === 0) {
+            this.telikes = false;
+          }
         }
       });
     });
