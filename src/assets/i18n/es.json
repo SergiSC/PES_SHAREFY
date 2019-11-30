@@ -31,7 +31,9 @@
       "TEXTTEPUBLI": "Este usuario no ha subido ninguna publicación aún",
       "TEXTNOTEPUBLI": "Aún no has subido ninguna publicación",
       "NOFOLLOWERS": "Este usuario no es seguido por nadie",
-      "NOFOLLOWING": "Este usuario no sigue a nadie"
+      "NOFOLLOWING": "Este usuario no sigue a nadie",
+      "LIKES": "Me gustas",
+      "NOLIKES": "Ningun usuario a dado me gusta en esta publicación aún"
     },
     "GAMES": {
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
@@ -187,6 +189,10 @@
       "SELECTPRIORITYPOPULAR": "Más me gustas",
       "TEXTLABELALERT1": "Filtrar por:",
       "TEXTLABELALERT2": "Ordenar por:"
+    },
+    "VISTAPUBLICACIO": {
+      "TITLE": "Publicación",
+      "TEXTALLCOMMENTS": "Mira todos los comentarios"
     }
   },
   "SHARED": {

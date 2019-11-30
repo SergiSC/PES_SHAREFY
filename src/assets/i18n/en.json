@@ -31,7 +31,9 @@
       "TEXTTEPUBLI": "This user hasn't upload any publication yet",
       "TEXTNOTEPUBLI": "You haven't upload any publication yet",
       "NOFOLLOWERS": "This user isn't followed by anyone",
-      "NOFOLLOWING": "This user is not following anyone"
+      "NOFOLLOWING": "This user is not following anyone",
+      "LIKES": "Likes",
+      "NOLIKES": "Any user have liked this publication yet"
     },
     "INFORMACIO": {
       "TITLE": "Information",
@@ -187,6 +189,10 @@
       "SELECTPRIORITYPOPULAR": "Most likes",
       "TEXTLABELALERT1": "Filter by:",
       "TEXTLABELALERT2": "Order by:"
+    },
+    "VISTAPUBLICACIO": {
+      "TITLE": "Publication",
+      "TEXTALLCOMMENTS": "See all comments"
     }
   },
   "SHARED": {

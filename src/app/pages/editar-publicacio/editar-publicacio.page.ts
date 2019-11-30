@@ -37,7 +37,7 @@ export class EditarPublicacioPage implements OnInit {
       this.pid = data.idp;
       this.path = data.video;
       this.desc = data.desc;
-      this.newSel = data.game;
+      this.newSel = data.game_en;
     });
     this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;
@@ -47,9 +47,9 @@ export class EditarPublicacioPage implements OnInit {
 
   save() {
     let id;
-    const a = this.newSel.substring(1, this.newSel.length - 1);
+    const a = this.newSel;
     for (const game of this.games) {
-         if (game.name === a) {
+         if (game.name_en === a) {
           id = game.id;
          }
     }
@@ -64,7 +64,7 @@ export class EditarPublicacioPage implements OnInit {
       }).then(alert => {
         alert.present();
         alert.onDidDismiss().then(() => {
-          this.router.navigate(['/mur']);
+          this.router.navigate(['/tabs/mur']);
         });
       });
   }

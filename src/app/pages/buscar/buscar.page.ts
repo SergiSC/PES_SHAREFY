@@ -101,16 +101,17 @@ export class BuscarPage implements OnInit {
   }
 
   redirectPublicacio(publicacioId) {
-    this.api.getPublicationById(publicacioId).subscribe((data:any) => {
-      const edit = {
-        video: data.video_path, 
-        desc: data.text, 
-        game: data.game, 
-        idp: publicacioId
-      };
-      this.router.navigate(['/publicacio', edit]);
-    })
-    
+    const edit = {
+      idp: publicacioId
+    };
+    this.router.navigate(['/vistapublicacio', edit]);
+  }
+
+  redirectUsuari(nom) {
+    const user = {
+      nom: nom
+    };
+    this.router.navigate(['/perfiluser', user]);
   }
 
   ordenaPer() {

@@ -19,7 +19,7 @@
   </ion-row>
   <ion-row  class="row-likes-comm ion-padding-horizontal">
     <ion-col size="1">
-        <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="numLikes">{{ numLikes }}</ion-text>
+        <ion-text style="font-size: 14pt;" class="ion-padding-left" color="primary" [(ngModel)]="numLikes" (click)="gotolikes()">{{ numLikes }}</ion-text>
     </ion-col>
     <ion-col size="1">
          <ion-icon style="font-size: 25px;     margin-top: 2px; margin-left: -10px;" color=primary (click)="blike()" [name]="like ? 'heart' :'heart-empty'"></ion-icon>

@@ -31,7 +31,9 @@
       "TEXTTEPUBLI": "Aquest usuari encara no ha pujat cap publicaicó",
       "TEXTNOTEPUBLI": "Encara no has pujat cap publicació",
       "NOFOLLOWERS": "Aquest usuari no es seguit per ningú",
-      "NOFOLLOWING": "Aquest usuari no segueix a ningú"
+      "NOFOLLOWING": "Aquest usuari no segueix a ningú",
+      "LIKES": "M'agrada",
+      "NOLIKES": "Cap usuari ha donat m'agrada en aquesta publicació"
     },
     "GAMES": {
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
@@ -187,6 +189,10 @@
       "SELECTPRIORITYPOPULAR": "Més m'agrada",
       "TEXTLABELALERT1": "Filtra per:",
       "TEXTLABELALERT2": "Ordena per:"
+    },
+    "VISTAPUBLICACIO": {
+      "TITLE": "Publicació",
+      "TEXTALLCOMMENTS": "Mira tots els comentaris"
     }
   },
   "SHARED": {

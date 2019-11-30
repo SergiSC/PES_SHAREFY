@@ -50,7 +50,7 @@
               <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='joc'" color="tertiary" size="small" style="text-transform: none; width: 100%;" (click)="redirectJoc(resultat)">
                 <ion-icon name="logo-game-controller-b" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONGAMES' | translate}}
               </ion-button>
-              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;">
+              <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='usuari'" color="primary" size="small" style="text-transform: none; width: 100%;" (click)="redirectUsuari(resultat.text)">
                 <ion-icon name="contact" style="margin-right:3px;"></ion-icon>{{ 'PAGE.BUSCAR.BUTTONUSER' | translate}}
               </ion-button>
               <ion-button expand="block" fill="outline" *ngIf="resultat.tipus=='publicacio'" color="warning" size="small" style="text-transform: none; width: 100%;" (click)="redirectPublicacio(resultat.id)">
