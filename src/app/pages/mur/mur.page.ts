@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
 import {Storage} from '@ionic/storage';
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-mur',

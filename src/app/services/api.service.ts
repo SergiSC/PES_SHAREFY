@@ -35,6 +35,17 @@ export class ApiService {
     );
   }
 
+  setNoti(user, tok, tokenf) {
+    const body = {
+      token: tok,
+      token_notification: tokenf
+    };
+    return this.http.post(
+        this.url + '/api/user/' +  user + '/token_notification',
+        body
+    );
+  }
+
   usernameDisponible(name) {
     const body = {
       username: name,
