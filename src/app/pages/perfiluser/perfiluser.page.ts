@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
 import { LoadingController, ModalController } from '@ionic/angular';
-import { ModalconvidarComponent } from '../modalconvidar/modalconvidar.component';
+import { ModalconvidarPage } from '../modalconvidar/modalconvidar.page';
 
 @Component({
   selector: 'app-perfiluser',
@@ -36,14 +36,13 @@ export class PerfiluserPage implements OnInit {
   
   async presentModal() {
     const modal = await this.modalController.create({
-      component: ModalconvidarComponent,
+      component: ModalconvidarPage,
       componentProps: {
-        'firstName': 'Douglas',
-        'lastName': 'Adams',
-        'middleInitial': 'N'
+        firstName: 'Douglas',
+        lastName: 'Adams'
       }
     });
-    return await modal.present();
+    await modal.present();
   }
 
 Follow() {

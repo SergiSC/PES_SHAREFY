@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modalconvidar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-row>
+    <p>{{ 'PAGE.INFORMACIO.TEXT' | translate}} <font color = #64C995>Persona</font> </p>
+  </ion-row>
+  <ion-row>
+    <ion-item style="width:100%">
+      <ion-label>{{ 'PAGE.INFORMACIO.TEXTMODAL' | translate}}</ion-label>
+      <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="{{ 'PAGE.INFORMACIO.PLACEHOLDERSELECT' | translate}}">
+        <ion-select-option *ngFor="let joc of jocs" value="joc.name_en">{{joc.name_en}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  </ion-grid>
+</ion-content>

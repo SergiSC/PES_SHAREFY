@@ -194,6 +194,12 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicació",
       "TEXTALLCOMMENTS": "Mira tots els comentaris"
+    },
+    "MODALCONVIDAR": {
+      "TEXT": "A quin joc voldries convidar a",
+      "TEXTMODAL": "Jocs",
+      "PLACEHOLDERSELECT": "Selecciona'n un",
+      "BUTTON": "Envia"
     }
   },
   "SHARED": {

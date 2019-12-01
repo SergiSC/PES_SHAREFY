@@ -194,6 +194,12 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
       "TEXTALLCOMMENTS": "See all comments"
+    },
+    "MODALCONVIDAR": {
+      "TEXT": "Which game would you like to invite",
+      "TEXTMODAL": "Games",
+      "PLACEHOLDERSELECT": "Select one",
+      "BUTTON": "Send"
     }
   },
   "SHARED": {
