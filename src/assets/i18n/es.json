@@ -39,6 +39,9 @@
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
       "TITLE": "Juegos"
     },
+    "EVENTS": {
+      "TITLE": "Eventos"
+    },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publicaciones",
       "NOPUBLI": "Todavía no se han colgado clips de este juego, sé el primero!"
