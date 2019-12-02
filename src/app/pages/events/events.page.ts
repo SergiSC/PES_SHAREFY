@@ -20,5 +20,5 @@ export class EventsPage implements OnInit {
       this.events = data;
     });
   }
-
+  
 }
