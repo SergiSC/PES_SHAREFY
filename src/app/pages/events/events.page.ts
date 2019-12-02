@@ -16,8 +16,8 @@ export class EventsPage implements OnInit {
 
   ngOnInit() {
     this.api.getEvents().subscribe((data: any) => {
-      this.events = data.value;
       console.log(data);
+      this.events = data;
     });
   }
 
