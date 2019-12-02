@@ -44,7 +44,7 @@ export class FollowersPage implements OnInit {
           });
         } else if (this.following) {
           this.api.Following(com[0], token).subscribe((followers: any) => {
-            this.vectorfollow = followers.followers;
+            this.vectorfollow = followers.followed;
           }, err => {
             this.tefollowing = false;
           });

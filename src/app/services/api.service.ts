@@ -176,6 +176,12 @@ export class ApiService {
     );
   }
 
+  getEvents() {
+    return this.http.get(
+      'http://event-app.ml:5000/api/events/search?tags=Games'
+    );
+  }
+
   getGamePublications(idg) {
     return this.http.get(
       this.url + '/api/game/' + idg + '/publications'

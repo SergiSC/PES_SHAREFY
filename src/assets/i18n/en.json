@@ -90,6 +90,9 @@
       "DESCRIPTION": "Choose you favorite game to watch the best clips!",
       "TITLE": "Games"
     },
+    "EVENTS": {
+      "TITLE": "Events"
+    },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publications",
       "NOPUBLI": "Clips of this game have not yet been uploaded, be the first!"

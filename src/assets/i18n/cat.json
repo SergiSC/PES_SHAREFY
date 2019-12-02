@@ -40,6 +40,9 @@
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
       "TITLE": "Jocs"
     },
+    "EVENTS": {
+      "TITLE": "Events"
+    },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publicaions",
       "NOPUBLI": "Encara no s'han penjat clips d'aquest joc, sigues el primer!"
