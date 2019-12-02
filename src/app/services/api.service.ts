@@ -258,5 +258,14 @@ export class ApiService {
   getUsuarisIPublicacions(data,tok) {
     return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
   }
+  inviteGame(joc, userReciver, userEmiter, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/invite/' + userEmiter + '/' + joc + '/' + userReciver,
+      body
+    );
+  }
 
 }

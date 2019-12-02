@@ -38,8 +38,8 @@ export class PerfiluserPage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalconvidarPage,
       componentProps: {
-        firstName: 'Douglas',
-        lastName: 'Adams'
+        usernameReciver: this.Perfiluser,
+        photoReciver: this.pathFotoPerfil
       }
     });
     await modal.present();

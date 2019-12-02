@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {TranslateService} from '@ngx-translate/core';
+import { Storage } from '@ionic/storage';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modalconvidar',
@@ -9,21 +11,37 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ModalconvidarPage implements OnInit {
 
-  jocs
+  jocs;
+  jocSeleccionat;
+  @Input() usernameReciver: string;
+  @Input() photoReciver: string;
 
   constructor(
     private api: ApiService,
-    private translate: TranslateService) { }
+    private translate: TranslateService,
+    private storage: Storage,
+    public modalController: ModalController) { }
 
   ngOnInit() {
     this.api.getAllGames().subscribe((data: any) => {
-      console.log(data.value)
       this.jocs = data.value;
     });
   }
 
+  enviaNotificacio() {
+    this.storage.get('token').then(tok => {
+      this.storage.get('username').then(usr => {
+        this.api.inviteGame(this.jocSeleccionat, this.usernameReciver, usr, tok)
+      });
+    });
+  }
+
+  tancarModal() {
+    this.modalController.dismiss();
+  }
+
   customPopoverOptions: any = {
-    header: this.translate.instant('PAGE.INFORMACIO.PLACEHOLDERSELECT'),
+    header: this.translate.instant('PAGE.MODALCONVIDAR.PLACEHOLDERSELECT'),
   };
 
 }

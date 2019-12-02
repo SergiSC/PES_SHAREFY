@@ -196,10 +196,12 @@
       "TEXTALLCOMMENTS": "See all comments"
     },
     "MODALCONVIDAR": {
+      "TITLE": "Invite",
       "TEXT": "Which game would you like to invite",
       "TEXTMODAL": "Games",
       "PLACEHOLDERSELECT": "Select one",
-      "BUTTON": "Send"
+      "BUTTON": "Send",
+      "BUTTONCANCEL": "Cancel"
     }
   },
   "SHARED": {

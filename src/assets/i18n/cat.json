@@ -196,10 +196,12 @@
       "TEXTALLCOMMENTS": "Mira tots els comentaris"
     },
     "MODALCONVIDAR": {
+      "TITLE": "Convidar",
       "TEXT": "A quin joc voldries convidar a",
       "TEXTMODAL": "Jocs",
       "PLACEHOLDERSELECT": "Selecciona'n un",
-      "BUTTON": "Envia"
+      "BUTTON": "Envia",
+      "BUTTONCANCEL": "Cancel·lar"
     }
   },
   "SHARED": {
