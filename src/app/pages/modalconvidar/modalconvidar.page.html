@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'PAGE.MODALCONVIDAR.TITLE' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid-modal">
+    <ion-row>
+      <ion-col>
+        <ion-avatar style="margin: auto;">
+          <img alt="" [src]="photoReciver">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-modal">
+      <p style="padding: 0 5px; text-align : center;">{{ 'PAGE.MODALCONVIDAR.TEXT' | translate}} <font color = #64C995>{{usernameReciver}}</font>?</p>
+    </ion-row>
+    <ion-row class="row-modal">
+      <ion-item style="width:100%">
+        <ion-label>{{ 'PAGE.MODALCONVIDAR.TEXTMODAL' | translate}}</ion-label>
+        <ion-select [(ngModel)]="jocSeleccionat" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="{{ 'PAGE.MODALCONVIDAR.PLACEHOLDERSELECT' | translate}}">
+          <ion-select-option *ngFor="let joc of jocs" value="{{joc.name_en}}">{{joc.name_en}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row class="row-modal">
+      <ion-button (click)="enviaNotificacio()" expand="block" style="width: 100%;">{{ 'PAGE.MODALCONVIDAR.BUTTON' | translate}}</ion-button>
+    </ion-row>
+    <ion-row class="row-modal">
+        <ion-button (click)="tancarModal()" expand="block" color="danger" fill="outline" style="width: 100%;">{{ 'PAGE.MODALCONVIDAR.BUTTONCANCEL' | translate}}</ion-button>
+      </ion-row>
+  </ion-grid>
+</ion-content>

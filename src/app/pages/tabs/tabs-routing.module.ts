@@ -14,11 +14,11 @@ const routes: Routes = [
                     loadChildren: '../mur/mur.module#MurPageModule'
                 }]
             }, {
-                path: 'populars',
+                path: 'events',
                 children: [
                     {
                         path: '',
-                        loadChildren: '../populars/populars.module#PopularsPageModule'
+                        loadChildren: '../events/events.module#EventsPageModule'
                     }
                 ]
             }, {

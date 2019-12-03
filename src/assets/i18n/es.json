@@ -33,11 +33,15 @@
       "NOFOLLOWERS": "Este usuario no es seguido por nadie",
       "NOFOLLOWING": "Este usuario no sigue a nadie",
       "LIKES": "Me gustas",
-      "NOLIKES": "Ningun usuario a dado me gusta en esta publicación aún"
+      "NOLIKES": "Ningun usuario a dado me gusta en esta publicación aún",
+      "BUTTONINVITE": "Convidar"
     },
     "GAMES": {
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
       "TITLE": "Juegos"
+    },
+    "EVENTS": {
+      "TITLE": "Eventos"
     },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publicaciones",
@@ -193,6 +197,14 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicación",
       "TEXTALLCOMMENTS": "Mira todos los comentarios"
+    },
+    "MODALCONVIDAR": {
+      "TITLE": "Invitar",
+      "TEXT": "A qué juego querrías invitar a",
+      "TEXTMODAL": "Juegos",
+      "PLACEHOLDERSELECT": "Selecciona uno",
+      "BUTTON": "Envía",
+      "BUTTONCANCEL": "Cancelar"
     }
   },
   "SHARED": {

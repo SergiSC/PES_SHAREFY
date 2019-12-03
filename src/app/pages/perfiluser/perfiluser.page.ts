@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
+import { ModalconvidarPage } from '../modalconvidar/modalconvidar.page';
 
 @Component({
   selector: 'app-perfiluser',
@@ -29,8 +30,20 @@ export class PerfiluserPage implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage,
-              private loadingController: LoadingController,  private router: Router) { }
+              private loadingController: LoadingController,  private router: Router,
+              public modalController: ModalController) { }
 
+  
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ModalconvidarPage,
+      componentProps: {
+        usernameReciver: this.Perfiluser,
+        photoReciver: this.pathFotoPerfil
+      }
+    });
+    await modal.present();
+  }
 
 Follow() {
   if (!this.seguint) {

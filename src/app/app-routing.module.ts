@@ -21,8 +21,7 @@ const routes: Routes = [
   { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
   { path: 'vistapublicacio', loadChildren: './pages/vistapublicacio/vistapublicacio.module#VistapublicacioPageModule' },
   { path: 'followers', loadChildren: './pages/followers/followers.module#FollowersPageModule' },
-
-
+  { path: 'events', loadChildren: './pages/events/events.module#EventsPageModule' },
 ];
 @NgModule({
   imports: [

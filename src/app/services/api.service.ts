@@ -187,6 +187,12 @@ export class ApiService {
     );
   }
 
+  getEvents() {
+    return this.http.get(
+      'http://event-app.ml:5000/api/events/search?tags=Games'
+    );
+  }
+
   getGamePublications(idg) {
     return this.http.get(
       this.url + '/api/game/' + idg + '/publications'
@@ -268,6 +274,15 @@ export class ApiService {
   }
   getUsuarisIPublicacions(data,tok) {
     return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
+  }
+  inviteGame(joc, userReciver, userEmiter, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/invite/' + userEmiter + '/' + joc + '/' + userReciver,
+      body
+    );
   }
 
 }

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
 }
 
 .ion-text-center {
@@ -35,3 +34,12 @@
     background-color: transparent;
 }
 
+.number-text {
+    text-align:center;
+    color: var(--ion-color-primary);
+}
+
+.label-text {
+    text-align:center;
+    font-size: small;
+}
