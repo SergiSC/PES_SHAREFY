@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import {Storage} from '@ionic/storage';
 
@@ -21,40 +21,63 @@ export class FollowersPage implements OnInit {
   telikes = true;
 
   vectorfollow;
-  constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage) {}
+  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private store: Storage) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.vectorfollow = [];
+    this.follower = false;
+    this.tefollower = true;
 
-    this.route.queryParams.subscribe(params => {
-      const com  = JSON.parse(params.special);
-      this.data = com;
-      if (com[1] === 'Followers') {
+    this.following = false;
+    this.tefollowing = true;
+
+    this.likes = false;
+    this.telikes = true;
+
+    this.route.params.subscribe(data => {
+      const nom = data.nom;
+      const tipus = data.type;
+      if (tipus === 'Followers') {
+        console.log('caca');
         this.follower = true;
-      } else if (com[1] === 'Following') {
+      } else if (tipus === 'Following') {
         this.following = true;
-      } else if (com[1] === 'Likes') {
+        console.log('culo');
+      } else if (tipus === 'Likes') {
         this.likes = true;
       }
       this.store.get('token').then((token) => {
         if (this.follower) {
-          this.api.Followers(com[0], token).subscribe((followers: any) => {
+          this.api.Followers(nom, token).subscribe((followers: any) => {
             this.vectorfollow = followers.followers;
           }, err => {
+            console.log(err);
             this.tefollower = false;
           });
         } else if (this.following) {
-          this.api.Following(com[0], token).subscribe((followers: any) => {
+          this.api.Following(nom, token).subscribe((followers: any) => {
             this.vectorfollow = followers.followed;
           }, err => {
             this.tefollowing = false;
           });
         } else if (this.likes) {
-          this.vectorfollow = com[2];
-          if (this.vectorfollow.length === 0) {
+          this.api.getLikesPubliId(nom, token).subscribe((followers: any) => {
+            this.vectorfollow = followers.users;
+            if (this.vectorfollow.length === 0) {
+              this.telikes = false;
+            }
+          }, err => {
             this.telikes = false;
-          }
+          });
         }
       });
     });
   }
+
+  gotoporfile(name) {
+    const edit = {
+      nom: name
+    };
+    this.router.navigate(['/perfiluser', edit]);
+   }
 }

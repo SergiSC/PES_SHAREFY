@@ -15,7 +15,9 @@ export class MurPage implements OnInit {
               private router: Router,
               private store: Storage) {}
 
-  ngOnInit() {
+
+    ngOnInit() {}
+    ionViewWillEnter() {
     this.api.getAllPublis(8, null).subscribe( (data: any) => {
       this.publicacio = data.value;
     });

@@ -259,4 +259,15 @@ export class ApiService {
     return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
   }
 
+  getCommentsPubliId(id, tok) {
+    return this.http.get(
+      this.url + '/api/comments/publication/' + id + '?token=' + tok
+    );
+  }
+
+  getLikesPubliId(id, tok) {
+    return this.http.get(
+      this.url + '/api/publication/' + id + '/likes' + '?token=' + tok
+    );
+  }
 }

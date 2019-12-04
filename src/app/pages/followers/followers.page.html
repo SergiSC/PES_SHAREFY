@@ -19,26 +19,26 @@
             <ion-img alt="" [src]="'http://sharefy.tk' + comm.photo_path"></ion-img>
           </ion-avatar>
         </ion-col>
-        <ion-col class="ion-padding-bottom" class="comm2"><ion-text><p><b>{{ comm.username }}</b></p></ion-text></ion-col>
+        <ion-col class="ion-padding-bottom" class="comm2" (click)="gotoporfile(comm.username)"><ion-text><p><b>{{ comm.username }}</b></p></ion-text></ion-col>
       </ion-row>
     </ion-item>
   </ion-list>
   <ion-row *ngIf="!tefollower || !tefollowing || !telikes">
     <ion-col *ngIf="follower">
       <div class="item">
-        <ion-icon name="people" style="font-size: 128px; margin-top: 32px;"></ion-icon>
+        <ion-icon name="people" style="font-size: 128px; margin-top: 32px;" color="primary"></ion-icon>
         <p style="font-size: x-large;">{{ 'PAGE.PERFIL.NOFOLLOWERS' | translate }}</p>
       </div>
     </ion-col>
     <ion-col *ngIf="following">
       <div class="item">
-          <ion-icon name="people" style="font-size: 128px; margin-top: 32px;"></ion-icon>
+          <ion-icon name="people" style="font-size: 128px; margin-top: 32px;" color="primary"></ion-icon>
           <p style="font-size: x-large;">{{ 'PAGE.PERFIL.NOFOLLOWING' | translate }}</p>
       </div>
     </ion-col>
     <ion-col *ngIf="likes">
       <div class="item">
-          <ion-icon name="heart" style="font-size: 128px; margin-top: 32px;"></ion-icon>
+          <ion-icon name="heart" style="font-size: 128px; margin-top: 32px;" color="primary"></ion-icon>
           <p style="font-size: x-large;">{{ 'PAGE.PERFIL.NOLIKES' | translate }}</p>
       </div>
     </ion-col>

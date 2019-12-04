@@ -77,25 +77,30 @@ export class PublicacioComponent implements OnInit {
    }
 
    gotolikes() {
-    this.api.getPublicationById(this.idp).subscribe((data4: any) => {
-      this.vlikes = data4.value.likes;
-      let CC = [this.idp, 'Likes', this.vlikes];
-      const navigationExtras: NavigationExtras = {
-        queryParams: {
-          special: JSON.stringify(CC)
-        }
-      };
-      this.router.navigate(['/followers'], navigationExtras);
-    });
+    const edit = {
+      nom: this.idp,
+      type: 'Likes'
+    };
+    this.router.navigate(['/followers', edit]);
    }
 
    gotoComments() {
+
+    const edit = {
+      id: this.idp,
+      des: this.des,
+      name: this.username,
+      photo: this.photo
+    };
+    this.router.navigate(['/comentaris', edit]);
+    /*
     const navigationExtras: NavigationExtras = {
       queryParams: {
         special: JSON.stringify(this.commentaris)
       }
     };
     this.router.navigate(['/comentaris'], navigationExtras);
+    */
    }
 
    gotoShare() {

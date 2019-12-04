@@ -21,33 +21,25 @@ export class ComentarisPage implements OnInit {
   user: '';
 
   ngOnInit() {
-
-    this.route.queryParams.subscribe(params => {
-      let com  = JSON.parse(params.special);
-      this.des = com.descrpicio;
-      this.ownername = com.ownername;
-      this.ownerphoto = com.ownerphoto;
-      this.Idpublicacio = com.idpubli;
+    this.route.params.subscribe(data => {
+      this.Idpublicacio = data.id;
+      this.des = data.des;
+      this.ownername = data.name;
+      this.ownerphoto = data.photo;
       this.getComents();
     });
+
     this.stor.get('username').then((val) => {
       this.user = val;
     });
   }
 
   getComents() {
-    let c = [];
-    this.api.getPublicationById(this.Idpublicacio).subscribe((data: any) => {
-      data.value.comments.forEach(comment => {
-        const coments = [ {
-          name: comment.user.username,
-          img: comment.user.photo_path,
-          text: comment.text,
-          id: comment.id
-        }];
-        c.push(...coments);
+    this.stor.get('token').then((token) => {
+      this.api.getCommentsPubliId(this.Idpublicacio, token).subscribe((data: any) => {
+        console.log(data);
+        this.comentaris = data.comments;
       });
-      this.comentaris = c;
     });
   }
 

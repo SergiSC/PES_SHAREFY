@@ -33,7 +33,8 @@
       "NOFOLLOWERS": "This user isn't followed by anyone",
       "NOFOLLOWING": "This user is not following anyone",
       "LIKES": "Likes",
-      "NOLIKES": "Any user have liked this publication yet"
+      "NOLIKES": "Any user have liked this publication yet",
+      "INVITA": "Invite"
     },
     "INFORMACIO": {
       "TITLE": "Information",

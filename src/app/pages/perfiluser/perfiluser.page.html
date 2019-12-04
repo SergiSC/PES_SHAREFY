@@ -48,8 +48,11 @@
         </ion-row>
         <ion-row *ngIf="!esell">
             <ion-col class="flex">
-                  <ion-button *ngIf="!seguint" [color]="seguint ? 'secondary' :'primary'" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUIR' | translate }}</ion-button>
-                  <ion-button *ngIf="seguint" [color]="seguint ? 'secondary' :'primary'" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
+                  <ion-button *ngIf="!seguint" color="primary" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUIR' | translate }}</ion-button>
+                  <ion-button *ngIf="seguint" color="secondary" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
+            </ion-col>
+            <ion-col *ngIf="seguint" class="flex">
+              <ion-button [color]="seguint ? 'secondary' :'primary'" (click)="Follow()">{{ 'PAGE.PERFIL.INVITA' | translate }}</ion-button>
             </ion-col>
           </ion-row>
           <ion-row>

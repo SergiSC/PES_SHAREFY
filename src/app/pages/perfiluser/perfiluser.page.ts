@@ -46,18 +46,19 @@ Follow() {
 }
 
 go_to_follow(x) {
-  let CC;
   if (x === 0) {
-    CC = [this.iduser, 'Followers'];
+    const edit = {
+      nom: this.iduser,
+      type: 'Followers'
+    };
+    this.router.navigate(['/followers', edit]);
   } else {
-    CC = [this.iduser, 'Following'];
+    const edit = {
+      nom: this.iduser,
+      type: 'Following'
+    };
+    this.router.navigate(['/followers', edit]);
   }
-  const navigationExtras: NavigationExtras = {
-    queryParams: {
-      special: JSON.stringify(CC)
-    }
-  };
-  if (this.public === true || this.seguint === true) {this.router.navigate(['/followers'], navigationExtras); }
 }
 
 ngOnInit() {
