@@ -35,6 +35,9 @@ export class LoginPage implements OnInit {
         this.storage.set('token', data.access_token);
         this.storage.set('username', data.username);
         this.storage.get('noti').then(n => {
+          if(n == undefined) {
+            n = 1234;
+          }
           this.api.setNoti(data.username, data.access_token, n).subscribe(date => {
             this.router.navigateByUrl('/tabs');
           });
