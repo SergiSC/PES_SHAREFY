@@ -11,6 +11,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {customTranslateLoader} from '../../app.module';
 import {HttpClient} from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ModalconvidarPage } from '../modalconvidar/modalconvidar.page';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  entryComponents: [
+    ModalconvidarPage
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -34,6 +38,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [PerfiluserPage]
+  declarations: [PerfiluserPage, ModalconvidarPage]
 })
 export class PerfiluserPageModule {}

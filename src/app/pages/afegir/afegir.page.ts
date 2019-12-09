@@ -21,6 +21,7 @@ export class AfegirPage implements OnInit {
   loading;
   newSel;
   desc;
+  canN = false;
   constructor(private file: File, private transfer: FileTransfer, private chooser: FileChooser,
               private opener: FileOpener, private path: FilePath, private storage: Storage,
               private  api: ApiService, public loadingController: LoadingController) { }
@@ -39,41 +40,52 @@ export class AfegirPage implements OnInit {
     });
   }
   UploatFile() {
-    this.storage.get('username').then((usr) => {
-      this.storage.get('token').then((tk) => {
-        this.api.recuperarInfoUser(usr, tk).subscribe((d: any) => {
-          const idu = d.value[0].id;
-          console.log(idu, 'ID_USER');
-          this.chooser.open().then((uri) => {
-            this.path.resolveNativePath(uri).then((result) => {
-              this.fileTransfer = this.transfer.create();
-              const pathName = result.split('/');
-              const name = pathName[pathName.length - 1];
-              const options: FileUploadOptions = {
-                fileKey: 'video',
-                fileName: name,
-                httpMethod: 'POST',
-                params: {
-                  id_user: idu,
-                  game: 1,
-                  text: this.desc,
-                  token: tk,
-                },
-                mimeType: 'video/mp4'
-              };
-              console.log(idu, this.newSel, this.desc, tk);
-              this.presentLoading();
-              this.fileTransfer.upload(result, 'http://sharefy.tk/api/publication', options, true).then(data => {
-                this.loading.dismiss();
-                alert('Transfer done');
-              }, (err) => {
-                console.log(err);
+    if ((this.desc !== undefined || this.desc !== '') && this.newSel !== undefined) {
+      let id;
+      const a = this.newSel;
+      for (const game of this.games) {
+        if (game.name_en === a) {
+          id = game.id;
+        }
+      }
+      this.storage.get('username').then((usr) => {
+        this.storage.get('token').then((tk) => {
+          this.api.recuperarInfoUser(usr, tk).subscribe((d: any) => {
+            const idu = d.value[0].id;
+            console.log(idu, 'ID_USER');
+            this.chooser.open().then((uri) => {
+              this.path.resolveNativePath(uri).then((result) => {
+                this.fileTransfer = this.transfer.create();
+                const pathName = result.split('/');
+                const name = pathName[pathName.length - 1];
+                const options: FileUploadOptions = {
+                  fileKey: 'video',
+                  fileName: name,
+                  httpMethod: 'POST',
+                  params: {
+                    id_user: idu,
+                    game: id,
+                    text: this.desc,
+                    token: tk,
+                  },
+                  mimeType: 'video/mp4'
+                };
+                console.log(idu, this.newSel, this.desc, tk);
+                this.presentLoading();
+                this.fileTransfer.upload(result, 'http://sharefy.tk/api/publication', options, true).then(data => {
+                  this.loading.dismiss();
+                  alert('Transfer done');
+                }, (err) => {
+                  console.log(err);
+                });
               });
             });
           });
         });
       });
-    });
+    } else {
+      alert('Completa els camps!');
+    }
   }
 
   async presentLoading() {
@@ -83,5 +95,4 @@ export class AfegirPage implements OnInit {
     });
     await this.loading.present();
   }
-
 }

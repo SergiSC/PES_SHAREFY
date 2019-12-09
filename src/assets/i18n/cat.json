@@ -34,11 +34,15 @@
       "NOFOLLOWING": "Aquest usuari no segueix a ningú",
       "LIKES": "M'agrada",
       "NOLIKES": "Cap usuari ha donat m'agrada en aquesta publicació",
-      "INVITA": "Invita"
+      "INVITA": "Invita",
+      "BUTTONINVITE": "Convidar"
     },
     "GAMES": {
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
       "TITLE": "Jocs"
+    },
+    "EVENTS": {
+      "TITLE": "Events"
     },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publicaions",
@@ -194,6 +198,14 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicació",
       "TEXTALLCOMMENTS": "Mira tots els comentaris"
+    },
+    "MODALCONVIDAR": {
+      "TITLE": "Convidar",
+      "TEXT": "A quin joc voldries convidar a",
+      "TEXTMODAL": "Jocs",
+      "PLACEHOLDERSELECT": "Selecciona'n un",
+      "BUTTON": "Envia",
+      "BUTTONCANCEL": "Cancel·lar"
     }
   },
   "SHARED": {

@@ -5,16 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilPage } from './perfil.page';
-
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {customTranslateLoader} from '../../app.module';
-import {HttpClient} from '@angular/common/http';
+import { EventsPage } from './events.page';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { customTranslateLoader } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 const routes: Routes = [
   {
     path: '',
-    component: PerfilPage
+    component: EventsPage
   }
 ];
 
@@ -32,6 +32,6 @@ const routes: Routes = [
       }
     }),
   ],
-  declarations: [PerfilPage]
+  declarations: [EventsPage]
 })
-export class PerfilPageModule {}
+export class EventsPageModule {}

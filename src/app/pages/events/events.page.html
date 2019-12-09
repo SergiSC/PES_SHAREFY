@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/buscar']">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ 'PAGE.EVENTS.TITLE' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotoperfiluser()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let e of events">
+    <img src="https://www.digitaltveurope.com/files/2019/07/wc_numbers_banner_16.jpg"/>
+    <ion-card-header>
+      <ion-card-subtitle>{{e.event_start_date}}</ion-card-subtitle>
+      <ion-card-title>{{e.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{e.description}}</ion-card-content>
+  </ion-card>
+</ion-content>

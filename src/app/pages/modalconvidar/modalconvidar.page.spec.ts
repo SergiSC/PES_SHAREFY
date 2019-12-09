@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerfilPage } from './perfil.page';
+import { ModalconvidarPage } from './modalconvidar.page';
 
-describe('PerfilPage', () => {
-  let component: PerfilPage;
-  let fixture: ComponentFixture<PerfilPage>;
+describe('ModalconvidarPage', () => {
+  let component: ModalconvidarPage;
+  let fixture: ComponentFixture<ModalconvidarPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerfilPage ],
+      declarations: [ ModalconvidarPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerfilPage);
+    fixture = TestBed.createComponent(ModalconvidarPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

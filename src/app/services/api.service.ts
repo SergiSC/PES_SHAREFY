@@ -35,6 +35,17 @@ export class ApiService {
     );
   }
 
+  setNoti(user, tok, tokenf) {
+    const body = {
+      token: tok,
+      token_notification: tokenf
+    };
+    return this.http.post(
+        this.url + '/api/user/' +  user + '/token_notification',
+        body
+    );
+  }
+
   usernameDisponible(name) {
     const body = {
       username: name,
@@ -76,6 +87,16 @@ export class ApiService {
     return this.http.post(
       this.url + '/api/register',
       body
+    );
+  }
+
+  postUsuariRegistrat(emai) {
+    const body = {
+      email: emai
+    };
+    return this.http.post(
+        this.url + '/api/login/google',
+        body
     );
   }
 
@@ -176,6 +197,12 @@ export class ApiService {
     );
   }
 
+  getEvents() {
+    return this.http.get(
+      'http://event-app.ml:5000/api/events/search?tags=Games'
+    );
+  }
+
   getGamePublications(idg) {
     return this.http.get(
       this.url + '/api/game/' + idg + '/publications'
@@ -257,6 +284,15 @@ export class ApiService {
   }
   getUsuarisIPublicacions(data,tok) {
     return this.http.get(this.url + '/api/search/' + data + '?token=' + tok);
+  }
+  inviteGame(joc, userReciver, userEmiter, tok) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/invite/' + userEmiter + '/' + joc + '/' + userReciver,
+      body
+    );
   }
 
   getCommentsPubliId(id, tok) {

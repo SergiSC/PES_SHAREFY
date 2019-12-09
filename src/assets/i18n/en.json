@@ -34,7 +34,8 @@
       "NOFOLLOWING": "This user is not following anyone",
       "LIKES": "Likes",
       "NOLIKES": "Any user have liked this publication yet",
-      "INVITA": "Invite"
+      "INVITA": "Invite",
+      "BUTTONINVITE": "Convidar"
     },
     "INFORMACIO": {
       "TITLE": "Information",
@@ -89,6 +90,9 @@
     "GAMES": {
       "DESCRIPTION": "Choose you favorite game to watch the best clips!",
       "TITLE": "Games"
+    },
+    "EVENTS": {
+      "TITLE": "Events"
     },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publications",
@@ -194,6 +198,14 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
       "TEXTALLCOMMENTS": "See all comments"
+    },
+    "MODALCONVIDAR": {
+      "TITLE": "Invite",
+      "TEXT": "Which game would you like to invite",
+      "TEXTMODAL": "Games",
+      "PLACEHOLDERSELECT": "Select one",
+      "BUTTON": "Send",
+      "BUTTONCANCEL": "Cancel"
     }
   },
   "SHARED": {
