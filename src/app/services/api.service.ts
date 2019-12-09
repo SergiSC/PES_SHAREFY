@@ -90,6 +90,16 @@ export class ApiService {
     );
   }
 
+  postUsuariRegistrat(emai) {
+    const body = {
+      email: emai
+    };
+    return this.http.post(
+        this.url + '/api/login/google',
+        body
+    );
+  }
+
   editarPublicacio(gameN, textN, id, tokenPu) {
     const body = {
       game: gameN,

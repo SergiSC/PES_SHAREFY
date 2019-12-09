@@ -34,7 +34,11 @@ export class LoginPage implements OnInit {
       this.api.login(this.mail, this.password).subscribe((data: any) => {
         this.storage.set('token', data.access_token);
         this.storage.set('username', data.username);
-        this.router.navigateByUrl('/tabs');
+        this.storage.get('noti').then(n => {
+          this.api.setNoti(data.username, data.access_token, n).subscribe(date => {
+            this.router.navigateByUrl('/tabs');
+          });
+        });
       }, err => {
         this.presentAlert();
         this.password = null;
@@ -71,29 +75,46 @@ export class LoginPage implements OnInit {
       this.emailList = data.list;
     });
     this.storage.get('token').then( (data: any) => {
-      if(data != null) {
+      if (data != null) {
         this.router.navigateByUrl('/tabs');
       }
     });
   }
 
   google_login() {
-    this.googlePlus.login({})
-        .then(res => {
+    this.googlePlus.login({}).then(res => {
           console.log(res);
           const user = {
-            username: res.displayName,
+            username: res.displayName.replace(' ', ''),
             first_name: res.givenName,
             last_name: res.familyName,
-            email: res.email,
+            email: res.email
           };
-          this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
-            this.storage.set('token', data.access_token);
-            this.storage.set('username', res.displayName);
-            this.showToast(this.err.alerts[0].msg);
-            this.router.navigate(['/tabs']);
-          }, err => {
-            this.showToast(this.err.alerts[2].msg);
+          this.api.postUsuariRegistrat(res.email).subscribe(r => {
+            this.storage.set('token', res.userId);
+            this.storage.set('username', res.displayName.replace(' ', ''));
+            this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
+              this.storage.get('noti').then(n => {
+               // this.api.setNoti(user.username, res.accessToken, n).subscribe(d => {
+                  this.router.navigate(['/tabs']);
+                // });
+              });
+            });
+          }, error => {
+            this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
+              this.storage.set('token', res.userId);
+              this.storage.set('username', res.displayName.replace(' ', ''));
+              this.showToast(this.err.alerts[0].msg);
+              this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
+                this.storage.get('noti').then(n => {
+                  // this.api.setNoti(data.username, res.accessToken, n).subscribe(d => {
+                    this.router.navigate(['/tabs']);
+                  // });
+                });
+              });
+            }, err => {
+              this.showToast(this.err.alerts[2].msg);
+            });
           });
         })
         .catch(err => console.error(err));

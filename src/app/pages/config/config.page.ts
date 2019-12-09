@@ -58,9 +58,9 @@ export class ConfigPage implements OnInit {
   }
 
   sendInfo(lang) {
-    let noti: string = String(this.notification);
-    let priv: string = String(this.private);
-    if(lang !== 'cat' && lang !== 'en' && lang !== 'es') {
+    const noti: string = String(this.notification);
+    const priv: string = String(this.private);
+    if (lang !== 'cat' && lang !== 'en' && lang !== 'es') {
       this.storage.get('token').then((token: any) => {
         this.storage.get('username').then((username: any) => {
           this.api.setUserConfig(username, token, noti, priv, this.translate.currentLang).subscribe((data: any) => {
@@ -86,8 +86,14 @@ export class ConfigPage implements OnInit {
   }
 
   close() {
-    this.storage.remove('token');
-    this.storage.remove('username');
-    this.router.navigate(['login']);
+    this.storage.get('token').then(t => {
+      this.storage.get('username').then(u => {
+        this.api.setNoti(u, t, null);
+        this.storage.remove('token');
+        this.storage.remove('username');
+        this.storage.remove('noti');
+        this.router.navigate(['login']);
+      });
+    });
   }
 }
