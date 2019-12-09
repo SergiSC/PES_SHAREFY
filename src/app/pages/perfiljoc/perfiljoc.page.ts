@@ -36,4 +36,19 @@ export class PerfiljocPage implements OnInit {
     });
   }
 
+  ionViewWillEnter() {
+    this.route.params.subscribe(data => {
+      this.imatge = data.imag;
+      this.descripcio = data.desc;
+      this.joc = data.name;
+      this.id = data.idg;
+    });
+
+    this.api.getGamePublications(this.id).subscribe((data: any) => {
+      this.publicacions = data.value;
+      this.numPubli = data.value.length;
+      this.tePublicacions = (this.numPubli !== 0);
+    });
+  }
+
 }

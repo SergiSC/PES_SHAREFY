@@ -41,6 +41,9 @@
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
       "TITLE": "Juegos"
     },
+    "MUR": {
+      "TITLE": "Muro"
+    },
     "EVENTS": {
       "TITLE": "Eventos"
     },

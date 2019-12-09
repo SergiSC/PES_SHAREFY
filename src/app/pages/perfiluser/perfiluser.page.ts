@@ -48,11 +48,11 @@ export class PerfiluserPage implements OnInit {
 Follow() {
   if (!this.seguint) {
     this.api.Seguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
-      console.log(data);
+      this.nseguid++;
     });
   } else {
     this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
-      console.log(data);
+      this.nseguid--;
     });
   }
   this.seguint = !this.seguint;
@@ -89,7 +89,6 @@ ngOnInit() {
     this.store.get('token').then((token) => {
       this.token = token;
       this.api.recuperarInfoUser(this.Perfiluser, token).subscribe((data2: any) => {
-        console.log(data2);
         if (data2.value[0].photo_path !== null) {
           this.pathFotoPerfil = 'http://www.sharefy.tk' + data2.value[0].photo_path;
         }
@@ -140,7 +139,6 @@ ngOnInit() {
       message: "Wait"
     }).then(a => {
       a.present().then(() => {
-        console.log('presented');
         if (!this.isLoading) {
           a.dismiss().then(() => console.log('abort presenting'));
         }
@@ -149,14 +147,11 @@ ngOnInit() {
   }
 
   GoToLogIn() {
-    console.log('Cacagahfueisñ1');
     this.store.get('username').then((user) => {
       this.store.get('token').then((token) => {
         this.api.recuperarInfoUser(user, token).subscribe((data: any) => {
-          console.log(data);
         }, err => {
           this.router.navigate(['/login']);
-          console.log('Cacagahfueisñ2');
         });
       });
     });
