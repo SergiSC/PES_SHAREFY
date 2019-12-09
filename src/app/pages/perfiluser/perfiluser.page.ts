@@ -68,6 +68,7 @@ ngOnInit() {
 }
 
   ionViewWillEnter() {
+    this.GoToLogIn();
     this.presentLoading();
     this.route.params.subscribe(data => {
       this.Perfiluser = data.nom;
@@ -130,6 +131,20 @@ ngOnInit() {
         if (!this.isLoading) {
           a.dismiss().then(() => console.log('abort presenting'));
         }
+      });
+    });
+  }
+
+  GoToLogIn() {
+    console.log('Cacagahfueisñ1');
+    this.store.get('username').then((user) => {
+      this.store.get('token').then((token) => {
+        this.api.recuperarInfoUser(user, token).subscribe((data: any) => {
+          console.log(data);
+        }, err => {
+          this.router.navigate(['/login']);
+          console.log('Cacagahfueisñ2');
+        });
       });
     });
   }

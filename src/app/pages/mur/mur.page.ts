@@ -17,6 +17,7 @@ export class MurPage implements OnInit {
 
 
     ngOnInit() {}
+    
     ionViewWillEnter() {
     this.api.getAllPublis(8, null).subscribe( (data: any) => {
       this.publicacio = data.value;
@@ -27,6 +28,7 @@ export class MurPage implements OnInit {
     this.api.getAllPublis(54, null).subscribe( (data: any) => {
       this.publicacio.push(...data.value);
     });
+    this.GoToLogIn();
   }
 
   gotoperfiluser() {
@@ -40,5 +42,16 @@ export class MurPage implements OnInit {
 
   openSearch() {
     this.router.navigateByUrl('/buscar');
+  }
+
+  GoToLogIn() {
+    this.store.get('username').then((user) => {
+      this.store.get('token').then((token) => {
+        this.api.recuperarInfoUser(user, token).subscribe((data: any) => {
+        }, err => {
+          this.router.navigate(['/login']);
+        });
+      });
+    });
   }
 }

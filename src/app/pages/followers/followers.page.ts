@@ -23,7 +23,9 @@ export class FollowersPage implements OnInit {
   vectorfollow;
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private store: Storage) {}
 
+
   ionViewWillEnter() {
+    this.GoToLogIn();
     this.vectorfollow = [];
     this.follower = false;
     this.tefollower = true;
@@ -74,10 +76,24 @@ export class FollowersPage implements OnInit {
     });
   }
 
+  ngOnInit() {
+  }
+
   gotoporfile(name) {
     const edit = {
       nom: name
     };
     this.router.navigate(['/perfiluser', edit]);
-   }
+  }
+
+  GoToLogIn() {
+    this.store.get('username').then((user) => {
+      this.store.get('token').then((token) => {
+        this.api.recuperarInfoUser(user, token).subscribe((data: any) => {
+        }, err => {
+        this.router.navigateByUrl('/login');
+        });
+      });
+    });
+  }
 }
