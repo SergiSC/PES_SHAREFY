@@ -43,7 +43,7 @@ export class AppComponent {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
             this.fcm.getToken().then(token => {
-                console.log(token);
+                console.log('New set: ' + token);
                 this.storage.set('noti', token);
             });
 
@@ -58,7 +58,7 @@ export class AppComponent {
                 // nomatch.$link - the full link data
                 console.error('Got a deeplink that didn\'t match', nomatch);
             });
-
+            /*
             this.fcm.onNotification().subscribe(data => {
                 if (data.wasTapped) {
                     console.log('Received in background');
@@ -71,6 +71,7 @@ export class AppComponent {
                 console.log(token);
                 this.storage.set('noti', token);
             });
+            */
             this.router.navigate(['login']);
         });
     }
