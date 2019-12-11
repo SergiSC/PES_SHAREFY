@@ -75,17 +75,26 @@ go_to_follow(x) {
 }
 
 ngOnInit() {
-  this.route.params.subscribe(data => {
-    this.Perfiluser = data.nom;
-  });
+ 
 }
 
   ionViewWillEnter() {
-    this.GoToLogIn();
-    this.presentLoading();
     this.route.params.subscribe(data => {
       this.Perfiluser = data.nom;
+      if (this.Perfiluser === undefined) {
+        this.store.get('username').then(n => {
+          this.Perfiluser = n;
+          this.getInfo();
+        });
+      } else {
+        this.getInfo();
+      }
     });
+  }
+
+  getInfo() {
+    this.GoToLogIn();
+    this.presentLoading();
     this.store.get('token').then((token) => {
       this.token = token;
       this.api.recuperarInfoUser(this.Perfiluser, token).subscribe((data2: any) => {

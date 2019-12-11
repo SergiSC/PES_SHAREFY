@@ -37,7 +37,6 @@ export class ComentarisPage implements OnInit {
   getComents() {
     this.stor.get('token').then((token) => {
       this.api.getCommentsPubliId(this.Idpublicacio, token).subscribe((data: any) => {
-        console.log(data);
         this.comentaris = data.comments;
       });
     });
