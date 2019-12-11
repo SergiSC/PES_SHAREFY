@@ -52,7 +52,7 @@
                     <ion-button *ngIf="seguint" color="secondary" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
               </ion-col>
               <ion-col *ngIf="seguint" class="flex">
-                <ion-button [color]="seguint ? 'secondary' :'primary'">{{ 'PAGE.PERFIL.INVITA' | translate }}</ion-button>
+                <ion-button [color]="seguint ? 'secondary' :'primary'" (click)="presentModal()">{{ 'PAGE.PERFIL.INVITA' | translate }}</ion-button>
               </ion-col>
             </ion-row>
             <ion-row>
