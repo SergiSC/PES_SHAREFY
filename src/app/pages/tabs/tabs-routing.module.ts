@@ -21,7 +21,8 @@ const routes: Routes = [
                         loadChildren: '../events/events.module#EventsPageModule'
                     }
                 ]
-            }, {
+            },
+            {
                 path: 'jocs',
                 children: [
                     {
@@ -35,6 +36,15 @@ const routes: Routes = [
                 redirectTo: '/tabs/mur',
                 pathMatch: 'full'
             },
+            {
+                path: 'perfiluser',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './pages/perfiluser/perfiluser.module#PerfiluserPageModule'
+                    }
+                ]
+            }
         ]
     },
     {

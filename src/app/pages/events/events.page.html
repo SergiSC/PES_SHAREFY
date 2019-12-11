@@ -7,8 +7,8 @@
     </ion-buttons>
     <ion-title class="ion-text-center">{{ 'PAGE.EVENTS.TITLE' | translate }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="gotoperfiluser()">
-        <ion-icon name="person"></ion-icon>
+      <ion-button [routerLink]="['/config']">
+        <ion-icon  name="settings"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

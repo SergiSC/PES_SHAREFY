@@ -23,7 +23,6 @@ export class EventsPage implements OnInit {
 
   ionViewWillEnter() {
     this.api.getEvents().subscribe((data: any) => {
-      console.log(data);
       this.events = data;
     });
   }
@@ -36,5 +35,5 @@ export class EventsPage implements OnInit {
       this.router.navigate(['/perfiluser', edit]);
     });
   }
-  
+
 }
