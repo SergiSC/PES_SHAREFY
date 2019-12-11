@@ -290,7 +290,7 @@ export class ApiService {
       token: tok
     };
     return this.http.post(
-      this.url + '/api/invite/' + userEmiter + '/' + joc + '/' + userReciver,
+      this.url + '/api/notification/invite/' + userEmiter + '/' + joc + '/' + userReciver,
       body
     );
   }

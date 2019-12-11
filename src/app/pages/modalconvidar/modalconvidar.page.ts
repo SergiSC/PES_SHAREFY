@@ -34,6 +34,7 @@ export class ModalconvidarPage implements OnInit {
         this.api.inviteGame(this.jocSeleccionat, this.usernameReciver, usr, tok)
       });
     });
+    this.tancarModal();
   }
 
   tancarModal() {
