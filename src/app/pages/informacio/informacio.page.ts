@@ -122,6 +122,7 @@ export class InformacioPage implements OnInit {
         first_name: this.regName,
         last_name: this.regLastname,
         email: this.regEmail,
+        birth_date: this.regDate.substring(0, 10)
       };
       this.storage.get('token').then(tok => {
         this.storage.get('username').then(usr => {

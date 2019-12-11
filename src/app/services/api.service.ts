@@ -174,8 +174,8 @@ export class ApiService {
       username: user.username,
       first_name: user.first_name,
       last_name: user.last_name,
-      email: user.email,
-      birth_date: user.birth_date, // TODO: MIRAR SI VA AL BACKEND
+      birth_date: user.birth_date,
+      email: user.email, // TODO: MIRAR SI VA AL BACKEND
       token: tok
     };
     return this.http.put(

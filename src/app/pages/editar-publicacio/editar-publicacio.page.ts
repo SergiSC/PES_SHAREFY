@@ -47,7 +47,7 @@ export class EditarPublicacioPage implements OnInit {
 
   save() {
     let id;
-    const a = this.newSel;
+    const a = this.newSel.slice(1,-1);
     for (const game of this.games) {
          if (game.name_en === a) {
           id = game.id;

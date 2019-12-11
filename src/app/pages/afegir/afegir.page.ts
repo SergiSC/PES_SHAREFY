@@ -42,7 +42,7 @@ export class AfegirPage implements OnInit {
   UploatFile() {
     if ((this.desc !== undefined || this.desc !== '') && this.newSel !== undefined) {
       let id;
-      const a = this.newSel;
+      const a = this.newSel.slice(1,-1);
       for (const game of this.games) {
         if (game.name_en === a) {
           id = game.id;
@@ -70,14 +70,17 @@ export class AfegirPage implements OnInit {
                   },
                   mimeType: 'video/mp4'
                 };
-                console.log(idu, this.newSel, this.desc, tk);
                 this.presentLoading();
-                this.fileTransfer.upload(result, 'http://sharefy.tk/api/publication', options, true).then(data => {
+                if (result.endsWith('.mp4')) {
+                  this.fileTransfer.upload(result, 'http://sharefy.tk/api/publication', options, true).then(data => {
                   this.loading.dismiss();
                   alert('Transfer done');
-                }, (err) => {
+                  }, (err) => {
                   console.log(err);
-                });
+                  });
+                } else {
+                  alert('El format no és el correcte');
+                }
               });
             });
           });

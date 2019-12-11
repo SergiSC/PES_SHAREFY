@@ -21,20 +21,7 @@ export class PerfiljocPage implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, public api: ApiService) { }
 
-  ngOnInit() {
-    this.route.params.subscribe(data => {
-      this.imatge = data.imag;
-      this.descripcio = data.desc;
-      this.joc = data.name;
-      this.id = data.idg;
-    });
-
-    this.api.getGamePublications(this.id).subscribe((data: any) => {
-      this.publicacions = data.value;
-      this.numPubli = data.value.length;
-      this.tePublicacions = (this.numPubli !== 0);
-    });
-  }
+  ngOnInit() {}
 
   ionViewWillEnter() {
     this.route.params.subscribe(data => {

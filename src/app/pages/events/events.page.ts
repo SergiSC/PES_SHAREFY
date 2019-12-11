@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { TranslateService } from '@ngx-translate/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import {Storage} from '@ionic/storage';
 
 
@@ -19,7 +19,9 @@ export class EventsPage implements OnInit {
               private store: Storage,
               private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     this.api.getEvents().subscribe((data: any) => {
       console.log(data);
       this.events = data;
