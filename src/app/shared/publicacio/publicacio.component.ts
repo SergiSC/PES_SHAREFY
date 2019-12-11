@@ -115,7 +115,6 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
-    
     let element = <HTMLMediaElement>document.getElementById('video');
     element.muted = true;
 
