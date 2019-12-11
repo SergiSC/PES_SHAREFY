@@ -115,6 +115,10 @@ export class PublicacioComponent implements OnInit {
 
 
   ngOnInit() {
+    
+    let element = <HTMLMediaElement>document.getElementById('video');
+    element.muted = true;
+
     this.commentaris.descrpicio = this.des.toString();
     this.commentaris.ownername = this.username;
     this.commentaris.idpubli = this.idp;
