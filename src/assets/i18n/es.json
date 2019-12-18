@@ -41,6 +41,12 @@
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
       "TITLE": "Juegos"
     },
+    "ADD": {
+      "TITLE": "Subir clip",
+      "BUTTON": "Seleccionar clip",
+      "MESSAGECORRECT": "Clip subido con éxito",
+      "MESSAGEWRONG": "El formato del clip no es el correcto"
+    },
     "MUR": {
       "TITLE": "Muro"
     },

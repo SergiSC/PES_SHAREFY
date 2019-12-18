@@ -41,6 +41,12 @@
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",
       "TITLE": "Jocs"
     },
+    "ADD": {
+      "TITLE": "Pujar clip",
+      "BUTTON": "Seleccionar clip",
+      "MESSAGECORRECT": "Clip pujat amb éxit",
+      "MESSAGEWRONG": "El format del clip no és el correcte"
+    },
     "EVENTS": {
       "TITLE": "Events"
     },

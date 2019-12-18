@@ -91,6 +91,12 @@
       "DESCRIPTION": "Choose you favorite game to watch the best clips!",
       "TITLE": "Games"
     },
+    "ADD": {
+      "TITLE": "Upload clip",
+      "BUTTON": "Select clip",
+      "MESSAGECORRECT": "Clip uploaded",
+      "MESSAGEWRONG": "The format of the clip is not the correct"
+    },
     "MUR": {
       "TITLE": "Wall"
     },

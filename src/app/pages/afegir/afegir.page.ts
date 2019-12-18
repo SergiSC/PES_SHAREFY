@@ -7,6 +7,7 @@ import {FilePath} from '@ionic-native/file-path/ngx';
 import {Storage} from '@ionic/storage';
 import {ApiService} from '../../services/api.service';
 import {LoadingController} from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-afegir',
@@ -22,7 +23,7 @@ export class AfegirPage implements OnInit {
   newSel;
   desc;
   canN = false;
-  constructor(private file: File, private transfer: FileTransfer, private chooser: FileChooser,
+  constructor(private file: File, private transfer: FileTransfer, private translate: TranslateService, private chooser: FileChooser,
               private opener: FileOpener, private path: FilePath, private storage: Storage,
               private  api: ApiService, public loadingController: LoadingController) { }
 
@@ -74,12 +75,12 @@ export class AfegirPage implements OnInit {
                 if (result.endsWith('.mp4')) {
                   this.fileTransfer.upload(result, 'http://sharefy.tk/api/publication', options, true).then(data => {
                   this.loading.dismiss();
-                  alert('Transfer done');
+                  alert(this.translate.instant('PAGE.ADD.MESSAGECORRECT'));
                   }, (err) => {
                   console.log(err);
                   });
                 } else {
-                  alert('El format no és el correcte');
+                  alert(this.translate.instant('PAGE.ADD.MESSAGEWRONG'));
                 }
               });
             });

@@ -3,14 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Afegir Clip</ion-title>
+    <ion-title class="ion-text-center">{{ 'PAGE.ADD.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!--FALTA TRADUIR-->
-
 <ion-content>
-  <ion-textarea placeholder="description" [(ngModel)]="desc"></ion-textarea>
+  <ion-textarea placeholder="Description" [(ngModel)]="desc"></ion-textarea>
   <ion-row style="margin-top: 10%">
     <ion-item lines=none>
        <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
@@ -19,5 +17,5 @@
       </ion-select>
     </ion-item>
   </ion-row>
-  <ion-button (click)="UploatFile()"> Select File </ion-button>
+  <ion-button (click)="UploatFile()">{{ 'PAGE.ADD.BUTTON' | translate }}</ion-button>
 </ion-content>
