@@ -118,6 +118,12 @@ export class PublicacioComponent implements OnInit {
     let element = <HTMLMediaElement>document.getElementById('video');
     element.muted = true;
 
+    /* function capture(){
+      var canvas = document.getElementById('canvas');
+      var video = document.getElementById('video');
+      canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    }*/
+
     this.commentaris.descrpicio = this.des.toString();
     this.commentaris.ownername = this.username;
     this.commentaris.idpubli = this.idp;
