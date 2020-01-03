@@ -96,7 +96,7 @@ export class LoginPage implements OnInit {
           this.api.postUsuariRegistrat(res.email).subscribe(r => {
             this.storage.set('token', res.userId);
             this.storage.set('username', res.displayName.replace(' ', ''));
-            this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
+            this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId, res.expires).subscribe(resp => {
               this.storage.get('noti').then(n => {
                // this.api.setNoti(user.username, res.accessToken, n).subscribe(d => {
                   this.router.navigate(['/tabs']);

@@ -46,8 +46,6 @@ export class PublicacioComponent implements OnInit {
   
   onPlayingVideo(event) {
     event.preventDefault();
-    console.log(event);
-    console.log(event.target.autoplay);
     if (event.target.autoplay) {
       event.target.autoplay = false;
       event.target.pause();

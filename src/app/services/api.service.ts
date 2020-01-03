@@ -179,9 +179,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/emails');
   }
 
-  postSetTokenFromGoogleAuth(user, tokenGoogleAuth) {
+  postSetTokenFromGoogleAuth(user, tokenGoogleAuth, expires_in) {
     const body = {
-      token: tokenGoogleAuth
+      token: tokenGoogleAuth,
+      expires: expires_in
     };
     return this.http.post(
       this.url + '/api/user/' + user + '/token_password',
