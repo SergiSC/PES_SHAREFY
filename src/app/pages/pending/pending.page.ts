@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import {TranslateService} from '@ngx-translate/core';
 import {Storage} from '@ionic/storage';
 
 @Component({
@@ -19,6 +20,7 @@ export class PendingPage implements OnInit {
   constructor(
     private api: ApiService,
     private storage: Storage,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {

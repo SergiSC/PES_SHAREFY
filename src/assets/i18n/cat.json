@@ -14,6 +14,13 @@
       "TITLEALERT": "Email ja registrat",
       "MESSAGEALERT": "Aquest email ja està registrat en el sistema. Recupera la teva contrasenya per entrar."
     },
+    "PENDING": {
+      "TITLE": "Pendents",
+      "FECHA_SOLICITUD": "Data sol·licitud:",
+      "ACCEPT": "Acceptar",
+      "DECLINE": "Rebutjar",
+      "NOTHING": "No tens sol·licituds"
+    },
     "PERFIL": {
       "TITLE": "Perfil",
       "BUTTONINFORMACIO": "Informació",

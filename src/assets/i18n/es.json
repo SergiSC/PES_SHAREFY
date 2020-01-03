@@ -14,6 +14,13 @@
       "TITLEALERT": "Email ya registrado",
       "MESSAGEALERT": "Este email ya está registrado en el sistema. Recupera tu contraseña para entrar."
     },
+    "PENDING": {
+      "TITLE": "Pendientes",
+      "FECHA_SOLICITUD": "Fecha solicitud:",
+      "ACCEPT": "Aceptar",
+      "DECLINE": "Rechazar",
+      "NOTHING": "No tienes solicitudes"
+    },
     "PERFIL": {
       "TITLE": "Perfil",
       "BUTTONINFORMACIO": "Informatición",
