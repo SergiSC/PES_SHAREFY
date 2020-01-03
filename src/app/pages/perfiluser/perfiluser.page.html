@@ -6,7 +6,10 @@
         </ion-buttons>
       <ion-title class="ion-text-center" > {{ Perfiluser }} </ion-title>
       <ion-buttons slot="end">
-          <ion-button>
+          <ion-button *ngIf="esell" [routerLink]="['/pending']">
+            <ion-icon name="contacts"></ion-icon>
+          </ion-button>
+          <ion-button *ngIf="esell">
             <ion-icon name="heart"></ion-icon>
           </ion-button>
           <ion-button *ngIf="esell" [routerLink]="['/informacio']">
