@@ -31,9 +31,9 @@
             <img alt="" [src]="url+pending.user_follower.photo_path">
           </ion-avatar>
           <ion-label>
-            <h3>{{ pending.user_follower.username }}</h3>
-            <p>{{ pending.user_follower.first_name }} {{ pending.user_follower.last_name }}</p>
-            <p>Data sol·licitud: {{ pending.created_at }}</p>
+            <h3 class="word-break">{{ pending.user_follower.username }}</h3>
+            <p class="word-break">{{ pending.user_follower.first_name }} {{ pending.user_follower.last_name }}</p>
+            <p class="word-break">Data sol·licitud: {{ pending.created_at }}</p>
           </ion-label>
         </ion-item>
       </ion-col>
