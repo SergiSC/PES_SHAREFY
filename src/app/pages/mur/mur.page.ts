@@ -18,18 +18,27 @@ export class MurPage implements OnInit {
 
 
     ngOnInit() {}
-    
+
     ionViewWillEnter() {
-    this.api.getAllPublis(8, null).subscribe( (data: any) => {
-      this.publicacio = data.value;
-    });
-    this.api.getAllPublis(25, null).subscribe( (data: any) => {
-      this.publicacio.push(...data.value);
-    });
-    this.api.getAllPublis(54, null).subscribe( (data: any) => {
-      this.publicacio.push(...data.value);
+    let id;
+    this.store.get('username').then((val) => {
+      this.store.get('token').then((tok) => {
+        this.api.recuperarInfoUser(val, tok).subscribe((info: any) =>{
+          id = info.value[0].id;
+          this.api.getMur(id, tok).subscribe( (data: any) => {
+            this.publicacio = data.value;
+          });
+        });
+      });
     });
     this.GoToLogIn();
+    /*
+    this.store.get('username').then((val) => {
+      this.store.get('token').then((tok) => {
+        this.api.getMur(val, tok).subscribe( (data: any) => {
+            this.publicacio = data.value;
+          });
+    */
   }
 
   gotoperfiluser() {
