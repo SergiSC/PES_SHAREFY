@@ -105,6 +105,9 @@
       "AFEGIR": "Afegir",
       "PLACEHOLDER": "Comentari"
     },
+    "PUBLIILIKE": {
+      "TITLE": "Publi amb likes"
+    },
     "CONFIGURACIO": {
       "TITLE": "Configuració",
       "PRIVACITY": "Compte privada",

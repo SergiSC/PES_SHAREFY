@@ -165,4 +165,11 @@ ngOnInit() {
       });
     });
   }
+
+  GoToPublisILike() {
+    const edit = {
+      id: this.iduser,
+    };
+    this.router.navigate(['/pubilike', edit]);
+  }
 }

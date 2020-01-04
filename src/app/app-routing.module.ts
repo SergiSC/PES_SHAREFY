@@ -21,8 +21,10 @@ const routes: Routes = [
   { path: 'perfiljoc', loadChildren: './pages/perfiljoc/perfiljoc.module#PerfiljocPageModule' },
   { path: 'vistapublicacio', loadChildren: './pages/vistapublicacio/vistapublicacio.module#VistapublicacioPageModule' },
   { path: 'followers', loadChildren: './pages/followers/followers.module#FollowersPageModule' },
-  { path: 'events', loadChildren: './pages/events/events.module#EventsPageModule' },  { path: 'canviar-contra', loadChildren: './pages/canviar-contra/canviar-contra.module#CanviarContraPageModule' },
+  { path: 'events', loadChildren: './pages/events/events.module#EventsPageModule' },
+  { path: 'canviar-contra', loadChildren: './pages/canviar-contra/canviar-contra.module#CanviarContraPageModule' },
   { path: 'pending', loadChildren: './pages/pending/pending.module#PendingPageModule' },
+  { path: 'pubilike', loadChildren: './pages/pubilike/pubilike.module#PubilikePageModule' },
 
 ];
 @NgModule({
