@@ -46,6 +46,7 @@ export class VistapublicacioPage implements OnInit {
       this.storage.get('username').then((user) => {
         this.api.AddComment(user, this.idPublicacio, token, this.nouComentari).subscribe((data2: any) => {
           this.nouComentari = '';
+          this.api.sendNotification(user, this.dadesPublicacio.user.username, token,'comment'). subscribe();
           //falta aplicar ion-refresher per refrescar els comentaris
         });
       });

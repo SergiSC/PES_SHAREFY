@@ -60,6 +60,7 @@ export class PublicacioComponent implements OnInit {
       this.numLikes += 1;
       this.storage.get('username').then((data: any) => {
         this.api.like(data, this.idp, this.token).subscribe();
+        this.api.sendNotification(data, this.username,this.token,'like').subscribe();
       });
 
     } else {
@@ -118,7 +119,11 @@ export class PublicacioComponent implements OnInit {
   gotoShare() {
     this.socialSharing.share("Check this item:  sharefy://tabs/mur/")
       .then(() => {
-
+        this.storage.get('username').then((username: any) => {
+          this.storage.get('token').then((tok: any) => {
+            this.api.sendNotification(username, this.username,tok,'share').subscribe();
+          });
+        });
       })
       .catch(() => {
 

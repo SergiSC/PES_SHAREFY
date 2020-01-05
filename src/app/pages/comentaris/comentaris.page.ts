@@ -48,6 +48,7 @@ export class ComentarisPage implements OnInit {
         this.Inpu = "";
         this.getComents();
       });
+      this.api.sendNotification(this.user, this.ownername, token,'comment'). subscribe();
     });
   }
 

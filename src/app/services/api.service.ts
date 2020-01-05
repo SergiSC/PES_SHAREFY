@@ -338,4 +338,13 @@ export class ApiService {
       this.url + '/api/likes/user/' + id + '/publications' + '?token=' + tok
     );
   }
+
+  sendNotification(fromUser, toUser, tok, type) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/notification/' + type +'/' + fromUser +'/' + toUser, body
+    );
+  }
 }

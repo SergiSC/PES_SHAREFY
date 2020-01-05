@@ -50,6 +50,7 @@ Follow() {
     this.api.Seguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
       this.nseguid++;
     });
+    this.api.sendNotification(this.user, this.Perfiluser, this.token,'follow').subscribe();
   } else {
     this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
       this.nseguid--;
