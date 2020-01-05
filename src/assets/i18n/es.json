@@ -216,7 +216,8 @@
     },
     "VISTAPUBLICACIO": {
       "TITLE": "Publicación",
-      "TEXTALLCOMMENTS": "Mira todos los comentarios"
+      "TEXTALLCOMMENTS": "Mira todos los comentarios",
+      "TEXTGOTOMUR": "Ir al muro"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invitar",

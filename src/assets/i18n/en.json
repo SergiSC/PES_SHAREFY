@@ -216,7 +216,8 @@
     },
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
-      "TEXTALLCOMMENTS": "See all comments"
+      "TEXTALLCOMMENTS": "See all comments",
+      "TEXTGOTOMUR": "Go to timeline"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invite",

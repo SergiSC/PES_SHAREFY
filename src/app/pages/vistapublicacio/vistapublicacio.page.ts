@@ -41,6 +41,10 @@ export class VistapublicacioPage implements OnInit {
     this.router.navigate(['/comentaris'], navigationExtras);
    }
 
+   goToMur(){
+    this.router.navigate(['/tabs/mur']);
+   }
+
    afegirComentari() {
     this.storage.get('token').then((token) => {
       this.storage.get('username').then((user) => {
