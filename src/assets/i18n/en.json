@@ -219,7 +219,17 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
       "TEXTALLCOMMENTS": "See all comments",
-      "TEXTGOTOMUR": "Go to timeline"
+      "TEXTGOTOMUR": "Go to timeline",
+      "HOURFA": "ago",
+      "HOURMIN": "minut",
+      "HOURMINS": "minuts",
+      "HOURHOURS": "hours",
+      "HOURHOUR": "hour",
+      "HOURSEC": "segons",
+      "HOURDAY": "day",
+      "HOURDAYS": "days",
+      "HOURWEEK": "week",
+      "HOURWEEKS": "weeks"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invite",

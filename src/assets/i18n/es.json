@@ -219,7 +219,17 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicación",
       "TEXTALLCOMMENTS": "Mira todos los comentarios",
-      "TEXTGOTOMUR": "Ir al muro"
+      "TEXTGOTOMUR": "Ir al muro",
+      "HOURFA": "Hace",
+      "HOURMIN": "minuto",
+      "HOURMINS": "minutos",
+      "HOURHOUR": "hora",
+      "HOURHOURS": "horas",
+      "HOURSEC": "segundos",
+      "HOURDAY": "día",
+      "HOURDAYS": "días",
+      "HOURWEEK": "semana",
+      "HOURWEEKS": "semanas"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invitar",

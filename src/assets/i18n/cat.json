@@ -219,7 +219,17 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicació",
       "TEXTALLCOMMENTS": "Mira tots els comentaris",
-      "TEXTGOTOMUR": "Anar al mur"
+      "TEXTGOTOMUR": "Anar al mur",
+      "HOURFA": "Fa",
+      "HOURMIN": "minut",
+      "HOURMINS": "minuts",
+      "HOURHOURS": "hores",
+      "HOURHOUR": "hora",
+      "HOURSEC": "segons",
+      "HOURDAY": "dia",
+      "HOURDAYS": "dies",
+      "HOURWEEK": "setmana",
+      "HOURWEEKS": "setmanes"
     },
     "MODALCONVIDAR": {
       "TITLE": "Convidar",

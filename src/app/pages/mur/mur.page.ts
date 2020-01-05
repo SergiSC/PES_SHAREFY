@@ -24,6 +24,7 @@ export class MurPage implements OnInit {
     this.store.get('username').then((val) => {
       this.store.get('token').then((tok) => {
         this.api.getMur(val, tok).subscribe( (data: any) => {
+          console.log(data)
             this.publicaci = data.value;
             if (this.publicaci.length === 0) {
                 this.pub = true;

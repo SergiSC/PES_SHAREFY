@@ -13,7 +13,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <app-publicacio *ngIf="carregat" [numLikes]="dadesPublicacio.num_likes" [idp]="dadesPublicacio.id" [username]="dadesPublicacio.user.username" [video]="dadesPublicacio.video_path" [des]="dadesPublicacio.text" [photo]="dadesPublicacio.user.photo_path" [game]="dadesPublicacio.game.name_en"></app-publicacio>
+      <app-publicacio *ngIf="carregat" [numLikes]="dadesPublicacio.num_likes" [idp]="dadesPublicacio.id" [username]="dadesPublicacio.user.username" [video]="dadesPublicacio.video_path" [des]="dadesPublicacio.text" [photo]="dadesPublicacio.user.photo_path" [game]="dadesPublicacio.game.name_en" [created_at]="publi.created_at"></app-publicacio>
     </ion-row>
     <ion-row *ngFor="let comentari of comentaris; let i=index" style="margin-left:5%"> 
       <ion-col size="auto" class="comm" *ngIf="i<3">

@@ -7,6 +7,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 import { Storage } from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-publicacio',
@@ -21,11 +22,13 @@ export class PublicacioComponent implements OnInit {
   @Input('des') des: string;
   @Input('numLikes') numLikes: number;
   @Input('photo') photo: string;
+  @Input('created_at') creat: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   esOwner = false;
   PopoverController: any;
   token: '';
+  tempsPassat: String;
 
   commentaris = {
     idpubli: null,
@@ -41,9 +44,10 @@ export class PublicacioComponent implements OnInit {
     private router: Router,
     private socialSharing: SocialSharing,
     private storage: Storage,
+    private translate: TranslateService
   ) { }
 
-  
+
   onPlayingVideo(event) {
     event.preventDefault();
     console.log(event);
@@ -59,9 +63,9 @@ export class PublicacioComponent implements OnInit {
     if (this.like) {
       this.numLikes += 1;
       this.storage.get('username').then((data: any) => {
-        this.storage.get('token').then((token:any) => {
+        this.storage.get('token').then((token: any) => {
           this.api.like(data, this.idp, this.token).subscribe();
-          this.api.sendNotification(data, this.username,token,'like').subscribe();
+          this.api.sendNotification(data, this.username, token, 'like').subscribe();
         })
       });
 
@@ -123,7 +127,7 @@ export class PublicacioComponent implements OnInit {
       .then(() => {
         this.storage.get('username').then((username: any) => {
           this.storage.get('token').then((tok: any) => {
-            this.api.sendNotification(username, this.username,tok,'share').subscribe();
+            this.api.sendNotification(username, this.username, tok, 'share').subscribe();
           });
         });
       })
@@ -156,7 +160,84 @@ export class PublicacioComponent implements OnInit {
       });
 
     });
+    this.storage.get('lang').then(lang => {
+      this.calculTempsPassat(lang);
+    })
 
+  }
+
+  calculTempsPassat(idioma) {
+    let dataCreacio = new Date(this.creat.split(' ')[0]).getTime();
+    let dataActual = new Date().getTime();
+    let diferenciaTemporal = dataActual - dataCreacio;
+    diferenciaTemporal = diferenciaTemporal / (1000 * 3600 * 24 * 7);
+
+    //Fa 1 setmana o més
+    if (Math.trunc(diferenciaTemporal) > 0) {
+      if (idioma == 'en') {
+        if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+        else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+      }
+      else {
+        if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK')
+        else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS')
+      }
+    }
+
+    else {
+      diferenciaTemporal = diferenciaTemporal * 7;
+      //Fa 1 dia o més
+      if (Math.trunc(diferenciaTemporal) > 0) {
+        if (idioma == 'en') {
+          if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+          else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+        }
+        else {
+          if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY')
+          else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS')
+        }
+      }
+
+      else {
+        diferenciaTemporal = diferenciaTemporal * 24;
+        //Fa 1 hora o més
+        if (Math.trunc(diferenciaTemporal) > 0) {
+          if (idioma == 'en') {
+            if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+            else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+          }
+          else {
+            if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR')
+            else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS')
+          }
+        }
+
+        else {
+          diferenciaTemporal = diferenciaTemporal * 60;
+          //Fa 1 minut o més
+          if (Math.trunc(diferenciaTemporal) > 0) {
+            if (idioma == 'en') {
+              if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+              else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+            }
+            else {
+              if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN')
+              else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS')
+            }
+          }
+          else {
+            diferenciaTemporal = diferenciaTemporal * 60;
+            if (idioma == 'en') {
+              this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+            }
+            else {
+              this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC')
+
+            }
+          }
+        }
+      }
+    }
   }
 
 }
