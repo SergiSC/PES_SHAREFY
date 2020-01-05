@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'followers', loadChildren: './pages/followers/followers.module#FollowersPageModule' },
   { path: 'events', loadChildren: './pages/events/events.module#EventsPageModule' },  { path: 'canviar-contra', loadChildren: './pages/canviar-contra/canviar-contra.module#CanviarContraPageModule' },
   { path: 'pending', loadChildren: './pages/pending/pending.module#PendingPageModule' },
+  { path: 'avatarcomplet', loadChildren: './pages/avatarcomplet/avatarcomplet.module#AvatarcompletPageModule' },
 
 ];
 @NgModule({

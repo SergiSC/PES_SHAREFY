@@ -77,6 +77,10 @@ go_to_follow(x) {
 ngOnInit() {
  
 }
+fullAvatar() {
+  const edit = {pathFotoPerfil: this.pathFotoPerfil, nomUser: this.Perfiluser};
+  this.router.navigate(['/avatarcomplet', edit]);
+}
 
   ionViewWillEnter() {
     this.route.params.subscribe(data => {
