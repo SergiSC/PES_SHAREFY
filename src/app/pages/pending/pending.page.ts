@@ -29,12 +29,8 @@ export class PendingPage implements OnInit {
       this.storage.get('username').then((username: any) => {
         this.username = username;
         this.api.getPending(username, token).subscribe((data: any) => {
-          if(data.value.length !== undefined){
-            this.listPending = data.value;
-          }else{
-            this.listPending = [];
-            this.listPending.push(data.value[1]);
-          }
+          data.value = Object.keys(data.value).map(key => data.value[key]);
+          this.listPending = data.value;
         });
       });
     });
