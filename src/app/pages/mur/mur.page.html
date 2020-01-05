@@ -21,7 +21,12 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div *ngFor="let publi of publicacio">
-    <app-publicacio *ngIf="publi.id_game !== null" [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name_en"></app-publicacio>
+  <div *ngIf="!pub">
+    <div *ngFor="let publi of publicaci">
+      <app-publicacio *ngIf="publi.id_game !== null" [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [game]="publi.game.name_en"></app-publicacio>
+    </div>
+  </div>
+  <div *ngIf="pub" class="divv">
+    <p color="primary">{{ 'PAGE.MUR.TEXTNOPUB' | translate }}</p>
   </div>
 </ion-content>

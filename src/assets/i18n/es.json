@@ -55,7 +55,8 @@
       "MESSAGEWRONG": "El formato del clip no es el correcto"
     },
     "MUR": {
-      "TITLE": "Muro"
+      "TITLE": "Muro",
+      "TEXTNOPUB": "Sigue a usuarios para poder ver su actividad"
     },
     "EVENTS": {
       "TITLE": "Eventos"
@@ -106,7 +107,8 @@
       "PLACEHOLDER": "Comentario"
     },
     "PUBLIILIKE": {
-      "TITLE": "Publi con likes"
+      "TITLE": "Publi con likes",
+      "TEXTNOPUB": "No has dado a like a ninguna pulicación"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuración",

@@ -86,7 +86,8 @@
       "PLACEHOLDER": "Comment"
     },
     "PUBLIILIKE": {
-      "TITLE": "Publi you liked"
+      "TITLE": "Publi you liked",
+      "TEXTNOPUB": "You did't like any publication"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
@@ -108,7 +109,8 @@
       "MESSAGEWRONG": "The format of the clip is not the correct"
     },
     "MUR": {
-      "TITLE": "Wall"
+      "TITLE": "Wall",
+      "TEXTNOPUB": "Follow users to see their activity"
     },
     "EVENTS": {
       "TITLE": "Events"
