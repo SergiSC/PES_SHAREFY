@@ -108,9 +108,12 @@ export class LoginPage implements OnInit {
             this.storage.set('username', r.username);
             //this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
             this.storage.get('noti').then(n => {
-              // this.api.setNoti(user.username, res.accessToken, n).subscribe(d => {
+              if(n == undefined) {
+                n = 1234;
+              }
+              this.api.setNoti(r.username, r.access_token, n).subscribe(d => {
                 this.router.navigate(['/tabs']);
-              // });
+              });
             });
             //});
           }, error => {
