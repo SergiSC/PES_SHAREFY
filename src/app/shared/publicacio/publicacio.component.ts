@@ -59,8 +59,10 @@ export class PublicacioComponent implements OnInit {
     if (this.like) {
       this.numLikes += 1;
       this.storage.get('username').then((data: any) => {
-        this.api.like(data, this.idp, this.token).subscribe();
-        this.api.sendNotification(data, this.username,this.token,'like').subscribe();
+        this.storage.get('token').then((token:any) => {
+          this.api.like(data, this.idp, this.token).subscribe();
+          this.api.sendNotification(data, this.username,token,'like').subscribe();
+        })
       });
 
     } else {
@@ -129,7 +131,6 @@ export class PublicacioComponent implements OnInit {
 
       });
   }
-
 
   ngOnInit() {
     let element = <HTMLMediaElement>document.getElementById('video');

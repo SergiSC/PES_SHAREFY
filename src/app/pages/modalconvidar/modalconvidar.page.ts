@@ -31,7 +31,7 @@ export class ModalconvidarPage implements OnInit {
   enviaNotificacio() {
     this.storage.get('token').then(tok => {
       this.storage.get('username').then(usr => {
-        this.api.inviteGame(this.jocSeleccionat, this.usernameReciver, usr, tok)
+        this.api.inviteGame(this.jocSeleccionat, this.usernameReciver, usr, tok).subscribe()
       });
     });
     this.tancarModal();
