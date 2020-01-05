@@ -110,13 +110,10 @@ export class ApiService {
     );
   }
 
-  postUsuariRegistrat(emai) {
-    const body = {
-      email: emai
-    };
+  googleLogin(user) {
     return this.http.post(
         this.url + '/api/login/google',
-        body
+        user
     );
   }
 
