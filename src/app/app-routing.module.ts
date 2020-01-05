@@ -24,11 +24,8 @@ const routes: Routes = [
   { path: 'events', loadChildren: './pages/events/events.module#EventsPageModule' },
   { path: 'canviar-contra', loadChildren: './pages/canviar-contra/canviar-contra.module#CanviarContraPageModule' },
   { path: 'pending', loadChildren: './pages/pending/pending.module#PendingPageModule' },
-<<<<<<< HEAD
   { path: 'avatarcomplet', loadChildren: './pages/avatarcomplet/avatarcomplet.module#AvatarcompletPageModule' },
-=======
   { path: 'pubilike', loadChildren: './pages/pubilike/pubilike.module#PubilikePageModule' },
->>>>>>> sprint6
 
 ];
 @NgModule({
