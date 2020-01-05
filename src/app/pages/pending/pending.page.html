@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center"> {{ 'PAGE.PENDING.TITLE' | translate }} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="esell" [routerLink]="['/pending']">
+        <ion-icon name="contacts"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="esell">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="esell" [routerLink]="['/informacio']">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="esell" [routerLink]="['/config']">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="margin-top" *ngFor="let pending of listPending">
+    <ion-row >
+      <ion-col>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img alt="" [src]="url+pending.user_follower.photo_path">
+          </ion-avatar>
+          <ion-label>
+            <h3 class="word-break">{{ pending.user_follower.username }}</h3>
+            <p class="word-break">{{ pending.user_follower.first_name }} {{ pending.user_follower.last_name }}</p>
+            <p class="word-break">{{ 'PAGE.PENDING.FECHA_SOLICITUD' | translate }} {{ pending.created_at }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-button expand="full" color="success" fill="outline" (click)="acceptPending(pending.user_follower.username)">{{ 'PAGE.PENDING.ACCEPT' | translate }}</ion-button>
+    <ion-button expand="full" color="danger" fill="outline" (click)="deletePending(pending.user_follower.username)">{{ 'PAGE.PENDING.DECLINE' | translate }}</ion-button>
+  </ion-grid>
+  <ion-grid class="margin-top" *ngIf="listPending.length===0">
+    <ion-row >
+      <ion-col>
+        <p>{{ 'PAGE.PENDING.NOTHING' | translate }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

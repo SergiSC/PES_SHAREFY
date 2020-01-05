@@ -13,7 +13,7 @@
     </ion-col>
   </ion-row>
   <ion-row class="row-video-container">
-      <video id="video" width="100%"  [id]="idp" autoplay controls muted="muted">
+      <video (playing)="onPlayingVideo($event)" autoplay id="video" width="100%"  [id]="idp" controls muted="muted">
         <source [src]="'http://sharefy.tk' + video" type='video/mp4'>
       </video>
   </ion-row>

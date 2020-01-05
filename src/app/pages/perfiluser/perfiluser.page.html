@@ -4,9 +4,11 @@
             <ion-back-button>
             </ion-back-button>
         </ion-buttons>
-      <ion-title class="ion-text-center" > {{ Perfiluser }} </ion-title>
       <ion-buttons slot="end">
-          <ion-button>
+          <ion-button *ngIf="esell" [routerLink]="['/pending']">
+            <ion-icon name="contacts"></ion-icon>
+          </ion-button>
+          <ion-button *ngIf="esell" (click)="GoToPublisILike()">
             <ion-icon name="heart"></ion-icon>
           </ion-button>
           <ion-button *ngIf="esell" [routerLink]="['/informacio']">
@@ -22,8 +24,15 @@
   <ion-content>
       <ion-grid class="margin-top">
           <ion-row>
+            <ion-col>
+              <div class="text-center">
+                <h3>{{ Perfiluser }}</h3>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
             <ion-col class="flex">
-              <ion-avatar class="avatar">
+              <ion-avatar class="avatar" (click)="fullAvatar()">
                 <img alt="" [src]="pathFotoPerfil">
               </ion-avatar>
             </ion-col>

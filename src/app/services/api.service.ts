@@ -71,6 +71,26 @@ export class ApiService {
     return this.http.get(this.url + '/api/users');
   }
 
+  getPending(username, token) {
+    return this.http.get(this.url + `/api/user/${username}/follow/request?token=${token}`);
+  }
+
+  deletePending(follower, followed, token) {
+    return this.http.delete(
+        this.url + `/api/follow/user/${follower}/user/${followed}?token=${token}`,
+    );
+  }
+
+  acceptPending(follower, followed, token) {
+    const body = {
+      follower_username: follower,
+    };
+    return this.http.put(
+        this.url + `/api/user/${followed}/follow/request?token=${token}`,
+        body
+    );
+  }
+
   getAllGames() {
     return this.http.get(this.url + '/api/games');
   }
@@ -90,13 +110,10 @@ export class ApiService {
     );
   }
 
-  postUsuariRegistrat(emai) {
-    const body = {
-      email: emai
-    };
+  googleLogin(user) {
     return this.http.post(
         this.url + '/api/login/google',
-        body
+        user
     );
   }
 
@@ -304,6 +321,27 @@ export class ApiService {
   getLikesPubliId(id, tok) {
     return this.http.get(
       this.url + '/api/publication/' + id + '/likes' + '?token=' + tok
+    );
+  }
+
+  getMur(id, tok) {
+    return this.http.get(
+      this.url + '/api/user/' + id + '/wall' + '?token=' + tok
+    );
+  }
+
+  getPulbisILike(id, tok) {
+    return this.http.get(
+      this.url + '/api/likes/user/' + id + '/publications' + '?token=' + tok
+    );
+  }
+
+  sendNotification(fromUser, toUser, tok, type) {
+    const body = {
+      token: tok
+    };
+    return this.http.post(
+      this.url + '/api/notification/' + type +'/' + fromUser +'/' + toUser, body
     );
   }
 }

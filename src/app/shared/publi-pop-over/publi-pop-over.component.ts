@@ -54,7 +54,7 @@ export class PubliPopOverComponent implements OnInit {
             this.storage.get('token').then((token) => {
               this.api.deletePublication(this.idPublication, token).subscribe((data: any) => {
                 this.showToast(this.translate.instant('SHARED.POPOVER.TEXTDELETEOK'));
-                location.reload()
+                location.reload();
               });
             });
           }

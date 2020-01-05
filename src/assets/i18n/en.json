@@ -14,6 +14,13 @@
       "TITLEALERT": "Email is already registred",
       "MESSAGEALERT": "This email is already registred in the system. Restore your password to access the aplication."
     },
+    "PENDING": {
+      "TITLE": "Pending",
+      "FECHA_SOLICITUD": "Date application:",
+      "ACCEPT": "Accept",
+      "DECLINE": "Rebuff",
+      "NOTHING": "Do not have applications"
+    },
     "PERFIL": {
       "TITLE": "Profile",
       "BUTTONINFORMACIO": "Information",
@@ -77,6 +84,9 @@
       "TITLE": "Comments",
       "AFEGIR": "Add",
       "PLACEHOLDER": "Comment"
+    },
+    "PUBLIILIKE": {
+      "TITLE": "Publi you liked"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
@@ -206,7 +216,8 @@
     },
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
-      "TEXTALLCOMMENTS": "See all comments"
+      "TEXTALLCOMMENTS": "See all comments",
+      "TEXTGOTOMUR": "Go to timeline"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invite",

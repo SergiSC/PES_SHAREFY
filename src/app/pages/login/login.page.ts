@@ -85,25 +85,42 @@ export class LoginPage implements OnInit {
   }
 
   google_login() {
-    this.googlePlus.login({}).then(res => {
-          console.log(res);
+    this.googlePlus.login(
+                  {
+                    'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+                    'webClientId': '86262135528-mh2ujp0to4rnrvk0capvuoenv3tjidn5.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+                    'offline': true
+                  }
+        ).then(res => {
+          alert(JSON.stringify(res));
+          //console.log(JSON.stringify(res));
+          //console.log(res.displayName);
           const user = {
             username: res.displayName.replace(' ', ''),
             first_name: res.givenName,
             last_name: res.familyName,
-            email: res.email
+            email: res.email,
+            idToken: res.idToken
           };
-          this.api.postUsuariRegistrat(res.email).subscribe(r => {
-            this.storage.set('token', res.userId);
-            this.storage.set('username', res.displayName.replace(' ', ''));
-            this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
-              this.storage.get('noti').then(n => {
-               // this.api.setNoti(user.username, res.accessToken, n).subscribe(d => {
-                  this.router.navigate(['/tabs']);
-                // });
+          this.api.googleLogin(user).subscribe((r: any) => {
+            alert(JSON.stringify(r));
+            this.storage.set('token', r.access_token);
+            this.storage.set('username', r.username);
+            //this.api.postSetTokenFromGoogleAuth(res.displayName.replace(' ', ''), res.userId).subscribe(resp => {
+            this.storage.get('noti').then(n => {
+              if(n == undefined) {
+                n = 1234;
+              }
+              this.api.setNoti(r.username, r.access_token, n).subscribe(d => {
+                this.router.navigate(['/tabs']);
               });
             });
+            //});
           }, error => {
+            alert("error");
+            alert(JSON.stringify(error));
+            console.log(JSON.stringify(error));
+            /*
             this.api.postAfegirNouUsuariRegistrat(user).subscribe((data: any) => {
               this.storage.set('token', res.userId);
               this.storage.set('username', res.displayName.replace(' ', ''));
@@ -118,6 +135,7 @@ export class LoginPage implements OnInit {
             }, err => {
               this.showToast(this.err.alerts[2].msg);
             });
+            */
           });
         })
         .catch(err => console.error(err));

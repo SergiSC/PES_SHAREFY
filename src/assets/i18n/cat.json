@@ -14,6 +14,13 @@
       "TITLEALERT": "Email ja registrat",
       "MESSAGEALERT": "Aquest email ja està registrat en el sistema. Recupera la teva contrasenya per entrar."
     },
+    "PENDING": {
+      "TITLE": "Pendents",
+      "FECHA_SOLICITUD": "Data sol·licitud:",
+      "ACCEPT": "Acceptar",
+      "DECLINE": "Rebutjar",
+      "NOTHING": "No tens sol·licituds"
+    },
     "PERFIL": {
       "TITLE": "Perfil",
       "BUTTONINFORMACIO": "Informació",
@@ -97,6 +104,9 @@
       "TITLE": "Comentaris",
       "AFEGIR": "Afegir",
       "PLACEHOLDER": "Comentari"
+    },
+    "PUBLIILIKE": {
+      "TITLE": "Publi amb likes"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuració",
@@ -206,7 +216,8 @@
     },
     "VISTAPUBLICACIO": {
       "TITLE": "Publicació",
-      "TEXTALLCOMMENTS": "Mira tots els comentaris"
+      "TEXTALLCOMMENTS": "Mira tots els comentaris",
+      "TEXTGOTOMUR": "Anar al mur"
     },
     "MODALCONVIDAR": {
       "TITLE": "Convidar",

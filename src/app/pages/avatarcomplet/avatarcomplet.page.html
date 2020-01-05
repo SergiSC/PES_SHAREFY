@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar style="--background: black">
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="background">
+    <ion-row style="justify-content: center;">
+      <h3 class="name">{{ nomUser }}</h3>
+    </ion-row>
+    <ion-row style="justify-content: center;">
+      <ion-avatar class="avatar">
+        <img alt="" [src]="pathFotoPerfil">
+      </ion-avatar>
+    </ion-row>
+  </ion-grid>
+</ion-content>

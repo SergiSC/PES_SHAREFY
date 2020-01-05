@@ -49,6 +49,7 @@ Follow() {
   if (!this.seguint) {
     this.api.Seguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
       this.nseguid++;
+      this.api.sendNotification(this.user, this.Perfiluser, this.token,'follow').subscribe();
     });
   } else {
     this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
@@ -76,6 +77,10 @@ go_to_follow(x) {
 
 ngOnInit() {
  
+}
+fullAvatar() {
+  const edit = {pathFotoPerfil: this.pathFotoPerfil, nomUser: this.Perfiluser};
+  this.router.navigate(['/avatarcomplet', edit]);
 }
 
   ionViewWillEnter() {
@@ -164,5 +169,12 @@ ngOnInit() {
         });
       });
     });
+  }
+
+  GoToPublisILike() {
+    const edit = {
+      id: this.iduser,
+    };
+    this.router.navigate(['/pubilike', edit]);
   }
 }

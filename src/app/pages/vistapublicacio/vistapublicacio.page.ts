@@ -41,11 +41,16 @@ export class VistapublicacioPage implements OnInit {
     this.router.navigate(['/comentaris'], navigationExtras);
    }
 
+   goToMur(){
+    this.router.navigate(['/tabs/mur']);
+   }
+
    afegirComentari() {
     this.storage.get('token').then((token) => {
       this.storage.get('username').then((user) => {
         this.api.AddComment(user, this.idPublicacio, token, this.nouComentari).subscribe((data2: any) => {
           this.nouComentari = '';
+          this.api.sendNotification(user, this.dadesPublicacio.user.username, token,'comment'). subscribe();
           //falta aplicar ion-refresher per refrescar els comentaris
         });
       });
