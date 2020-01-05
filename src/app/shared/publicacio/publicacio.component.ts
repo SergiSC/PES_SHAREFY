@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-import { StreamingMedia, StreamingVideoOptions} from '@ionic-native/streaming-media/ngx';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import { PubliPopOverComponent } from 'src/app/shared/publi-pop-over/publi-pop-over.component';
 import { ApiService } from 'src/app/services/api.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
-import {Storage} from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-publicacio',
@@ -26,6 +26,7 @@ export class PublicacioComponent implements OnInit {
   esOwner = false;
   PopoverController: any;
   token: '';
+
   commentaris = {
     idpubli: null,
     ownername: '',
@@ -36,11 +37,22 @@ export class PublicacioComponent implements OnInit {
   vlikes;
 
   constructor(public popoverCtrl: PopoverController,
-              public api: ApiService,
-              private router: Router,
-              private socialSharing: SocialSharing,
-              private storage: Storage,
-               ) { }
+    public api: ApiService,
+    private router: Router,
+    private socialSharing: SocialSharing,
+    private storage: Storage,
+  ) { }
+
+  
+  onPlayingVideo(event) {
+    event.preventDefault();
+    console.log(event);
+    console.log(event.target.autoplay);
+    if (event.target.autoplay) {
+      event.target.autoplay = false;
+      event.target.pause();
+    }
+  }
 
   blike() {
     this.like = !this.like;
@@ -59,32 +71,32 @@ export class PublicacioComponent implements OnInit {
   }
 
   async presentPopOver(event) {
-     const popover = await this.popoverCtrl.create({
-       component: PubliPopOverComponent,
-       componentProps: {idPublication: this.idp, video: this.video, desc: this.des},
-       event,
-       cssClass: 'setting-popover'
-     });
-     return await popover.present();
-   }
+    const popover = await this.popoverCtrl.create({
+      component: PubliPopOverComponent,
+      componentProps: { idPublication: this.idp, video: this.video, desc: this.des },
+      event,
+      cssClass: 'setting-popover'
+    });
+    return await popover.present();
+  }
 
 
-   gotoporfile() {
+  gotoporfile() {
     const edit = {
       nom: this.commentaris.ownername
     };
     this.router.navigate(['/perfiluser', edit]);
-   }
+  }
 
-   gotolikes() {
+  gotolikes() {
     const edit = {
       nom: this.idp,
       type: 'Likes'
     };
     this.router.navigate(['/followers', edit]);
-   }
+  }
 
-   gotoComments() {
+  gotoComments() {
 
     const edit = {
       id: this.idp,
@@ -101,17 +113,17 @@ export class PublicacioComponent implements OnInit {
     };
     this.router.navigate(['/comentaris'], navigationExtras);
     */
-   }
+  }
 
-   gotoShare() {
+  gotoShare() {
     this.socialSharing.share("Check this item:  sharefy://tabs/mur/")
-    .then(() => {
+      .then(() => {
 
-    })
-    .catch(() => {
+      })
+      .catch(() => {
 
-    });
-   }
+      });
+  }
 
 
   ngOnInit() {

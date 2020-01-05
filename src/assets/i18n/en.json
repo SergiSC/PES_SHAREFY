@@ -85,6 +85,9 @@
       "AFEGIR": "Add",
       "PLACEHOLDER": "Comment"
     },
+    "PUBLIILIKE": {
+      "TITLE": "Publi you liked"
+    },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
       "PRIVACITY": "Private Account",

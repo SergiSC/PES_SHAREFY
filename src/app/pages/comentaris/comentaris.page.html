@@ -23,13 +23,13 @@
       <hr>
       <ion-row *ngFor="let comm of comentaris" class="row-des">
         <ion-grid>
-            <ion-row>
+            <ion-row (click)="goperfiluser(comm.username)"> 
               <ion-col size="auto" class="comm">
                 <ion-avatar class="avatar">
                   <ion-img alt="" [src]="'http://sharefy.tk' + comm.photo_path"></ion-img>
                 </ion-avatar>
               </ion-col>
-              <ion-col class="ion-padding-bottom" class="comm"><ion-text (click)="goperfiluser(comm.username)"><p><b>{{ comm.username }}</b></p></ion-text></ion-col>
+              <ion-col class="ion-padding-bottom" class="comm"><ion-text><p><b>{{ comm.username }}</b></p></ion-text></ion-col>
               <ion-col><ion-icon name="trash" *ngIf="comm.username === user" (click)="BorrarCom(comm.id_comment)" class="ion-float-right" style="margin-top: 16px;"></ion-icon></ion-col>
             </ion-row>
             <ion-row><ion-text class="auto-margin">{{ comm.text }}</ion-text></ion-row>

@@ -326,4 +326,16 @@ export class ApiService {
       this.url + '/api/publication/' + id + '/likes' + '?token=' + tok
     );
   }
+
+  getMur(id, tok) {
+    return this.http.get(
+      this.url + '/api/user/' + id + '/wall' + '?token=' + tok
+    );
+  }
+
+  getPulbisILike(id, tok) {
+    return this.http.get(
+      this.url + '/api/likes/user/' + id + '/publications' + '?token=' + tok
+    );
+  }
 }
