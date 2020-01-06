@@ -11,6 +11,7 @@ import {Storage} from '@ionic/storage';
 export class PubilikePage implements OnInit {
 
   publicacions;
+  pub = undefined;
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage) { }
 
   ngOnInit() {
@@ -23,6 +24,9 @@ export class PubilikePage implements OnInit {
       this.store.get('token').then(n => {
         this.api.getPulbisILike(id, n).subscribe((pub: any) => {
           this.publicacions = pub.value;
+          if (this.publicacions.length === 0) {
+            this.pub = true;
+        } else { this.pub = false; }
         });
       });
     });

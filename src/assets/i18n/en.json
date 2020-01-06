@@ -86,7 +86,8 @@
       "PLACEHOLDER": "Comment"
     },
     "PUBLIILIKE": {
-      "TITLE": "Publi you liked"
+      "TITLE": "Publi you liked",
+      "TEXTNOPUB": "You did't like any publication"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuration",
@@ -108,7 +109,8 @@
       "MESSAGEWRONG": "The format of the clip is not the correct"
     },
     "MUR": {
-      "TITLE": "Wall"
+      "TITLE": "Wall",
+      "TEXTNOPUB": "Follow users to see their activity"
     },
     "EVENTS": {
       "TITLE": "Events"
@@ -217,7 +219,17 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publication",
       "TEXTALLCOMMENTS": "See all comments",
-      "TEXTGOTOMUR": "Go to timeline"
+      "TEXTGOTOMUR": "Go to timeline",
+      "HOURFA": "ago",
+      "HOURMIN": "minut",
+      "HOURMINS": "minuts",
+      "HOURHOURS": "hours",
+      "HOURHOUR": "hour",
+      "HOURSEC": "segons",
+      "HOURDAY": "day",
+      "HOURDAYS": "days",
+      "HOURWEEK": "week",
+      "HOURWEEKS": "weeks"
     },
     "MODALCONVIDAR": {
       "TITLE": "Invite",

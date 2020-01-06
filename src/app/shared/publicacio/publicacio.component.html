@@ -9,7 +9,7 @@
       </ion-button>
     </ion-col>
     <ion-col class="ion-text-right">
-      <ion-button fill="clear" class="buto-config" (click)="presentPopOver($event)" *ngIf="esOwner == true"><ion-icon name="more"></ion-icon></ion-button>
+      <ion-button fill="clear" class="buto-config" (click)="presentPopOver($event)" *ngIf="esOwner"><ion-icon name="more"></ion-icon></ion-button>
     </ion-col>
   </ion-row>
   <ion-row class="row-video-container">
@@ -34,4 +34,5 @@
   <ion-row class="row-des">
     <ion-text [(ngModel)]="commentaris" class="auto" ><b>{{ commentaris.ownername }}:</b> {{des}}</ion-text>
   </ion-row>
+  <ion-row class="date-publication">{{tempsPassat}}</ion-row>
 </ion-grid>

@@ -9,7 +9,12 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let publi of publicacions">
-    <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
+  <div *ngIf="!pub">
+    <div *ngFor="let publi of publicacions">
+      <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
+    </div>
+  </div>
+  <div *ngIf="pub" class="divv">
+    <p>{{ 'PAGE.PUBLIILIKE.TEXTNOPUB' | translate }}</p>
   </div>
 </ion-content>

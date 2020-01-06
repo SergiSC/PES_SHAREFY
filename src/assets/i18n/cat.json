@@ -58,7 +58,8 @@
       "TITLE": "Events"
     },
     "MUR": {
-      "TITLE": "Mur"
+      "TITLE": "Mur",
+      "TEXTNOPUB": "Segueix a usuaris per poder visualitzar la seva activitat"
     },
     "PROFILEGAMES": {
       "PUBLICATIONS": "Publicaions",
@@ -106,7 +107,8 @@
       "PLACEHOLDER": "Comentari"
     },
     "PUBLIILIKE": {
-      "TITLE": "Publi amb likes"
+      "TITLE": "Publi amb likes",
+      "TEXTNOPUB": "No has donat like a cap publicació"
     },
     "CONFIGURACIO": {
       "TITLE": "Configuració",
@@ -217,7 +219,17 @@
     "VISTAPUBLICACIO": {
       "TITLE": "Publicació",
       "TEXTALLCOMMENTS": "Mira tots els comentaris",
-      "TEXTGOTOMUR": "Anar al mur"
+      "TEXTGOTOMUR": "Anar al mur",
+      "HOURFA": "Fa",
+      "HOURMIN": "minut",
+      "HOURMINS": "minuts",
+      "HOURHOURS": "hores",
+      "HOURHOUR": "hora",
+      "HOURSEC": "segons",
+      "HOURDAY": "dia",
+      "HOURDAYS": "dies",
+      "HOURWEEK": "setmana",
+      "HOURWEEKS": "setmanes"
     },
     "MODALCONVIDAR": {
       "TITLE": "Convidar",

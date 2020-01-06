@@ -11,7 +11,8 @@ import {AppComponent} from '../../app.component';
 })
 export class MurPage implements OnInit {
 
-  publicacio: any;
+  publicaci: any;
+  pub = undefined;
   constructor(private api: ApiService,
               private router: Router,
               private store: Storage) {}
@@ -20,25 +21,18 @@ export class MurPage implements OnInit {
     ngOnInit() {}
 
     ionViewWillEnter() {
-    let id;
-    this.store.get('username').then((val) => {
-      this.store.get('token').then((tok) => {
-        this.api.recuperarInfoUser(val, tok).subscribe((info: any) =>{
-          id = info.value[0].id;
-          this.api.getMur(id, tok).subscribe( (data: any) => {
-            this.publicacio = data.value;
-          });
-        });
-      });
-    });
-    this.GoToLogIn();
-    /*
     this.store.get('username').then((val) => {
       this.store.get('token').then((tok) => {
         this.api.getMur(val, tok).subscribe( (data: any) => {
-            this.publicacio = data.value;
+          console.log(data)
+            this.publicaci = data.value;
+            if (this.publicaci.length === 0) {
+                this.pub = true;
+            } else { this.pub = false; }
           });
-    */
+        });
+      });
+    this.GoToLogIn();
   }
 
   gotoperfiluser() {
