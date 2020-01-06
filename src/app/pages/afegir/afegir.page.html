@@ -8,14 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-textarea placeholder="Description" [(ngModel)]="desc"></ion-textarea>
-  <ion-row style="margin-top: 10%">
-    <ion-item lines=none>
-       <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
-      <ion-select  [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select">
-        <ion-select-option *ngFor="let g of games"> {{g.name_en}} </ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-row>
-  <ion-button (click)="UploatFile()">{{ 'PAGE.ADD.BUTTON' | translate }}</ion-button>
+  <div class="divv">
+    <ion-textarea placeholder="Description" [(ngModel)]="desc"></ion-textarea>
+    <ion-row style="margin-top: 10%" class="box">
+      <ion-item lines=none>
+         <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
+        <ion-select  [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select">
+          <ion-select-option *ngFor="let g of games"> {{g.name_en}} </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-button (click)="UploatFile()">{{ 'PAGE.ADD.BUTTON' | translate }}</ion-button>
+  </div>
 </ion-content>
