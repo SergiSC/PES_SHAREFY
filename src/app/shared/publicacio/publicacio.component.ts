@@ -174,71 +174,74 @@ export class PublicacioComponent implements OnInit {
   }
 
   calculTempsPassat(idioma) {
-    let dataCreacio = new Date(this.creat.split(' ')[0]).getTime();
-    let dataActual = new Date().getTime();
-    let diferenciaTemporal = dataActual - dataCreacio;
-    diferenciaTemporal = diferenciaTemporal / (1000 * 3600 * 24 * 7);
+    let tempsDataCreacio = this.getDataCreacio()
+    let tempsDataActual = new Date().getTime();
+    let diferenciaTemporal = tempsDataActual - tempsDataCreacio;
+    let setmana = diferenciaTemporal / (1000 * 3600 * 24 * 7);
+    console.log(new Date(this.creat))
+    console.log(new Date)
+
 
     //Fa 1 setmana o més
-    if (Math.trunc(diferenciaTemporal) > 0) {
+    if (Math.trunc(setmana) > 0) {
       if (idioma == 'en') {
-        if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
-        else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+        if (Math.trunc(setmana) == 1) this.tempsPassat = Math.trunc(setmana) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+        else this.tempsPassat = Math.trunc(setmana) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
       }
       else {
-        if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK')
-        else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS')
+        if (Math.trunc(setmana) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(setmana) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEK')
+        else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(setmana) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURWEEKS')
       }
     }
 
     else {
-      diferenciaTemporal = diferenciaTemporal * 7;
+      let dia = diferenciaTemporal / (1000 * 3600 * 24);
       //Fa 1 dia o més
-      if (Math.trunc(diferenciaTemporal) > 0) {
+      if (Math.trunc(dia) > 0) {
         if (idioma == 'en') {
-          if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
-          else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+          if (Math.trunc(dia) == 1) this.tempsPassat = Math.trunc(dia) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+          else this.tempsPassat = Math.trunc(dia) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
         }
         else {
-          if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY')
-          else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS')
+          if (Math.trunc(dia) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(dia) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAY')
+          else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(dia) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURDAYS')
         }
       }
 
       else {
-        diferenciaTemporal = diferenciaTemporal * 24;
+        let hora = diferenciaTemporal / (1000 * 3600)
         //Fa 1 hora o més
-        if (Math.trunc(diferenciaTemporal) > 0) {
+        if (Math.trunc(hora) > 0) {
           if (idioma == 'en') {
-            if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
-            else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+            if (Math.trunc(hora) == 1) this.tempsPassat = Math.trunc(hora) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+            else this.tempsPassat = Math.trunc(hora) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
           }
           else {
-            if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR')
-            else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS')
+            if (Math.trunc(hora) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(hora) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOUR')
+            else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(hora) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURHOURS')
           }
         }
 
         else {
-          diferenciaTemporal = diferenciaTemporal * 60;
+          let minut = diferenciaTemporal / (1000 * 60)
           //Fa 1 minut o més
-          if (Math.trunc(diferenciaTemporal) > 0) {
+          if (Math.trunc(minut) > 0) {
             if (idioma == 'en') {
-              if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
-              else this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+              if (Math.trunc(minut) == 1) this.tempsPassat = Math.trunc(minut) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+              else this.tempsPassat = Math.trunc(minut) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
             }
             else {
-              if (Math.trunc(diferenciaTemporal) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN')
-              else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS')
+              if (Math.trunc(minut) == 1) this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(minut) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMIN')
+              else this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(minut) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURMINS')
             }
           }
           else {
-            diferenciaTemporal = diferenciaTemporal * 60;
+            let segon = diferenciaTemporal / 1000
             if (idioma == 'en') {
-              this.tempsPassat = Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
+              this.tempsPassat = Math.trunc(segon) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC') + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA')
             }
             else {
-              this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(diferenciaTemporal) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC')
+              this.tempsPassat = this.translate.instant('PAGE.VISTAPUBLICACIO.HOURFA') + ' ' + Math.trunc(segon) + ' ' + this.translate.instant('PAGE.VISTAPUBLICACIO.HOURSEC')
 
             }
           }
@@ -247,4 +250,10 @@ export class PublicacioComponent implements OnInit {
     }
   }
 
+  //Funcio que suma una h al temps del servidor (va una hora retrasar respecte el temps de Barcelona) y retorna els milisegons desde el 1 de Gener de 1970
+  getDataCreacio() {
+    let milisegons = new Date(this.creat).getTime()
+    milisegons += (3600*1000)
+    return milisegons
+  }
 }

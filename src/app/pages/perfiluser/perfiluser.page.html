@@ -72,7 +72,7 @@
             <ion-row>
               <ion-col *ngIf="(esell && !noPubli) || ((public == true || seguint == true) && !noPubli)">
                 <div *ngFor="let publi of publicacio">
-                    <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path"></app-publicacio>
+                    <app-publicacio [numLikes]="publi.num_likes" [idp]="publi.id" [username]="publi.user.username" [video]="publi.video_path" [des]="publi.text" [photo]="publi.user.photo_path" [created_at]="publi.created_at"></app-publicacio>
                 </div>
             </ion-col>
             <ion-col *ngIf="public == false && seguint == false">
