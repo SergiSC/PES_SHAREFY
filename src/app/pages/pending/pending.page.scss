@@ -5,3 +5,22 @@
 .text-center{
     text-align: center;
 }
+
+.ion-text-center {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: medium;
+}
+
+.divv {
+    margin-top: 60px;
+    text-align: center;
+    color: #64C995;
+}
