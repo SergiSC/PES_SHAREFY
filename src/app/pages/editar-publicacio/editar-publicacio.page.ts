@@ -36,10 +36,11 @@ export class EditarPublicacioPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(data => {
+      console.log(data)
       this.pid = data.idp;
       this.path = data.video;
       this.desc = data.desc;
-      this.newSel = data.game_en;
+      this.newSel = data.game;
     });
     this.api.getAllGames().subscribe((data: any) => {
       this.games = data.value;

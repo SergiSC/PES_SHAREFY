@@ -23,6 +23,7 @@ export class PublicacioComponent implements OnInit {
   @Input('numLikes') numLikes: number;
   @Input('photo') photo: string;
   @Input('created_at') creat: string;
+  @Input('game') joc: string;
 
   like = false; // substituir per crida a sistema per si l'usuari li ha donat a like o no
   esOwner = false;
@@ -80,7 +81,7 @@ export class PublicacioComponent implements OnInit {
   async presentPopOver(event) {
     const popover = await this.popoverCtrl.create({
       component: PubliPopOverComponent,
-      componentProps: { idPublication: this.idp, video: this.video, desc: this.des },
+      componentProps: { idPublication: this.idp, video: this.video, desc: this.des, game: this.joc },
       event,
       cssClass: 'setting-popover'
     });
