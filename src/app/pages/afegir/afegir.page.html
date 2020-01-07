@@ -13,11 +13,17 @@
     <ion-row style="margin-top: 10%" class="box">
       <ion-item lines=none>
          <ion-label>{{ 'PAGE.EDITAR.GAMES' | translate }}</ion-label>
-        <ion-select  [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select">
-          <ion-select-option *ngFor="let g of games"> {{g.name_en}} </ion-select-option>
-        </ion-select>
+        <ion-item style="width:100%">
+          <ion-label>{{ 'PAGE.MODALCONVIDAR.TEXTMODAL' | translate}}</ion-label>
+          <ion-select style="width: 500px" [(ngModel)]="newSel" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="{{ 'PAGE.MODALCONVIDAR.PLACEHOLDERSELECT' | translate}}">
+            <ion-select-option *ngFor="let joc of games" value="{{joc.name_en}}">{{joc.name_en}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+<!--        <ion-select  [(ngModel)]="newSel"  [selectedText]="newSel" interface="popover" class="select">-->
+<!--          <ion-select-option *ngFor="let g of games"> {{g.name_en}} </ion-select-option>-->
+<!--        </ion-select>-->
       </ion-item>
     </ion-row>
-    <ion-button (click)="UploatFile()">{{ 'PAGE.ADD.BUTTON' | translate }}</ion-button>
+    <ion-button style="margin-top: 10%" (click)="UploatFile()">{{ 'PAGE.ADD.BUTTON' | translate }}</ion-button>
   </div>
 </ion-content>

@@ -23,6 +23,9 @@ export class AfegirPage implements OnInit {
   newSel;
   desc;
   canN = false;
+  customPopoverOptions: any = {
+    header: this.translate.instant('PAGE.MODALCONVIDAR.PLACEHOLDERSELECT'),
+  };
   constructor(private file: File, private transfer: FileTransfer, private translate: TranslateService, private chooser: FileChooser,
               private opener: FileOpener, private path: FilePath, private storage: Storage,
               private  api: ApiService, public loadingController: LoadingController) { }

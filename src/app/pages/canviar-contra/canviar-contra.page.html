@@ -1,9 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>canviarContra</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <div style="width: 48px"></div>
+    </ion-buttons>
+    <ion-title> Change Password </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row class="row_grid">
+    <ion-item class="item-input-new-password" id="t">
+      <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYA' | translate}} Actual</ion-label>
+      <ion-input [(ngModel)]="oldPass" type="password" clear-on-edit class="input-register"></ion-input>
+    </ion-item>
+    <div *ngIf="missatgeErrorOldPassword.length > 0">
+      <ng-container *ngFor="let err of missatgeErrorOldPassword">
+        <div class="error_message">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+  <ion-row class="row_grid">
+    <ion-item class="item-input-password" id="item-input-password">
+      <ion-label position="floating">Nova {{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
+      <ion-input [(ngModel)]="regPassword" (ionChange)="checkPasswordFormat()" type="password" clear-on-edit id="input-nickt" class="input-register"></ion-input>
+    </ion-item>
+    <div *ngIf="missatgeErrorPassword.length > 0">
+      <ng-container *ngFor="let err of missatgeErrorPassword">
+        <div class="error_message">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+  <ion-row class="row_grid">
+    <ion-item class="item_registre" id="item-input-password-rep">
+      <ion-label position="floating">{{ 'PAGE.REGISTRE.LABELCONTRASENYAREP' | translate}}</ion-label>
+      <ion-input [(ngModel)]="regPasswordRepeat" (ionChange)="checkSamePasswords()" type="password" clear-on-edit id="input-nick" class="input-register"></ion-input>
+    </ion-item>
+    <div *ngIf="missatgeErrorPasswordRep.length > 0">
+      <ng-container *ngFor="let err of missatgeErrorPasswordRep">
+        <div class="error_message">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ err }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+  <ion-row style="margin-top: 15%; justify-content: center">
+    <ion-button block size="8" expand="full" id="registreButton" (click)="changePassword()"> Change <ion-ripple-effect></ion-ripple-effect></ion-button>
+  </ion-row>
 </ion-content>

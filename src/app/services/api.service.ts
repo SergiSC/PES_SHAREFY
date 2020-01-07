@@ -46,6 +46,18 @@ export class ApiService {
     );
   }
 
+  changePass(username, tok, pass, newPass) {
+    const body = {
+      token: tok,
+      password: pass,
+      new_password: newPass
+    };
+    return this.http.put(
+        this.url + '/api/user/' + username + '/password',
+        body
+    );
+  }
+
   usernameDisponible(name) {
     const body = {
       username: name,
