@@ -4,6 +4,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {ToastController} from '@ionic/angular';
 import {ApiService} from '../../services/api.service';
 import {Storage} from '@ionic/storage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-canviar-contra',
@@ -20,7 +21,7 @@ export class CanviarContraPage implements OnInit {
   regPassword;
   err = new errorsRegistre(this.translate);
 
-  constructor(public translate: TranslateService, public toastController: ToastController, public api: ApiService, public storage: Storage) { }
+  constructor(public translate: TranslateService, public toastController: ToastController, public api: ApiService, public storage: Storage, public rout: Router) { }
 
   ngOnInit() {
   }
@@ -62,37 +63,25 @@ export class CanviarContraPage implements OnInit {
         this.storage.get('username').then((usr) => {
           this.storage.get('token').then((tk) => {
             console.log(usr, tk, this.oldPass, this.regPassword);
-            this.api.changePass(usr, tk, this.regPassword, this.oldPass).subscribe((result) => {
-              console.log(result);
-            });
+            this.api.changePass(usr, tk, this.oldPass, this.regPassword).subscribe((result) => {
+                  this.presentToastWithOptions('Guardada Correctament!');
+                  this.rout.navigateByUrl('/informacio');
+            },
+                err => { this.presentToastWithOptions('La contrasenya actual no coincideix!'); });
           });
         });
       } else {
-        this.presentToastWithOptions();
+        this.presentToastWithOptions('Algo ha ido mal!');
       }
   }
 
-  async presentToastWithOptions() {
+  async presentToastWithOptions(msg) {
     const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      message: msg,
+      showCloseButton: true,
       position: 'bottom',
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
+      closeButtonText: 'Close',
+      duration: 3000,
     });
     toast.present();
   }

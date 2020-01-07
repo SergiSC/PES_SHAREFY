@@ -81,13 +81,10 @@ export class AppComponent {
         const toast = await this.toastController.create({
             header: title,
             message: body,
+            showCloseButton: true,
             position: 'bottom',
-            // buttons: [
-            //     {
-            //         text: 'Done',
-            //         role: 'cancel',
-            //     }
-            // ]
+            closeButtonText: 'Close',
+            duration: 3000,
         });
         toast.present();
     }
