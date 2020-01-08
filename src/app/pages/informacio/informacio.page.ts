@@ -7,6 +7,8 @@ import { Storage } from '@ionic/storage';
 import { ApiService } from 'src/app/services/api.service';
 import {Router} from '@angular/router';
 import {errorsInformacio} from './informacio.errors';
+import {FileTransfer, FileTransferObject, FileUploadOptions} from '@ionic-native/file-transfer/ngx';
+import {FilePath} from '@ionic-native/file-path/ngx';
 
 
 
@@ -37,6 +39,7 @@ export class InformacioPage implements OnInit {
     maximumImagesCount: 1,
     quality: 50
   };
+  fileTransfer: FileTransferObject;
 
   constructor(
       private router: Router,
@@ -46,7 +49,9 @@ export class InformacioPage implements OnInit {
       private file: File,
       private translate: TranslateService,
       private storage: Storage,
-      private api: ApiService
+      private api: ApiService,
+      private path: FilePath,
+      private transfer: FileTransfer
   ) { }
 
   ngOnInit() {
@@ -84,12 +89,34 @@ export class InformacioPage implements OnInit {
       mediaType: this.camera.MediaType.PICTURE
     };
     this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      // let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      // Handle error
-    });
+      const img = imageData;
+      this.storage.get('token').then(tok => {
+        this.storage.get('username').then(usr => {
+          this.api.setPhoto(usr, tok, img).subscribe(data => console.log(data));
+
+          this.path.resolveNativePath(img).then((result) => {
+            this.fileTransfer = this.transfer.create();
+            const pathName = result.split('/');
+            const name = pathName[pathName.length - 1];
+            // tslint:disable-next-line:no-shadowed-variable
+            const options: FileUploadOptions = {
+              fileKey: 'photo',
+              fileName: name,
+              httpMethod: 'POST',
+              params: {
+                token: tok,
+              },
+            };
+            if (result.endsWith('.png') || result.endsWith('.jpg')) {
+              this.fileTransfer.upload(result, 'http://sharefy.tk/api/' + usr + 'photo', options, true).then(data => {
+              }, (err) => {
+                console.log(err);
+              });
+            }
+          });
+        });
+      });
+    }, (err) => {});
   }
 
   async selectImage() {

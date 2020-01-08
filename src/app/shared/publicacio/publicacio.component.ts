@@ -124,7 +124,7 @@ export class PublicacioComponent implements OnInit {
   }
 
   gotoShare() {
-    this.socialSharing.share("Check this item:  sharefy://tabs/mur/")
+    this.socialSharing.share(this.des + '     www.sharefy.tk' + this.video)
       .then(() => {
         this.storage.get('username').then((username: any) => {
           this.storage.get('token').then((tok: any) => {

@@ -46,6 +46,18 @@ export class ApiService {
     );
   }
 
+
+  setPhoto(user, tok, phot) {
+    const body = {
+      token: tok,
+      photo: phot
+    };
+    return this.http.post(
+        this.url + '/api/user/' +  user + '/photo',
+        body
+    );
+  }
+
   changePass(username, tok, pass, newPass) {
     const body = {
       token: tok,
