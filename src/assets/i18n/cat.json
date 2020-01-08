@@ -42,7 +42,8 @@
       "LIKES": "M'agrada",
       "NOLIKES": "Cap usuari ha donat m'agrada en aquesta publicació",
       "INVITA": "Invita",
-      "BUTTONINVITE": "Convidar"
+      "BUTTONINVITE": "Convidar",
+      "BUTTONPENDING": "Pendent"
     },
     "GAMES": {
       "DESCRIPTION": "Escull el joc que més t'agradi per veure els millors clips!",

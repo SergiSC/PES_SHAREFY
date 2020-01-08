@@ -42,7 +42,8 @@
       "LIKES": "Likes",
       "NOLIKES": "Any user have liked this publication yet",
       "INVITA": "Invite",
-      "BUTTONINVITE": "Convidar"
+      "BUTTONINVITE": "Invite",
+      "BUTTONPENDING": "Pending"
     },
     "INFORMACIO": {
       "TITLE": "Information",

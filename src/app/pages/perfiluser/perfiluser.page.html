@@ -48,13 +48,13 @@
               </div>
             </ion-col>
             <ion-col class="item2">
-              <div (click)="go_to_follow(0)">
+              <div (click)="go_to_followers()">
                 <p>{{ nseguid }}</p>
                 <p>{{ 'PAGE.PERFIL.NSEGUIDORS' | translate }}</p>
               </div>
             </ion-col>
             <ion-col class="item2">
-              <div (click)="go_to_follow(1)">
+              <div (click)="go_to_following()">
                 <p>{{ nseguit }}</p>
                 <p>{{ 'PAGE.PERFIL.NSEGUITS' | translate }}</p>
               </div>
@@ -62,11 +62,12 @@
           </ion-row>
           <ion-row *ngIf="!esell">
               <ion-col class="flex">
-                    <ion-button *ngIf="!seguint" color="primary" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUIR' | translate }}</ion-button>
-                    <ion-button *ngIf="seguint" color="secondary" (click)="Follow()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
+                    <ion-button *ngIf="isfollow" color="primary" (click)="do_follow()">{{ 'PAGE.PERFIL.BUTTONSEGUIR' | translate }}</ion-button>
+                    <ion-button *ngIf="isfollowing" color="secondary" (click)="do_following()">{{ 'PAGE.PERFIL.BUTTONSEGUINT' | translate }}</ion-button>
+                    <ion-button *ngIf="ispending" color="secondary" (click)="do_pending()">{{ 'PAGE.PERFIL.BUTTONPENDING' | translate }}</ion-button>
               </ion-col>
-              <ion-col *ngIf="seguint" class="flex">
-                <ion-button [color]="seguint ? 'secondary' :'primary'" (click)="presentModal()">{{ 'PAGE.PERFIL.INVITA' | translate }}</ion-button>
+              <ion-col *ngIf="isfollowing" class="flex">
+                <ion-button color="secondary"  (click)="presentModal()">{{ 'PAGE.PERFIL.INVITA' | translate }}</ion-button>
               </ion-col>
             </ion-row>
             <ion-row>

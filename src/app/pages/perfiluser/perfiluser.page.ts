@@ -28,6 +28,10 @@ export class PerfiluserPage implements OnInit {
   noPubli = true;
   isLoading = false;
 
+  isfollow = false;
+  isfollowing = false;
+  ispending = false;
+
 
   constructor(private route: ActivatedRoute, private api: ApiService, private store: Storage,
               private loadingController: LoadingController,  private router: Router,
@@ -45,11 +49,40 @@ export class PerfiluserPage implements OnInit {
     await modal.present();
   }
 
+do_follow() {
+  this.api.Seguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
+    this.api.sendNotification(this.user, this.Perfiluser, this.token, 'follow').subscribe();
+    this.isfollow = false;
+    if (this.public) {
+      this.nseguid++;
+      this.isfollowing = true;
+      this.seguint = true;
+    } else {
+      this.ispending = true;
+    }
+  });
+}
+
+do_pending() {
+  this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
+    this.ispending = false;
+    this.isfollow = true;
+  });
+}
+
+do_following() {
+  this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
+    this.nseguid--;
+    this.isfollowing = false;
+    this.isfollow = true;
+  });
+}
+
 Follow() {
   if (!this.seguint) {
     this.api.Seguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
       this.nseguid++;
-      this.api.sendNotification(this.user, this.Perfiluser, this.token,'follow').subscribe();
+      this.api.sendNotification(this.user, this.Perfiluser, this.token, 'follow').subscribe();
     });
   } else {
     this.api.DeixardeSeguir(this.user, this.Perfiluser, this.token).subscribe((data: any) => {
@@ -59,14 +92,8 @@ Follow() {
   this.seguint = !this.seguint;
 }
 
-go_to_follow(x) {
-  if (x === 0) {
-    const edit = {
-      nom: this.iduser,
-      type: 'Followers'
-    };
-    this.router.navigate(['/followers', edit]);
-  } else {
+go_to_following() {
+  if (this.isfollowing) {
     const edit = {
       nom: this.iduser,
       type: 'Following'
@@ -75,8 +102,18 @@ go_to_follow(x) {
   }
 }
 
+go_to_followers() {
+  if (this.isfollowing) {
+    const edit = {
+      nom: this.iduser,
+      type: 'Followers'
+    };
+    this.router.navigate(['/followers', edit]);
+  }
+}
+
 ngOnInit() {
- 
+
 }
 fullAvatar() {
   const edit = {pathFotoPerfil: this.pathFotoPerfil, nomUser: this.Perfiluser};
@@ -103,6 +140,7 @@ fullAvatar() {
     this.store.get('token').then((token) => {
       this.token = token;
       this.api.recuperarInfoUser(this.Perfiluser, token).subscribe((data2: any) => {
+        console.log(data2);
         if (data2.value[0].photo_path !== null) {
           this.pathFotoPerfil = 'http://www.sharefy.tk' + data2.value[0].photo_path;
         }
@@ -121,7 +159,16 @@ fullAvatar() {
           this.user = val;
           if (!(val === this.Perfiluser)) {
             this.api.IsFollowing(val, this.Perfiluser, token).subscribe((data: any) => {
-              if (data.value === 'true') {
+              console.log(data.state);
+              if (data.state === 'FOLLOW') {
+                this.isfollow = true;
+              } else if (data.state === 'FOLLOWING') {
+                this.isfollowing = true;
+              } else {
+                this.ispending = true;
+              }
+
+              if (this.isfollowing) {
                 this.seguint = true;
               } else { this.seguint = false; }
               this.esell = false;
@@ -136,7 +183,6 @@ fullAvatar() {
             this.noPubli = false;
           }
           this.dismiss();
-
         });
       });
     });

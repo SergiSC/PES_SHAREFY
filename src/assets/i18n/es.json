@@ -41,8 +41,9 @@
       "NOFOLLOWING": "Este usuario no sigue a nadie",
       "LIKES": "Me gustas",
       "NOLIKES": "Ningun usuario a dado me gusta en esta publicación aún",
-      "INVITA": "Invita",
-      "BUTTONINVITE": "Convidar"
+      "INVITA": "Invitar",
+      "BUTTONINVITE": "Convidar",
+      "BUTTONPENDING": "Pendiente"
     },
     "GAMES": {
       "DESCRIPTION": "Escoje el juego que más te guste para ver los mejores clips!",
