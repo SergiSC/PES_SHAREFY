@@ -93,7 +93,7 @@ Follow() {
 }
 
 go_to_following() {
-  if (this.isfollowing) {
+  if (this.isfollowing || this.esell) {
     const edit = {
       nom: this.iduser,
       type: 'Following'
@@ -103,7 +103,7 @@ go_to_following() {
 }
 
 go_to_followers() {
-  if (this.isfollowing) {
+  if (this.isfollowing || this.esell) {
     const edit = {
       nom: this.iduser,
       type: 'Followers'
