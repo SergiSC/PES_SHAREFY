@@ -1,0 +1,30 @@
+.title {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.grid_registre {
+  padding: 10%;
+}
+
+.item_registre {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.error_message{
+  color: red;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+ion-checkbox {
+  margin: 0;
+}
+
+.row_grid {
+  margin: 5% 5% 15%;
+}

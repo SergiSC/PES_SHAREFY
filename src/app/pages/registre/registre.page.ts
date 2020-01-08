@@ -80,7 +80,7 @@ export class RegistrePage implements OnInit {
       || this.regPasswordRepeat === undefined || this.regPasswordRepeat === "" 
       || this.missatgeErrorNick.length > 0 || this.missatgeErrorMail.length > 0 || this.missatgeErrorPassword.length > 0 || this.missatgeErrorPasswordRep.length > 0
       || this.legalChecked === false) return false
-    else return true
+    else return true;
   }
 
   checkNickName() {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import {Platform, ToastController} from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FCM } from '@ionic-native/fcm/ngx';
@@ -26,7 +26,8 @@ export class AppComponent {
         private fcm: FCM,
         private translate: TranslateService,
         private storage: Storage,
-        private deeplink: Deeplinks
+        private deeplink: Deeplinks,
+        public toastController: ToastController
     ) {
         this.initializeApp();
     }
@@ -63,7 +64,8 @@ export class AppComponent {
                 if (data.wasTapped) {
                     console.log('Received in background');
                 } else {
-                    console.log('Received in foreground');
+                    console.log(data);
+                    this.presentToastWithOptions(data.title, data.body);
                 }
             });
 
@@ -73,5 +75,17 @@ export class AppComponent {
             });
             this.router.navigate(['login']);
         });
+    }
+
+    async presentToastWithOptions(title, body) {
+        const toast = await this.toastController.create({
+            header: title,
+            message: body,
+            showCloseButton: true,
+            position: 'bottom',
+            closeButtonText: 'Close',
+            duration: 3000,
+        });
+        toast.present();
     }
 }
